@@ -6,6 +6,10 @@ Rust support for these devices is still in the early stages, but progress is bei
 
 For tools and libraries relating to Rust on ESP, please see the [esp-rs organization] on GitHub.
 
+[rust programming language]: https://www.rust-lang.org/
+[espressif]: https://espressif.com/
+[esp-rs organization]: https://github.com/esp-rs/
+
 ## Additional Resources
 
 Some additional resources can be found below which may prove useful for those less experienced with embedded Rust.
@@ -16,9 +20,6 @@ Some additional resources can be found below which may prove useful for those le
 | [The Embedded Rust Book]        | Here you can find several other resources provided by Rust's Embedded Working Group. |
 | [The Embedonomicon]             | The nitty gritty details when doing embedded programming in Rust.                    |
 
-[rust programming language]: https://www.rust-lang.org/
-[espressif]: https://espressif.com/
-[esp-rs organization]: https://github.com/esp-rs/
 [the rust programming language]: https://doc.rust-lang.org/book/
 [the embedded rust book]: https://docs.rust-embedded.org/book/index.html
 [the embedonomicon]: https://docs.rust-embedded.org/embedonomicon/

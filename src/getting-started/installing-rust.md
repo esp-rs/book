@@ -62,7 +62,9 @@ $ chmod +x install-rust-toolchain.sh
 $ ./install-rust-toolchain.sh
 ```
 
-On _Windows_:
+On _Windows_ with GUI installer: https://github.com/espressif/idf-installer/releases
+
+On _Windows_ with PowerShell:
 
 ```powershell
 PS> Invoke-WebRequest https://raw.githubusercontent.com/esp-rs/rust-build/main/Install-RustToolchain.ps1

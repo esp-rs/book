@@ -47,9 +47,10 @@ jobs:
       - name: Check links
         run: linkchecker book
 
-      # - name: Deploy book
-      #   if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' }}
-      #   uses: peaceiris/actions-gh-pages@v3
-      #   with:
-      #     github_token: ${{ secrets.GITHUB_TOKEN }}
-      #     force_orphan: true
+      - name: Deploy book
+        if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          force_orphan: true
+          publish_dir: ./book

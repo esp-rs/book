@@ -17,7 +17,10 @@ $ rustup toolchain install nightly
 $ rustup default nightly
 ```
 
+You can read more about toolchains in the [rustup book].
+
 [rustup]: https://rustup.rs/
+[rustup book]: https://rust-lang.github.io/rustup/concepts/toolchains.html
 
 ## RISC-V (ESP32-C3)
 
@@ -44,6 +47,8 @@ At this point you are ready to build applications for the ESP32-C3.
 
 Because there is no `Xtensa` support in the mainline Rust compiler you must use the [esp-rs/rust] fork instead. There are a few options available for installing this compiler fork.
 
+[esp-rs/rust]: https://github.com/esp-rs/rust
+
 ### Using a Pre-Built Release
 
 Pre-built releases are available for a number of platforms on GitHub under the [esp-rs/rust-build] repository. The following operating systems and architectures are currently supported:
@@ -54,7 +59,7 @@ Pre-built releases are available for a number of platforms on GitHub under the [
 
 The aforementioned repository also contains Bash and PowerShell scripts to automate the installation process.
 
-On _macOS_ or _Linux_:
+#### macOS and Linux
 
 ```bash
 $ curl -LO https://raw.githubusercontent.com/esp-rs/rust-build/main/install-rust-toolchain.sh
@@ -62,9 +67,11 @@ $ chmod +x install-rust-toolchain.sh
 $ ./install-rust-toolchain.sh
 ```
 
-On _Windows_ with GUI installer: https://github.com/espressif/idf-installer/releases
+#### Windows
 
-On _Windows_ with PowerShell:
+With GUI installer: [https://github.com/espressif/idf-installer/releases]
+
+With PowerShell:
 
 ```powershell
 PS> Invoke-WebRequest https://raw.githubusercontent.com/esp-rs/rust-build/main/Install-RustToolchain.ps1
@@ -80,9 +87,14 @@ nightly-x86_64-apple-darwin (default)
 esp
 ```
 
+[esp-rs/rust-build]: https://github.com/esp-rs/rust-build
+[https://github.com/espressif/idf-installer/releases]: https://github.com/espressif/idf-installer/releases
+
 ### Building From Source
 
 You can also build the Rust compiler with `Xtensa` support from source. This process is computationally expensive and can take one or more hours to complete depending on your system. It is recommended that you have _at least_ 6GB of RAM and 25GB+ of available storage space.
+
+To check out the repository and build the compiler:
 
 ```bash
 $ git clone -b esp https://github.com/esp-rs/rust
@@ -99,7 +111,7 @@ Once the build has completed, you can link the toolchain using rustup (your arch
 $ rustup toolchain link esp $PWD/build/x86_64-apple-darwin/stage2
 ```
 
-To confirm the `esp` toolchain has been installed:
+Once the compiler fork has been installed using one of the above methods, to confirm the `esp` toolchain has been installed:
 
 ```bash
 $ rustup toolchain list
@@ -120,6 +132,3 @@ xtensa-esp32s2-none-elf
 xtensa-esp8266-none-elf
 xtensa-none-elf
 ```
-
-[esp-rs/rust]: https://github.com/esp-rs/rust
-[esp-rs/rust-build]: https://github.com/esp-rs/rust-build

@@ -16,11 +16,17 @@ To install:
 $ cargo install cargo-espflash
 ```
 
+This command must be run within a Cargo project, ie.) a directory containing a `Cargo.toml` file. For example, to build an example named 'blinky' in `release` mode, flash the resulting binary to a device, and then subsequently start a serial monitor:
+
+```bash
+$ cargo espflash --release --monitor --example=blinky /dev/ttyUSB0
+```
+
 [the cargo documentation]: https://doc.rust-lang.org/cargo/reference/unstable.html#build-std
 
 ## espflash
 
-Provides a standalone command-line utility which flashes an ELF file to a device.
+Provides a standalone command-line application which flashes an ELF file to a device.
 
 To install:
 

@@ -123,8 +123,7 @@ esp
 To view the installed `Xtensa` targets:
 
 ```bash
-$ rustup default esp
-$ rustc --print target-list | grep xtensa
+$ rustc +esp --print target-list | grep xtensa
 xtensa-esp32-espidf
 xtensa-esp32-none-elf
 xtensa-esp32s2-espidf

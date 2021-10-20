@@ -10,6 +10,12 @@ For tools and libraries relating to Rust on ESP, please see the [esp-rs organiza
 [espressif]: https://espressif.com/
 [esp-rs organization]: https://github.com/esp-rs/
 
+## Who This Book is For
+
+This book assumes some experience with embedded development and the Rust programming language. Teaching these topics is outside the scope of this book.
+
+If you are unfamiliar with either topic, please refer to the resources listed below to help you get started.
+
 ## Additional Resources
 
 Some additional resources can be found below which may prove useful for those less experienced with embedded Rust.

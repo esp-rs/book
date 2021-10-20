@@ -9,3 +9,6 @@
   - [espflash](./tooling/espflash.md)
   - [espmonitor](./tooling/espmonitor.md)
 
+---
+
+[Appendix A: Glossary](./misc/glossary.md)

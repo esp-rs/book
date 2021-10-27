@@ -31,12 +31,12 @@ There are two suitable targets for this chip:
 - For bare-metal (`no_std`) applications, use `riscv32imc-unknown-none-elf`
 - For applications which require `std`, use `riscv32imc-esp-espidf`
 
-The compilation targets can be installed by running:
+The bare-metal target can be installed by running:
 
 ```bash
 $ rustup target add riscv32imc-unknown-none-elf
-$ rustup target add riscv32imc-esp-espidf
 ```
+The standard library target (`riscv32imc-esp-espidf`) is currently Tier 3, and does not have prebuilt objects distributed through `rustup`, therefore the `-Z build-std` unstable cargo feature is required within your project. See an example usage in [rust-esp32-std-mini](https://github.com/ivmarkov/rust-esp32-std-mini/blob/5fe3a5d75b16c6cee63e4c36b87f936744151494/.cargo/config.toml#L25-L26).
 
 At this point you are ready to build applications for the ESP32-C3.
 

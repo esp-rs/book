@@ -131,3 +131,20 @@ xtensa-esp32s2-none-elf
 xtensa-esp8266-none-elf
 xtensa-none-elf
 ```
+
+### Using Containers
+
+As an alternative to installing the compiler fork to your local system directly, it's also possible to run it inside of a container.
+
+A number of container runtimes are available, and which should be used depends on your operating system. Some of the popular options are:
+
+- [Docker] (non-commerial use only without a license)
+- [Podman]
+- [Lima]
+
+Espressif provides the [idf-rust] container image which contains [esp-idf] and the pre-built Rust compiler fork.
+
+[docker]: https://www.docker.com/
+[podman]: https://podman.io/
+[lima]: https://github.com/lima-vm/lima
+[idf-rust]: https://hub.docker.com/r/espressif/idf-rust

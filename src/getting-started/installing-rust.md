@@ -74,7 +74,7 @@ With GUI installer: [https://github.com/espressif/idf-installer/releases]
 With PowerShell:
 
 ```powershell
-PS> Invoke-WebRequest https://raw.githubusercontent.com/esp-rs/rust-build/main/Install-RustToolchain.ps1
+PS> Invoke-WebRequest https://raw.githubusercontent.com/esp-rs/rust-build/main/Install-RustToolchain.ps1 -OutFile Install-RustToolchain.ps1
 PS> ./Install-RustToolchain.ps1
 ```
 

@@ -10,6 +10,15 @@ For tools and libraries relating to Rust on ESP, please see the [esp-rs organiza
 [espressif]: https://espressif.com/
 [esp-rs organization]: https://github.com/esp-rs/
 
+## Status of This Book
+
+This book is currently a work in progress. A number of sections may be missing information or be missing altogether. If there is a specific topic you would like to see documented please [open an issue].
+
+If you feel you can contribute something to this book, we encourage you to [create a pull request]!
+
+[open an issue]: https://github.com/esp-rs/book/issues
+[create a pull request]: https://github.com/esp-rs/book/pulls
+
 ## Who This Book is For
 
 This book assumes some experience with embedded development and the Rust programming language. Teaching these topics is outside the scope of this book.

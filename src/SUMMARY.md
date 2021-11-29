@@ -1,7 +1,7 @@
 # Summary
 
 - [Introduction](./introduction.md)
-- [Ecosystem overview](./overview.md)
+- [Ecosystem Overview](./overview.md)
 - [Getting Started](./getting-started/index.md)
   - [Installing Rust](./getting-started/installing-rust.md)
 - [Tooling](./tooling/index.md)

@@ -16,7 +16,7 @@ This book is currently a work in progress. A number of sections may be missing i
 
 If you feel you can contribute something to this book, we encourage you to [create a pull request]!
 
-[open an issue]: https://github.com/esp-rs/book/issues
+[open an issue]: https://github.com/esp-rs/book/issues/new
 [create a pull request]: https://github.com/esp-rs/book/pulls
 
 ## Who This Book is For

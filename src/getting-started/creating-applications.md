@@ -39,13 +39,3 @@ The generated application can be built as normal using the appropriate toolchain
 
 [cargo-generate]: https://github.com/cargo-generate/cargo-generate
 [esp-idf-template]: https://github.com/esp-rs/esp-idf-template
-
-## Starting from Scratch
-
-Alternatively, you can of course create a project like you normally would using `cargo`:
-
-```shell
-$ cargo new esp-rust-app
-```
-
-**TODO:** detail the required files, configuration, and dependencies for each approach

@@ -6,3 +6,6 @@ language = "en"
 
 [rust]
 edition = "2018"
+
+[output.html]
+git-repository-url = "https://github.com/esp-rs/book"

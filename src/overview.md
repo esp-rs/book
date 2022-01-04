@@ -45,10 +45,10 @@ Chip support for `std` requires two things, LLVM/Clang support and support in `e
 
 | Repository            | Description                                                                                                   |
 | --------------------- | ------------------------------------------------------------------------------------------------------------- |
+| [esp-rs/esp-idf-hal]  | An implementation of the `embedded-hal` traits using the `esp-idf` framework. Provides the Rust `std` library.|
 | [esp-rs/embedded-svc] | Abstraction traits for embedded services.                                                                     |
 | [esp-rs/esp-idf-svc]  | An implementation of [embedded-svc] using `esp-idf` drivers.                                                  |
 | [esp-rs/esp-idf-sys]  | Rust bindings to the `esp-idf` development framework. Gives raw (`unsafe`) access to drivers, Wi-Fi and more. |
-| [esp-rs/esp-idf-hal]  | An implementation of the `embedded-hal` traits using the `esp-idf` framework.                                 |
 
 [esp-rs/embedded-svc]: https://github.com/esp-rs/embedded-svc
 [esp-rs/esp-idf-svc]: https://github.com/esp-rs/esp-idf-svc
@@ -91,15 +91,15 @@ Refer to the table below to see if your chip is supported.
 
 ### Relevant `esp-rs` Crates
 
-| Repository           | Description                                                              |
-| -------------------- | ------------------------------------------------------------------------ |
-| [esp-rs/esp32-hal]   | An implementation of the `embedded-hal` traits and more for the ESP32.   |
-| [esp-rs/esp32]       | A PAC crate for the ESP32.                                               |
-| [esp-rs/esp32c3]     | A PAC crate for the ESP32-C3.                                            |
-| [esp-rs/esp32s2]     | A PAC crate for the ESP32-S2.                                            |
-| [esp-rs/esp32s3]     | A PAC crate for the ESP32-S3.                                            |
-| [esp-rs/esp8266-hal] | An implementation of the `embedded-hal` traits and more for the ESP8266. |
-| [esp-rs/esp8266]     | A PAC crate for the ESP8266.                                             |
+| Repository           | Description                                                                                      |
+| -------------------- | ------------------------------------------------------------------------------------------------ |
+| [esp-rs/esp32-hal]   | An implementation of the `embedded-hal` traits and more for the ESP32 using bare metal (no_std). |
+| [esp-rs/esp32]       | A PAC crate for the ESP32.                                                                       |
+| [esp-rs/esp32c3]     | A PAC crate for the ESP32-C3.                                                                    |
+| [esp-rs/esp32s2]     | A PAC crate for the ESP32-S2.                                                                    |
+| [esp-rs/esp32s3]     | A PAC crate for the ESP32-S3.                                                                    |
+| [esp-rs/esp8266-hal] | An implementation of the `embedded-hal` traits and more for the ESP8266.                         |
+| [esp-rs/esp8266]     | A PAC crate for the ESP8266.                                                                     |
 
 [esp-rs/esp32-hal]: https://github.com/esp-rs/esp32-hal
 [esp-rs/esp32]: https://github.com/esp-rs/esp32
@@ -111,7 +111,7 @@ Refer to the table below to see if your chip is supported.
 
 ## Comparing `std` and `no_std`
 
-There are a number of factors which must be considered when choosing between the two possible approaches. As stated earlier, each approach has its own unique set of advantages and disadvantages. While we can't decide for you, this section will hopefully allow you to make an educated decision.
+There are a number of factors which must be considered when choosing between `std` (esp-idf-hal) and `no_std` (esp32-hal). As stated earlier, each approach has its own unique set of advantages and disadvantages. While we can't decide for you, this section will hopefully allow you to make an educated decision.
 
 At present, there are unfortunately certain technical restrictions which may dictate your choice; we hope to have these issues resolved soon. Currently you _must_ use the `std` approach if you require any of the following:
 

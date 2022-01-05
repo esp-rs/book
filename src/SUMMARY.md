@@ -4,6 +4,7 @@
 - [Ecosystem Overview](./overview.md)
 - [Required Dependencies](./dependencies/index.md)
   - [Installing Rust](./dependencies/installing-rust.md)
+  - [Build Tools](./dependencies/build-tools.md)
 - [Tooling](./tooling/index.md)
   - [Text Editors and IDEs](./tooling/text-editors-and-ides.md)
   - [espflash](./tooling/espflash.md)

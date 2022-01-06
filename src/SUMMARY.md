@@ -5,7 +5,7 @@
 - [Required Dependencies](./dependencies/index.md)
   - [Installing Rust](./dependencies/installing-rust.md)
   - [Build Tools](./dependencies/build-tools.md)
-- [Tooling](./tooling/index.md)
+- [Tooling]()
   - [Text Editors and IDEs](./tooling/text-editors-and-ides.md)
   - [espflash](./tooling/espflash.md)
   - [espmonitor](./tooling/espmonitor.md)

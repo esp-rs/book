@@ -19,7 +19,7 @@ $ cargo install cargo-espflash
 This command must be run within a Cargo project, ie.) a directory containing a `Cargo.toml` file. For example, to build an example named 'blinky' in `release` mode, flash the resulting binary to a device, and then subsequently start a serial monitor:
 
 ```bash
-$ cargo espflash --release --monitor --example=blinky /dev/ttyUSB0
+$ cargo espflash --example=blinky --release --monitor
 ```
 
 For more information please see to the [cargo-espflash README].
@@ -40,7 +40,7 @@ $ cargo install espflash
 Assuming you have built an ELF binary by other means already, `espflash` can be used to download it to your device. For example, if you have built the `getting-started/blinky` example from [esp-idf] using `idf.py` you might run something like:
 
 ```bash
-$ espflash /dev/ttyUSB0 build/blinky
+$ espflash build/blinky
 ```
 
 For more information please see to the [espflash README].

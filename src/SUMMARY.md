@@ -17,8 +17,8 @@
     - [OpenOCD](./tooling/debugging/openocd.md)
 - [Writing Your Application]()
   - [Generate Project from Template](./writing-your-application/generate-project-from-template.md)
-  - [Wiriting `std` Applications](./writing-your-application/writing-std-applications.md)
-  - [Wiriting `no_std` Applications (TODO)]()
+  - [Writing `std` Applications](./writing-your-application/writing-std-applications.md)
+  - [Writing `no_std` Applications (TODO)]()
 
 ---
 

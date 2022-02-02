@@ -58,3 +58,15 @@ In general, this approach should feel quite similar to developing for most norma
 [esp-rs/esp-idf-svc]: https://github.com/esp-rs/esp-idf-svc
 [esp-rs/esp-idf-sys]: https://github.com/esp-rs/esp-idf-sys
 [esp-rs/esp-idf-hal]: https://github.com/esp-rs/esp-idf-hal
+
+## FAQ
+
+### \*\*\*ERROR\*\*\* A stack overflow in task main has been detected.
+
+If the second-stage bootloader reports this error, you likely need to increase the stack size for the main task. This can be accomplished by adding the following to the `sdkconfig.defaults` file:
+
+```ignore
+CONFIG_ESP_MAIN_TASK_STACK_SIZE=7000
+```
+
+In this example, we are allocating 7kB for the main task's stack.

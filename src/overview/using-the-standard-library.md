@@ -22,6 +22,10 @@ Refer to the table below to see if your chip is supported.
 | ESP32-H2 |  planned   |
 | ESP8266  |     ❌     |
 
+Since `esp-idf` does not have support for the ESP8266, we unfortunately are unable to use these libraries with it. See the [Bare Metal] page for information on the `no_std` HAL for this chip.
+
+[bare metal]: ./bare-metal.md
+
 ## Standard Library Features
 
 The supported `std` features are as follows:
@@ -60,6 +64,20 @@ In general, this approach should feel quite similar to developing for most norma
 [esp-rs/esp-idf-hal]: https://github.com/esp-rs/esp-idf-hal
 
 ## FAQ
+
+### The documentation for the crates mentioned on this page is out of date or missing
+
+Due to the [resource limits] imposed by [docs.rs], internet access is blocked while building documentation and as such we are unable to build the documentation for `esp-idf-sys` or any crate depending on it.
+
+Instead, we are building the documentation and hosting it ourselves on GitHub Pages.
+
+[`esp-idf-sys` Documentation]
+
+Documentation for the remaining crates will be made available soon in the same way.
+
+[resource limits]: https://docs.rs/about/builds#hitting-resource-limits
+[docs.rs]: https://docs.rs
+[`esp-idf-sys` documentation]: https://esp-rs.github.io/esp-idf-sys/esp_idf_sys/
 
 ### \*\*\*ERROR\*\*\* A stack overflow in task main has been detected.
 

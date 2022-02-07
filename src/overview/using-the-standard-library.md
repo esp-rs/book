@@ -65,6 +65,15 @@ In general, this approach should feel quite similar to developing for most norma
 
 ## FAQ
 
+### I updated my `sdkconfig.defaults` file but it doesn't appear to have had any effect
+
+You must clean your project and rebuild in order for changes in the `sdkconfig.defaults` to take effect:
+
+```shell,ignore
+$ cargo clean
+$ cargo build
+```
+
 ### The documentation for the crates mentioned on this page is out of date or missing
 
 Due to the [resource limits] imposed by [docs.rs], internet access is blocked while building documentation and as such we are unable to build the documentation for `esp-idf-sys` or any crate depending on it.

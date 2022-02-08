@@ -51,12 +51,20 @@ In general, this approach should feel quite similar to developing for most norma
 
 ## Relevant `esp-rs` crates
 
-| Repository            | Description                                                                                                    |
-| --------------------- | -------------------------------------------------------------------------------------------------------------- |
-| [esp-rs/esp-idf-hal]  | An implementation of the `embedded-hal` traits using the `esp-idf` framework. Provides the Rust `std` library. |
-| [esp-rs/embedded-svc] | Abstraction traits for embedded services.                                                                      |
-| [esp-rs/esp-idf-svc]  | An implementation of [embedded-svc] using `esp-idf` drivers.                                                   |
-| [esp-rs/esp-idf-sys]  | Rust bindings to the `esp-idf` development framework. Gives raw (`unsafe`) access to drivers, Wi-Fi and more.  |
+| Repository            | Description                                                                                                   |
+| --------------------- | ------------------------------------------------------------------------------------------------------------- |
+| [esp-rs/esp-idf-hal]  | An implementation of the `embedded-hal` and other traits using the `esp-idf` framework.                       |
+| [esp-rs/esp-idf-svc]  | An implementation of [embedded-svc] using `esp-idf` drivers.                                                  |
+| [esp-rs/esp-idf-sys]  | Rust bindings to the `esp-idf` development framework. Gives raw (`unsafe`) access to drivers, Wi-Fi and more. |
+| [esp-rs/embedded-svc] | Abstraction traits for embedded services. (`WiFi`, `Network`, `Httpd`, `Logging`, etc.)                       |
+
+The aforementioned crates have interdependencies, and this relationship can be seen below.
+
+```mermaid
+graph TD;
+    esp-idf-hal --> esp-idf-sys & embedded-svc
+    esp-idf-svc --> esp-idf-sys & esp-idf-hal & embedded-svc
+```
 
 [esp-rs/embedded-svc]: https://github.com/esp-rs/embedded-svc
 [esp-rs/esp-idf-svc]: https://github.com/esp-rs/esp-idf-svc

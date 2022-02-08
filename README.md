@@ -4,17 +4,22 @@ This book is a work in progress.
 
 ## Quickstart
 
-This book is generated using [mdbook], which can be installed by running `cargo install mdbook`.
+This book is generated using [mdbook], and additionally uses the [mdbook-mermaid] preprocessor to add support for diagrams. To install these tools:
 
-With `mdbook` installed you can clone the respository and start a development server by running:
+```shell
+$ cargo install mdbook mdbook-mermaid
+```
 
-```bash
+With `mdbook` and `mdbook-mermaid` installed you can clone the respository and start a development server by running:
+
+```shell
 $ git clone https://github.com/esp-rs/book
 $ cd book/
 $ mdbook serve
 ```
 
 [mdbook]: https://github.com/rust-lang/mdBook
+[mdbook-mermaid]: https://github.com/badboy/mdbook-mermaid
 
 ## License
 

@@ -27,6 +27,7 @@ Refer to the table below to see if your chip is supported. Please note that the 
 |   Chip   |    PAC    |    HAL    |
 | :------: | :-------: | :-------: |
 |  ESP32   |    ✅     |    ✅     |
+| ESP32-C2 | _planned_ | _planned_ |
 | ESP32-C3 |    ✅     |    ✅     |
 | ESP32-S2 |    ✅     |    ✅     |
 | ESP32-S3 |    ✅     |    ✅     |

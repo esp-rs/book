@@ -12,4 +12,4 @@ To install:
 $ cargo install ldproxy
 ```
 
-[embuild repository]: https://github.com/ivmarkov/embuild
+[embuild repository]: https://github.com/esp-rs/embuild

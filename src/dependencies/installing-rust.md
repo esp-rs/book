@@ -22,6 +22,28 @@ You can read more about toolchains in the [rustup book].
 [rustup]: https://rustup.rs/
 [rustup book]: https://rust-lang.github.io/rustup/concepts/toolchains.html
 
+## Prerequisites
+
+### git
+
+`git` must be installed on your system in order to clone repositories. This should be available via your system's package manager, or for Windows users [Git for Windows] can be used.
+
+[git for windows]: https://gitforwindows.org/
+
+### Visual Studio Build Tools
+
+If you are running Windows as your host operating system, you must install the Visual Studio Build Tools, which can be downloaded from the [Microsoft website].
+
+[microsoft website]: https://visualstudio.microsoft.com/downloads/
+
+### Xtensa Toolchain
+
+If you are developing for an Xtensa chip (_ESP32_, _ESP32-S2_, _ESP32-S3_) you must also install the appropriate Xtensa toolchain. Pre-built toolchains can be downloaded from the [crosstool-NG] repository for the most common operating systems and architectures.
+
+Ensure that you have downloaded the required toolchain and added its directory to your `PATH` environment variable prior to building your application.
+
+[crosstool-ng]: https://github.com/espressif/crosstool-NG
+
 ## RISC-V (ESP32-C3)
 
 The `RISC-V` architecture has support in the mainline Rust compiler so setup is relatively simple, all we must do is add the appropriate compilation target.
@@ -36,6 +58,7 @@ The bare-metal target can be installed by running:
 ```bash
 $ rustup target add riscv32imc-unknown-none-elf
 ```
+
 The standard library target (`riscv32imc-esp-espidf`) is currently Tier 3, and does not have prebuilt objects distributed through `rustup`, therefore the `-Z build-std` unstable cargo feature is required within your project. See an example usage in [rust-esp32-std-mini](https://github.com/ivmarkov/rust-esp32-std-mini/blob/5fe3a5d75b16c6cee63e4c36b87f936744151494/.cargo/config.toml#L25-L26).
 
 At this point you are ready to build applications for the ESP32-C3.
@@ -43,9 +66,11 @@ At this point you are ready to build applications for the ESP32-C3.
 [rustup]: https://rustup.rs/
 [esp-idf]: https://github.com/espressif/esp-idf
 
-## Xtensa (ESP32, ESP32-S2)
+## Xtensa (ESP32, ESP32-S2, ESP32-S3)
 
 Because there is no `Xtensa` support in the mainline Rust compiler you must use the [esp-rs/rust] fork instead. There are a few options available for installing this compiler fork.
+
+The forked compiler can coexist with the standard Rust compiler, so it is possible to have both installed on your system. The forked compiler is invoked when using the `esp` channel instead of the defaults, `stable` or `nightly`.
 
 [esp-rs/rust]: https://github.com/esp-rs/rust
 

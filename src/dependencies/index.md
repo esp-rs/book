@@ -4,4 +4,4 @@ With an understanding of the ecosystem surrounding Rust on Espressif chips, we'r
 
 In this chapter we will cover the installation of the correct Rust compiler and toolchain as well as creating applications.
 
-[ecosystem overview]: ../overview.md
+[ecosystem overview]: ../overview/index.md

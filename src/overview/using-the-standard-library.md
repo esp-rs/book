@@ -9,7 +9,7 @@ Espressif provides a C-based development framework called [esp-idf] which has su
 In order for applications targeting `std` to be built for ESP devices, two things are required:
 
 1. LLVM/Clang support
-2. Support for the device in question in `esp-idf`
+2. Support for the device in `esp-idf`
 
 Refer to the table below to see if your chip is supported.
 
@@ -87,14 +87,16 @@ $ cargo build
 
 Due to the [resource limits] imposed by [docs.rs], internet access is blocked while building documentation and as such we are unable to build the documentation for `esp-idf-sys` or any crate depending on it.
 
-Instead, we are building the documentation and hosting it ourselves on GitHub Pages.
+Instead, we are building the documentation and hosting it ourselves on GitHub Pages:
 
-[`esp-idf-sys` Documentation]
-
-Documentation for the remaining crates will be made available soon in the same way.
+- [`esp-idf-hal` Documentation]
+- [`esp-idf-svc` Documentation]
+- [`esp-idf-sys` Documentation]
 
 [resource limits]: https://docs.rs/about/builds#hitting-resource-limits
 [docs.rs]: https://docs.rs
+[`esp-idf-hal` documentation]: https://esp-rs.github.io/esp-idf-hal/esp_idf_hal/
+[`esp-idf-svc` documentation]: https://esp-rs.github.io/esp-idf-svc/esp_idf_svc/
 [`esp-idf-sys` documentation]: https://esp-rs.github.io/esp-idf-sys/esp_idf_sys/
 
 ### \*\*\*ERROR\*\*\* A stack overflow in task main has been detected.
@@ -106,3 +108,14 @@ CONFIG_ESP_MAIN_TASK_STACK_SIZE=7000
 ```
 
 In this example, we are allocating 7kB for the main task's stack.
+
+### How can I completely disable the watchdog timer(s)?
+
+Add to your `sdkconfig.defaults` file:
+
+```ignore
+CONFIG_INT_WDT=n
+CONFIG_ESP_TASK_WDT=n
+```
+
+Recall that you must clean your project before rebuilding when modifying these configuration files.

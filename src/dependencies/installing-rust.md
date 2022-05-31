@@ -122,7 +122,7 @@ You can also build the Rust compiler with `Xtensa` support from source. This pro
 To check out the repository and build the compiler:
 
 ```bash
-$ git clone -b esp https://github.com/esp-rs/rust
+$ git clone https://github.com/esp-rs/rust
 $ cd rust
 $ ./configure --experimental-targets=Xtensa
 $ ./x.py build --stage 2

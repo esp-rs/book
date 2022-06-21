@@ -15,6 +15,7 @@
   - [Debugging]()
     - [probe-rs](./tooling/debugging/probe-rs.md)
     - [OpenOCD](./tooling/debugging/openocd.md)
+    - [Debugging in Visual Studio Code](./tooling/debugging/vscode-debugging.md)
 - [Writing Your Application]()
   - [Generate Project from Template](./writing-your-application/generate-project-from-template.md)
   - [Writing `std` Applications](./writing-your-application/writing-std-applications.md)

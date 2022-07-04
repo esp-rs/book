@@ -16,7 +16,7 @@ In the case of applications (as opposed to libraries) the standard library provi
 
 Applications targeting `no_std` will be responsible for initializing their own runtimes instead. Runtime initialization is generally handled by an external dependency, in our case the [riscv-rt] and [xtensa-lx-rt] libraries. You can refer to their READMEs and documentation for more information.
 
-One advantage of not including the default runtime is that you're able to write applications at a lower level. This is possible because the applications will have been linked again the `core` crate instead of `std`, which makes no assumptions about the system it is running on. As such, it's possible to write applications like bootloaders, firmware, or even operating system kernels using the `no_std` approach.
+One advantage of not including the default runtime is that you're able to write applications at a lower level. This is possible because the applications will have been linked against the `core` crate instead of `std`, which makes no assumptions about the system it is running on. As such, it's possible to write applications like bootloaders, firmware, or even operating system kernels using the `no_std` approach.
 
 [riscv-rt]: https://github.com/rust-embedded/riscv-rt
 [xtensa-lx-rt]: https://github.com/esp-rs/xtensa-lx-rt

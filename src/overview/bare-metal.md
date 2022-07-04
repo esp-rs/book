@@ -2,7 +2,7 @@
 
 Using `no_std` may be more familiar to embedded Rust developers; it does not use `std` (the Rust standard library) but instead uses a subset, the `core` library. The [official Rust embedded book] has a [great section on this].
 
-It's important to note that in general a `no_std` crate can always compile in `std` environment but the inverse is not true. Therefore, when creating crates it's worth keeping in mind if it needs to the standard library to function.
+It's important to note that in general a `no_std` crate can always compile in `std` environment but the inverse is not true. Therefore, when creating crates it's worth keeping in mind if it needs the standard library to function.
 
 [great section on this]: https://docs.rust-embedded.org/book/intro/no-std.html
 [official rust embedded book]: https://docs.rust-embedded.org/

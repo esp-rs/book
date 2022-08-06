@@ -100,6 +100,7 @@ With PowerShell:
 
 ```powershell
 PS> Invoke-WebRequest https://raw.githubusercontent.com/esp-rs/rust-build/main/Install-RustToolchain.ps1 -OutFile Install-RustToolchain.ps1
+PS> Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process -Force
 PS> ./Install-RustToolchain.ps1
 ```
 

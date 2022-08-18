@@ -9,14 +9,14 @@ It's important to note that in general a `no_std` crate can always compile in `s
 
 ## Hardware Abstraction Layers
 
-Previously, the primary focus of `no_std` development was the ESP32 and (to a lesser extent) the ESP8266, via [esp-rs/esp32-hal] and [esp-rs/esp8266-hal].
+Previously, the primary focus of `no_std` development was the ESP32 and (to a lesser extent) the ESP8266.
 
-While `esp32-hal` and `esp8266-hal` have great support for a lot of the onboard peripherals, Wi-Fi and Bluetooth are **not** currently supported in a `no_std` enviroment. [esp-rs/esp32-wifi] was created to explore getting it working, but it is not yet functional.
+Now there is a renewed effort to implement `no_std` support for the entire lineup of Espressif devices from the ESP32 and newer. These new HALs can be found in the [esp-rs/esp-hal] repository.
 
-More recently, there has been a renewed effort to implement `no_std` support for the entire lineup of Espressif devices from the ESP32 and newer. These new HALs can be found in the [esp-rs/esp-hal] repository.
+There is also some level of support for Wi-Fi and Bluetooth via [esp-rs/esp-wifi] for ESP32 and ESP32-C3.
 
-[esp-rs/esp32-hal]: https://github.com/esp-rs/esp32-hal
-[esp-rs/esp32-wifi]: https://github.com/esp-rs/esp32-wifi
+[esp-rs/esp-hal]: https://github.com/esp-rs/esp-hal
+[esp-rs/esp-wifi]: https://github.com/esp-rs/esp-wifi
 
 ## Chip Support
 

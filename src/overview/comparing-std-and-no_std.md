@@ -2,11 +2,6 @@
 
 There are a number of factors which must be considered when choosing between `std` ([esp-idf-hal]) and `no_std` (eg. [esp-hal]). As stated previously, each approach has its own unique set of advantages and disadvantages. While we can't decide for you, this section will hopefully allow you to make an educated decision.
 
-At present, there are unfortunately certain technical restrictions which may dictate your choice; we hope to have these issues resolved soon. Currently you _must_ use the `std` approach if you require any of the following:
-
-- Use of Wi-Fi or Bluetooth on a chip other than ESP32 or ESP32-C3
-- The ability to target any chip other than the ESP32, ESP32-C3, ESP32-S2, ESP32-S3 or the ESP8266
-
 [esp-idf-hal]: https://github.com/esp-rs/esp-idf-hal
 [esp-hal]: https://github.com/esp-rs/esp-hal
 

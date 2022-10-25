@@ -13,7 +13,7 @@ Previously, the primary focus of `no_std` development was the ESP32 and (to a le
 
 Now there is a renewed effort to implement `no_std` support for the entire lineup of Espressif devices from the ESP32 and newer. These new HALs can be found in the [esp-rs/esp-hal] repository.
 
-There is also some level of support for Wi-Fi and Bluetooth via [esp-rs/esp-wifi] for ESP32 and ESP32-C3.
+There is also some level of support for Wi-Fi and Bluetooth via [esp-rs/esp-wifi] for ESP32, ESP32-C3, ESP32-S2, and ESP32-S3.
 
 [esp-rs/esp-hal]: https://github.com/esp-rs/esp-hal
 [esp-rs/esp-wifi]: https://github.com/esp-rs/esp-wifi
@@ -27,8 +27,9 @@ Refer to the table below to see if your chip is supported. Please note that the 
 |   Chip   |    PAC    |    HAL    |
 | :------: | :-------: | :-------: |
 |  ESP32   |    ✅     |    ✅     |
-| ESP32-C2 | _planned_ | _planned_ |
+| ESP32-C2 |    ✅     |    ✅     |
 | ESP32-C3 |    ✅     |    ✅     |
+| ESP32-C6 | _planned_ | _planned_ |
 | ESP32-S2 |    ✅     |    ✅     |
 | ESP32-S3 |    ✅     |    ✅     |
 | ESP32-H2 | _planned_ | _planned_ |
@@ -36,11 +37,11 @@ Refer to the table below to see if your chip is supported. Please note that the 
 
 ## Relevant `esp-rs` Crates
 
-| Repository           | Description                                                                                              |
-| -------------------- | -------------------------------------------------------------------------------------------------------- |
-| [esp-rs/esp-pacs]    | A monorepo containing PACs for each supported device.                                                    |
-| [esp-rs/esp-hal]     | An implementation of the `embedded-hal` traits and more for the ESP32, ESP32-C3, ESP32-S2, and ESP32-S3. |
-| [esp-rs/esp8266-hal] | An implementation of the `embedded-hal` traits and more for the ESP8266.                                 |
+| Repository           | Description                                                                                                        |
+| -------------------- | ------------------------------------------------------------------------------------------------------------------ |
+| [esp-rs/esp-pacs]    | A monorepo containing PACs for each supported device.                                                              |
+| [esp-rs/esp-hal]     | An implementation of the `embedded-hal` traits and more for the ESP32, ESP32-C2, ESP32-C3, ESP32-S2, and ESP32-S3. |
+| [esp-rs/esp8266-hal] | An implementation of the `embedded-hal` traits and more for the ESP8266.                                           |
 
 [esp-rs/esp-pacs]: https://github.com/esp-rs/esp-pacs
 [esp-rs/esp-hal]: https://github.com/esp-rs/esp-hal

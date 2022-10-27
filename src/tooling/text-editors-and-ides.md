@@ -10,10 +10,17 @@ Visual Studio Code is an open-source and cross-platform graphical text editor wi
 
 Visual Studio Code can be installed via most popular package managers, and installers are available on the official website. The [Rust Analyzer extension] can be installed in Visual Studo Code via the built-in extension manager.
 
+Alongside Rust Analyzer (RA), there are other extension which might be very helful:
+- [Even Better TOML] for editing TOML based configuration files
+- [crates] to help manage Rust dependencies
+
+
 [visual studio code]: https://code.visualstudio.com/
 [rust analyzer]: https://rust-analyzer.github.io/
 [Rust Analyzer extension]: https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer
 [language server protocol]: https://microsoft.github.io/language-server-protocol/
+[Even Better TOML]: https://marketplace.visualstudio.com/items?itemName=tamasfe.even-better-toml
+[crates]: https://marketplace.visualstudio.com/items?itemName=serayuzgur.crates
 
 ### Tips and Tricks
 

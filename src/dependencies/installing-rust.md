@@ -10,23 +10,13 @@ $ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 For installation on Windows or alternative installation methods, please refer to the instructions on the [rustup] website.
 
-If you are running Windows as your host operating system, you must install one of the available ABIs:
+If you are [running Windows as your host operating system, you must also install one of the available ABIs]:
 - MSVC: Is the recommended ABI. When installing `rustup`, it will check if all the requirements are installed, and, if they are not, it allows the user to install them.
 - GNU: No checks are done in `rustup` and expect that the user takes care of properly installing it.
 
-You can read more about toolchains in the [rustup book].
-
 [rustup]: https://rustup.rs/
-[rustup book]: https://rust-lang.github.io/rustup/concepts/toolchains.html
-
+[running Windows as your host operating system, you must also install one of the available ABIs]: https://rust-lang.github.io/rustup/installation/windows.html
 ## RISC-V
-
-The `RISC-V` architecture has support in the mainline Rust compiler so setup is relatively simple, all we must do is add the appropriate compilation target.
-
-There are two suitable targets for this chip:
-
-- For bare-metal (`no_std`) applications, use `riscv32imc-unknown-none-elf`
-- For applications which require `std`, use `riscv32imc-esp-espidf`
 
 The bare-metal target can be installed by running:
 
@@ -34,13 +24,12 @@ The bare-metal target can be installed by running:
 $ rustup target add riscv32imc-unknown-none-elf
 ```
 
-The standard library target (`riscv32imc-esp-espidf`) is currently [Tier 3], and does not have prebuilt objects distributed through `rustup`, therefore the `-Z build-std` unstable cargo feature is required within your project. Do not worry about this, as it is already addressed in our [template projects] that we will later discuss.
+The `-Z build-std` unstable cargo feature is required within your project. Do not worry about this, as it is already addressed in our [template projects] that we will later discuss.
 
 At this point you are ready to build applications for all the Espressif chips based on RISC-V architecture.
 
-[Tier 3]: https://doc.rust-lang.org/nightly/rustc/platform-support.html#tier-3
 [template projects]: /src/writing-your-application/generate-project-from-template.md
-## Xtensa (ESP32, ESP32-S2, ESP32-S3)
+## Xtensa
 
 Because there is no `Xtensa` support in the mainline Rust compiler you must use the [esp-rs/rust] fork instead. There are a few options available for installing this compiler fork.
 

@@ -6,12 +6,13 @@ While an often contentious subject, using the right development environment can 
 
 One of the more common development environents is Microsoft's [Visual Studio Code] text editor along with the [Rust Analyzer] extension.
 
-Visual Studio Code is an open-source and cross-platform graphical text editor with a rich ecosystem of extensions. The Rust Analyzer extension provides an implementation of the [Language Server Protocol] for Rust, and additionally includes features like autocompletion, go to definition, and more.
+Visual Studio Code is an open-source and cross-platform graphical text editor with a rich ecosystem of extensions. The [Rust Analyzer extension] provides an implementation of the [Language Server Protocol] for Rust, and additionally includes features like autocompletion, go to definition, and more.
 
-Visual Studio Code can be installed via most popular package managers, and installers are available on the official website. The Rust Analyzer extension can be installed in Visual Studo Code via the built-in extension manager.
+Visual Studio Code can be installed via most popular package managers, and installers are available on the official website. The [Rust Analyzer extension] can be installed in Visual Studo Code via the built-in extension manager.
 
 [visual studio code]: https://code.visualstudio.com/
 [rust analyzer]: https://rust-analyzer.github.io/
+[Rust Analyzer extension]: https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer
 [language server protocol]: https://microsoft.github.io/language-server-protocol/
 
 ### Tips and Tricks

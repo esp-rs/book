@@ -10,41 +10,16 @@ $ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 For installation on Windows or alternative installation methods, please refer to the instructions on the [rustup] website.
 
-With Rust installed we next need to ensure that the `nightly` toolchain is installed and set as the default:
-
-```bash
-$ rustup toolchain install nightly
-$ rustup default nightly
-```
+If you are running Windows as your host operating system, you must install one of the available ABIs:
+- MSVC: Is the recommended ABI. When installing `rustup`, it will check if all the requirements are installed, and, if they are not, it allows the user to install them.
+- GNU: No checks are done in `rustup` and expect that the user takes care of properly installing it.
 
 You can read more about toolchains in the [rustup book].
 
 [rustup]: https://rustup.rs/
 [rustup book]: https://rust-lang.github.io/rustup/concepts/toolchains.html
 
-## Prerequisites
-
-### git
-
-`git` must be installed on your system in order to clone repositories. This should be available via your system's package manager, or for Windows users [Git for Windows] can be used.
-
-[git for windows]: https://gitforwindows.org/
-
-### Visual Studio Build Tools
-
-If you are running Windows as your host operating system, you must install the Visual Studio Build Tools, which can be downloaded from the [Microsoft website].
-
-[microsoft website]: https://visualstudio.microsoft.com/downloads/
-
-### Xtensa Toolchain
-
-If you are developing for an Xtensa chip (_ESP32_, _ESP32-S2_, _ESP32-S3_) you must also install the appropriate Xtensa toolchain. Pre-built toolchains can be downloaded from the [crosstool-NG] repository for the most common operating systems and architectures.
-
-Ensure that you have downloaded the required toolchain and added its directory to your `PATH` environment variable prior to building your application.
-
-[crosstool-ng]: https://github.com/espressif/crosstool-NG
-
-## RISC-V (ESP32-C3)
+## RISC-V
 
 The `RISC-V` architecture has support in the mainline Rust compiler so setup is relatively simple, all we must do is add the appropriate compilation target.
 
@@ -59,13 +34,12 @@ The bare-metal target can be installed by running:
 $ rustup target add riscv32imc-unknown-none-elf
 ```
 
-The standard library target (`riscv32imc-esp-espidf`) is currently Tier 3, and does not have prebuilt objects distributed through `rustup`, therefore the `-Z build-std` unstable cargo feature is required within your project. See an example usage in [rust-esp32-std-mini](https://github.com/ivmarkov/rust-esp32-std-mini/blob/5fe3a5d75b16c6cee63e4c36b87f936744151494/.cargo/config.toml#L25-L26).
+The standard library target (`riscv32imc-esp-espidf`) is currently [Tier 3], and does not have prebuilt objects distributed through `rustup`, therefore the `-Z build-std` unstable cargo feature is required within your project. Do not worry about this, as it is already addressed in our [template projects] that we will later discuss.
 
-At this point you are ready to build applications for the ESP32-C3.
+At this point you are ready to build applications for all the Espressif chips based on RISC-V architecture.
 
-[rustup]: https://rustup.rs/
-[esp-idf]: https://github.com/espressif/esp-idf
-
+[Tier 3]: https://doc.rust-lang.org/nightly/rustc/platform-support.html#tier-3
+[template projects]: /src/writing-your-application/generate-project-from-template.md
 ## Xtensa (ESP32, ESP32-S2, ESP32-S3)
 
 Because there is no `Xtensa` support in the mainline Rust compiler you must use the [esp-rs/rust] fork instead. There are a few options available for installing this compiler fork.
@@ -74,91 +48,36 @@ The forked compiler can coexist with the standard Rust compiler, so it is possib
 
 [esp-rs/rust]: https://github.com/esp-rs/rust
 
-### Using a Pre-Built Release
+## `espup`
 
-Pre-built releases are available for a number of platforms on GitHub under the [esp-rs/rust-build] repository. The following operating systems and architectures are currently supported:
+[esp-rs/espup] is a tool for installing and maintaining the required ecosystem to develop applications in Rust for Espressif SoC's (both `Xtensa` and `RISC-V`).
 
-- macOS (`x86_64`, `aarch64`)
-- Windows (`x86_64`)
-- Linux (`x86_64`)
+`espup` takes care of installing our forked Rust compiler, the necesary GCC toolchains for ESP chips, and many other things. For more details, [see Usage section of the `espup` Readme](https://github.com/esp-rs/espup#usage).
 
-The aforementioned repository also contains Bash and PowerShell scripts to automate the installation process.
-
-#### macOS and Linux
-
-```bash
-$ curl -LO https://raw.githubusercontent.com/esp-rs/rust-build/main/install-rust-toolchain.sh
-$ chmod +x install-rust-toolchain.sh
-$ ./install-rust-toolchain.sh
+In order to install `espup`:
+```sh
+cargo install espup --git https://github.com/esp-rs/espup
 ```
 
-#### Windows
+It's also possible to directly download the pre-compiled [release binaries] or using [cargo-binstall].
 
-With GUI installer: [https://github.com/espressif/idf-installer/releases]
+[esp-rs/espup]: https://github.com/esp-rs/espup
+[release binaries]: https://github.com/esp-rs/espup/releases
+[cargo-binstall]: https://github.com/cargo-bins/cargo-binstall
 
-With PowerShell:
 
-```powershell
-PS> Invoke-WebRequest https://raw.githubusercontent.com/esp-rs/rust-build/main/Install-RustToolchain.ps1 -OutFile Install-RustToolchain.ps1
-PS> Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process -Force
-PS> ./Install-RustToolchain.ps1
+Once that `espup` is installed you can simply run:
+```sh
+espup install
 ```
 
-To confirm the `esp` toolchain has been installed:
+And it will all the necesary tools to develop Rust applications for ESP targets.
 
-```bash
-$ rustup toolchain list
-stable-x86_64-apple-darwin
-nightly-x86_64-apple-darwin (default)
-esp
-```
+`espup` will create and export file, by default called `export-esp.sh` on Unix systems
+and `export-esp.ps1` on Windows, this file contains the envionment variables that are required. Please, make sure to source in every terminal before building any application.
 
-[esp-rs/rust-build]: https://github.com/esp-rs/rust-build
-[https://github.com/espressif/idf-installer/releases]: https://github.com/espressif/idf-installer/releases
 
-### Building From Source
-
-You can also build the Rust compiler with `Xtensa` support from source. This process is computationally expensive and can take one or more hours to complete depending on your system. It is recommended that you have _at least_ 6GB of RAM and 25GB+ of available storage space.
-
-To check out the repository and build the compiler:
-
-```bash
-$ git clone https://github.com/esp-rs/rust
-$ cd rust
-$ ./configure --experimental-targets=Xtensa
-$ ./x.py build --stage 2
-```
-
-Note that you should _not_ rename the `rust` directory to avoid issues while building.
-
-Once the build has completed, you can link the toolchain using rustup (your architecture/operating system may be different):
-
-```bash
-$ rustup toolchain link esp $PWD/build/x86_64-apple-darwin/stage2
-```
-
-Once the compiler fork has been installed using one of the above methods, to confirm the `esp` toolchain has been installed:
-
-```bash
-$ rustup toolchain list
-stable-x86_64-apple-darwin
-nightly-x86_64-apple-darwin (default)
-esp
-```
-
-To view the installed `Xtensa` targets:
-
-```bash
-$ rustc +esp --print target-list | grep xtensa
-xtensa-esp32-espidf
-xtensa-esp32-none-elf
-xtensa-esp32s2-espidf
-xtensa-esp32s2-none-elf
-xtensa-esp8266-none-elf
-xtensa-none-elf
-```
-
-### Using Containers
+## Using Containers
 
 As an alternative to installing the compiler fork to your local system directly, it's also possible to run it inside of a container.
 
@@ -168,9 +87,16 @@ A number of container runtimes are available, and which should be used depends o
 - [Podman]
 - [Lima]
 
-Espressif provides the [idf-rust] container image which contains [esp-idf] and the pre-built Rust compiler fork.
+Espressif provides the [idf-rust] container image which contains several tags (generated both for `linux/arm64` and `linux/amd64`) for every Rust release:
+- For `std` aplications the following naming convention is applied: `<chip>_<esp-idf-version>_<rust-toolchain-version>` . E.g [`esp32s3_v4.4_1.64.0.0`] contains the ecosystem for developing `std` applications based on [ESP-IDF release/v4.4] for `ESP32-S3` with the `1.64.0.0` Rust toolchain.
+- For `no_std` applications, the naming convention is: `<chip>_<rust-toolchain-version>`. E.g [`esp32_1.64.0.0`] contains the ecosystem for developing `non_std` aplications for `ESP32` with the `1.64.0.0` Rust toolchain.
+
+There is an `all` `<chip>` for both `std` and `no_std` tags which contains the enviornment required for all the ESP targets.
 
 [docker]: https://www.docker.com/
 [podman]: https://podman.io/
 [lima]: https://github.com/lima-vm/lima
-[idf-rust]: https://hub.docker.com/r/espressif/idf-rust
+[idf-rust]: https://hub.docker.com/r/espressif/idf-rust/tags
+[`esp32s3_v4.4_1.64.0.0`]: https://hub.docker.com/layers/espressif/idf-rust/esp32s3_v4.4_1.64.0.0/images/sha256-6fa1e98d770e3edc67cbd565893aa04e5573024b1e3e373fae50907435e841e4?context=explore
+[ESP-IDF release/v4.4]: https://github.com/espressif/esp-idf/tree/release/v4.4
+[`esp32_1.64.0.0`]: https://hub.docker.com/layers/espressif/idf-rust/esp32_1.64.0.0/images/sha256-cc026ff9278a876f171d48978988e131940c07659485937a37cf750c44b28dfd?context=explore

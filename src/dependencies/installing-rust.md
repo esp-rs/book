@@ -88,8 +88,8 @@ A number of container runtimes are available, and which should be used depends o
 - [Lima]
 
 Espressif provides the [idf-rust] container image which contains several tags (generated both for `linux/arm64` and `linux/amd64`) for every Rust release:
-- For `std` aplications the following naming convention is applied: `<chip>_<esp-idf-version>_<rust-toolchain-version>` . E.g [`esp32s3_v4.4_1.64.0.0`] contains the ecosystem for developing `std` applications based on [ESP-IDF release/v4.4] for `ESP32-S3` with the `1.64.0.0` Rust toolchain.
-- For `no_std` applications, the naming convention is: `<chip>_<rust-toolchain-version>`. E.g [`esp32_1.64.0.0`] contains the ecosystem for developing `non_std` aplications for `ESP32` with the `1.64.0.0` Rust toolchain.
+- For `std` aplications the following naming convention is applied: `<chip>_<esp-idf-version>_<rust-toolchain-version>` . E.g., [`esp32s3_v4.4_1.64.0.0`] contains the ecosystem for developing `std` applications based on [ESP-IDF release/v4.4] for `ESP32-S3` with the `1.64.0.0` Rust toolchain.
+- For `no_std` applications, the naming convention is: `<chip>_<rust-toolchain-version>`. E.g., [`esp32_1.64.0.0`] contains the ecosystem for developing `non_std` aplications for `ESP32` with the `1.64.0.0` Rust toolchain.
 
 There is an `all` `<chip>` for both `std` and `no_std` tags which contains the enviornment required for all the ESP targets.
 

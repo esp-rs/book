@@ -56,5 +56,7 @@ targets = ["xtensa-esp32-none-elf"]
 
 ## vim
 
+[vim] is a highly configurable text editor based on vi that also [supports Rust Analyzer].
+
 [vim]: https://www.vim.org/
-[rust.vim]: https://github.com/rust-lang/rust.vim/
+[supports Rust Analyzer]: https://rust-analyzer.github.io/manual.html#vimneovim

@@ -1,6 +1,6 @@
 # espflash
 
-A serial flasher utility for ESP devices. Supports flashing _ESP32_, _ESP32-C3_, _ESP32-S2_, and _ESP8266_.
+A serial flasher utility for ESP devices. Supports flashing _ESP32_, _ESP32-C2_, _ESP32-C3_, _ESP32-S2_, _ESP32-S3_, and _ESP8266_.
 
 The [esp-rs/espflash] repository contains two crates, `cargo-espflash` and `espflash`. You can find more information on both of these in their respective sections below.
 

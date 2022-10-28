@@ -16,17 +16,27 @@ If you are [running Windows as your host operating system, you must also install
 
 [rustup]: https://rustup.rs/
 [running Windows as your host operating system, you must also install one of the available ABIs]: https://rust-lang.github.io/rustup/installation/windows.html
+
 ## RISC-V
-If you only want to target RISC-V chips, installation is much simpler. The bare-metal target can be installed by running:
+If you only want to target RISC-V chips, installation is simpler. In order to build
+applications for RISC-V targets we need to use a [Rust nightly toolchain] with the `rust-src` [component], both things can be installed with:
+
+```bash
+rustup toolchain install nigthly --component rust-src
+```
+
+For bare-metal, target can be installed by running:
 
 ```bash
 rustup target add riscv32imc-unknown-none-elf
 ```
-For `std` applications, the `riscv32imc-esp-espidf` target does not have prebuilt objects distributed through rustup, therefore the `-Z build-std` [unstable cargo feature] is required within your project. This [unstable cargo feature] can also be added to `.cargo/config.toml` of your project. Our [template projects] ,that we will later discuss, already take care of this.
 
+For `std` applications, the `riscv32imc-esp-espidf` target does not have prebuilt objects distributed through rustup, therefore the `-Z build-std` [unstable cargo feature] is required within your project. This [unstable cargo feature] can also be added to `.cargo/config.toml` of your project. Our [template projects] ,that we will later discuss, already take care of this.
 
 At this point you are ready to build applications for all the Espressif chips based on RISC-V architecture.
 
+[Rust nightly toolchain]: https://rust-lang.github.io/rustup/concepts/channels.html#working-with-nightly-rust
+[component]: https://rust-lang.github.io/rustup/concepts/components.html
 [template projects]: /src/writing-your-application/generate-project-from-template.md
 [unstable cargo feature]: https://doc.rust-lang.org/cargo/reference/unstable.html
 

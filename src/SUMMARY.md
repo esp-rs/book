@@ -15,7 +15,7 @@
     - [probe-rs](./tooling/debugging/probe-rs.md)
     - [OpenOCD](./tooling/debugging/openocd.md)
     - [Debugging in Visual Studio Code](./tooling/debugging/vscode-debugging.md)
-  - [Simulating]()
+  - [Simulating](./tooling/simulating/index.md)
     - [Wokwi](./tooling/simulating/wokwi.md)
     - [QEMU](tooling/simulating/qemu.md)
 - [Writing Your Own Application](./writing-your-application/index.md)

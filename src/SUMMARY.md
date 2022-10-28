@@ -18,9 +18,9 @@
   - [Simulating](./tooling/simulating/index.md)
     - [Wokwi](./tooling/simulating/wokwi.md)
     - [QEMU](tooling/simulating/qemu.md)
-- [Writing Your Own Application](./writing-your-application/index.md)
-  - [Generate Project from Template](./writing-your-application/generate-project-from-template.md)
-  - [Writing `std` Applications](./writing-your-application/writing-std-applications.md)
+- [Writing Your Own Application](./writing-your-own-application/index.md)
+  - [Generate Project from Template](./writing-your-own-application/generate-project-from-template.md)
+  - [Writing `std` Applications](./writing-your-own-application/writing-std-applications.md)
   - [Writing `no_std` Applications (TODO)]()
 - [Resources](./resources.md)
 ---

@@ -1,8 +1,8 @@
 # Generating Projects From Templates
 
 We currently maintin two template repositories:
-- [esp-template](https://github.com/esp-rs/esp-template) - `no_std` template.
-- [esp-idf-template](https://github.com/esp-rs/esp-template) - `std` template.
+- [esp-template] - `no_std` template.
+- [esp-idf-template] - `std` template.
 
 Both templates are based on [cargo-generate], a tool that allows you to create a new project based on some existing template. In our case [esp-idf-template] or [esp-template] can be used to generate an application with all the required configuration and dependencies.
 
@@ -73,11 +73,6 @@ cargo generate --git https://github.com/esp-rs/esp-template
 ✨   Done! New project created /home/alice/esp-rust-app
 ```
 
-[cargo-generate]: https://github.com/cargo-generate/cargo-generate
-[esp-idf-template]: https://github.com/esp-rs/esp-idf-template
-[esp-template]: https://github.com/esp-rs/esp-template
-
-
 ### Using Dev Containers in the templates
 
 Both template repositories have a prompt for Dev Containers support, when using Dev Containers in the templates it will add support for:
@@ -89,6 +84,10 @@ Dev Containers use the `idf-rust` container image that was explained in the [Usi
 
 For more details about on Dev Containers, see [Dev Container section of the template Readme].
 
+
+[cargo-generate]: https://github.com/cargo-generate/cargo-generate
+[esp-idf-template]: https://github.com/esp-rs/esp-idf-template
+[esp-template]: https://github.com/esp-rs/esp-template
 [VS Code Dev Containers]: https://code.visualstudio.com/docs/remote/containers#_quick-start-open-an-existing-folder-in-a-container
 [GitHub Codespaces]: https://docs.github.com/en/codespaces/developing-in-codespaces/creating-a-codespace
 [Gitpod]: https://www.gitpod.io

@@ -10,7 +10,7 @@ The [CMSIS-SVD] specification formalizes the description of the system contained
 
 SVD files are XML and contain definitions for peripherals which can be consumed by tools such a [svd2rust] to generate Peripheral Access Crates.
 
-[cmsis-svd]: https://arm-software.github.io/CMSIS_5/SVD/html/index.html
+[CMSIS-SVD]: https://arm-software.github.io/CMSIS_5/SVD/html/index.html
 [svd2rust]: https://github.com/rust-embedded/svd2rust/
 
 ## PAC

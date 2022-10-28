@@ -124,9 +124,9 @@ There is an `all` `<chip>` for both `std` and `no_std` tags which contains the e
 [see Usage section of the `espup` Readme]: https://github.com/esp-rs/espup#usage
 [release binaries]: https://github.com/esp-rs/espup/releases
 [cargo-binstall]: https://github.com/cargo-bins/cargo-binstall
-[docker]: https://www.docker.com/
-[podman]: https://podman.io/
-[lima]: https://github.com/lima-vm/lima
+[Docker]: https://www.docker.com/
+[Podman]: https://podman.io/
+[Lima]: https://github.com/lima-vm/lima
 [idf-rust]: https://hub.docker.com/r/espressif/idf-rust/tags
 [`esp32s3_v4.4_1.64.0.0`]: https://hub.docker.com/layers/espressif/idf-rust/esp32s3_v4.4_1.64.0.0/images/sha256-6fa1e98d770e3edc67cbd565893aa04e5573024b1e3e373fae50907435e841e4?context=explore
 [ESP-IDF release/v4.4]: https://github.com/espressif/esp-idf/tree/release/v4.4

@@ -45,14 +45,11 @@ targets = ["xtensa-esp32-none-elf"]
 
 [CLion] is a cross-platform IDE for C and C++ from [JetBrains].
 
-[clion]: https://www.jetbrains.com/clion/
-[clion rust plugin]: https://www.jetbrains.com/help/clion/rust-support.html
-[jetbrains]: https://www.jetbrains.com/
+[CLion]: https://www.jetbrains.com/clion/
+[JetBrains]: https://www.jetbrains.com/
 
 ## IntelliJ
 
-[intellij]: https://www.jetbrains.com/idea/
-[intellij rust plugin]: https://intellij-rust.github.io/
 
 ## vim
 

@@ -45,6 +45,8 @@ rustup target add riscv32imc-unknown-none-elf
 
 For `std` applications, the `riscv32imc-esp-espidf` target does not have prebuilt objects distributed through rustup, therefore the `-Z build-std` [unstable cargo feature] is required within your project. This [unstable cargo feature] can also be added to `.cargo/config.toml` of your project. Our [template projects] ,that we will later discuss, already take care of this.
 
+Also, when building `std` aplications, make sure you have [`LLVM`] installed.
+
 At this point you are ready to build applications for all the Espressif chips based on RISC-V architecture.
 
 The installation of `RISC-V` targets can also, be handled by `espup`, a tool that will be introduced
@@ -52,8 +54,9 @@ in the [`espup` section].
 
 [Rust nightly toolchain]: https://rust-lang.github.io/rustup/concepts/channels.html#working-with-nightly-rust
 [component]: https://rust-lang.github.io/rustup/concepts/components.html
-[template projects]: /src/writing-your-application/generate-project-from-template.md
 [unstable cargo feature]: https://doc.rust-lang.org/cargo/reference/unstable.html
+[template projects]: /src/writing-your-application/generate-project-from-template.md
+[`LLVM`]: https://llvm.org/
 [`espup` section]: #espup
 
 ## Xtensa

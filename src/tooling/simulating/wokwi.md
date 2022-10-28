@@ -10,8 +10,11 @@ Wokwi offers WiFi simulation, Virtual Logic Analyzer, and GDB debugging among ma
 [Wokwi documentation]: https://docs.wokwi.com/
 [table of simulation features that are currently supported]: https://docs.wokwi.com/guides/esp32#simulation-features
 
-## Using Wokwi Server
-[Wokwi server] is a CLI tool for launching a Wokwi simulation of your project. I.e., it allows you
+## Using wokwi-server
+[wokwi-server] is a CLI tool for launching a Wokwi simulation of your project. I.e., it allows you
 to build a project on your machine, or in a container, and simulate the resulting binary.
 
-[Wokwi server]: https://github.com/MabezDev/wokwi-server
+[wokwi-server] also allows simulating your resulting binary on other Wokwi projects, with more hardware parts other than the chip itself. See the [corresponding section of the wokwi-server Readme] for detailed instructions.
+
+[wokwi-server]: https://github.com/MabezDev/wokwi-server
+[corresponding section of the wokwi-server Readme]: https://github.com/MabezDev/wokwi-server#simulating-your-binary-on-a-custom-wokwi-project

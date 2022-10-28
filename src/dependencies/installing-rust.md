@@ -17,13 +17,24 @@ If you are [running Windows as your host operating system, you must also install
 [rustup]: https://rustup.rs/
 [running Windows as your host operating system, you must also install one of the available ABIs]: https://rust-lang.github.io/rustup/installation/windows.html
 
+## ldproxy
+
+As seen in the previous [Required dependencies section], `ldproxy` is required when building applications using the Rust standard library, `std`. To install:
+```sh
+cargo install ldproxy
+```
+
+This tool is required regardless of the target architecture.
+
+[Required dependencies section]: index.md#required-dependencies
+
 ## RISC-V
 
 If you only want to target `RISC-V` chips, installation is simpler. In order to build
 applications for `RISC-V` targets we need to use a [Rust nightly toolchain] with the `rust-src` [component], both things can be installed with:
 
 ```bash
-rustup toolchain install nigthly --component rust-src
+rustup toolchain install nightly --component rust-src
 ```
 
 For bare-metal, target can be installed by running:

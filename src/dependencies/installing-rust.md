@@ -18,8 +18,9 @@ If you are [running Windows as your host operating system, you must also install
 [running Windows as your host operating system, you must also install one of the available ABIs]: https://rust-lang.github.io/rustup/installation/windows.html
 
 ## RISC-V
-If you only want to target RISC-V chips, installation is simpler. In order to build
-applications for RISC-V targets we need to use a [Rust nightly toolchain] with the `rust-src` [component], both things can be installed with:
+
+If you only want to target `RISC-V` chips, installation is simpler. In order to build
+applications for `RISC-V` targets we need to use a [Rust nightly toolchain] with the `rust-src` [component], both things can be installed with:
 
 ```bash
 rustup toolchain install nigthly --component rust-src
@@ -35,10 +36,14 @@ For `std` applications, the `riscv32imc-esp-espidf` target does not have prebuil
 
 At this point you are ready to build applications for all the Espressif chips based on RISC-V architecture.
 
+The installation of `RISC-V` targets can also, be handled by `espup`, a tool that will be introduced
+in the [`espup` section].
+
 [Rust nightly toolchain]: https://rust-lang.github.io/rustup/concepts/channels.html#working-with-nightly-rust
 [component]: https://rust-lang.github.io/rustup/concepts/components.html
 [template projects]: /src/writing-your-application/generate-project-from-template.md
 [unstable cargo feature]: https://doc.rust-lang.org/cargo/reference/unstable.html
+[`espup` section]: #espup
 
 ## Xtensa
 
@@ -46,11 +51,19 @@ Because there is no `Xtensa` support in the mainline Rust compiler you must use 
 
 The forked compiler can coexist with the standard Rust compiler, so it is possible to have both installed on your system. The forked compiler is invoked when using the `esp` channel instead of the defaults, `stable` or `nightly`.
 
+
+There are several ways of installing our Xtensa Rust toolchain:
+- The recomended one is using `espup`. See [`espup` section] for more details.
+- Using [esp-rs/rust-build] installation scripts. This was the recomended way in the past, but now, the installation scripts are feature frozen and all the new features will only be include in `espup`. See the repository readme for instructions.
+- Building the Rust compiler with Xtensa support from source. This process is computationally expensive and can take one or more hours to complete depending on your system, for this reason is not reccomended unless there is a major reason to go for this approach. See instructions in the [Installing from Source section of the esp-rs/rust repository].
+
 [esp-rs/rust]: https://github.com/esp-rs/rust
+[`espup` section]: #espup
+[esp-rs/rust-build]: https://github.com/esp-rs/rust-build
+[Installing from Source section of the esp-rs/rust repository]: https://github.com/esp-rs/rust#installing-from-source
+## espup
 
-## `espup`
-
-[esp-rs/espup] is a tool for installing and maintaining the required ecosystem to develop applications in Rust for Espressif SoC's (both `Xtensa` and `RISC-V`).
+[esp-rs/espup] is a tool for installing and maintaining the required ecosystem to develop applications in Rust for Espressif SoC's (both `Xtensa` and `RISC-V` targets).
 
 `espup` takes care of installing our forked Rust compiler, the necesary GCC toolchains for ESP chips, and many other things. For more details, [see Usage section of the `espup` Readme](https://github.com/esp-rs/espup#usage).
 
@@ -59,12 +72,7 @@ In order to install `espup`:
 cargo install espup --git https://github.com/esp-rs/espup
 ```
 
-It's also possible to directly download the pre-compiled [release binaries] or using [cargo-binstall].
-
-[esp-rs/espup]: https://github.com/esp-rs/espup
-[release binaries]: https://github.com/esp-rs/espup/releases
-[cargo-binstall]: https://github.com/cargo-bins/cargo-binstall
-
+It's also possible to directly download the pre-compiled [release binaries] or to use [cargo-binstall].
 
 Once that `espup` is installed you can simply run:
 ```sh
@@ -74,8 +82,18 @@ espup install
 And it will all the necesary tools to develop Rust applications for ESP targets.
 
 `espup` will create and export file, by default called `export-esp.sh` on Unix systems
-and `export-esp.ps1` on Windows, this file contains the envionment variables that are required. Please, make sure to source in every terminal before building any application.
+and `export-esp.ps1` on Windows, this file contains the required envionment variables. Please, make sure to source in every terminal before building any application.
 
+```sh
+# Unix
+. ./export-esp.sh
+# Windows
+.\export-esp.ps1
+```
+
+[esp-rs/espup]: https://github.com/esp-rs/espup
+[release binaries]: https://github.com/esp-rs/espup/releases
+[cargo-binstall]: https://github.com/cargo-bins/cargo-binstall
 
 ## Using Containers
 

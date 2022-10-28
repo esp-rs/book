@@ -17,18 +17,18 @@ If you are [running Windows as your host operating system, you must also install
 [rustup]: https://rustup.rs/
 [running Windows as your host operating system, you must also install one of the available ABIs]: https://rust-lang.github.io/rustup/installation/windows.html
 ## RISC-V
-
-The bare-metal target can be installed by running:
+If you only want to target RISC-V chips, installation is much simpler. The bare-metal target can be installed by running:
 
 ```bash
 $ rustup target add riscv32imc-unknown-none-elf
 ```
-
-The `-Z build-std` unstable cargo feature is required within your project. Do not worry about this, as it is already addressed in our [template projects] that we will later discuss.
+For `std` applications, the `riscv32imc-esp-espidf` target does not have prebuilt objects distributed through rustup, therefore the `-Z build-std` [unstable cargo feature] is required within your project. This [unstable cargo feature] can also be added to `.cargo/config.toml` of your project. Our [template projects] ,that we will later discuss, already take care of this.
 
 At this point you are ready to build applications for all the Espressif chips based on RISC-V architecture.
 
 [template projects]: /src/writing-your-application/generate-project-from-template.md
+[unstable cargo feature]: https://doc.rust-lang.org/cargo/reference/unstable.html
+
 ## Xtensa
 
 Because there is no `Xtensa` support in the mainline Rust compiler you must use the [esp-rs/rust] fork instead. There are a few options available for installing this compiler fork.

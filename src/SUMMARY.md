@@ -18,11 +18,11 @@
   - [Simulating]()
     - [Wokwi](./tooling/simulating/wokwi.md)
     - [QEMU](tooling/simulating/qemu.md)
-- [Writing Your Application]()
+- [Writing Your Own Application](./writing-your-application/index.md)
   - [Generate Project from Template](./writing-your-application/generate-project-from-template.md)
   - [Writing `std` Applications](./writing-your-application/writing-std-applications.md)
   - [Writing `no_std` Applications (TODO)]()
-
+- [Resources](./resources.md)
 ---
 
 [Appendix A: Glossary](./misc/glossary.md)

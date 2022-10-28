@@ -15,13 +15,13 @@ Refer to the table below to see if your chip is supported.
 
 |   Chip   | Supported? |
 | :------: | :--------: |
-|  ESP32   |     ✅     |
+|  ESP32   |     ✅      |
 | ESP32-C2 | _planned_  |
-| ESP32-C3 |     ✅     |
-| ESP32-S2 |     ✅     |
-| ESP32-S3 |     ✅     |
+| ESP32-C3 |     ✅      |
+| ESP32-S2 |     ✅      |
+| ESP32-S3 |     ✅      |
 | ESP32-H2 | _planned_  |
-| ESP8266  |     ❌     |
+| ESP8266  |     ❌      |
 
 Since `esp-idf` does not have support for the ESP8266, we unfortunately are unable to use these libraries with it. See the [Bare Metal] page for information on the `no_std` HAL for this chip.
 
@@ -79,8 +79,8 @@ graph TD;
 You must clean your project and rebuild in order for changes in the `sdkconfig.defaults` to take effect:
 
 ```shell,ignore
-$ cargo clean
-$ cargo build
+cargo clean
+cargo build
 ```
 
 ### The documentation for the crates mentioned on this page is out of date or missing

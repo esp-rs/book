@@ -9,7 +9,7 @@ When building applications using the Rust standard library, `std`, the build too
 To install:
 
 ```bash
-$ cargo install ldproxy
+cargo install ldproxy
 ```
 
 [embuild repository]: https://github.com/esp-rs/embuild

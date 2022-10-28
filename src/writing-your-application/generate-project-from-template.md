@@ -9,7 +9,7 @@ The [cargo-generate] subcommand allows you to create a new project based on some
 `cargo generate` can be installed by running:
 
 ```shell
-$ cargo install cargo-generate
+cargo install cargo-generate
 ```
 
 When the `cargo generate` subcommand is invoked, you will be prompted to answer a number of questions regarding the target of your application. Upon completion of this process you will have a buildable project with all the correct configuration.
@@ -21,7 +21,7 @@ The generated application can be built as normal using the appropriate toolchain
 When using the Rust standard library (`std`) you can use the [esp-idf-template] template, which will look something like:
 
 ```shell
-$ cargo generate --git https://github.com/esp-rs/esp-idf-template cargo
+cargo generate --git https://github.com/esp-rs/esp-idf-template cargo
 🤷   Project Name : esp-rust-app
 🔧   Generating template ...
 ✔ 🤷   Rust toolchain (beware: nightly works only for esp32c3!) · esp
@@ -46,7 +46,7 @@ $ cargo generate --git https://github.com/esp-rs/esp-idf-template cargo
 For bare-metal applications (`no_std`) you can instead use the [esp-template] template:
 
 ```shell
-$ cargo generate --git https://github.com/esp-rs/esp-template
+cargo generate --git https://github.com/esp-rs/esp-template
 🤷   Project Name : esp-rust-app
 🔧   Generating template ...
 ✔ 🤷   Which MCU to target? · esp32c3

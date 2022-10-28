@@ -5,7 +5,7 @@ In order to develop for ESP devices using Rust you must first install the Rust c
 If you have not yet installed Rust on your system, you can do so easily using [rustup]. For _macOS_ and _Linux_ it can be installed by runing the following command:
 
 ```bash
-$ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 ```
 
 For installation on Windows or alternative installation methods, please refer to the instructions on the [rustup] website.
@@ -20,9 +20,10 @@ If you are [running Windows as your host operating system, you must also install
 If you only want to target RISC-V chips, installation is much simpler. The bare-metal target can be installed by running:
 
 ```bash
-$ rustup target add riscv32imc-unknown-none-elf
+rustup target add riscv32imc-unknown-none-elf
 ```
 For `std` applications, the `riscv32imc-esp-espidf` target does not have prebuilt objects distributed through rustup, therefore the `-Z build-std` [unstable cargo feature] is required within your project. This [unstable cargo feature] can also be added to `.cargo/config.toml` of your project. Our [template projects] ,that we will later discuss, already take care of this.
+
 
 At this point you are ready to build applications for all the Espressif chips based on RISC-V architecture.
 

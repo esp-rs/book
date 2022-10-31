@@ -12,7 +12,7 @@
   - [Text Editors and IDEs](./tooling/text-editors-and-ides.md)
   - [espflash](./tooling/espflash.md)
   - [espmonitor](./tooling/espmonitor.md)
-  - [Debugging]()
+  - [Debugging](./tooling/debugging/index.md)
     - [probe-rs](./tooling/debugging/probe-rs.md)
     - [OpenOCD](./tooling/debugging/openocd.md)
     - [Debugging in Visual Studio Code](./tooling/debugging/vscode-debugging.md)

@@ -1,6 +1,6 @@
 # Rust on Espressif SoCs
 
-Let's discuss more in detail the Rust support for the architectures of the Espressif chips. At this momment, Espressif SoCs are based on two different architectures: RISC-V and Xtensa. The support for those two architectures in the Rust programming language is very different.
+Let's discuss more in detail the Rust support for the architectures of the Espressif chips. At this moment, Espressif SoCs are based on two different architectures: RISC-V and Xtensa. The support for those two architectures in the Rust programming language is very different.
 
 ## Rust in RISC-V
 

@@ -13,7 +13,7 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 For installation on Windows or alternative installation methods, please refer to the instructions on the [rustup] website.
 
 If you are [running Windows as your host operating system, you must also install one of the available ABIs]:
-- MSVC: Is the recommended ABI. When installing `rustup`, it will check if all the requirements are installed, and, if they are not, it allows the user to install them.
+- MSVC: This is the recommended ABI. When installing `rustup`, it will check if all the requirements are installed, and, if they are not, it allows the user to install them.
 - GNU: No checks are done in `rustup` and expect that the user takes care of properly installing it.
 
 [rustup]: https://rustup.rs/
@@ -43,7 +43,7 @@ For bare-metal, target can be installed by running:
 rustup target add riscv32imc-unknown-none-elf
 ```
 
-For `std` applications, the `riscv32imc-esp-espidf` target does not have prebuilt objects distributed through rustup, therefore the `-Z build-std` [unstable cargo feature] is required within your project. This [unstable cargo feature] can also be added to `.cargo/config.toml` of your project. Our [template projects] ,which we will later discuss, already take care of this.
+For `std` applications, the `riscv32imc-esp-espidf` target does not have prebuilt objects distributed through rustup, therefore the `-Z build-std` [unstable cargo feature] is required within your project. This [unstable cargo feature] can also be added to `.cargo/config.toml` of your project. Our [template projects], which we will later discuss, already take care of this.
 
 Also, when building `std` applications, make sure you have [`LLVM`] and [`ldproxy`] installed.
 
@@ -77,7 +77,7 @@ Because there is no `Xtensa` support in the mainline Rust compiler you must use 
 
 [esp-rs/espup] is a tool for installing and maintaining the required ecosystem to develop applications in Rust for Espressif SoC's (both `Xtensa` and `RISC-V` targets).
 
-`espup` takes care of installing the proper Rust compiler (our fork in case of Xtensa targets, and the `nightly` toolchain with the necesary target for RISC-V targets), the necessary GCC toolchains for ESP chips, LLVM toolchain, and many other things. For more details, [see Usage section of the `espup` Readme].
+`espup` takes care of installing the proper Rust compiler (our fork in case of Xtensa targets, and the `nightly` toolchain with the necessary target for RISC-V targets), the necessary GCC toolchains for ESP chips, LLVM toolchain, and many other things. For more details, [see Usage section of the `espup` Readme].
 
 In order to install `espup`:
 ```sh
@@ -91,7 +91,7 @@ Once that `espup` is installed you can simply run:
 espup install
 ```
 
-And it will all the necesary tools to develop Rust applications for all supported ESP targets.
+And it will install all the necessary tools to develop Rust applications for all supported ESP targets.
 
 `espup` will create and export file, by default called `export-esp.sh` on Unix systems
 and `export-esp.ps1` on Windows, this file contains the required environment variables. Please, make sure to source in every terminal before building any application.
@@ -119,14 +119,10 @@ A number of container runtimes are available, and which should be used depends o
 - [Lima]
 
 Espressif provides the [idf-rust] container image which contains several tags (generated both for `linux/arm64` and `linux/amd64`) for every Rust release:
-- For `std` applications the following naming convention is applied: `<chip>_<esp-idf-version>_<rust-toolchain-version>` . E.g., [`esp32s3_v4.4_1.64.0.0`] contains the ecosystem for developing `std` applications based on [ESP-IDF release/v4.4] for `ESP32-S3` with the `1.64.0.0` Rust toolchain.
-- For `no_std` applications, the naming convention is: `<chip>_<rust-toolchain-version>`. E.g., [`esp32_1.64.0.0`] contains the ecosystem for developing `non_std` aplications for `ESP32` with the `1.64.0.0` Rust toolchain.
+- For `std` applications, the following naming convention is applied: `<chip>_<esp-idf-version>_<rust-toolchain-version>` . E.g., [`esp32s3_v4.4_1.64.0.0`] contains the ecosystem for developing `std` applications based on [ESP-IDF release/v4.4] for `ESP32-S3` with the `1.64.0.0` Rust toolchain.
+- For `no_std` applications, the naming convention is: `<chip>_<rust-toolchain-version>`. E.g., [`esp32_1.64.0.0`] contains the ecosystem for developing `non_std` applications for `ESP32` with the `1.64.0.0` Rust toolchain.
 
-There is an `all` `<chip>` for both `std` and `no_std` tags which contains the environment required for all the ESP targets.
-
-
-
-
+There is an `all` `<chip>` for both `std` and `no_std` tags that contains the environment required for all the ESP targets.
 
 [Docker]: https://www.docker.com/
 [Podman]: https://podman.io/

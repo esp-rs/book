@@ -8,7 +8,7 @@
 - [Installation](./installation/index.md)
   - [Rust on Espressif SoCs](installation/rust-on-esp.md)
   - [Installing Rust for Espressif SoCs](./installation/installing-rust-for-esp.md)
-- [Tooling]()
+- [Tooling](./tooling/index.md)
   - [Text Editors and IDEs](./tooling/text-editors-and-ides.md)
   - [espflash](./tooling/espflash.md)
   - [espmonitor](./tooling/espmonitor.md)

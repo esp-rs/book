@@ -28,6 +28,8 @@ cargo install ldproxy
 
 This tool is required regardless of the target architecture.
 
+[`ldproxy` crate]: https://github.com/esp-rs/embuild/tree/master/ldproxy
+
 ## RISC-V
 
 If you only want to target `RISC-V` chips, installation is simpler. In order to build

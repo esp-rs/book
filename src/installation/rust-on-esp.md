@@ -1,5 +1,6 @@
 # Rust on Espressif SoCs
-Let's discuss more in detail the Rust support for the architectures of the Espressif chips.
+
+Let's discuss more in detail the Rust support for the architectures of the Espressif chips. At this momment, Espressif SoCs are based on two different architectures: RISC-V and Xtensa. The support for those two architectures in the Rust programming language is very different.
 
 ## Rust in RISC-V
 
@@ -17,7 +18,7 @@ The standard library target (`riscv32imc-esp-espidf`) is currently [Tier 3] and 
 ## Rust in Xtensa
 To this day, there is no `Xtensa` support in the mainline Rust compiler, for this reason, we maintain the [esp-rs/rust] fork that adds support four our `Xtensa` targets.
 
-`Xtensa` not being supported on Rust mainline is mainly a consequence of `LLVM` not supporting `Xtensa` targets. We also maintain an LLVM fork with support for Espressif `Xtensa` targets in [espressif/llvm-project]
+`Xtensa` not being supported on Rust mainline is mainly a consequence of `LLVM` not supporting `Xtensa` targets. For that reason, we also maintain an LLVM fork with support for Espressif `Xtensa` targets in [espressif/llvm-project]
 
 > #### A note in upstreaming our forks.
 >

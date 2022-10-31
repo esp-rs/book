@@ -4,11 +4,11 @@ With an understanding of the ecosystem surrounding Rust on Espressif chips, we c
 
 The dependencies required to build Rust applications for ESP Chips depend on the approach that we take:
 - For `no_std` applications:
-  - GCC Toolchain: To serve as a C compiler.
+  - GCC Toolchain: GCC linker is used in our Rust applications.
   - Rust Toolchain: Used to compile our Rust code.
     - `LLVM`: The Rust compiler uses `LLVM` as codegen backend.
 - For `std` applications:
-  - GCC Toolchain: To serve as a C compiler.
+  - GCC Toolchain: GCC linker is used in our Rust applications.
   - Rust Toolchain: Used to compile our Rust code.
     - `LLVM`: The Rust compiler uses `LLVM` as codegen backend.
   - [ESP-IDF]: Espressif IoT Development Framework.

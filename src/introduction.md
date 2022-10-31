@@ -7,7 +7,7 @@ Rust support for these devices is still in the early stages, but progress is bei
 For tools and libraries relating to Rust on ESP, please see the [esp-rs organization] on GitHub.
 
 [rust programming language]: https://www.rust-lang.org/
-[espressif]: https://espressif.com/
+[Espressif]: https://espressif.com/
 [esp-rs organization]: https://github.com/esp-rs/
 
 ## Status of This Book

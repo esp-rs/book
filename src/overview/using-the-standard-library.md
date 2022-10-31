@@ -6,7 +6,7 @@ Espressif provides a C-based development framework called [esp-idf] which has su
 
 ## Chip Support
 
-In order for applications targeting `std` to be built for ESP devices, two things are required:
+For applications targeting `std` to be built for ESP devices, two things are required:
 
 1. LLVM/Clang support
 2. Support for the device in `esp-idf`
@@ -15,13 +15,13 @@ Refer to the table below to see if your chip is supported.
 
 |   Chip   | Supported? |
 | :------: | :--------: |
-|  ESP32   |     ✅     |
+|  ESP32   |     ✅      |
 | ESP32-C2 | _planned_  |
-| ESP32-C3 |     ✅     |
-| ESP32-S2 |     ✅     |
-| ESP32-S3 |     ✅     |
+| ESP32-C3 |     ✅      |
+| ESP32-S2 |     ✅      |
+| ESP32-S3 |     ✅      |
 | ESP32-H2 | _planned_  |
-| ESP8266  |     ❌     |
+| ESP8266  |     ❌      |
 
 Since `esp-idf` does not have support for the ESP8266, we unfortunately are unable to use these libraries with it. See the [Bare Metal] page for information on the `no_std` HAL for this chip.
 
@@ -37,7 +37,7 @@ The supported `std` features are as follows:
 - Random number generation
 - Sockets
 
-In addition to the `std` features there is an [embedded-svc] implementation for `esp-idf`, [esp-idf-svc], which adds extra support for services/modules not available in the standard library, including:
+In addition to the `std` features, there is an [embedded-svc] implementation for `esp-idf`, [esp-idf-svc], which adds extra support for services/modules not available in the standard library, including:
 
 - Wi-Fi management
 - NVS (non-volatile storage)
@@ -76,11 +76,11 @@ graph TD;
 
 ### I updated my `sdkconfig.defaults` file but it doesn't appear to have had any effect
 
-You must clean your project and rebuild in order for changes in the `sdkconfig.defaults` to take effect:
+You must clean your project and rebuild for changes in the `sdkconfig.defaults` to take effect:
 
 ```shell,ignore
-$ cargo clean
-$ cargo build
+cargo clean
+cargo build
 ```
 
 ### The documentation for the crates mentioned on this page is out of date or missing

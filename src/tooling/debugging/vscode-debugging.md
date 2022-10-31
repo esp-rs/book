@@ -7,16 +7,16 @@ There is also a possibility to debug with graphical output directly in Visual St
 
 ## Hardware Setup
 
-ESP32 doesn't have a built-in JTAG interface so you have to connect an external JTAG adapter with the ESP32 board, for example [ESP-Prog](https://docs.espressif.com/projects/espressif-esp-iot-solution/en/latest/hw-reference/ESP-Prog_guide.html) can be used.
+ESP32 doesn't have a built-in JTAG interface so you have to connect an external JTAG adapter to the ESP32 board, for example, [ESP-Prog](https://docs.espressif.com/projects/espressif-esp-iot-solution/en/latest/hw-reference/ESP-Prog_guide.html) can be used.
 
-|   ESP32 Pin   |   JTAG Signal   |
-| :-----------: | :-------------: |
-| MTDO/GPIO15   |      TDO        |
-| MTDI/GPIO12   |      TDI        |
-| MTCK/GPIO13   |      TCK        |
-| MTMS/GPIO14   |      TMS        |
-| 3V3           |      VJTAG      |
-| GND           |      GND        |
+|  ESP32 Pin  | JTAG Signal |
+| :---------: | :---------: |
+| MTDO/GPIO15 |     TDO     |
+| MTDI/GPIO12 |     TDI     |
+| MTCK/GPIO13 |     TCK     |
+| MTMS/GPIO14 |     TMS     |
+|     3V3     |    VJTAG    |
+|     GND     |     GND     |
 
 
 **Note**: On Windows `USB Serial Converter A 0403 6010 00` driver should be WinUSB.
@@ -25,7 +25,7 @@ ESP32 doesn't have a built-in JTAG interface so you have to connect an external 
 
 1. Install [Cortex-Debug](https://marketplace.visualstudio.com/items?itemName=marus25.cortex-debug) extension for VScode.
 2. Create the `.vscode/launch.json` file in the project tree you want to debug. [This](https://github.com/esp-rs/esp32-hal/blob/master/.vscode/launch.json) can be used as a template file.
-3. Update **executable**, **svdFile**, **serverpath** paths and **toolchainPrefix** field.
+3. Update **executable**, **svdFile**, **serverpath** paths, and **toolchainPrefix** field.
 ```jsonc
     {
     // Use IntelliSense to learn about possible attributes.
@@ -76,16 +76,16 @@ ESP32-C3 with **revision 3** **does** have a built-in JTAG interface and you don
 
 If your ESP32-C3's revision is lesser than 3, follow these instructions, if you have revision 3 you can jump to the **Set up VSCode** step.
 
-ESP32-C3 **revision 1** and **revision 2** don't have a built-in JTAG interface so you have to connect an external JTAG adapter with the ESP32-C3 board, for example [ESP-Prog](https://docs.espressif.com/projects/espressif-esp-iot-solution/en/latest/hw-reference/ESP-Prog_guide.html) can be used.
+ESP32-C3 **revision 1** and **revision 2** don't have a built-in JTAG interface so you have to connect an external JTAG adapter to the ESP32-C3 board, for example, [ESP-Prog](https://docs.espressif.com/projects/espressif-esp-iot-solution/en/latest/hw-reference/ESP-Prog_guide.html) can be used.
 
-|   ESP32-C3 Pin   |   JTAG Signal   |
-| :--------------: | :-------------: |
-| MTDO/GPIO7       |      TDO        |
-| MTDI/GPIO5       |      TDI        |
-| MTCK/GPIO6       |      TCK        |
-| MTMS/GPIO4       |      TMS        |
-| 3V3              |      VJTAG      |
-| GND              |      GND        |
+| ESP32-C3 Pin | JTAG Signal |
+| :----------: | :---------: |
+|  MTDO/GPIO7  |     TDO     |
+|  MTDI/GPIO5  |     TDI     |
+|  MTCK/GPIO6  |     TCK     |
+|  MTMS/GPIO4  |     TMS     |
+|     3V3      |    VJTAG    |
+|     GND      |     GND     |
 
 
 **Note**: On Windows `USB Serial Converter A 0403 6010 00` driver should be WinUSB.
@@ -94,7 +94,7 @@ ESP32-C3 **revision 1** and **revision 2** don't have a built-in JTAG interface 
 
 1. Install [Cortex-Debug](https://marketplace.visualstudio.com/items?itemName=marus25.cortex-debug) extension for VScode.
 2. Create the `.vscode/launch.json` file in the project tree you want to debug. [This](https://github.com/esp-rs/esp32-hal/blob/master/.vscode/launch.json) can be used as a template file.
-3. Update **executable**, **svdFile**, **serverpath** paths and **toolchainPrefix** field.
+3. Update **executable**, **svdFile**, **serverpath** paths, and **toolchainPrefix** field.
 ```jsonc
     {
     // Use IntelliSense to learn about possible attributes.

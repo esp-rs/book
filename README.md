@@ -7,15 +7,15 @@ This book is a work in progress.
 This book is generated using [mdbook], and additionally uses the [mdbook-mermaid] preprocessor to add support for diagrams. To install these tools:
 
 ```shell
-$ cargo install mdbook mdbook-mermaid
+cargo install mdbook mdbook-mermaid
 ```
 
 With `mdbook` and `mdbook-mermaid` installed you can clone the respository and start a development server by running:
 
 ```shell
-$ git clone https://github.com/esp-rs/book
-$ cd book/
-$ mdbook serve
+git clone https://github.com/esp-rs/book
+cd book/
+mdbook serve
 ```
 
 [mdbook]: https://github.com/rust-lang/mdBook

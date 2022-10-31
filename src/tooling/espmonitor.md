@@ -5,13 +5,13 @@ The [esp-rs/espmonitor] repository contains two crates, `cargo-espmonitor` and `
 ## cargo-espmonitor
 
 ```bash
-$ cargo install cargo-espmonitor
+cargo install cargo-espmonitor
 ```
 
 ## espmonitor
 
 ```bash
-$ cargo install espmonitor
+cargo install espmonitor
 ```
 
 [esp-rs/espmonitor]: https://github.com/esp-rs/espmonitor

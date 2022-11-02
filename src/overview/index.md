@@ -13,4 +13,9 @@ Both approaches have their advantages and disadvantages, so you should make a de
 
 The [esp-rs organization] on GitHub is home to a number of repositories related to running Rust on Espressif chips. Most of the required crates have their source code hosted here.
 
+> A note on the repository naming convention
+> In the [esp-rs organization] we use the folling wording:
+> - Repositories starting with `esp-idf-` are focused on `std` apporach. E.g. `esp-idf-hal`
+> - Repositories starting with `esp-` are focused on `no_std` apporach. E.g. `esp-hal`
+
 [esp-rs organization]: https://github.com/esp-rs/

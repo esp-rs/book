@@ -8,9 +8,10 @@ Examples shown here usually apply to ESP32-C3 using the [ESP32-C3-DevKit-RUST-1]
 
 You can use any other ESP32, ESP32-C3, ESP32-S2, or ESP32-S3 development board but smaller code changes and configuration changes might be needed.
 
-Also, this section of the book will only cover working locally.
+Also, this section of the book will only cover working locally. I.e. we will be using our host machine to develop, not [devcontainers], so make sure you have the [ecosystem properly installed].
 
 [esp-hal]: https://github.com/esp-rs/esp-hal
 [ESP32-C3-DevKit-RUST-1]: https://github.com/esp-rs/esp-rust-board
 [`esp32c3-hal/examples`]: https://github.com/esp-rs/esp-hal/tree/main/esp32c3-hal/examples
-
+[devcontainers]: ../generate-project-from-template.md#using-dev-containers-in-the-templates
+[ecosystem properly installed]: ../../installation/installing-rust-for-esp.md

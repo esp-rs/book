@@ -1,4 +1,4 @@
-# Generating Projects From Templates
+# Generating Projects from Templates
 
 We currently maintin two template repositories:
 - [esp-template] - `no_std` template.
@@ -56,7 +56,7 @@ cargo generate --git https://github.com/esp-rs/esp-template
 🔧   Destination: /home/alice/esp-rust-app ...
 🔧   Generating template ...
 ✔ 🤷   Which MCU to target? · esp32c3
-✔ 🤷   Configure project to use Dev Containers (VS Code, GitHub Codespaces and Gitpod)? · true
+✔ 🤷   Configure project to use Dev Containers (VS Code, GitHub Codespaces and Gitpod)? · false
 ✔ 🤷   Enable allocations via the esp-alloc crate? · false
 [ 1/11]   Done: .cargo/config.toml
 [ 2/11]   Done: .cargo

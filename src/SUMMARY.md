@@ -19,9 +19,15 @@
     - [Wokwi](./tooling/simulating/wokwi.md)
     - [QEMU](tooling/simulating/qemu.md)
 - [Writing Your Own Application](./writing-your-own-application/index.md)
-  - [Generate Project from Template](./writing-your-own-application/generate-project-from-template.md)
+  - [Generating Projects from Templates](./writing-your-own-application/generate-project-from-template.md)
+  - [Writing `no_std` Applications](./writing-your-own-application/no-std-applications/index.md)
+    - [Understanding esp-template](./writing-your-own-application/no-std-applications/understanding-esp-template.md)
+    - [Hello World](./writing-your-own-application/no-std-applications/hello-world.md)
+    - [Panic!](./writing-your-own-application/no-std-applications/panic.md)
+    - [Blinky](./writing-your-own-application/no-std-applications/blinky.md)
+    - [Detect a button press](./writing-your-own-application/no-std-applications/button.md)
+    - [Detect a button press with interrupt](./writing-your-own-application/no-std-applications/interrupt.md)
   - [Writing `std` Applications](./writing-your-own-application/writing-std-applications.md)
-  - [Writing `no_std` Applications (TODO)]()
 - [Resources](./resources.md)
 ---
 

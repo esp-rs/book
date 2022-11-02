@@ -31,10 +31,6 @@ In `main.rs` before the `loop {}` add this line
 esp_println::println!("Hello World");
 ```
 
-> Note: [`espflash`] only shows output when a new-line is detected. There is also a `print!` macro but nothing will be shown until a new-line is received.
-
-However other serial monitors work differently.
-
 ## See Results
 
 Again run

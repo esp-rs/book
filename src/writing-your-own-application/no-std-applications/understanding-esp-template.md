@@ -8,20 +8,17 @@ project contains and try to understand every part of it.
 When creating a project from [esp-template] using the `esp32c3` target without dev-container support and without support for memory allocations, should generate a file structure like this:
 
 ```text
-│   .gitignore
-│   Cargo.toml
-│   LICENSE-APACHE
-│   LICENSE-MIT
-│   rust-toolchain.toml
-│
-├───.cargo
-│       config.toml
-│
-├───.vscode
-│       settings.json
-│
-└───src
-        main.rs
+├─ .cargo/
+│  ├─ config.toml
+├─ .vscode/
+│  ├─ settings.json
+├─ src/
+│  ├─ main.rs
+├─ .gitignore
+├─ Cargo.toml
+├─ LICENSE-APACHE
+├─ LICENSE-MIT
+├─ rust-toolchain.toml
 ```
 
 

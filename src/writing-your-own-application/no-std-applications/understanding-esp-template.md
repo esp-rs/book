@@ -96,7 +96,7 @@ That is quite a lot of code. Let's see what it is good for.
     - here we configure the system clocks - in this case, we are fine with the defaults
     - we freeze the clocks which means we cannot change them later
     - some drivers need a reference to the clocks to know how to calculate rates and durations
-- the next block of code instantiates some peripherals (namely Rtc and the two timer groups) to disable the watchdog which is armed after boot
+- the next block of code instantiates some peripherals (namely RTC and the two timer groups) to disable the watchdog which is armed after boot
     - without that code, the SoC would reboot after some time
     - there is another way to prevent the reboot: [feeding](https://docs.rs/esp32c3-hal/0.2.0/esp32c3_hal/prelude/trait._embedded_hal_watchdog_Watchdog.html#tymethod.feed) the watchdog
 - `loop {}`

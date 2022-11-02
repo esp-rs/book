@@ -114,10 +114,10 @@ and `export-esp.ps1` on Windows, this file contains the required environment var
 
 > A few words on ESP-IDF, we already mentioned that [ESP-IDF is required] when building `std` applications but, so far, no
 > instructions on how to install ESP-IDF have been mentioned. That is because [`esp-idf-sys`], a crate that all `std` applications
-> will use, already takes care of installing the necesary ESP-IDF version. [By default, this installation will take place under an `.embuild` folder] inside
+> will use, already takes care of installing the necessary ESP-IDF version. [By default, this installation will take place under an `.embuild` folder] inside
 > the project directory.
 >
-> `espup install` has a `--espidf-version` that allows installing the desired ESP-IDF version, when using this argument:
+> `espup install` has a `--espidf-version` option that allows installing the desired ESP-IDF version, see [Install subcommand instructions]. When using this argument:
 > - `ldproxy` will be installed if not present already.
 > - The export file will include the necessary environment variables for ESP-IDF
 > - When building `std` applications that use the installed version of ESP-IDF, `esp-idf-sys` will recognize there is an activated ESP-IDF environment activated
@@ -132,6 +132,7 @@ and `export-esp.ps1` on Windows, this file contains the required environment var
 [ESP-IDF is required]: index.md
 [`esp-idf-sys`]: https://github.com/esp-rs/esp-idf-sys
 [By default, this installation will take place under an `.embuild` folder]: https://github.com/esp-rs/esp-idf-sys#esp_idf_tools_install_dir-esp_idf_tools_install_dir
+[Install subcommand instructions]: https://github.com/esp-rs/espup#install-subcommand
 
 ## Using Containers
 

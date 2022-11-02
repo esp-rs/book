@@ -39,7 +39,14 @@ applications for `RISC-V` targets we need to use a [Rust nightly toolchain] with
 rustup toolchain install nightly --component rust-src
 ```
 
-For bare-metal, target can be installed by running:
+There are two suitable targets for this chip:
+
+- For bare-metal (`no_std`) applications, use `riscv32imc-unknown-none-elf`
+- For applications that require `std`, use `riscv32imc-esp-espidf`
+
+The standard library target (`riscv32imc-esp-espidf`) is currently [Tier 3] and does not have prebuilt objects distributed through `rustup`.
+
+The bare-metal target can be installed by running:
 
 ```bash
 rustup target add riscv32imc-unknown-none-elf
@@ -69,7 +76,7 @@ Because there is no `Xtensa` support in the mainline Rust compiler you must use 
 
 - The recommended one is using `espup`. See [`espup` section] for more details.
 - Using [esp-rs/rust-build] installation scripts. This was the recommended way in the past, but now, the installation scripts are feature frozen and all the new features will only be included in `espup`. See the repository readme for instructions.
-- Building the Rust compiler with Xtensa support from source. This process is computationally expensive and can take one or more hours to complete depending on your system, for this reason, is not recommended unless there is a major reason to go for this approach. See instructions in the [Installing from Source section of the esp-rs/rust repository].
+- Building the Rust compiler with `Xtensa` support from source. This process is computationally expensive and can take one or more hours to complete depending on your system, for this reason, is not recommended unless there is a major reason to go for this approach. See instructions in the [Installing from Source section of the esp-rs/rust repository].
 
 [esp-rs/rust]: https://github.com/esp-rs/rust
 [esp-rs/rust-build]: https://github.com/esp-rs/rust-build
@@ -79,7 +86,7 @@ Because there is no `Xtensa` support in the mainline Rust compiler you must use 
 
 [esp-rs/espup] is a tool for installing and maintaining the required ecosystem to develop applications in Rust for Espressif SoC's (both `Xtensa` and `RISC-V` targets).
 
-`espup` takes care of installing the proper Rust compiler (our fork in case of Xtensa targets, and the `nightly` toolchain with the necessary target for RISC-V targets), the necessary GCC toolchains for ESP chips, LLVM toolchain, and many other things. For more details, [see Usage section of the `espup` Readme].
+`espup` takes care of installing the proper Rust compiler (our fork in case of `Xtensa` targets, and the `nightly` toolchain with the necessary target for `RISC-V` targets), the necessary `GCC` toolchains for ESP chips, `LLVM` toolchain, and many other things. For more details, [see Usage section of the `espup` Readme].
 
 In order to install `espup`:
 ```sh

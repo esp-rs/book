@@ -1,7 +1,7 @@
 # Detect a button press with interrupt
-[Interrupts] offer are a mechanism by which the processor handles asynchronous events and fatal errors.
+[Interrupts] offer a mechanism by which the processor handles asynchronous events and fatal errors.
 
-Lets add the [`critical-section`] crate [(see instructions on how to add a dependency)], and change `main.rs` to look like this:
+Let's add the [`critical-section`] crate [(see instructions on how to add a dependency)], and change `main.rs` to look like this:
 ```rust,ignore
 #![no_std]
 #![no_main]
@@ -65,7 +65,7 @@ fn GPIO() {
 }
 ```
 
-There are quite a lot new things here.
+There are quite a lot of new things here.
 
 First thing is the `static BUTTON`. We need it since in the interrupt handler we have to clear the pending interrupt on the button and we somehow need to pass the button from main to the interrupt handler.
 
@@ -81,7 +81,7 @@ In the next line we move our button into the `static BUTTON` for the interrupt h
 
 Last thing we need to do is actually enable the interrupt.
 
-First parameter here is the kind of the interrupt we want. There are several [possible interrupts].
+First parameter here is the kind of interrupt we want. There are several [possible interrupts].
 
 Second parameter is the priority of the interrupt.
 

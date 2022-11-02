@@ -4,9 +4,9 @@ The goal of this chapter is to provide a getting-started guide on using the Rust
 
 Examples shown here usually apply to ESP32-C3 using the [ESP32-C3-DevKit-RUST-1] board.
 
-You can use any other ESP32, ESP32-C3, ESP32-S2 or ESP32-S3 development board but smaller code changes and configuration changes might be needed.
+You can use any other ESP32, ESP32-C3, ESP32-S2, or ESP32-S3 development board but smaller code changes and configuration changes might be needed.
 
-Also this section of the book will only cover working locally.
+Also, this section of the book will only cover working locally.
 
 
 [esp-hal]: https://github.com/esp-rs/esp-hal

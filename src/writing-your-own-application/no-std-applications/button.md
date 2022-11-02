@@ -1,6 +1,6 @@
 # Detect a button press
 
-Most of the dev-boards have a button, in our case we will use the one labeled [`BOOT` on `GPIO9`]. Let's see how to check the state of the button.
+Most of the dev-boards have a button, in our case, we will use the one labeled [`BOOT` on `GPIO9`]. Let's see how to check the state of the button.
 
 ```rust,ignore
 #![no_std]

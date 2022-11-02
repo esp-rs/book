@@ -1,6 +1,6 @@
 # Understanding esp-template
 
-Now that we know how to [generate a no_std project], lets inspect what the generated
+Now that we know how to [generate a no_std project], let's inspect what the generated
 project contains and try to understand every part of it.
 
 ## Inspecting the generated Project
@@ -25,7 +25,7 @@ When creating a project from [esp-template] using the `esp32c3` target without d
 ```
 
 
-Before going further lets see what these files are for.
+Before going further let's see what these files are for.
 
 - [.gitignore]
     - tells `git` which folders and files to ignore
@@ -45,7 +45,7 @@ Before going further lets see what these files are for.
     - settings for Visual Studio Code - if you are not using VSCode you can delete the whole folder
 - src/main.rs
     - the main source file of the newly created project
-    - we will examine it's content in the next section
+    - we will examine its content in the next section
 
 ## `main.rs`
 
@@ -78,12 +78,12 @@ fn main() -> ! {
 }
 ```
 
-That is quite a lot of code. Lets see what it is good for.
+That is quite a lot of code. Let's see what it is good for.
 
 - `#![no_std]`
     - this tells the Rust compiler that this code doesn't use `libstd`
 - `#![no_main]`
-    - The `no_main` attribute says that this program won't use the standard main interface, which is tailored for command line applications that receive arguments. Instead of the standard main we'll use the entry attribute from the `riscv-rt` crate to define a custom entry point. In this program we have named the entry point "main", but any other name could have been used. The entry point function must have the signature `fn() -> !`; this type indicates that the function never returns – which means that the program never terminates.
+    - The `no_main` attribute says that this program won't use the standard main interface, which is tailored for command-line applications that receive arguments. Instead of the standard main, we'll use the entry attribute from the `riscv-rt` crate to define a custom entry point. In this program we have named the entry point "main", but any other name could have been used. The entry point function must have the signature `fn() -> !`; this type indicates that the function never returns – which means that the program never terminates.
 - `use esp32c3_hal:{...}`
     - we need to bring in some types we are going to use
     - these are from `esp-hal`
@@ -94,13 +94,13 @@ That is quite a lot of code. Lets see what it is good for.
     - HAL drivers usually take ownership of peripherals accessed via the PAC
     - here we take all the peripherals from the PAC to pass them to the HAL drivers later
 - `let system = peripherals.SYSTEM.split();`
-    - sometimes a peripheral (here the System peripheral) are coarse grained and don't exactly fit the HAL drivers - so here we split the System peripheral into smaller pieces which get passed to the drivers
+    - sometimes a peripheral (here the System peripheral) is coarse-grained and doesn't exactly fit the HAL drivers - so here we split the System peripheral into smaller pieces which get passed to the drivers
 - `let clocks = ClockControl::boot_defaults(system.clock_control).freeze();`
-    - here we configure the system clocks - in this case we are fine with the defaults
+    - here we configure the system clocks - in this case, we are fine with the defaults
     - we freeze the clocks which means we cannot change them later
     - some drivers need a reference to the clocks to know how to calculate rates and durations
-- the next block of code instanciates some peripherals (namely Rtc and the two timer groups) to disable the watchdog which is armed after boot
-    - without that code the SoC would reboot after some time
+- the next block of code instantiates some peripherals (namely Rtc and the two timer groups) to disable the watchdog which is armed after boot
+    - without that code, the SoC would reboot after some time
     - there is another way to prevent the reboot: [feeding](https://docs.rs/esp32c3-hal/0.2.0/esp32c3_hal/prelude/trait._embedded_hal_watchdog_Watchdog.html#tymethod.feed) the watchdog
 - `loop {}`
     - since our function is supposed to never return we just "do nothing" in a loop
@@ -185,7 +185,7 @@ And that is exactly what the code is doing.
 
 You can reboot with `CTRL+R` or exit with `CTRL+C`
 
-In the next chapter we will add some more interesting output.
+In the next chapter, we will add some more interesting output.
 
 
 [generate a no_std project]: ../generate-project-from-template.md#esp-template

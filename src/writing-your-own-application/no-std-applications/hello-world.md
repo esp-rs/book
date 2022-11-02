@@ -4,7 +4,7 @@ In the last chapter you flashed and run your first piece of code on the SoC - wh
 
 Traditionally the first thing to run on a microcontroller is _blinky_.
 
-However we will start with _Hello World_ here.
+However, we will start with _Hello World_ here.
 
 ## Add a Dependency
 You can add a dependency by any of the following methods:
@@ -22,7 +22,7 @@ cargo add esp-println --features "esp32c3"
 
 We need to pass the feature `esp32c3` since that crate targets multiple SoCs and needs to know which one it is supposed to run on.
 
-> Note that there migth be new versions by the time you are reading this, please check [crates.io].
+> Note that there might be new versions by the time you are reading this, please check [crates.io].
 
 ## Print Something
 

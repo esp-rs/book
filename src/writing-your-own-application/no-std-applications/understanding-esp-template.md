@@ -80,7 +80,7 @@ That is quite a lot of code. Let's see what it is good for.
 - `#![no_std]`
     - this tells the Rust compiler that this code doesn't use `libstd`
 - `#![no_main]`
-    - The `no_main` attribute says that this program won't use the standard main interface, which is tailored for command-line applications that receive arguments. Instead of the standard main, we'll use the entry attribute from the `riscv-rt` crate to define a custom entry point. In this program we have named the entry point "main", but any other name could have been used. The entry point function must have the signature `fn() -> !`; this type indicates that the function never returns – which means that the program never terminates.
+    - The `no_main` attribute says that this program won't use the standard main interface, which is tailored for command-line applications that receive arguments. Instead of the standard main, we'll use the entry attribute from the `riscv-rt` crate to define a custom entry point. In this program we have named the entry point `main`, but any other name could have been used. The entry point function must be a [diverging function]. I.e. it has the signature `fn foo() -> !`; this type indicates that the function never returns – which means that the program never terminates.
 - `use esp32c3_hal:{...}`
     - we need to bring in some types we are going to use
     - these are from `esp-hal`
@@ -193,3 +193,4 @@ In the next chapter, we will add some more interesting output.
 [.cargo/config.toml]: https://doc.rust-lang.org/cargo/reference/config.html
 [`espflash`]: https://github.com/esp-rs/espflash/tree/main/espflash
 [`runner` configuration]: https://doc.rust-lang.org/cargo/reference/config.html#targettriplerunner
+[diverging function]: https://doc.rust-lang.org/beta/rust-by-example/fn/diverging.html

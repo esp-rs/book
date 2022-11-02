@@ -1,6 +1,6 @@
 # Detect a button press
 
-The dev-boards have a button (labeled BOOT) on GPIO9. Let's see how to check the state of the button.
+Most of the dev-boards have a button, in our case we will use the one labeled [`BOOT` on `GPIO9`]. Let's see how to check the state of the button.
 
 ```rust,ignore
 #![no_std]
@@ -46,4 +46,6 @@ fn main() -> ! {
 
 Now if the button is not pressed the LED is lit. If the button is pressed the LED is off.
 
-Similarly to turning a GPIO into an output we can turn it into an input. Then we can get the current state of the input pin with `is_high` and similar functions.
+Similarly to turning a `GPIO` into an `output` we can turn it into an `input`. Then we can get the current state of the `input` pin with `is_high` and similar functions.
+
+[`BOOT` on `GPIO9`]: https://github.com/esp-rs/esp-rust-board#ios

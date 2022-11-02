@@ -113,9 +113,12 @@ Building and running the code is as easy as
 cargo run
 ```
 
-This builds the code according to the configuration and executes `espflash` to flash the code to the board.
+This builds the code according to the configuration and executes [`espflash`] to flash the code to the board.
 
-Since our `runner` configuration also passes the `--monitor` argument to `espflash` we can see what the code is printing.
+Since our [`runner` configuration] also passes the `--monitor` argument to [`espflash`] we can see what the code is printing.
+
+> Make sure that you have [`espflash`] installed, otherwise this step will fail. To install [`espflash`]:
+> `cargo install espflash`
 
 You should see something similar to this:
 ```text
@@ -189,5 +192,7 @@ In the next chapter we will add some more interesting output.
 [esp-template]: https://github.com/esp-rs/esp-template
 [.gitignore]: https://git-scm.com/docs/gitignore
 [Cargo.toml]: https://doc.rust-lang.org/cargo/reference/manifest.html
-[.cargo/config.toml]: https://doc.rust-lang.org/cargo/reference/config.html
 [rust-toolchain.toml]: https://rust-lang.github.io/rustup/overrides.html#the-toolchain-file
+[.cargo/config.toml]: https://doc.rust-lang.org/cargo/reference/config.html
+[`espflash`]: https://github.com/esp-rs/espflash/tree/main/espflash
+[`runner` configuration]: https://doc.rust-lang.org/cargo/reference/config.html#targettriplerunner

@@ -1,6 +1,6 @@
 # Panic!
 
-When something goes terribly wrong in Rust there might occur a panic.
+When something goes terribly wrong in Rust there might occur a [panic].
 
 Let's see how it looks like for us.
 
@@ -83,6 +83,9 @@ But you might have noticed the difference in the size of the flashed binary.
 
 It went from 199056 bytes down to 86896 bytes!
 
-Please note that this is still huge for what we get. There are a lot of options to get the binary smaller which is beyond the scope of this book. (TODO should we add a section about this?)
+Please note that this is still huge for what we get. There are a lot of options to get the binary smaller which is beyond the scope of this book.
+<!-- (TODO: should we add a section about binary sizes?) -->
 
 Before going further remove the line causing the explicit panic.
+
+[panic]: https://doc.rust-lang.org/book/ch09-01-unrecoverable-errors-with-panic.html

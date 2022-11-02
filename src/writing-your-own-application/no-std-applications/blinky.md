@@ -49,11 +49,11 @@ fn main() -> ! {
 }
 ```
 
-We need two new types in scope: `IO` and `Delay`
+We need two new types in scope: [`IO`] and [`Delay`]
 
 On [ESP32-C3-DevKit-RUST-1] there is a regular [LED connected to GPIO 7]. If you use another board consult the data-sheet.
 
-Please note that most dev-boards today use an addressable LED which works different and is beyond the scope of this book. In that case you can also connect a regular LED to some of the free pins (and don't forget to add a resistor).
+> Note that most dev-boards today use an addressable LED which works different and is beyond the scope of this book. In that case you can also connect a regular LED to some of the free pins (and don't forget to add a resistor).
 
 Here we see that we can drive the pin `high`, `low` or `toggle` it.
 
@@ -61,3 +61,5 @@ We also see that the HAL offers a way to delay execution.
 
 [ESP32-C3-DevKit-RUST-1]:  https://github.com/esp-rs/esp-rust-board
 [LED connected to GPIO 7]: https://github.com/esp-rs/esp-rust-board#pin-layout
+[`IO`]: https://docs.rs/esp32c3-hal/0.2.0/esp32c3_hal/gpio/struct.IO.html
+[`Delay`]: https://docs.rs/esp32c3-hal/0.2.0/esp32c3_hal/struct.Delay.html

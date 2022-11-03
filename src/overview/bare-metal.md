@@ -43,6 +43,7 @@ Refer to the table below to see if your chip is supported. Please note that the 
 | [esp-rs/esp-hal]       | An implementation of the `embedded-hal` traits and more for the ESP32, ESP32-C2, ESP32-C3, ESP32-S2, and ESP32-S3. |
 | [esp-rs/esp8266-hal]   | An implementation of the `embedded-hal` traits and more for the ESP8266.                                           |
 | [esp-rs/esp-alloc]     | A simple no_std heap allocator.                                                                                    |
+| [esp-rs/esp-println]   | Provides `print!` and `println!`.                                                                                  |
 | [esp-rs/esp-backtrace] | Backtrace support for bare-metal applications.                                                                     |
 | [esp-rs/esp-storage]   | Implementation of embedded-storage traits to access unencrypted flash memory.                                      |
 | [esp-rs/esp-wifi]      | _WIP_: Experimental Wifi and Bluetooth LE support.                                                                 |
@@ -55,3 +56,4 @@ Refer to the table below to see if your chip is supported. Please note that the 
 [esp-rs/esp-backtrace]: https://github.com/esp-rs/esp-backtrace
 [esp-rs/esp-storage]: https://github.com/esp-rs/esp-storage
 [esp-rs/esp-wifi]: https://github.com/esp-rs/esp-wifi
+[esp-rs/esp-println]: https://github.com/esp-rs/esp-println

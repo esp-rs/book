@@ -5,9 +5,8 @@
   - [Using the Standard Library (`std`)](./overview/using-the-standard-library.md)
   - [Bare Metal (`no_std`)](./overview/bare-metal.md)
   - [Comparing `std` and `no_std`](./overview/comparing-std-and-no_std.md)
-- [Installation](./installation/index.md)
-  - [Rust on Espressif SoCs](installation/rust-on-esp.md)
-  - [Installing Rust for Espressif SoCs](./installation/installing-rust-for-esp.md)
+- [Rust on ESP targets](./installation/index.md)
+  - [Installation](./installation/installation.md)
 - [Tooling](./tooling/index.md)
   - [Text Editors and IDEs](./tooling/text-editors-and-ides.md)
   - [espflash](./tooling/espflash.md)
@@ -28,7 +27,8 @@
     - [Blinky](./writing-your-own-application/no-std-applications/blinky.md)
     - [Detect a button press](./writing-your-own-application/no-std-applications/button.md)
     - [Detect a button press with interrupt](./writing-your-own-application/no-std-applications/interrupt.md)
-  - [Writing `std` Applications](./writing-your-own-application/writing-std-applications.md)
+  - [Writing `std` Applications](./writing-your-own-application/std-applications/index.md)
+    - [Understanding esp-idf-template](./writing-your-own-application/std-applications/understanding-esp-idf-template.md)
 - [Resources](./resources.md)
 ---
 

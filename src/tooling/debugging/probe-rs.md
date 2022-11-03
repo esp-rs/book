@@ -18,7 +18,7 @@ Starting from `probe-rs` v0.12, it is possible to flash and debug the ESP32-C3 w
 
 ## Support for Espressif chips
 
-`probe-rs` currently only supports ARM & RISCV, therefore this limits the number of Espressif chips that can be used at the moment.
+`probe-rs` currently only supports `ARM` & `RISC-V`, therefore this limits the number of Espressif chips that can be used at the moment.
 
 |   Chip   | Flashing | Debugging |
 | :------: | :------: | :-------: |

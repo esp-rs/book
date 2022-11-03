@@ -5,22 +5,26 @@ project contains and try to understand every part of it.
 
 ## Inspecting the generated Project
 
-When creating a project from [esp-template] using the `esp32c3` target without dev-container support and without support for memory allocations, should generate a file structure like this:
+When creating a project from [esp-template] using:
+- MCU: `esp32c3`
+- Devcontainer support: `false`
+- `esp-alloc` crate support: `flase`
+
+It should generate a file structure like this:
 
 ```text
-├─ .cargo/
-│  ├─ config.toml
-├─ .vscode/
-│  ├─ settings.json
-├─ src/
-│  ├─ main.rs
-├─ .gitignore
-├─ Cargo.toml
-├─ LICENSE-APACHE
-├─ LICENSE-MIT
-├─ rust-toolchain.toml
+├── .cargo
+│   └── config.toml
+├── src
+│   └── main.rs
+├── .vscode
+│   └── settings.json
+├── .gitignore
+├── Cargo.toml
+├── LICENSE-APACHE
+├── LICENSE-MIT
+└── rust-toolchain.toml
 ```
-
 
 Before going further let's see what these files are for.
 
@@ -180,7 +184,7 @@ What you see here are messages from the first and second stage bootloader and th
 
 And that is exactly what the code is doing.
 
-You can reboot with `CTRL+R` or exit with `CTRL+C`
+You can reboot with `CTRL+R` or exit with `CTRL+C`.
 
 In the next chapter, we will add some more interesting output.
 

@@ -45,7 +45,7 @@ $ cargo generate --git https://github.com/esp-rs/esp-idf-template cargo
 💡   Initializing a fresh Git repository
 ✨   Done! New project created /home/alice/esp-rust-app
 ```
-
+See [Understanding esp-idf-template] for more details on the template project.
 ## esp-template
 
 For bare-metal applications (`no_std`) you can instead use the [esp-template] template:
@@ -72,6 +72,7 @@ cargo generate --git https://github.com/esp-rs/esp-template
 🔧   Moving generated files into: `/home/alice/esp-rust-app`...
 ✨   Done! New project created /home/alice/esp-rust-app
 ```
+See [Understanding esp-template] for more details on the template project.
 
 ### Using Dev Containers in the templates
 
@@ -91,8 +92,9 @@ For more details about on Dev Containers, see [Dev Container section of the temp
 [VS Code Dev Containers]: https://code.visualstudio.com/docs/remote/containers#_quick-start-open-an-existing-folder-in-a-container
 [GitHub Codespaces]: https://docs.github.com/en/codespaces/developing-in-codespaces/creating-a-codespace
 [Gitpod]: https://www.gitpod.io
-[Using Container section of the Installing Rust chapter]: ../installation/installing-rust-for-esp.md#using-containers
+[Using Container section of the Installing Rust chapter]: ../installation/installation.md#using-containers
 [Wokwi simulator]: https://wokwi.com/
 [web flash]: https://github.com/bjoernQ/esp-web-flash-server
 [Dev Container section of the template Readme]: https://github.com/esp-rs/esp-template/tree/main/docs#dev-containers
-
+[Understanding esp-template]: ./no-std-applications/understanding-esp-template.md
+[Understanding esp-idf-template]: ./std-applications/understanding-esp-idf-template.md

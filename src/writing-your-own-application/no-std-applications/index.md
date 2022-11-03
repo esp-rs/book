@@ -14,4 +14,4 @@ Also, this section of the book will only cover working locally. I.e. we will be 
 [ESP32-C3-DevKit-RUST-1]: https://github.com/esp-rs/esp-rust-board
 [`esp32c3-hal/examples`]: https://github.com/esp-rs/esp-hal/tree/main/esp32c3-hal/examples
 [devcontainers]: ../generate-project-from-template.md#using-dev-containers-in-the-templates
-[ecosystem properly installed]: ../../installation/installing-rust-for-esp.md
+[ecosystem properly installed]: ../../installation/installation.md

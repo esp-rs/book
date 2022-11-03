@@ -2,7 +2,7 @@
 
 The goal of this book is to provide a comprehensive guide on using the [Rust programming language] with [Espressif] SoCs and modules.
 
-Rust support for these devices is still in the early stages, but progress is being made rapidly. Because of this parts of this documentation may be out of date or change dramatically between readings.
+Rust support for these devices is still a work in progress, and progress is being made rapidly. Because of this, parts of this documentation may be out of date or change dramatically between readings.
 
 For tools and libraries relating to Rust on ESP, please see the [esp-rs organization] on GitHub.
 

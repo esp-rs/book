@@ -38,7 +38,7 @@ Before going further let's see what these files are for.
     - depending on your target this will use `nightly` or `esp`
 - [.cargo/config.toml]
     - the Cargo configuration
-    - this defines a few options to correctly build the project
+    - contains our target
     - contains `runner = "espflash --monitor"` - this means you can just use `cargo run` to flash and monitor your code
     - contains the linker to use, in our case, [`ldproxy`]
     - contains the unstable `build-std` cargo feature enabled.
@@ -51,7 +51,22 @@ Before going further let's see what these files are for.
 - [sdkconfig.defaults]
     - contains the overriden values from the ESP-IDF defaults.
 
+## `main.rs`
 
+```rust,ignore
+use esp_idf_sys as _; // If using the `binstart` feature of `esp-idf-sys`, always keep this module imported
+
+fn main() {
+    esp_idf_sys::link_patches();
+    println!("Hello, world!");
+}
+
+```
+The first line its an import that defines the esp-idf entry-point when the root crate is a binary crate that defines a main function.
+
+Then, we have an usual main function with two lines on it:
+- A call to `esp_idf_sys::link_patches` function that makes sure that a few patches to the ESP-IDF which are implemented in Rust are linked to the final executable.
+- We print in our console the famous "Hello World!".
 
 [.gitignore]: https://git-scm.com/docs/gitignore
 [Cargo.toml]: https://doc.rust-lang.org/cargo/reference/manifest.html

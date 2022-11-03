@@ -24,7 +24,6 @@ It should generate a file structure like this:
 ├── LICENSE-APACHE
 ├── LICENSE-MIT
 └── rust-toolchain.toml
-
 ```
 
 Before going further let's see what these files are for.

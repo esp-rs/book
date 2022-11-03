@@ -2,7 +2,7 @@
 
 With an understanding of the ecosystem surrounding Rust on Espressif chips, we can move on to actual development. If you are not aware of the two possible development approaches or do not understand the differences between writing `std` and `no_std` applications, please first read the [Ecosystem Overview] chapter.
 
-Let's take a momment discuss more in detail the Rust support for the architectures of the Espressif chips. At this moment, Espressif SoCs are based on two different architectures: `RISC-V` and `Xtensa`. The support for those two architectures in the Rust programming language is very different.
+Let's take a momment discuss, more in detail, the Rust support for the architectures of the Espressif chips. At this moment, Espressif SoCs are based on two different architectures: `RISC-V` and `Xtensa`. The support for those two architectures in the Rust programming language is very different.
 
 ## Rust in RISC-V targets
 
@@ -10,9 +10,9 @@ The `RISC-V` architecture has support in the mainline Rust compiler so setup is 
 
 Hence, the dependencies required to develop Rust applications in `RISC-V` targets are:
 - Rust Toolchain with the proper target: Used to compile our Rust code.
-- `LLVM`: As the Rust compiler uses `LLVM` as codegen backend.
+- `LLVM`: Used as codegen backend by the Rust compiler.
 - \[_Optional_\] `GCC` Toolchain: `GCC` linker can be used.
-  - `GCC` is marked as optional as you can also use `LLVM` linker, `LLD`..
+  - `GCC` is marked as optional as you can also use `LLVM` linker.
 
 Aditonally when building `std` applications we also need:
 - [ESP-IDF]: Espressif IoT Development Framework.
@@ -27,26 +27,25 @@ Another consequence of `LLVM` not suporting our `Xtensa` targets is that we need
 
 > #### A note in upstreaming our forks.
 >
-> We are trying to upstream the changes in both our `LLVM` and Rust fork.
+> We are trying to upstream the changes in both our `LLVM` and Rust forks.
 > The first step is to upstream the `LLVM` project, this is already in progress
 > and you can see the status at this [tracking issue].
-> If `LLVM` changes are accepted in `LLVM` mainline, we will proceed with trying
+> If our `LLVM` changes are accepted in `LLVM` mainline, we will proceed with trying
 > to upstream the Rust compiler changes.
 
 The forked compiler can coexist with the standard Rust compiler, so it is possible to have both installed on your system. The forked compiler is invoked when using the `esp` [channel] instead of the defaults, `stable` or `nightly`.
 
 Hence, the dependencies required to develop Rust applications in `Xtensa` targets are:
 - Rust Toolchain: Used to compile our Rust code.
-  - _We need to use custom fork with `Xtensa` support_.
-- `LLVM`: As the Rust compiler uses `LLVM` as codegen backend.
-  - _We need to use custom fork with `Xtensa` support_.
+  - _We need to use our custom fork with `Xtensa` support_.
+- `LLVM`: Used as codegen backend by the Rust compiler.
+  - _We need to use our custom fork with `Xtensa` support_.
 - `GCC` Toolchain: `GCC` linker is used in our Rust applications as it supports all our targets architectures (`Xtensa` and `RISC-V`).
 
 Aditonally when building `std` applications we also need:
 - [ESP-IDF]: Espressif IoT Development Framework.
 - [`ldproxy`] crate:  Simple tool to forward linker arguments given to [`ldproxy`] to the actual linker executable. The crate can be found in the [esp-rs/embuild] repository.
 
-[Tier 3]: https://doc.rust-lang.org/nightly/rustc/platform-support.html#tier-3
 [esp-rs/rust]: https://github.com/esp-rs/rust
 [espressif/llvm-project]: https://github.com/espressif/llvm-project
 [GCC toolchain]: https://github.com/espressif/crosstool-NG/

@@ -16,8 +16,8 @@ The training is split into two parts:
 * [Advanced level examples]:
    * Low-level GPIO
    * Interrupts in General
-   * I2c Driver ([Source](https://github.com/ferrous-systems/espressif-trainings/tree/main/advanced/i2c-driver))
-   * I2c Sensor Reading ([Source](https://github.com/ferrous-systems/espressif-trainings/tree/main/advanced/i2c-sensor-reading))
+   * I2C Driver ([Source](https://github.com/ferrous-systems/espressif-trainings/tree/main/advanced/i2c-driver))
+   * I2C Sensor Reading ([Source](https://github.com/ferrous-systems/espressif-trainings/tree/main/advanced/i2c-sensor-reading))
    * GPIO/Button Interrupts ([Source](https://github.com/ferrous-systems/espressif-trainings/tree/main/advanced/button-interrupt))
    * Driving an RGB LED
 

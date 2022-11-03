@@ -176,3 +176,5 @@ You can reboot with `CTRL+R` or exit with `CTRL+C`.
 [`ldproxy`]: https://github.com/esp-rs/embuild/tree/master/ldproxy
 [build.rs]: https://doc.rust-lang.org/cargo/reference/build-scripts.html
 [sdkconfig.defaults]: https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-guides/build-system.html#custom-sdkconfig-defaults
+[`espflash`]: https://github.com/esp-rs/espflash/tree/main/espflash
+[`runner` configuration]: https://doc.rust-lang.org/cargo/reference/config.html#targettriplerunner

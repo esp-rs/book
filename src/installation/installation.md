@@ -50,7 +50,7 @@ The bare-metal target can be installed by running:
 rustup target add riscv32imc-unknown-none-elf
 ```
 
-For `std` applications, the `riscv32imc-esp-espidf` target is currently [Tier 3] and does not have prebuilt objects distributed through rustup, therefore the `-Z build-std` [unstable cargo feature] is required within your project. This [unstable cargo feature] can also be added to `.cargo/config.toml` of your project. Our [template projects], which we will later discuss, already takes care of this.
+For `std` applications, the `riscv32imc-esp-espidf` target is currently [Tier 3] and does not have prebuilt objects distributed through rustup, therefore, it does not need to be installed as `riscv32imc-unknown-none-elf`. The `-Z build-std` [unstable cargo feature] is required within your project, this [unstable cargo feature] can also be added to `.cargo/config.toml` of your project. Our [template projects], which we will later discuss, already takes care of this.
 
 Also, when building `std` applications, make sure you have [`LLVM`] and [`ldproxy`] installed. ESP-IDF will be installed by [`esp-idf-sys`] altough you can also use an existing installation, see [ESP-IDF installation note].
 

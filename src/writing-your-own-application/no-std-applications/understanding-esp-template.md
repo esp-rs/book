@@ -185,7 +185,7 @@ What you see here are messages from the first and second stage bootloader and th
 
 And that is exactly what the code is doing.
 
-You can reboot with `CTRL+R` or exit with `CTRL+C`
+You can reboot with `CTRL+R` or exit with `CTRL+C`.
 
 In the next chapter, we will add some more interesting output.
 

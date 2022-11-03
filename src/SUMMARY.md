@@ -27,7 +27,8 @@
     - [Blinky](./writing-your-own-application/no-std-applications/blinky.md)
     - [Detect a button press](./writing-your-own-application/no-std-applications/button.md)
     - [Detect a button press with interrupt](./writing-your-own-application/no-std-applications/interrupt.md)
-  - [Writing `std` Applications](./writing-your-own-application/writing-std-applications.md)
+  - [Writing `std` Applications](./writing-your-own-application/std-applications/index.md)
+    - [Understanding esp-idf-template](./writing-your-own-application/std-applications/understanding-esp-idf-template.md)
 - [Resources](./resources.md)
 ---
 

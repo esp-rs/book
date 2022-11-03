@@ -6,7 +6,7 @@
   - [Bare Metal (`no_std`)](./overview/bare-metal.md)
   - [Comparing `std` and `no_std`](./overview/comparing-std-and-no_std.md)
 - [Rust on ESP targets](./installation/index.md)
-  - [Installation](./installation/installing-rust-for-esp.md)
+  - [Installation](./installation/installation.md)
 - [Tooling](./tooling/index.md)
   - [Text Editors and IDEs](./tooling/text-editors-and-ides.md)
   - [espflash](./tooling/espflash.md)

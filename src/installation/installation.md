@@ -88,7 +88,7 @@ Because there is no `Xtensa` support in the mainline Rust compiler you must use 
 
 In order to install `espup`:
 ```sh
-cargo install espup --git https://github.com/esp-rs/espup
+cargo install espup
 ```
 
 It's also possible to directly download the pre-compiled [release binaries] or to use [cargo-binstall].

@@ -105,9 +105,9 @@ and `export-esp.ps1` on Windows, this file contains the required environment var
 
 ```sh
 # Unix
-. ./export-esp.sh
+. $HOME/export-esp.sh
 # Windows
-.\export-esp.ps1
+C:\Users\<user>\export-esp.ps1
 ```
 
 > #### A note in ESP-IDF installation.

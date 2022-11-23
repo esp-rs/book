@@ -75,6 +75,6 @@ For more information on toolchain overriding, see the [Overrides chapter of The 
 [for Xtensa targets, you need to use Espressif Rust fork toolchain]: index.md#rust-in-xtensa-targets
 [toolchain override]: https://rust-lang.github.io/rustup/overrides.html#toolchain-override-shorthand
 [directory override]: https://rust-lang.github.io/rustup/overrides.html#directory-overrides
-[rust-toolchain.toml]: ttps://rust-lang.github.io/rustup/overrides.html#the-toolchain-file
+[rust-toolchain.toml]: https://rust-lang.github.io/rustup/overrides.html#the-toolchain-file
 [default toolchain]: https://rust-lang.github.io/rustup/overrides.html#default-toolchain
 [Overrides chapter of The rustup book]: https://rust-lang.github.io/rustup/overrides.html#overrides

@@ -3,24 +3,24 @@
 Here, we will present a list of common errors that may appear when building a project alongside the reason and a solution to them.
 
 ## Environment variable LIBCLANG_PATH not set
-```
+```sh
 thread 'main' panicked at 'Unable to find libclang: "couldn't find any valid shared libraries matching: ['libclang.so', 'libclang-*.so', 'libclang.so.*', 'libclang-*.so.*'], set the `LIBCLANG_PATH` environment variable to a path where one of these files can be found (invalid: [])"', /home/esp/.cargo/registry/src/github.com-1ecc6299db9ec823/bindgen-0.60.1/src/lib.rs:2172:31
 ```
 We need `libclang` for [`bindgen`] to generate the Rust bindings to the ESP-IDF C headers.
 Make sure the environment variable `LIBCLANG_PATH` is set and pointing to our custom fork of LLVM:
 - Unix:
-  ```
+  ```sh
   export $HOME/.espressif/tools/xtensa-esp32-elf-clang/esp-15.0.0-20221014-x86_64-unknown-linux-gnu/esp-clang/lib
   ```
 - Windows:
-  ```
+  ```powershell
   $Env:LIBCLANG_PATH="%USERPROFILE%/.espressif/tools/xtensa-esp32-elf-clang/esp-15.0.0-20221014-x86_64-unknown-linux-gnu/esp-clang/bin/libclang.dll"
   $Env:PATH+=";%USERPROFILE%/.espressif/tools/xtensa-esp32-elf-clang/esp-15.0.0-20221014-x86_64-unknown-linux-gnu/esp-clang/bin/"
   ```
 
 [`bindgen`]: https://github.com/rust-lang/rust-bindgen
 ## Missing `libtinfo.so.5`
-```
+```sh
 thread 'main' panicked at 'Unable to find libclang: "the `libclang` shared library at /home/user/.espressif/tools/xtensa-esp32-elf-clang/esp-15.0.0-20221014-x86_64-unknown-linux-gnu/esp-clang/lib/libclang.so.15.0.0 could not be o
 pened: libtinfo.so.5: cannot open shared object file: No such file or directory"', /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/bindgen-0.60.1/src/lib.rs:2172:31
 ```
@@ -32,14 +32,14 @@ Our current version of LLVM, 15, requires `libtinfo.so.5`. This dependency will 
 
 
 ## Missing `ldproxy`
-```
+```sh
 error: linker `ldproxy` not found
   |
   = note: No such file or directory (os error 2)
 ```
 
 If you are trying to build a `std` application [`ldproxy`] must be installed.
-```
+```sh
 cargo install ldproxy
 ```
 For more information, see [ldproxy section].
@@ -49,7 +49,7 @@ For more information, see [ldproxy section].
 
 
 ## Using wrong Rust toolchain
-```
+```sh
 $ cargo build
 error: failed to run `rustc` to learn about target-specific information
 

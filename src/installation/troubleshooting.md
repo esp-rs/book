@@ -27,3 +27,20 @@ Our current version of LLVM, 15, requires `libtinfo.so.5`. This dependency will 
 - Fedora: `sudo dnf install ncurses-compat-libs`
 - openSUSE: `sudo dnf install libncurses5`
 - Arch Linux: `sudo pacman -S ncurses5-compat-libs`
+
+
+## Missing `ldproxy`
+```
+error: linker `ldproxy` not found
+  |
+  = note: No such file or directory (os error 2)
+```
+
+If you are triying to build a `std` application [`ldproxy`] must be installed.
+```
+cargo install ldproxy
+```
+For more information, see [ldproxy section].
+
+[`ldproxy`]: https://github.com/esp-rs/embuild/tree/master/ldproxy
+[ldproxy section]: installation.md#ldproxy

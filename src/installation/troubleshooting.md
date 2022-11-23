@@ -1,6 +1,6 @@
 # Troubleshooting
 
-Here, we will cover some of the common errors that may appear, the reason and a solution to them.
+Here, we will present a list of common errors that may appear when building a project alongside the reason and a solution to them.
 
 ## Environment variable LIBCLANG_PATH not set
 ```
@@ -24,7 +24,7 @@ Make sure the environment variable `LIBCLANG_PATH` is set and pointing to our cu
 thread 'main' panicked at 'Unable to find libclang: "the `libclang` shared library at /home/user/.espressif/tools/xtensa-esp32-elf-clang/esp-15.0.0-20221014-x86_64-unknown-linux-gnu/esp-clang/lib/libclang.so.15.0.0 could not be o
 pened: libtinfo.so.5: cannot open shared object file: No such file or directory"', /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/bindgen-0.60.1/src/lib.rs:2172:31
 ```
-Our current version of LLVM, 15, requires `libtinfo.so.5`. This dependency will probably be removed in our futures LLVM releases, but for the momment, please, make sure you have it installed:
+Our current version of LLVM, 15, requires `libtinfo.so.5`. This dependency will probably be removed in our future LLVM releases, but for the moment, please, make sure you have it installed:
 - Ubuntu/Debian: `sudo apt-get install libtinfo5`
 - Fedora: `sudo dnf install ncurses-compat-libs`
 - openSUSE: `sudo dnf install libncurses5`
@@ -38,7 +38,7 @@ error: linker `ldproxy` not found
   = note: No such file or directory (os error 2)
 ```
 
-If you are triying to build a `std` application [`ldproxy`] must be installed.
+If you are trying to build a `std` application [`ldproxy`] must be installed.
 ```
 cargo install ldproxy
 ```
@@ -48,7 +48,7 @@ For more information, see [ldproxy section].
 [ldproxy section]: installation.md#ldproxy
 
 
-## Using wrong toolchain
+## Using wrong Rust toolchain
 ```
 $ cargo build
 error: failed to run `rustc` to learn about target-specific information
@@ -59,7 +59,7 @@ Caused by:
   error: Error loading target specification: Could not find specification for target "xtensa-esp32-espidf". Run `rustc --print target-list` for a list of built-in targets
 ```
 
-If you are encountering the previous error or a similar one, you are probably not ussing the proper Rust toolchain, remember that for Xtensa targets, you need to use Espressif Rust fork toolchain, there are several ways to do it:
+If you are encountering the previous error or a similar one, you are probably not using the proper Rust toolchain, remember that [for Xtensa targets, you need to use Espressif Rust fork toolchain], there are several ways to do it:
 - A [toolchain override] shorthand used on the command-line: `cargo +esp`.
 - Set `RUSTUP_TOOLCHAIN` environment variable to `esp`.
 - Set a [directory override]: `rustup override set esp`
@@ -72,6 +72,7 @@ If you are encountering the previous error or a similar one, you are probably no
 
 For more information on toolchain overriding, see the [Overrides chapter of The rustup book].
 
+[for Xtensa targets, you need to use Espressif Rust fork toolchain]: index.md#rust-in-xtensa-targets
 [toolchain override]: https://rust-lang.github.io/rustup/overrides.html#toolchain-override-shorthand
 [directory override]: https://rust-lang.github.io/rustup/overrides.html#directory-overrides
 [rust-toolchain.toml]: ttps://rust-lang.github.io/rustup/overrides.html#the-toolchain-file

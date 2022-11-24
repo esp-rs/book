@@ -6,8 +6,7 @@ The [esp-rs/espflash] repository contains two crates, `cargo-espflash` and `espf
 
 > #### A note on `espflash` and `cargo-espflash`.
 >
-> The `espflash` and `cargo-espflash` commands shown below, assume that version `2.0` or
-> greater is installed.
+> The `espflash` and `cargo-espflash` commands shown below, assume that version `2.0` or greater.
 
 [esp-rs/espflash]: https://github.com/esp-rs/espflash
 

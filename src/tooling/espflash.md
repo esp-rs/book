@@ -6,14 +6,14 @@ The [esp-rs/espflash] repository contains two crates, `cargo-espflash` and `espf
 
 > #### A note on `espflash` and `cargo-espflash`.
 >
-> The `espflash` and `cargo-espflash` commands showed bellow, assume that version `2.0` or
+> The `espflash` and `cargo-espflash` commands shown below, assume that version `2.0` or
 > greater is installed.
 
 [esp-rs/espflash]: https://github.com/esp-rs/espflash
 
 ## cargo-espflash
 
-Provides a subcommand for `cargo` which handles cross-compilation and flashing. Note that this requires the unstable `build-std` cargo feature; for more information on this please refer to [the cargo documentation].
+Provides a subcommand for `cargo` that handles cross-compilation and flashing. Note that this requires the unstable `build-std` cargo feature; for more information on this please refer to [the cargo documentation].
 
 See [Installation section of cargo-espflash README] for details on how to install it.
 
@@ -31,7 +31,7 @@ For more information about usage, please see [Usage section of cargo-espflash RE
 
 ## espflash
 
-Provides a standalone command-line application which flashes an ELF file to a device.
+Provides a standalone command-line application that flashes an ELF file to a device.
 
 See [Installation section of espflash README] for details on how to install it.
 

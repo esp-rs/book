@@ -41,6 +41,14 @@ espflash flash build/blinky --monitor
 ```
 See [Usage section of espflash README] for more details and other commands.
 
+`espflash` can be used as a Cargo runner by adding the following to your project's `.cargo/config.toml` file:
+```toml
+[target.'cfg(any(target_arch = "riscv32", target_arch = "xtensa"))']
+runner = "espflash flash --monitor"
+```
+With this configuration you can flash and monitor you application using `cargo run`.
+
+
 [Installation section of espflash README]: https://github.com/esp-rs/espflash/tree/main/espflash#installation
 [esp-idf]: https://github.com/espressif/esp-idf
 [espflash readme]: https://github.com/esp-rs/espflash/blob/master/espflash/README.md

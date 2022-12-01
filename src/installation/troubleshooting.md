@@ -78,3 +78,37 @@ For more information on toolchain overriding, see the [Overrides chapter of The 
 [rust-toolchain.toml]: https://rust-lang.github.io/rustup/overrides.html#the-toolchain-file
 [default toolchain]: https://rust-lang.github.io/rustup/overrides.html#default-toolchain
 [Overrides chapter of The rustup book]: https://rust-lang.github.io/rustup/overrides.html#overrides
+
+## Windows
+
+### Long path names
+
+When using Windows, you may encounter issues building a new project if using long path names. Follow these steps to substitute the path of your project:
+```sh
+subst r:\ <pathToYourProject>
+cd r:\
+```
+
+### Missing ABI
+
+```sh
+  Compiling cc v1.0.69
+error: linker `link.exe` not found
+  |
+  = note: The system cannot find the file specified. (os error 2)
+
+note: the msvc targets depend on the msvc linker but `link.exe` was not found
+
+note: please ensure that VS 2013, VS 2015, VS 2017 or VS 2019 was installed with the Visual C++ option
+
+error: could not compile `compiler_builtins` due to previous error
+warning: build failed, waiting for other jobs to finish...
+error: build failed
+```
+
+The reason for this error is that we are missing the MSVC C++, hence we are not meeting the [Compile-time Requirements], please install [Visual Studio 2013 (or later) or the Visual C++ Build Tools 2019]. For Visual Studio, make sure to check the "C++ tools" and "Windows 10 SDK" options.
+If using GNU ABI, install [MinGW/MSYS2 toolchain].
+
+[Compile-time Requirements]: https://github.com/rust-lang/cc-rs#compile-time-requirements
+[Visual Studio 2013 (or later) or the Visual C++ Build Tools 2019]: https://rust-lang.github.io/rustup/installation/windows.html
+[MinGW/MSYS2 toolchain]: https://www.msys2.org/

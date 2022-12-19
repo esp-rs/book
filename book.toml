@@ -1,15 +1,16 @@
 [book]
-title        = "The Rust on ESP Book"
-description  = "A comprehensive guide on using the Rust programming language with Espressif SoCs and modules"
+title = "The Rust on ESP Book"
+description = "A comprehensive guide on using the Rust programming language with Espressif SoCs and modules"
 multilingual = false
-language     = "en"
+language = "en"
 
 [rust]
 edition = "2018"
 
 [output.html]
 git-repository-url = "https://github.com/esp-rs/book"
-additional-js      = ["assets/mermaid.min.js", "assets/mermaid-init.js"]
+additional-js = ["assets/mermaid.min.js", "assets/mermaid-init.js"]
+edit-url-template = "https://github.com/esp-rs/book/edit/main/{path}"
 
 [preprocessor.mermaid]
 command = "mdbook-mermaid"

@@ -2,7 +2,7 @@
 
 With an understanding of the ecosystem surrounding Rust on Espressif chips, we can move on to actual development. If you are not aware of the two possible development approaches or do not understand the differences between writing `std` and `no_std` applications, please first read the [Ecosystem Overview] chapter.
 
-Let's take a momment discuss, more in detail, the Rust support for the architectures of the Espressif chips. At this moment, Espressif SoCs are based on two different architectures: `RISC-V` and `Xtensa`. The support for those two architectures in the Rust programming language is very different.
+Let's take a moment to discuss the Rust support for the architectures of the Espressif chips in more detail. At this moment, Espressif SoCs are based on two different architectures: `RISC-V` and `Xtensa`. The support for those two architectures in the Rust programming language is very different.
 
 ## Rust in RISC-V targets
 

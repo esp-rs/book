@@ -10,24 +10,26 @@ Once you have built QEMU, you should have `qemu-system-xtensa`.
 
 ## Running our project using QEMU
 
-> *NOTE*: Only ESP32 is supported at the moment, so make sure you are compiling for `xtensa-esp32-espidf` target.
+> *NOTE*: Only ESP32 is currently supported, so make sure you are compiling for `xtensa-esp32-espidf` target.
 
-For running our project in QEMU, we need a firmware/image which has bootloader and partition table merged in it. 
-We can use [cargo-espflash] to generate it:
+For running our project in QEMU, we need a firmware/image with bootloader and partition table merged in it.
+We can use [`cargo-espflash`] to generate it:
 
-[cargo-espflash]: https://github.com/esp-rs/espflash
+[`cargo-espflash`]: https://github.com/esp-rs/espflash/tree/main/cargo-espflash
 
 ```bash
 cargo espflash save-image --merge ESP32 <OUTFILE> --release
 ```
 
-> If you prefer to use `espflash`, you can achieve same by building project first and then generating image:
+> If you prefer to use [`espflash`], you can achieve the same result by building the project first and then generating image:
 > ```bash
 > cargo build --release
 > espflash save-image --merge ESP32 <OUTFILE> target/xtensa-esp32-espidf/release/<NAME>
 > ```
 
-Now, run the image in QEMU :
+[`espflash`]: https://github.com/esp-rs/espflash/tree/main/espflash
+
+Now, run the image in QEMU:
 ```sh
 /path/to/qemu-system-xtensa -nographic -machine esp32 -drive file=<OUTFILE>,if=mtd,format=raw
 ```

@@ -18,8 +18,6 @@ For tools and libraries relating to Rust on ESP, please see the [esp-rs organiza
 >
 > - ESP32 Series
 > - ESP32 C-Series
-> - ESP32 H-Series
-> - ESP32 P-Series
 > - ESP32 S-Series
 >
 > The ESP8266 series is outside the scope of this book. Rust support for the
@@ -53,10 +51,13 @@ If you are unfamiliar or less experienced with anything mentioned above, or if y
 | [The Rust Programming Language] | If you are not familiar with Rust we recommend reading this book first.              |
 | [The Embedded Rust Book]        | Here you can find several other resources provided by Rust's Embedded Working Group. |
 | [The Embedonomicon]             | The nitty-gritty details when doing embedded programming in Rust.                    |
+| [Embedded Rust on Espressif]    | Training material created in cooperation with [Ferrous Systems].                     |
 
 [the rust programming language]: https://doc.rust-lang.org/book/
 [the embedded rust book]: https://docs.rust-embedded.org/book/index.html
 [the embedonomicon]: https://docs.rust-embedded.org/embedonomicon/
+[embedded rust on espressif]: https://espressif-trainings.ferrous-systems.com/
+[ferrous systems]: https://ferrous-systems.com/
 
 ### Translations
 

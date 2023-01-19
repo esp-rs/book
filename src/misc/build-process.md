@@ -1,4 +1,28 @@
 
+```mermaid
+flowchart LR
+    subgraph  Compiler
+    direction LR
+    subgraph Frontend
+    direction LR
+    id1(rustc)
+    end
+    subgraph Backend
+    direction LR
+    id2(LLVM)
+    end
+    id1 --> id2
+    end
+    subgraph Linker
+    direction LR
+    id3(GCC)
+    end
+    id2 --> id3
+    click id1 "https://github.com/esp-rs/rust" "esp-rs/rust"
+    click id2 "https://github.com/espressif/llvm-project" "espressif/llvm-project"
+    click id3 "https://github.com/espressif/crosstool-NG/releases" "spressif/crosstool-NG"
+```
+
 ## Rust in RISC-V targets
 
 Hence, the dependencies required to develop Rust applications in `RISC-V` targets are:

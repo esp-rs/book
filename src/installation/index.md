@@ -4,28 +4,24 @@ With an understanding of the ecosystem surrounding Rust on Espressif chips, we c
 
 Let's take a moment to discuss the Rust support for the different architectures of the Espressif chips and the different approaches in more detail. At this moment, Espressif SoCs are based on two different architectures: `RISC-V` and `Xtensa`. The support for those two architectures in the Rust programming language is very different.
 
-
 [Ecosystem Overview]: ../overview/index.md
 
 ## RISC-V targets
 
-The `RISC-V` architecture has support in the mainline Rust compiler so, the setup is relatively simple. So, if you only want to target `RISC-V` chips we need to install [`rustup`], and a [Rust nightly toolchain] with the `rust-src` [component]. If you already have Rust installed, we can install a nightly toolchain with the `rust-src` component via:
+The `RISC-V` architecture has support in the mainline Rust compiler so, the setup is relatively simple. There are two way of proceeding with the installation:
+- Using [`espup`, a tool that will be covered later]
+- Using the official Rust tools
+
+If you only want to use the official Rust tools, we need [`rustup`] installed, and a [Rust nightly toolchain] with the `rust-src` [component]. We can install a nightly toolchain with the `rust-src` component via:
 
 ```bash
 rustup toolchain install nightly --component rust-src
 ```
 
-There are two suitable targets for this chip:
+There are two suitable targets for most Espressif `RISC-V` chips:
 
 - For bare-metal (`no_std`) applications, use `riscv32imc-unknown-none-elf`
 - For applications that require `std`, use `riscv32imc-esp-espidf`
-
-The bare-metal target can be installed by running:
-
-```bash
-rustup target add riscv32imc-unknown-none-elf
-```
-
 
 > #### A note in RISC-V `no_std` Rust targets.
 >
@@ -41,14 +37,19 @@ rustup target add riscv32imc-unknown-none-elf
 >   - Only available in ESP32-S2 at the moment
 > - `c`: Standard Extension for Compressed Instructions
 
+The bare-metal target can be installed by running:
+
+```bash
+rustup target add riscv32imc-unknown-none-elf
+```
+
 For `std` applications, the `riscv32imc-esp-espidf` target is currently [Tier 3] and does not have prebuilt objects distributed through `rustup`, therefore, it does not need to be installed as the `no_std` targets. For `std` applications, `-Z build-std` [unstable cargo feature] is required within your project, this [unstable cargo feature] can also be added to `.cargo/config.toml` of your project. Our [template projects], which we will later discuss, already take care of this.
 
 Also, when building `std` applications, make sure you have [`LLVM`] and [`ldproxy`] installed. ESP-IDF will be installed by [`esp-idf-sys`].
 
-At this point, you are ready to build applications for all the Espressif chips based on RISC-V architecture.
+At this point, you should be ready to build Rust applications for all the Espressif chips based on RISC-V architecture.
 
-The installation of Rust for ESP `RISC-V` targets can also be handled by [`espup`].
-
+[`espup`, a tool that will be covered later]: #espup
 [`rustup`]: https://rustup.rs/
 [Rust nightly toolchain]: https://rust-lang.github.io/rustup/concepts/channels.html#working-with-nightly-rust
 [component]: https://rust-lang.github.io/rustup/concepts/components.html
@@ -57,7 +58,7 @@ The installation of Rust for ESP `RISC-V` targets can also be handled by [`espup
 [`LLVM`]: https://llvm.org/
 [Tier 3]: https://doc.rust-lang.org/nightly/rustc/platform-support.html#tier-3
 [`esp-idf-sys`]: https://github.com/esp-rs/esp-idf-sys
-[`espup`]: https://github.com/esp-rs/espup
+
 ## Xtensa targets
 
 To this day, there is no `Xtensa` support in the mainline Rust compiler, for this reason, we maintain the [esp-rs/rust] fork that adds support for our `Xtensa` targets.
@@ -75,7 +76,6 @@ Another consequence of `LLVM` not supporting our `Xtensa` targets is that we nee
 > to upstream the Rust compiler changes.
 
 The forked compiler can coexist with the standard Rust compiler, so it is possible to have both installed on your system. The forked compiler is invoked when using the `esp` [channel] instead of the defaults, `stable` or `nightly`.
-
 
 [esp-rs/rust]: https://github.com/esp-rs/rust
 [espressif/llvm-project]: https://github.com/espressif/llvm-project

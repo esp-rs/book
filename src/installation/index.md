@@ -8,7 +8,7 @@ Let's take a moment to discuss the Rust support for the different architectures 
 
 ## RISC-V targets
 
-The `RISC-V` architecture has support in the mainline Rust compiler so, the setup is relatively simple. There are two way of proceeding with the installation:
+The `RISC-V` architecture has support in the mainline Rust compiler so, the setup is relatively simple. There are two ways of proceeding with the installation:
 - Using [`espup`, a tool that will be covered later]
 - Using the official Rust tools
 
@@ -80,7 +80,7 @@ Another consequence of `LLVM` not supporting our `Xtensa` targets is that we nee
 
 The forked compiler can coexist with the standard Rust compiler, so it is possible to have both installed on your system. The forked compiler is invoked when using the `esp` [channel] instead of the defaults, `stable` or `nightly`.
 
-Since the installation in this scenarion is sligthly complex, we have created `espup`.
+Since the installation in this scenario is slightly complex, we have created `espup`.
 
 [esp-rs/rust]: https://github.com/esp-rs/rust
 [espressif/llvm-project]: https://github.com/espressif/llvm-project
@@ -156,10 +156,10 @@ A number of container runtimes are available, and which should be used depends o
 - [Lima]
 
 Espressif provides the [idf-rust] container image which contains several tags (generated both for `linux/arm64` and `linux/amd64`) for every Rust release:
-- For `std` applications, the following naming convention is applied: `<chip>_<esp-idf-version>_<rust-toolchain-version>` . E.g., [`esp32s3_v4.4_1.64.0.0`] contains the ecosystem for developing `std` applications based on [ESP-IDF release/v4.4] for `ESP32-S3` with the `1.64.0.0` Rust toolchain.
+- For `std` applications, the following naming convention is applied: `<chip>_<esp-idf-version>_<rust-toolchain-version>`. E.g., [`esp32s3_v4.4_1.64.0.0`] contains the ecosystem for developing `std` applications based on [ESP-IDF release/v4.4] for `ESP32-S3` with the `1.64.0.0` Rust toolchain.
 - For `no_std` applications, the naming convention is: `<chip>_<rust-toolchain-version>`. E.g., [`esp32_1.64.0.0`] contains the ecosystem for developing `non_std` applications for `ESP32` with the `1.64.0.0` Rust toolchain.
 
-There is an `all` variant of `<chip>` that contains the environment required for all the ESP targets, and a `latest` variant of `<rust-toolchain-version>` that contains the lastest Xtensa Rust toolchain.
+There is an `all` variant of `<chip>` that contains the environment required for all the ESP targets, and a `latest` variant of `<rust-toolchain-version>` that contains the latest Xtensa Rust toolchain.
 
 [Docker]: https://www.docker.com/
 [Podman]: https://podman.io/

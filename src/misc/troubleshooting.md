@@ -37,7 +37,7 @@ cargo install ldproxy
 [`ldproxy`]: https://github.com/esp-rs/embuild/tree/master/ldproxy
 
 
-## Using wrong Rust toolchain
+## Using a wrong Rust toolchain
 
 ```
 $ cargo build

@@ -12,16 +12,16 @@ The `RISC-V` architecture has support in the mainline Rust compiler so, the setu
 - Using [`espup`, a tool that will be covered later]
 - Using the official Rust tools
 
-If you only want to use the official Rust tools, we need [`rustup`] installed, and a [Rust nightly toolchain] with the `rust-src` [component]. We can install a nightly toolchain with the `rust-src` component via:
+If you only want to use `RISC-V` targets, you can use the official Rust tools, for this approach we need [`rustup`] installed, and a [Rust nightly toolchain] with the `rust-src` [component]. We can install a nightly toolchain with the `rust-src` component via:
 
 ```bash
 rustup toolchain install nightly --component rust-src
 ```
 
-There are two suitable targets for most Espressif `RISC-V` chips:
+This are the two recommended targets for most Espressif `RISC-V` chips:
 
-- For bare-metal (`no_std`) applications, use `riscv32imc-unknown-none-elf`
-- For applications that require `std`, use `riscv32imc-esp-espidf`
+- For bare-metal (`no_std`) applications: `riscv32imc-unknown-none-elf`
+- For applications that require `std`: `riscv32imc-esp-espidf`
 
 > #### A note in RISC-V `no_std` Rust targets.
 >
@@ -37,17 +37,19 @@ There are two suitable targets for most Espressif `RISC-V` chips:
 >   - Only available in ESP32-S2 at the moment
 > - `c`: Standard Extension for Compressed Instructions
 
-The bare-metal target can be installed by running:
+The bare-metal targets can be installed by running:
 
 ```bash
 rustup target add riscv32imc-unknown-none-elf
 ```
 
-For `std` applications, the `riscv32imc-esp-espidf` target is currently [Tier 3] and does not have prebuilt objects distributed through `rustup`, therefore, it does not need to be installed as the `no_std` targets. For `std` applications, `-Z build-std` [unstable cargo feature] is required within your project, this [unstable cargo feature] can also be added to `.cargo/config.toml` of your project. Our [template projects], which we will later discuss, already take care of this.
+For `std` applications, the `riscv32imc-esp-espidf` target is currently [Tier 3] and does not have prebuilt objects distributed through `rustup`, therefore, it does not need to be installed as the `no_std` targets. Furthermore, `std` projects, also require:
+ - The `-Z build-std` [unstable cargo feature], this [unstable cargo feature] can also be added to `.cargo/config.toml` of your project. Our [template projects], which we will later discuss, already take care of this.
+ - [`LLVM`] installed.
+ - [`ldproxy`] installed.
+ - ESP-IDF (this will be installed by automatically by [`esp-idf-sys`]).
 
-Also, when building `std` applications, make sure you have [`LLVM`] and [`ldproxy`] installed. ESP-IDF will be installed by [`esp-idf-sys`].
-
-At this point, you should be ready to build Rust applications for all the Espressif chips based on RISC-V architecture.
+At this point, you should be ready to build Rust applications for all the Espressif chips based on `RISC-V` architecture.
 
 [`espup`, a tool that will be covered later]: #espup
 [`rustup`]: https://rustup.rs/

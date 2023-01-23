@@ -31,4 +31,3 @@
 ---
 
 [Appendix A: Troubleshooting](./misc/troubleshooting.md)
-[Appendix B: Build Process](./misc/build-process.md)

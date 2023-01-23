@@ -34,7 +34,7 @@ This are the two recommended targets for most Espressif `RISC-V` chips:
 > - `32i`: Base Integer Instruction Set for 32 bits
 > - `m`: Standard Extension for Integer Multiplication and Division
 > - `a`: Standard Extension for Atomic Instructions
->   - Only available in ESP32-S2 at the moment
+>   - Only available in ESP32-C6 at the moment
 > - `c`: Standard Extension for Compressed Instructions
 
 The bare-metal targets can be installed by running:

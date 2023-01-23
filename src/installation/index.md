@@ -65,9 +65,8 @@ At this point, you should be ready to build Rust applications for all the Espres
 
 To this day, there is no `Xtensa` support in the mainline Rust compiler, for this reason, we maintain the [esp-rs/rust] fork that adds support for our `Xtensa` targets.
 
-`Xtensa` not being supported on Rust mainline is mainly a consequence of `LLVM` not supporting `Xtensa` targets. For that reason, we also maintain an LLVM fork with support for Espressif `Xtensa` targets in [espressif/llvm-project]
+`Xtensa` not being supported on Rust mainline is mainly a consequence of `LLVM` not supporting `Xtensa` targets. Hence, we also maintain an LLVM fork with support for Espressif `Xtensa` targets in [espressif/llvm-project]
 
-Another consequence of `LLVM` not supporting our `Xtensa` targets is that we need to provide our own linker. I.e. we'll need to install [GCC toolchain] to use it as our linker.
 
 > #### A note in upstreaming our forks.
 >
@@ -77,7 +76,11 @@ Another consequence of `LLVM` not supporting our `Xtensa` targets is that we nee
 > If our `LLVM` changes are accepted in `LLVM` mainline, we will proceed with trying
 > to upstream the Rust compiler changes.
 
+Another consequence of `LLVM` not supporting our `Xtensa` targets is that we need to provide our own linker. I.e. we'll need to install [GCC toolchain] to use it as our linker.
+
 The forked compiler can coexist with the standard Rust compiler, so it is possible to have both installed on your system. The forked compiler is invoked when using the `esp` [channel] instead of the defaults, `stable` or `nightly`.
+
+Since the installation in this scenarion is sligthly complex, we have created `espup`.
 
 [esp-rs/rust]: https://github.com/esp-rs/rust
 [espressif/llvm-project]: https://github.com/espressif/llvm-project
@@ -89,7 +92,7 @@ The forked compiler can coexist with the standard Rust compiler, so it is possib
 
 [esp-rs/espup] is a tool for installing and maintaining the required ecosystem to develop applications in Rust for Espressif SoC's (both `Xtensa` and `RISC-V` targets).
 
-`espup` takes care of installing the proper Rust compiler (our fork in case of `Xtensa` targets, and the `nightly` toolchain with the necessary target for `RISC-V` targets), `LLVM` toolchain,  `GCC` toolchains, and many other things. For more details, [see Usage section of the `espup` Readme].
+`espup` takes care of installing the proper Rust compiler (our fork in case of `Xtensa` targets, and the `nightly` toolchain with the necessary target for `RISC-V` targets), `LLVM` toolchain,  `GCC` toolchains, `rustup`, and many other things. For more details, [see Usage section of the `espup` Readme].
 
 In order to install `espup`:
 ```sh
@@ -110,7 +113,7 @@ And it will install all the necessary tools to develop Rust applications for all
 [release binaries]: https://github.com/esp-rs/espup/releases
 [cargo-binstall]: https://github.com/cargo-bins/cargo-binstall
 
-`espup` will create and export file, by default called `export-esp.sh` on Unix systems and `export-esp.ps1` on Windows, this file contains the required environment variables. Please, make sure to source in every terminal before building any application:
+`espup` will create an export file, by default `$HOME/export-esp.sh` on Unix systems and `%USERPROFILE%\export-esp.ps1` on Windows, this file contains some environment variables required to build projects. Please, make sure to source this file in every terminal before building any application:
 
 ```sh
 # Unix
@@ -144,7 +147,7 @@ Regardless of the target architecture, if you want to build a project using the 
 
 ## Using Containers
 
-As an alternative to installing the compiler fork to your local system directly, it's also possible to run it inside of a container.
+As an alternative to installing the environment in your local system directly, it's also possible to run it inside of a container.
 
 A number of container runtimes are available, and which should be used depends on your operating system. Some of the popular options are:
 

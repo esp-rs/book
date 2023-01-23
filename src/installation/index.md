@@ -19,7 +19,6 @@ rustup toolchain install nightly --component rust-src
 ```
 
 This are the two recommended targets for most Espressif `RISC-V` chips:
-
 - For bare-metal (`no_std`) applications: `riscv32imc-unknown-none-elf`
 - For applications that require `std`: `riscv32imc-esp-espidf`
 
@@ -63,10 +62,9 @@ At this point, you should be ready to build Rust applications for all the Espres
 
 ## Xtensa targets
 
-To this day, there is no `Xtensa` support in the mainline Rust compiler, for this reason, we maintain the [esp-rs/rust] fork that adds support for our `Xtensa` targets.
+To this day, there is no `Xtensa` support in the mainline Rust compiler. For this reason, we maintain the [esp-rs/rust] fork that adds support for our `Xtensa` targets.
 
-`Xtensa` not being supported on Rust mainline is mainly a consequence of `LLVM` not supporting `Xtensa` targets. Hence, we also maintain an LLVM fork with support for Espressif `Xtensa` targets in [espressif/llvm-project]
-
+The main reason for `Xtensa` not being supported on Rust mainline is because `LLVM` does not support Xtensa targets. Therefore, we also maintain a fork of `LLVM` with support for Espressif `Xtensa` targets in [espressif/llvm-project].
 
 > #### A note in upstreaming our forks.
 >
@@ -76,11 +74,11 @@ To this day, there is no `Xtensa` support in the mainline Rust compiler, for thi
 > If our `LLVM` changes are accepted in `LLVM` mainline, we will proceed with trying
 > to upstream the Rust compiler changes.
 
-Another consequence of `LLVM` not supporting our `Xtensa` targets is that we need to provide our own linker. I.e. we'll need to install [GCC toolchain] to use it as our linker.
+Another consequence of `LLVM` not supporting our `Xtensa` targets is that we need to provide our own linker. In other words, we'll need to install a [GCC toolchain] to use it as our linker.
 
 The forked compiler can coexist with the standard Rust compiler, so it is possible to have both installed on your system. The forked compiler is invoked when using the `esp` [channel] instead of the defaults, `stable` or `nightly`.
 
-Since the installation in this scenario is slightly complex, we have created `espup`.
+Since the installation in this scenario is slightly complex, we have created a tool called `espup` to make it easier.
 
 [esp-rs/rust]: https://github.com/esp-rs/rust
 [espressif/llvm-project]: https://github.com/espressif/llvm-project
@@ -90,30 +88,24 @@ Since the installation in this scenario is slightly complex, we have created `es
 
 ### espup
 
-[esp-rs/espup] is a tool for installing and maintaining the required ecosystem to develop applications in Rust for Espressif SoC's (both `Xtensa` and `RISC-V` targets).
+[esp-rs/espup] is a tool for installing and maintaining the necessary ecosystem to develop applications in Rust for Espressif SoC's (both `Xtensa` and `RISC-V` targets).
 
-`espup` takes care of installing the proper Rust compiler (our fork in case of `Xtensa` targets, and the `nightly` toolchain with the necessary target for `RISC-V` targets), `LLVM` toolchain,  `GCC` toolchains, `rustup`, and many other things. For more details, [see Usage section of the `espup` Readme].
+`espup` takes care of installing the proper Rust compiler (our fork in case of `Xtensa` targets and the `nightly` toolchain with the necessary target for `RISC-V` targets), `LLVM` toolchain,  `GCC` toolchains, `rustup`, and many other things. For more details, [see Usage section of the `espup` Readme].
 
-In order to install `espup`:
+To install `espup`, use the following command:
 ```sh
 cargo install espup
 ```
+You can also directly download pre-compiled [release binaries] or use [cargo-binstall].
 
-It's also possible to directly download the pre-compiled [release binaries] or to use [cargo-binstall].
-
-Once that `espup` is installed you can simply run:
+Once that `espup` is installed, you can simply run:
 ```sh
 espup install
 ```
 
-And it will install all the necessary tools to develop Rust applications for all supported ESP targets.
+This will install all the necessary tools to develop Rust applications for all supported ESP targets.
 
-[esp-rs/espup]: https://github.com/esp-rs/espup
-[see Usage section of the `espup` Readme]: https://github.com/esp-rs/espup#usage
-[release binaries]: https://github.com/esp-rs/espup/releases
-[cargo-binstall]: https://github.com/cargo-bins/cargo-binstall
-
-`espup` will create an export file, by default `$HOME/export-esp.sh` on Unix systems and `%USERPROFILE%\export-esp.ps1` on Windows, this file contains some environment variables required to build projects. Please, make sure to source this file in every terminal before building any application:
+`espup` will create an export file, by default `$HOME/export-esp.sh` on Unix systems and `%USERPROFILE%\export-esp.ps1` on Windows. This file contains some environment variables required to build projects. Make sure to source this file in every terminal before building any application:
 
 ```sh
 # Unix
@@ -122,20 +114,25 @@ And it will install all the necessary tools to develop Rust applications for all
 %USERPROFILE%\export-esp.ps1
 ```
 
+[esp-rs/espup]: https://github.com/esp-rs/espup
+[see Usage section of the `espup` Readme]: https://github.com/esp-rs/espup#usage
+[release binaries]: https://github.com/esp-rs/espup/releases
+[cargo-binstall]: https://github.com/cargo-bins/cargo-binstall
+
 ### Other installation methods
 
-- Using [esp-rs/rust-build] installation scripts. This was the recommended way in the past, but now, the installation scripts are feature frozen and all the new features will only be included in `espup`. See the repository README for instructions.
-- Building the Rust compiler with `Xtensa` support from source. This process is computationally expensive and can take one or more hours to complete depending on your system, for this reason, is not recommended unless there is a major reason to go for this approach. See instructions in the [Installing from Source section of the esp-rs/rust repository].
+- Using [esp-rs/rust-build] installation scripts. This was the recommended way in the past, but now the installation scripts are feature frozen and all new features will only be included in `espup`. See the repository README for instructions.
+- Building the Rust compiler with `Xtensa` support from source. This process is computationally expensive and can take one or more hours to complete depending on your system. It is not recommended unless there is a major reason to go for this approach. See instructions in the [Installing from Source section of the esp-rs/rust repository].
 
 [esp-rs/rust-build]: https://github.com/esp-rs/rust-build
 [Installing from Source section of the esp-rs/rust repository]: https://github.com/esp-rs/rust#installing-from-source
 
 ## Rust with `std` runtime
 
-Regardless of the target architecture, if you want to build a project using the [`std` approach], we also need:
+Regardless of the target architecture, if you want to build a project using the [`std` approach], you will also need:
 - [ESP-IDF]: Espressif IoT Development Framework as it's used as our hosted environment.
   - See [ESP-IDF installation note] for details on how ESP-IDF can be installed.
-- [`ldproxy`] crate:  Simple tool to forward linker arguments given to [`ldproxy`] to the actual linker executable. The crate can be found in the [esp-rs/embuild] repository.
+- [`ldproxy`] crate:  Simple tool to forward linker arguments given to [`ldproxy`] to the actual linker executable. The crate can be found in the [esp-rs/embuild] repository. To install it, use the following command:
   - `cargo install ldproxy`
 
 
@@ -147,17 +144,17 @@ Regardless of the target architecture, if you want to build a project using the 
 
 ## Using Containers
 
-As an alternative to installing the environment in your local system directly, it's also possible to run it inside of a container.
+As an alternative to installing the environment directly on your local system, it's also possible to run it inside a container.
 
-A number of container runtimes are available, and which should be used depends on your operating system. Some of the popular options are:
+A number of container runtimes are available, and which one you should use depends on your operating system. Some popular options are:
 
 - [Docker] (non-commercial use only without a license)
 - [Podman]
 - [Lima]
 
 Espressif provides the [idf-rust] container image which contains several tags (generated both for `linux/arm64` and `linux/amd64`) for every Rust release:
-- For `std` applications, the following naming convention is applied: `<chip>_<esp-idf-version>_<rust-toolchain-version>`. E.g., [`esp32s3_v4.4_1.64.0.0`] contains the ecosystem for developing `std` applications based on [ESP-IDF release/v4.4] for `ESP32-S3` with the `1.64.0.0` Rust toolchain.
-- For `no_std` applications, the naming convention is: `<chip>_<rust-toolchain-version>`. E.g., [`esp32_1.64.0.0`] contains the ecosystem for developing `non_std` applications for `ESP32` with the `1.64.0.0` Rust toolchain.
+- For `std` applications, the following naming convention is applied: `<chip>_<esp-idf-version>_<rust-toolchain-version>`. For example, [`esp32s3_v4.4_1.64.0.0`] contains the ecosystem for developing `std` applications based on [ESP-IDF release/v4.4] for `ESP32-S3` with the `1.64.0.0` Rust toolchain.
+- For `no_std` applications, the naming convention is: `<chip>_<rust-toolchain-version>`. For example, [`esp32_1.64.0.0`] contains the ecosystem for developing `non_std` applications for `ESP32` with the `1.64.0.0` Rust toolchain.
 
 There is an `all` variant of `<chip>` that contains the environment required for all the ESP targets, and a `latest` variant of `<rust-toolchain-version>` that contains the latest Xtensa Rust toolchain.
 

@@ -11,12 +11,12 @@ We need `libclang` for [`bindgen`] to generate the Rust bindings to the ESP-IDF 
 Make sure the environment variable `LIBCLANG_PATH` is set and pointing to our custom fork of LLVM:
 - Unix:
   ```sh
-  export $HOME/.espressif/tools/xtensa-esp32-elf-clang/esp-15.0.0-20221014-x86_64-unknown-linux-gnu/esp-clang/lib
+  export $HOME/.espressif/tools/xtensa-esp32-elf-clang/<clang_version>-<host_triple>/esp-clang/lib
   ```
 - Windows:
   ```powershell
-  $Env:LIBCLANG_PATH="%USERPROFILE%/.espressif/tools/xtensa-esp32-elf-clang/esp-15.0.0-20221014-x86_64-unknown-linux-gnu/esp-clang/bin/libclang.dll"
-  $Env:PATH+=";%USERPROFILE%/.espressif/tools/xtensa-esp32-elf-clang/esp-15.0.0-20221014-x86_64-unknown-linux-gnu/esp-clang/bin/"
+  $Env:LIBCLANG_PATH="%USERPROFILE%/.espressif/tools/xtensa-esp32-elf-clang/<clang_version>-<host_triple>/esp-clang/bin/libclang.dll"
+  $Env:PATH+=";%USERPROFILE%/.espressif/tools/xtensa-esp32-elf-clang/<clang_version>-<host_triple>/esp-clang/bin/"
   ```
 
 [`bindgen`]: https://github.com/rust-lang/rust-bindgen

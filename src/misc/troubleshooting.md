@@ -4,7 +4,7 @@ Here, we will present a list of common errors that may appear when building a pr
 
 ## Environment variable LIBCLANG_PATH not set
 
-```sh
+```
 thread 'main' panicked at 'Unable to find libclang: "couldn't find any valid shared libraries matching: ['libclang.so', 'libclang-*.so', 'libclang.so.*', 'libclang-*.so.*'], set the `LIBCLANG_PATH` environment variable to a path where one of these files can be found (invalid: [])"', /home/esp/.cargo/registry/src/github.com-1ecc6299db9ec823/bindgen-0.60.1/src/lib.rs:2172:31
 ```
 We need `libclang` for [`bindgen`] to generate the Rust bindings to the ESP-IDF C headers.
@@ -52,7 +52,7 @@ cargo install ldproxy
 
 ## Using wrong Rust toolchain
 
-```sh
+```
 $ cargo build
 error: failed to run `rustc` to learn about target-specific information
 
@@ -86,14 +86,14 @@ For more information on toolchain overriding, see the [Overrides chapter of The 
 ### Long path names
 
 When using Windows, you may encounter issues building a new project if using long path names. Follow these steps to substitute the path of your project:
-```sh
+```powershell
 subst r:\ <pathToYourProject>
 cd r:\
 ```
 
 ### Missing ABI
 
-```sh
+```powershell
   Compiling cc v1.0.69
 error: linker `link.exe` not found
   |

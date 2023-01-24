@@ -18,7 +18,7 @@ If you only want to use `RISC-V` targets, you can use the official Rust tools, f
 rustup toolchain install nightly --component rust-src
 ```
 
-This are the two recommended targets for most Espressif `RISC-V` chips:
+These are the two recommended targets for most Espressif `RISC-V` chips:
 - For bare-metal (`no_std`) applications: `riscv32imc-unknown-none-elf`
 - For applications that require `std`: `riscv32imc-esp-espidf`
 

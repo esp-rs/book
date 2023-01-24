@@ -42,7 +42,7 @@ The bare-metal targets can be installed by running:
 rustup target add riscv32imc-unknown-none-elf
 ```
 
-For `std` applications, the `riscv32imc-esp-espidf` target is currently [Tier 3] and does not have prebuilt objects distributed through `rustup`, therefore, it does not need to be installed as the `no_std` targets. Furthermore, `std` projects, also require:
+For `std` applications, the `riscv32imc-esp-espidf` target is currently [Tier 3] and does not have pre-built objects distributed through `rustup`, therefore, it does not need to be installed as the `no_std` targets. Furthermore, `std` projects, also require:
  - The `-Z build-std` [unstable cargo feature], this [unstable cargo feature] can also be added to `.cargo/config.toml` of your project. Our [template projects], which we will later discuss, already take care of this.
  - [`LLVM`] installed.
  - [`ldproxy`] installed.

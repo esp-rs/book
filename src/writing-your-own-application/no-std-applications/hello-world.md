@@ -7,13 +7,18 @@ Traditionally the first thing to run on a microcontroller is _blinky_.
 However, we will start with _Hello World_ here.
 
 ## Add a Dependency
+
 You can add a dependency by any of the following methods:
-- Editing `Cargo.toml`
-In `Cargo.toml` in the `[dependencies]` section add this line:
+
+- By Editing `Cargo.toml`.
+  In `Cargo.toml` in the `[dependencies]` section add this line:
+
 ```toml
 esp-println = { version = "0.3.1", features = ["esp32c3"] }
 ```
+
 - Using [`cargo add`]
+
 ```sh
 cargo add esp-println --features "esp32c3"
 ```
@@ -27,6 +32,7 @@ We need to pass the feature `esp32c3` since that crate targets multiple SoCs and
 ## Print Something
 
 In `main.rs` before the `loop {}` add this line
+
 ```rust,ignore
 esp_println::println!("Hello World");
 ```
@@ -34,6 +40,7 @@ esp_println::println!("Hello World");
 ## See Results
 
 Again run
+
 ```shell
 cargo run
 ```

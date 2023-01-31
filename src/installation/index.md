@@ -124,7 +124,7 @@ This will install all the necessary tools to develop Rust applications for all s
 
 Regardless of the target architecture, if you want to build a project using the [`std` approach], you will also need:
 - [ESP-IDF]: Espressif IoT Development Framework as it's used as our hosted environment.
-  - See [ESP-IDF installation note] for details on how ESP-IDF can be installed.
+  - This is handled by [`esp-idf-sys`] (a crate that all `std` projects need to use) by default. See [ESP-IDF installation note] for details on how ESP-IDF can be installed.
 - [`ldproxy`] crate:  Simple tool to forward linker arguments given to [`ldproxy`] to the actual linker executable. The crate can be found in the [esp-rs/embuild] repository. To install it, use the following command:
   - `cargo install ldproxy`
 

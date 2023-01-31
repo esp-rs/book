@@ -9,8 +9,8 @@ Let's take a moment to discuss the Rust support for the different architectures 
 ## RISC-V targets
 
 The `RISC-V` architecture has support in the mainline Rust compiler so, the setup is relatively simple. There are two ways of proceeding with the installation:
-- Using [`espup`, a tool that will be covered later]
 - Using the official Rust tools
+- Using [`espup`, a tool that will be covered later]
 
 If you only want to use `RISC-V` targets, you can use the official Rust tools, for this approach we need [`rustup`] installed, and a [Rust nightly toolchain] with the `rust-src` [component]. We can install a nightly toolchain with the `rust-src` component via:
 

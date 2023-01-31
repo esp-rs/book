@@ -19,22 +19,13 @@ rustup toolchain install nightly --component rust-src
 ```
 
 These are the two recommended targets for most Espressif `RISC-V` chips:
-- For bare-metal (`no_std`) applications: `riscv32imc-unknown-none-elf`
+- For bare-metal (`no_std`) applications: `riscv32imac-unknown-none-elf`
 - For applications that require `std`: `riscv32imc-esp-espidf`
 
 > #### A note in RISC-V `no_std` Rust targets.
 >
-> There are 3 different flavors of RISC-V 32 target in Rust:
-> - `riscv32i-unknown-none-elf`
-> - `riscv32imc-unknown-none-elf`
-> - `riscv32imac-unknown-none-elf`
->
-> Where:
-> - `32i`: Base Integer Instruction Set for 32 bits
-> - `m`: Standard Extension for Integer Multiplication and Division
-> - `a`: Standard Extension for Atomic Instructions
->   - Only available in ESP32-C6 at the moment
-> - `c`: Standard Extension for Compressed Instructions
+> There are [different flavors of RISC-V 32 target in Rust] covering the different [RISC-V extensions].
+
 
 The bare-metal targets can be installed by running:
 
@@ -57,6 +48,8 @@ At this point, you should be ready to build Rust applications for all the Espres
 [template projects]: ../writing-your-own-application/generate-project-from-template.md
 [unstable cargo feature]: https://doc.rust-lang.org/cargo/reference/unstable.html
 [`LLVM`]: https://llvm.org/
+[different flavors of RISC-V 32 target in Rust]: https://doc.rust-lang.org/nightly/rustc/platform-support.html#tier-2
+[RISC-V extensions]: https://en.wikichip.org/wiki/risc-v/standard_extensions
 [Tier 3]: https://doc.rust-lang.org/nightly/rustc/platform-support.html#tier-3
 [`esp-idf-sys`]: https://github.com/esp-rs/esp-idf-sys
 

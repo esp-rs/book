@@ -24,4 +24,3 @@
 ---
 
 [Appendix A: Troubleshooting](./misc/troubleshooting.md)
-

@@ -19,7 +19,7 @@ rustup toolchain install nightly --component rust-src
 ```
 
 These are the two recommended targets for most Espressif `RISC-V` chips:
-- For bare-metal (`no_std`) applications: `riscv32imac-unknown-none-elf`
+- For bare-metal (`no_std`) applications: `riscv32imc-unknown-none-elf`
 - For applications that require `std`: `riscv32imc-esp-espidf`
 
 > #### A note in RISC-V `no_std` Rust targets.

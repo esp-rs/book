@@ -85,7 +85,7 @@ For more information on toolchain overriding, see the [Overrides chapter of The 
 
 When using Windows, you may encounter issues building a new project if using long path names. Follow these steps to substitute the path of your project:
 ```sh
-subst r:\ <pathToYourProject>
+subst r: <pathToYourProject>
 cd r:\
 ```
 

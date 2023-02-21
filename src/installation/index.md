@@ -6,28 +6,48 @@ Let's take a moment to discuss the Rust support for the different architectures 
 
 [Ecosystem Overview]: ../overview/index.md
 
+# Rust installation
+
+In order to develop applications for ESP devices using Rust you must first install the Rust compiler along with the appropriate toolchain and target(s). Depending on your device it may be one of two architectures, each requiring a different setup.
+
+If you have not yet installed Rust on your system, you can do so easily using [rustup]. For _macOS_ and _Linux_ it can be installed by running the following command:
+
+```bash
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+```
+
+For installation on Windows or alternative installation methods, please refer to the instructions on the [rustup] website.
+
+If you are [running Windows as your host operating system, you must also install one of the available ABIs]:
+- MSVC: This is the recommended ABI. When installing `rustup`, it will check if all the requirements are installed, and, if they are not, it allows the user to install them.
+- GNU: No checks are done in `rustup` and expect that the user takes care of properly installing it.
+
+[rustup]: https://rustup.rs/
+[running Windows as your host operating system, you must also install one of the available ABIs]: https://rust-lang.github.io/rustup/installation/windows.html
+
 ## Rust with `std` runtime
 
-Regardless of the target architecture, if you want to build a project using the [`std` approach], you will also need:
+Regardless of the target architecture, to build a project using the [`std` approach], the following tools are required:
 - [`python`]: Required by ESP-IDF
 - [`git`]: Required by ESP-IDF
-- [ESP-IDF]: Espressif IoT Development Framework as it's used as our hosted environment.
-  - This is handled by [`esp-idf-sys`] (a crate that all `std` projects need to use) by default.
 - [`ldproxy`] crate: Simple tool to forward linker arguments given to [`ldproxy`] to the actual linker executable. To install it, use the following command:
   - `cargo install ldproxy`
+- [ESP-IDF]: Espressif IoT Development Framework as it's used as our hosted environment.
+  - Users do not need to install ESP-IDf as it is automatically handled by [`esp-idf-sys`] (a crate that all `std` projects need to use).
 
+[`std` approach]: ../overview/using-the-standard-library.md
 [`git`]: https://git-scm.com/downloads
 [`python`]: https://www.python.org/downloads/
-[ESP-IDF]: https://github.com/espressif/esp-idf
-[`std` approach]: ../overview/using-the-standard-library.md
 [`ldproxy`]: https://github.com/esp-rs/embuild/tree/master/ldproxy
+[ESP-IDF]: https://github.com/espressif/esp-idf
+
 ## RISC-V targets
 
 The `RISC-V` architecture has support in the mainline Rust compiler so, the setup is relatively simple. There are two ways of proceeding with the installation:
 - Using the official Rust tools
 - Using [`espup`, a tool that will be covered later]
 
-If you only want to use `RISC-V` targets, you can use the official Rust tools, for this approach we need [`rustup`] installed, and a [Rust nightly toolchain] with the `rust-src` [component]. We can install a nightly toolchain with the `rust-src` component via:
+If you only want to use `RISC-V` targets, you can use the official Rust tools:
 
 ```bash
 rustup toolchain install nightly --component rust-src
@@ -56,7 +76,6 @@ For `std` applications, the `riscv32imc-esp-espidf` target is currently [Tier 3]
 At this point, you should be ready to build Rust applications for all the Espressif chips based on `RISC-V` architecture.
 
 [`espup`, a tool that will be covered later]: #espup
-[`rustup`]: https://rustup.rs/
 [Rust nightly toolchain]: https://rust-lang.github.io/rustup/concepts/channels.html#working-with-nightly-rust
 [component]: https://rust-lang.github.io/rustup/concepts/components.html
 [template projects]: ../writing-your-own-application/generate-project-from-template.md
@@ -96,9 +115,9 @@ Since the installation in this scenario is slightly complex, we have created a t
 
 ### espup
 
-[esp-rs/espup] is a tool for installing and maintaining the necessary ecosystem to develop applications in Rust for Espressif SoC's (both `Xtensa` and `RISC-V` targets).
+[esp-rs/espup] is a `rustup`-like tool that allows you to install and update all the required components for building `std` and `no_std` Rust applications for Espressif chips (both `Xtensa` and `RISC-V` targets).
 
-`espup` takes care of installing the proper Rust compiler (our fork in case of `Xtensa` targets and the `nightly` toolchain with the necessary target for `RISC-V` targets), `LLVM` toolchain,  `GCC` toolchains. For more details, [see Usage section of the `espup` Readme].
+`espup` takes care of installing the proper Rust compiler (our fork in case of `Xtensa` targets and the `nightly` toolchain with the necessary target for `RISC-V` targets), `LLVM` toolchain, and `GCC` toolchains. For more details, [see Usage section of the `espup` Readme].
 
 To install `espup`, use the following command:
 ```sh

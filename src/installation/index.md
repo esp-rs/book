@@ -143,16 +143,12 @@ A number of container runtimes are available, and which one you should use depen
 - [Podman]
 - [Lima]
 
-Espressif provides the [idf-rust] container image which contains several tags (generated both for `linux/arm64` and `linux/amd64`) for every Rust release:
-- For `std` applications, the following naming convention is applied: `<chip>_<esp-idf-version>_<rust-toolchain-version>`. For example, [`esp32s3_v4.4_1.64.0.0`] contains the ecosystem for developing `std` applications based on [ESP-IDF release/v4.4] for `ESP32-S3` with the `1.64.0.0` Rust toolchain.
-- For `no_std` applications, the naming convention is: `<chip>_<rust-toolchain-version>`. For example, [`esp32_1.64.0.0`] contains the ecosystem for developing `non_std` applications for `ESP32` with the `1.64.0.0` Rust toolchain.
+Espressif provides the [idf-rust] container image which contains several tags (generated both for `linux/arm64` and `linux/amd64`). For every Rust release, we generate a `<chip>_<xtensa-version>` tag containing the environment required to develop both
+`std` and `no_std` applications for the `<chip>`.
 
-There is an `all` variant of `<chip>` that contains the environment required for all the ESP targets, and a `latest` variant of `<rust-toolchain-version>` that contains the latest Xtensa Rust toolchain.
+There is an `all` variant of `<chip>` that contains the environment required for all the ESP targets, and a `latest` variant of `<xtensa-version>` that contains the latest Xtensa Rust toolchain.
 
 [Docker]: https://www.docker.com/
 [Podman]: https://podman.io/
 [Lima]: https://github.com/lima-vm/lima
 [idf-rust]: https://hub.docker.com/r/espressif/idf-rust/tags
-[`esp32s3_v4.4_1.64.0.0`]: https://hub.docker.com/layers/espressif/idf-rust/esp32s3_v4.4_1.64.0.0/images/sha256-6fa1e98d770e3edc67cbd565893aa04e5573024b1e3e373fae50907435e841e4?context=explore
-[ESP-IDF release/v4.4]: https://github.com/espressif/esp-idf/tree/release/v4.4
-[`esp32_1.64.0.0`]: https://hub.docker.com/layers/espressif/idf-rust/esp32_1.64.0.0/images/sha256-cc026ff9278a876f171d48978988e131940c07659485937a37cf750c44b28dfd?context=explore

@@ -77,7 +77,7 @@ The main reason for `Xtensa` not being supported on Rust mainline is because `LL
 > #### A note in upstreaming our forks.
 >
 > We are trying to upstream the changes in our `LLVM` and Rust forks.
-> The first step is to upstream the `LLVM` project, this is already in progress
+> The first step is to upstream the `LLVM` project, this is already in progress,
 > and you can see the status at this [tracking issue].
 > If our `LLVM` changes are accepted in `LLVM` mainline, we will proceed with trying
 > to upstream the Rust compiler changes.
@@ -127,7 +127,7 @@ This will install all the necessary tools to develop Rust applications for all s
 
 ### Other installation methods
 
-- Using [esp-rs/rust-build] installation scripts. This was the recommended way in the past, but now the installation scripts are feature frozen and all new features will only be included in `espup`. See the repository README for instructions.
+- Using [esp-rs/rust-build] installation scripts. This was the recommended way in the past, but now the installation scripts are feature frozen, and all new features will only be included in `espup`. See the repository README for instructions.
 - Building the Rust compiler with `Xtensa` support from source. This process is computationally expensive and can take one or more hours to complete depending on your system. It is not recommended unless there is a major reason to go for this approach. See instructions in the [Installing from Source section of the esp-rs/rust repository].
 
 [esp-rs/rust-build]: https://github.com/esp-rs/rust-build
@@ -143,10 +143,10 @@ A number of container runtimes are available, and which one you should use depen
 - [Podman]
 - [Lima]
 
-Espressif provides the [idf-rust] container image which contains several tags (generated both for `linux/arm64` and `linux/amd64`). For every Rust release, we generate a `<chip>_<xtensa-version>` tag containing the environment required to develop both
+Espressif provides the [idf-rust] container image, which contains several tags (generated both for `linux/arm64` and `linux/amd64`). For every Rust release, we generate a `<chip>_<xtensa-version>` tag containing the environment required to develop both
 `std` and `no_std` applications for the `<chip>`.
 
-There is an `all` variant of `<chip>` that contains the environment required for all the ESP targets, and a `latest` variant of `<xtensa-version>` that contains the latest Xtensa Rust toolchain.
+There is an `all` variant of `<chip>` that contains the environment required for all the ESP targets, and a `latest` variant of `<xtensa-version>` that contains the latest released Xtensa Rust toolchain.
 
 [Docker]: https://www.docker.com/
 [Podman]: https://podman.io/

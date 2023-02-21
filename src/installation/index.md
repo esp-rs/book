@@ -6,6 +6,21 @@ Let's take a moment to discuss the Rust support for the different architectures 
 
 [Ecosystem Overview]: ../overview/index.md
 
+## Rust with `std` runtime
+
+Regardless of the target architecture, if you want to build a project using the [`std` approach], you will also need:
+- [`python`]: Required by ESP-IDF
+- [`git`]: Required by ESP-IDF
+- [ESP-IDF]: Espressif IoT Development Framework as it's used as our hosted environment.
+  - This is handled by [`esp-idf-sys`] (a crate that all `std` projects need to use) by default.
+- [`ldproxy`] crate: Simple tool to forward linker arguments given to [`ldproxy`] to the actual linker executable. To install it, use the following command:
+  - `cargo install ldproxy`
+
+[`git`]: https://git-scm.com/downloads
+[`python`]: https://www.python.org/downloads/
+[ESP-IDF]: https://github.com/espressif/esp-idf
+[`std` approach]: ../overview/using-the-standard-library.md
+[`ldproxy`]: https://github.com/esp-rs/embuild/tree/master/ldproxy
 ## RISC-V targets
 
 The `RISC-V` architecture has support in the mainline Rust compiler so, the setup is relatively simple. There are two ways of proceeding with the installation:
@@ -36,8 +51,7 @@ rustup target add riscv32imc-unknown-none-elf
 For `std` applications, the `riscv32imc-esp-espidf` target is currently [Tier 3] and does not have pre-built objects distributed through `rustup`, therefore, it does not need to be installed as the `no_std` targets. Furthermore, `std` projects, also require:
  - The `-Z build-std` [unstable cargo feature], this [unstable cargo feature] can also be added to `.cargo/config.toml` of your project. Our [template projects], which we will later discuss, already take care of this.
  - [`LLVM`] installed.
- - [`ldproxy`] installed.
- - ESP-IDF (this will be installed by automatically by [`esp-idf-sys`]).
+ - The rest of requisites listed in [Rust with `std` runtime]
 
 At this point, you should be ready to build Rust applications for all the Espressif chips based on `RISC-V` architecture.
 
@@ -52,6 +66,7 @@ At this point, you should be ready to build Rust applications for all the Espres
 [RISC-V extensions]: https://en.wikichip.org/wiki/risc-v/standard_extensions
 [Tier 3]: https://doc.rust-lang.org/nightly/rustc/platform-support.html#tier-3
 [`esp-idf-sys`]: https://github.com/esp-rs/esp-idf-sys
+[Rust with `std` runtime]: #rust-with-std-runtime
 
 ## Xtensa targets
 
@@ -83,7 +98,7 @@ Since the installation in this scenario is slightly complex, we have created a t
 
 [esp-rs/espup] is a tool for installing and maintaining the necessary ecosystem to develop applications in Rust for Espressif SoC's (both `Xtensa` and `RISC-V` targets).
 
-`espup` takes care of installing the proper Rust compiler (our fork in case of `Xtensa` targets and the `nightly` toolchain with the necessary target for `RISC-V` targets), `LLVM` toolchain,  `GCC` toolchains, `rustup`, and many other things. For more details, [see Usage section of the `espup` Readme].
+`espup` takes care of installing the proper Rust compiler (our fork in case of `Xtensa` targets and the `nightly` toolchain with the necessary target for `RISC-V` targets), `LLVM` toolchain,  `GCC` toolchains. For more details, [see Usage section of the `espup` Readme].
 
 To install `espup`, use the following command:
 ```sh
@@ -98,14 +113,12 @@ espup install
 
 This will install all the necessary tools to develop Rust applications for all supported ESP targets.
 
-`espup` will create an export file, by default `$HOME/export-esp.sh` on Unix systems and `%USERPROFILE%\export-esp.ps1` on Windows. This file contains some environment variables required to build projects. Make sure to source this file in every terminal before building any application:
-
-```sh
-# Unix
-. $HOME/export-esp.sh
-# Windows
-%USERPROFILE%\export-esp.ps1
-```
+`espup` will create an export file, with the required environment variables, in `$HOME/export-esp.sh` on Unix systems and `%USERPROFILE%\export-esp.ps1` on Windows, the name and path of the file can be modified. This file contains some environment variables required to build projects.
+- Windows: Those environment variables are automatically injected to your system during the installation.
+- Unix: The export file must be sourced in every terminal before building any application:
+  ```sh
+  . $HOME/export-esp.sh
+  ```
 
 [esp-rs/espup]: https://github.com/esp-rs/espup
 [see Usage section of the `espup` Readme]: https://github.com/esp-rs/espup#usage
@@ -119,21 +132,6 @@ This will install all the necessary tools to develop Rust applications for all s
 
 [esp-rs/rust-build]: https://github.com/esp-rs/rust-build
 [Installing from Source section of the esp-rs/rust repository]: https://github.com/esp-rs/rust#installing-from-source
-
-## Rust with `std` runtime
-
-Regardless of the target architecture, if you want to build a project using the [`std` approach], you will also need:
-- [ESP-IDF]: Espressif IoT Development Framework as it's used as our hosted environment.
-  - This is handled by [`esp-idf-sys`] (a crate that all `std` projects need to use) by default. See [ESP-IDF installation note] for details on how ESP-IDF can be installed.
-- [`ldproxy`] crate:  Simple tool to forward linker arguments given to [`ldproxy`] to the actual linker executable. The crate can be found in the [esp-rs/embuild] repository. To install it, use the following command:
-  - `cargo install ldproxy`
-
-
-[ESP-IDF]: https://github.com/espressif/esp-idf
-[`std` approach]: ../overview/using-the-standard-library.md
-[`ldproxy`]: https://github.com/esp-rs/embuild/tree/master/ldproxy
-[esp-rs/embuild]: https://github.com/esp-rs/embuild
-[ESP-IDF installation note]: https://github.com/esp-rs/espup#esp-idf-instalation
 
 ## Using Containers
 

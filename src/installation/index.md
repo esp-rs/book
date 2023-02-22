@@ -47,27 +47,28 @@ The `RISC-V` architecture has support by the mainline Rust compiler, making the 
 - Using the official Rust tools
 - Using [`espup`, a tool that will be covered later]
 
-If you only want to use `RISC-V` targets, you can use the official Rust tools. To build projects for `RISC-V` tagets we need:
-- A [`nightly` toolchain] with the `rust-src` [component]:
+If you only want to use `RISC-V` targets, you can use the official Rust tools. To build projects for `RISC-V` targets, follow these steps:
+1. Install a [`nightly` toolchain] with the `rust-src` [component]:
   ```bash
   rustup toolchain install nightly --component rust-src
   ```
-- Set the target. These are the two recommended targets for most Espressif `RISC-V` chips:
-  - For bare-metal (`no_std`) applications: `riscv32imc-unknown-none-elf`. It can be installed with:
-    ```bash
-    rustup target add riscv32imc-unknown-none-elf
-    ```
-  - For applications that require `std`: `riscv32imc-esp-espidf`. `riscv32imc-esp-espidf` target is currently [Tier 3] and does not have pre-built objects distributed through `rustup`, therefore, i**t does not need to be installed** as the `no_std` target.
-> #### A note in RISC-V `no_std` Rust targets.
->
-> There are [different flavors of RISC-V 32 target in Rust] covering the different [RISC-V extensions].
+2. Set the target. The following two targets are recommended for most Espressif RISC-V chips:
+   - For bare-metal (`no_std`) applications: `riscv32imc-unknown-none-elf`. Install it with:
+       ```bash
+       rustup target add riscv32imc-unknown-none-elf
+       ```
+   - For `std` applications: `riscv32imc-esp-espidf`. Since `riscv32imc-esp-espidf` target is currently [Tier 3], itdoes not have pre-built objects distributed through `rustup`, and **it does not need to be installed** as the `no_std` target.
 
-Furthermore, `std` projects, also require:
+   > #### A note in RISC-V `no_std` Rust targets.
+   >
+   > There are [different flavors of RISC-V 32 target in Rust] covering the different [RISC-V extensions].
+3. To build `std` projects, you will also need:
 - [`LLVM`] installed.
-- The rest of requisites listed in [Rust with `std` runtime]
-- To use the `-Z build-std` [unstable cargo feature], this [unstable cargo feature] can also be added to `.cargo/config.toml` of your project. Our [template projects], which we will later discuss, already take care of this.
+- The other requirements listed in [Rust with `std` runtime]
+- To use the `-Z build-std` [unstable Cargo feature]. You can also add this [unstable Cargo feature] to `.cargo/config.toml` of your project. Our [template projects], which we will later discuss, already take care of this.
 
-At this point, you should be ready to build Rust applications for all the Espressif chips based on `RISC-V` architecture.
+After following these steps, you will be ready to build Rust applications for all the Espressif chips based on `RISC-V` architecture.
+
 
 [`espup`, a tool that will be covered later]: #espup
 [`nightly` toolchain]: https://rust-lang.github.io/rustup/concepts/channels.html#working-with-nightly-rust

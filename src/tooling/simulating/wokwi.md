@@ -1,4 +1,5 @@
 # Wokwi
+
 [Wokwi] is an online simulator that supports simulating Rust projects (both `std` and `no_std`) in ESP Chips,
 see [wokwi.com/rust] for a list of examples and a way to start new projects.
 
@@ -12,6 +13,7 @@ You can also debug your code using the VS Code debugger, see [Debugging your cod
 When using any of the [templates], there is a prompt that generates the required files to use Wokwi VS Code extension.
 
 ## Using wokwi-server
+
 [wokwi-server] is a CLI tool for launching a Wokwi simulation of your project. I.e., it allows you
 to build a project on your machine, or in a container, and simulate the resulting binary.
 

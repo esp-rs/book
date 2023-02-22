@@ -7,8 +7,10 @@ Here, we will present a list of common errors that may appear when building a pr
 ```text
 thread 'main' panicked at 'Unable to find libclang: "couldn't find any valid shared libraries matching: ['libclang.so', 'libclang-*.so', 'libclang.so.*', 'libclang-*.so.*'], set the `LIBCLANG_PATH` environment variable to a path where one of these files can be found (invalid: [])"', /home/esp/.cargo/registry/src/github.com-1ecc6299db9ec823/bindgen-0.60.1/src/lib.rs:2172:31
 ```
+
 We need `libclang` for [`bindgen`] to generate the Rust bindings to the ESP-IDF C headers.
 Make sure the environment variable `LIBCLANG_PATH` is set and pointing to our custom fork of LLVM:
+
 - Unix:
   ```sh
   export $HOME/.espressif/tools/xtensa-esp32-elf-clang/<clang_version>-<host_triple>/esp-clang/lib
@@ -30,6 +32,7 @@ error: linker `ldproxy` not found
 ```
 
 If you are trying to build a `std` application [`ldproxy`] must be installed.
+
 ```sh
 cargo install ldproxy
 ```

@@ -6,7 +6,7 @@ Rust support for these devices is still a work in progress, and progress is bein
 
 For tools and libraries relating to Rust on ESP, please see the [esp-rs organization] on GitHub.
 
-> #### A note in SoCs support.
+> #### A note in SoCs support
 >
 > The content of the books applies to ESP32, ESP32-S, and ESP32-C series of SoCs.
 > ESP8266 series is out of the scope of this book, support for Rust in ESP8266 is limited and only some parts

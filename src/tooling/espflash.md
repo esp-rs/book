@@ -22,14 +22,14 @@ This command must be run within a Cargo project, ie.) a directory containing a `
 cargo espflash --example=blinky --release --monitor
 ```
 
-For more information please see to the [cargo-espflash README].
+For more information please see the [cargo-espflash README].
 
 [the cargo documentation]: https://doc.rust-lang.org/cargo/reference/unstable.html#build-std
 [cargo-espflash readme]: https://github.com/esp-rs/espflash/blob/master/cargo-espflash/README.md
 
 ## espflash
 
-Provides a standalone command-line application which flashes an ELF file to a device.
+Provides a standalone command-line application that flashes an ELF file to a device.
 
 To install:
 
@@ -43,7 +43,7 @@ Assuming you have built an ELF binary by other means already, `espflash` can be 
 espflash build/blinky
 ```
 
-For more information please see to the [espflash README].
+For more information please see the [espflash README].
 
 [esp-idf]: https://github.com/espressif/esp-idf
 [espflash readme]: https://github.com/esp-rs/espflash/blob/master/espflash/README.md

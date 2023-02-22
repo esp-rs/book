@@ -5,6 +5,7 @@ When something goes terribly wrong in Rust there might occur a [panic].
 Let's see what it looks like for us.
 
 In `main.rs` put this line somewhere, e.g. before our `println`
+
 ```rust,ignore
 panic!("This is a panic");
 ```

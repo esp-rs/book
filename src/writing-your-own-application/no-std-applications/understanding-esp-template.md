@@ -6,6 +6,7 @@ project contains and try to understand every part of it.
 ## Inspecting the generated Project
 
 When creating a project from [esp-template] using:
+
 - MCU: `esp32c3`
 - Devcontainer support: `false`
 - `esp-alloc` crate support: `flase`
@@ -32,7 +33,7 @@ Before going further let's see what these files are for.
     - tells `git` which folders and files to ignore
 - [Cargo.toml]
     - the usual Cargo manifest declaring some meta-data and dependencies of the project
-- LICENSE-APACHE, LICENSE_MIT
+- `LICENSE-APACHE`, `LICENSE-MIT`
     - those are the most common licenses used in the Rust ecosystem
     - if you want to apply a different license you can delete these files and change the license in `Cargo.toml`
 - [rust-toolchain.toml]
@@ -122,6 +123,7 @@ Since our [`runner` configuration] also passes the `--monitor` argument to [`esp
 > `cargo install espflash`
 
 You should see something similar to this:
+
 ```text
 Connecting...
 
@@ -187,7 +189,6 @@ And that is exactly what the code is doing.
 You can reboot with `CTRL+R` or exit with `CTRL+C`.
 
 In the next chapter, we will add some more interesting output.
-
 
 [generate a no_std project]: ../generate-project-from-template.md#esp-template
 [esp-template]: https://github.com/esp-rs/esp-template

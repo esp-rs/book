@@ -31,6 +31,7 @@
   - [Writing `std` Applications](./writing-your-own-application/std-applications/index.md)
     - [Understanding esp-idf-template](./writing-your-own-application/std-applications/understanding-esp-idf-template.md)
 - [Resources](./resources.md)
+
 ---
 
 [Appendix A: Glossary](./misc/glossary.md)

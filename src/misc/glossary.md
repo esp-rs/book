@@ -6,9 +6,9 @@ A number of acronyms are used in the embedded development space. This glossary a
 
 **S**ystem **V**iew **D**escription.
 
-The [CMSIS-SVD] specification formalizes the description of the system contained within a microcontroller. This specification was designed with ARM Cortex-M microcontrollers in mind, however it is still applicable to other architectures.
+The [CMSIS-SVD] specification formalizes the description of the system contained within a microcontroller. This specification was designed with ARM Cortex-M microcontrollers in mind, however, it is still applicable to other architectures.
 
-SVD files are XML and contain definitions for peripherals which can be consumed by tools such a [svd2rust] to generate Peripheral Access Crates.
+SVD files are XML and contain definitions for peripherals which can be consumed by tools such as [svd2rust] to generate Peripheral Access Crates.
 
 [CMSIS-SVD]: https://arm-software.github.io/CMSIS_5/SVD/html/index.html
 [svd2rust]: https://github.com/rust-embedded/svd2rust/

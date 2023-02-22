@@ -48,15 +48,16 @@ In general, this approach should feel quite similar to developing for most norma
 [esp-idf]: https://github.com/espressif/esp-idf
 [newlib]: https://sourceware.org/newlib/
 [embedded-svc]: https://github.com/esp-rs/embedded-svc
+[embedded-hal]: https://github.com/rust-embedded/embedded-hal
 [esp-idf-svc]: https://github.com/esp-rs/esp-idf-svc
 
 ## Relevant `esp-rs` crates
 
 | Repository            | Description                                                                                                   |
 | --------------------- | ------------------------------------------------------------------------------------------------------------- |
-| [esp-rs/esp-idf-hal]  | An implementation of the `embedded-hal` and other traits using the `esp-idf` framework.                       |
-| [esp-rs/esp-idf-svc]  | An implementation of [embedded-svc] using `esp-idf` drivers.                                                  |
-| [esp-rs/esp-idf-sys]  | Rust bindings to the `esp-idf` development framework. Gives raw (`unsafe`) access to drivers, Wi-Fi and more. |
+| [esp-rs/esp-idf-hal]  | An implementation of [embedded-hal] and other traits using the `esp-idf` framework.                       |
+| [esp-rs/esp-idf-svc]  | An implementation of [embedded-svc] using `esp-idf`'s drivers.                                                  |
+| [esp-rs/esp-idf-sys]  | Rust bindings to the [esp-idf] development framework. Gives raw (`unsafe`) access to drivers, Wi-Fi and more. |
 | [esp-rs/embedded-svc] | Abstraction traits for embedded services. (`WiFi`, `Network`, `Httpd`, `Logging`, etc.)                       |
 
 The aforementioned crates have interdependencies, and this relationship can be seen below.
@@ -99,7 +100,7 @@ Instead, we are building the documentation and hosting it ourselves on GitHub Pa
 [`esp-idf-svc` documentation]: https://esp-rs.github.io/esp-idf-svc/esp_idf_svc/
 [`esp-idf-sys` documentation]: https://esp-rs.github.io/esp-idf-sys/esp_idf_sys/
 
-### \*\*\*ERROR\*\*\* A stack overflow in task main has been detected.
+### \*\*\*ERROR\*\*\* A stack overflow in task main has been detected
 
 If the second-stage bootloader reports this error, you likely need to increase the stack size for the main task. This can be accomplished by adding the following to the `sdkconfig.defaults` file:
 

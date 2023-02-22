@@ -1,13 +1,13 @@
 # Comparing `std` and `no_std`
 
-There are several factors that must be considered when choosing between `std` ([esp-idf-hal]) and `no_std` (eg. [esp-hal]). As stated previously, each approach has its own unique set of advantages and disadvantages. While we can't decide for you, this section will hopefully allow you to make an educated decision.
+Several factors must be considered when choosing between `std` ([esp-idf-hal]) and `no_std` (eg. [esp-hal]). As stated previously, each approach has its own unique set of advantages and disadvantages. While we can't decide for you, this section will hopefully allow you to make an educated decision.
 
 [esp-idf-hal]: https://github.com/esp-rs/esp-idf-hal
 [esp-hal]: https://github.com/esp-rs/esp-hal
 
 ## Application Runtimes
 
-In the case of applications (as opposed to libraries) the standard library provides a runtime that handles setting up stack overflow protection, spawning the main thread before an application's `main` function is invoked, and handling of command-line arguments.
+In the case of applications (as opposed to libraries) the standard library provides a runtime that handles command-line arguments, setting up stack overflow protection, and spawning the main thread before an application's `main` function is invoked.
 
 Applications targeting `no_std` will be responsible for initializing their own runtimes instead. Runtime initialization is generally handled by an external dependency, in our case the [riscv-rt] and [xtensa-lx-rt] libraries. You can refer to their READMEs and documentation for more information.
 
@@ -51,7 +51,7 @@ fn panic(info: &PanicInfo) -> ! {
 }
 ```
 
-Alternatively, there are a number of external dependencies which define various panic handlers for us. Some possible choices are [panic-halt], [panic-semihosting], or [panic-never].
+Alternatively, there are several external dependencies which define various panic handlers for us. Some possible choices are [panic-halt], [panic-semihosting], or [panic-never].
 
 These can be used simply by installing the relevant dependency, and then importing the crate:
 

@@ -22,7 +22,7 @@ cargo espflash save-image --merge ESP32 <OUTFILE> --release
 ```
 
 > If you prefer to use [`espflash`], you can achieve the same result by building the project first and then generating image:
->```bash 
+>```bash
 > cargo build --release
 > espflash save-image --merge ESP32 target/xtensa-esp32-espidf/release/<NAME> <OUTFILE>
 >```

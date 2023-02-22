@@ -3,6 +3,7 @@
 Let's see how to create the iconic _Blinky_.
 
 Change the code in `main.rs` to this
+
 ```rust,ignore
 #![no_std]
 #![no_main]

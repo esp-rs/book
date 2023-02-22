@@ -3,11 +3,14 @@
 Here, we will present a list of common errors that may appear when building a project alongside the reason and a solution to them.
 
 ## Environment variable LIBCLANG_PATH not set
+
 ```sh
 thread 'main' panicked at 'Unable to find libclang: "couldn't find any valid shared libraries matching: ['libclang.so', 'libclang-*.so', 'libclang.so.*', 'libclang-*.so.*'], set the `LIBCLANG_PATH` environment variable to a path where one of these files can be found (invalid: [])"', /home/esp/.cargo/registry/src/github.com-1ecc6299db9ec823/bindgen-0.60.1/src/lib.rs:2172:31
 ```
+
 We need `libclang` for [`bindgen`] to generate the Rust bindings to the ESP-IDF C headers.
 Make sure the environment variable `LIBCLANG_PATH` is set and pointing to our custom fork of LLVM:
+
 - Unix:
   ```sh
   export $HOME/.espressif/tools/xtensa-esp32-elf-clang/esp-15.0.0-20221014-x86_64-unknown-linux-gnu/esp-clang/lib
@@ -19,19 +22,23 @@ Make sure the environment variable `LIBCLANG_PATH` is set and pointing to our cu
   ```
 
 [`bindgen`]: https://github.com/rust-lang/rust-bindgen
+
 ## Missing `libtinfo.so.5`
+
 ```sh
 thread 'main' panicked at 'Unable to find libclang: "the `libclang` shared library at /home/user/.espressif/tools/xtensa-esp32-elf-clang/esp-15.0.0-20221014-x86_64-unknown-linux-gnu/esp-clang/lib/libclang.so.15.0.0 could not be o
 pened: libtinfo.so.5: cannot open shared object file: No such file or directory"', /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/bindgen-0.60.1/src/lib.rs:2172:31
 ```
+
 Our current version of LLVM, 15, requires `libtinfo.so.5`. This dependency will probably be removed in our future LLVM releases, but for the moment, please, make sure you have it installed:
+
 - Ubuntu/Debian: `sudo apt-get install libtinfo5`
 - Fedora: `sudo dnf install ncurses-compat-libs`
 - openSUSE: `sudo dnf install libncurses5`
 - Arch Linux: `sudo pacman -S ncurses5-compat-libs`
 
-
 ## Missing `ldproxy`
+
 ```sh
 error: linker `ldproxy` not found
   |
@@ -39,16 +46,18 @@ error: linker `ldproxy` not found
 ```
 
 If you are trying to build a `std` application [`ldproxy`] must be installed.
+
 ```sh
 cargo install ldproxy
 ```
+
 For more information, see [ldproxy section].
 
 [`ldproxy`]: https://github.com/esp-rs/embuild/tree/master/ldproxy
 [ldproxy section]: installation.md#ldproxy
 
-
 ## Using wrong Rust toolchain
+
 ```sh
 $ cargo build
 error: failed to run `rustc` to learn about target-specific information
@@ -60,6 +69,7 @@ Caused by:
 ```
 
 If you are encountering the previous error or a similar one, you are probably not using the proper Rust toolchain, remember that [for Xtensa targets, you need to use Espressif Rust fork toolchain], there are several ways to do it:
+
 - A [toolchain override] shorthand used on the command-line: `cargo +esp`.
 - Set `RUSTUP_TOOLCHAIN` environment variable to `esp`.
 - Set a [directory override]: `rustup override set esp`
@@ -84,6 +94,7 @@ For more information on toolchain overriding, see the [Overrides chapter of The 
 ### Long path names
 
 When using Windows, you may encounter issues building a new project if using long path names. Follow these steps to substitute the path of your project:
+
 ```sh
 subst r: <pathToYourProject>
 cd r:\

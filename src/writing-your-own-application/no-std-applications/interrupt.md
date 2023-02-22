@@ -1,7 +1,9 @@
 # Detect a button press with interrupt
+
 [Interrupts] offer a mechanism by which the processor handles asynchronous events and fatal errors.
 
 Let's add the [`critical-section`] crate [(see instructions on how to add a dependency)], and change `main.rs` to look like this:
+
 ```rust,ignore
 #![no_std]
 #![no_main]

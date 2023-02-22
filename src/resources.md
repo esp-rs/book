@@ -6,6 +6,7 @@
 - [esp-rs](https://github.com/esp-rs): Github organization with libraries, crates and examples for using Rust on Espressif SoC's.
 
 ## Crates referenced in this book
+
 - [cargo-binstall](https://github.com/cargo-bins/cargo-binstall) - Binary installation for rust projects
 - [cargo-generate](https://github.com/cargo-generate/cargo-generate) - Tool to help you get up and running quickly with a new Rust project by leveraging a pre-existing git repository as a template.
 - [esp-hal](https://github.com/esp-rs/esp-hal) - `no_std` HAL for Espressif microcontrollers.

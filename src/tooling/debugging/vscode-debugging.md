@@ -2,9 +2,9 @@
 
 There is also a possibility to debug with graphical output directly in Visual Studio Code.
 
-# ESP32
+## ESP32
 
-## Hardware Setup
+### Hardware Setup
 
 ESP32 doesn't have a built-in JTAG interface so you have to connect an external JTAG adapter to the ESP32 board, for example, [ESP-Prog](https://docs.espressif.com/projects/espressif-esp-iot-solution/en/latest/hw-reference/ESP-Prog_guide.html) can be used.
 
@@ -57,13 +57,13 @@ ESP32 doesn't have a built-in JTAG interface so you have to connect an external 
 }
 ```
 
-# ESP32-C3
+## ESP32-C3
 
 Older versions with **revision < 3** **don't** have built-in JTAG interface.
 
 ESP32-C3 with **revision 3** **does** have a built-in JTAG interface and you don't have to connect an external device to be able to debug. To get the chip revision, run the `cargo espflash board-info` command.
 
-## Hardware Setup
+### Hardware Setup
 
 If your ESP32-C3's revision is lesser than 3, follow these instructions, if you have revision 3 you can jump to the [**Set up VSCode**](#set-up-vscode-1) step.
 
@@ -80,7 +80,7 @@ ESP32-C3 **revision 1** and **revision 2** don't have a built-in JTAG interface 
 
 **Note**: On Windows `USB Serial Converter A 0403 6010 00` driver should be WinUSB.
 
-## Set up VSCode
+### Set up VSCode
 
 1. Install [Cortex-Debug](https://marketplace.visualstudio.com/items?itemName=marus25.cortex-debug) extension for VScode.
 2. Create the `.vscode/launch.json` file in the project tree you want to debug. [This](https://github.com/esp-rs/esp32-hal/blob/master/.vscode/launch.json) can be used as a template file.

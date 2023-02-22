@@ -5,6 +5,7 @@ Now that we know how to [generate a std project], let's inspect what the generat
 ## Inspecting the generated Project
 
 When creating a project from [esp-idf-template] using:
+
 - MCU: `esp32c3`
 - ESP-IDF version: `v4.4`
 - STD support: `true`
@@ -62,9 +63,11 @@ fn main() {
 }
 
 ```
+
 The first line its an import that defines the esp-idf entry-point when the root crate is a binary crate that defines a main function.
 
 Then, we have an usual main function with two lines on it:
+
 - A call to `esp_idf_sys::link_patches` function that makes sure that a few patches to the ESP-IDF which are implemented in Rust are linked to the final executable.
 - We print in our console the famous "Hello World!".
 
@@ -83,6 +86,7 @@ Since our [`runner` configuration] also passes the `--monitor` argument to [`esp
 > Make sure that you have [`espflash`] installed, otherwise this step will fail. To install [`espflash`]:
 > `cargo install espflash`
 You should see something similar to this:
+
 ```text
 Connecting...
 
@@ -161,10 +165,10 @@ I (285) sleep: Enable automatic switching of GPIO sleep configuration
 I (292) cpu_start: Starting scheduler.
 Hello, world!
 ```
+
 As you can see, there are messages from the first and second stage bootloader and then, our "Hello, world!" its printed.
 
 You can reboot with `CTRL+R` or exit with `CTRL+C`.
-
 
 [.gitignore]: https://git-scm.com/docs/gitignore
 [Cargo.toml]: https://doc.rust-lang.org/cargo/reference/manifest.html

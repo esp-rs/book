@@ -1,6 +1,7 @@
 # Generating Projects from Templates
 
 We currently maintin two template repositories:
+
 - [esp-template] - `no_std` template.
 - [esp-idf-template] - `std` template.
 
@@ -45,7 +46,9 @@ $ cargo generate --git https://github.com/esp-rs/esp-idf-template cargo
 💡   Initializing a fresh Git repository
 ✨   Done! New project created /home/alice/esp-rust-app
 ```
+
 See [Understanding esp-idf-template] for more details on the template project.
+
 ## esp-template
 
 For bare-metal applications (`no_std`) you can instead use the [esp-template] template:
@@ -72,19 +75,20 @@ cargo generate --git https://github.com/esp-rs/esp-template
 🔧   Moving generated files into: `/home/alice/esp-rust-app`...
 ✨   Done! New project created /home/alice/esp-rust-app
 ```
+
 See [Understanding esp-template] for more details on the template project.
 
 ### Using Dev Containers in the templates
 
 Both template repositories have a prompt for Dev Containers support, when using Dev Containers in the templates it will add support for:
--  [VS Code Dev Containers]
--  [GitHub Codespaces]
--  [Gitpod]
+
+- [VS Code Dev Containers]
+- [GitHub Codespaces]
+- [Gitpod]
 
 Dev Containers use the `idf-rust` container image that was explained in the [Using Container section of the Installing Rust chapter] and provide an environment ready to develop Rust applications for Espressif chips with no installation required. Dev Containers also have integration with [Wokwi simulator], to simulate the project, and allow flashing from the container using [web flash].
 
 For more details about on Dev Containers, see [Dev Container section of the template Readme].
-
 
 [cargo-generate]: https://github.com/cargo-generate/cargo-generate
 [esp-idf-template]: https://github.com/esp-rs/esp-idf-template

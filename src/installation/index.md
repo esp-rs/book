@@ -6,9 +6,9 @@ Let's take a moment to discuss the Rust support for the different architectures 
 
 [Ecosystem Overview]: ../overview/index.md
 
-# Rust installation
+## Rust installation
 
-In order to develop applications for ESP devices using Rust you must first install the Rust compiler along with the appropriate toolchain and target(s). Depending on your device it may be one of two architectures, each requiring a different setup.
+To develop applications for ESP devices using Rust, you need to install the Rust compiler along with the appropriate toolchain and target(s). Depending on your device, it may be one of two architectures, each requiring a different setup.
 
 If you have not yet installed Rust on your system, you can do so easily using [rustup]. For _macOS_ and _Linux_ it can be installed by running the following command:
 
@@ -16,11 +16,11 @@ If you have not yet installed Rust on your system, you can do so easily using [r
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 ```
 
-For installation on Windows or alternative installation methods, please refer to the instructions on the [rustup] website.
+For installation on Windows or alternative installation methods, refer to the instructions on the [rustup] website.
 
 If you are [running Windows as your host operating system, you must also install one of the available ABIs]:
-- MSVC: This is the recommended ABI. When installing `rustup`, it will check if all the requirements are installed, and, if they are not, it allows the user to install them.
-- GNU: No checks are done in `rustup` and expect that the user takes care of properly installing it.
+- MSVC: This is the recommended ABI. When installing `rustup`, it will check if all the requirements are installed, and, if they are not, it will prompt the user to install them.
+- GNU: `rustup` does not check for the requirements, and it is expected that the user installs them properly.
 
 [rustup]: https://rustup.rs/
 [running Windows as your host operating system, you must also install one of the available ABIs]: https://rust-lang.github.io/rustup/installation/windows.html
@@ -33,7 +33,7 @@ Regardless of the target architecture, to build a project using the [`std` appro
 - [`ldproxy`] crate: Simple tool to forward linker arguments given to [`ldproxy`] to the actual linker executable. To install it, use the following command:
   - `cargo install ldproxy`
 - [ESP-IDF]: Espressif IoT Development Framework as it's used as our hosted environment.
-  - Users do not need to install ESP-IDf as it is automatically handled by [`esp-idf-sys`] (a crate that all `std` projects need to use).
+  - Users do not need to install ESP-IDf as it is automatically installed by [`esp-idf-sys`] (a crate that all `std` projects need to use).
 
 [`std` approach]: ../overview/using-the-standard-library.md
 [`git`]: https://git-scm.com/downloads
@@ -43,40 +43,34 @@ Regardless of the target architecture, to build a project using the [`std` appro
 
 ## RISC-V targets
 
-The `RISC-V` architecture has support in the mainline Rust compiler so, the setup is relatively simple. There are two ways of proceeding with the installation:
+The `RISC-V` architecture has support by the mainline Rust compiler, making the setup process relatively simple. There are two ways to proceed with the installation:
 - Using the official Rust tools
 - Using [`espup`, a tool that will be covered later]
 
-If you only want to use `RISC-V` targets, you can use the official Rust tools:
-
-```bash
-rustup toolchain install nightly --component rust-src
-```
-
-These are the two recommended targets for most Espressif `RISC-V` chips:
-- For bare-metal (`no_std`) applications: `riscv32imc-unknown-none-elf`
-- For applications that require `std`: `riscv32imc-esp-espidf`
-
+If you only want to use `RISC-V` targets, you can use the official Rust tools. To build projects for `RISC-V` tagets we need:
+- A [`nightly` toolchain] with the `rust-src` [component]:
+  ```bash
+  rustup toolchain install nightly --component rust-src
+  ```
+- Set the target. These are the two recommended targets for most Espressif `RISC-V` chips:
+  - For bare-metal (`no_std`) applications: `riscv32imc-unknown-none-elf`. It can be installed with:
+    ```bash
+    rustup target add riscv32imc-unknown-none-elf
+    ```
+  - For applications that require `std`: `riscv32imc-esp-espidf`. `riscv32imc-esp-espidf` target is currently [Tier 3] and does not have pre-built objects distributed through `rustup`, therefore, i**t does not need to be installed** as the `no_std` target.
 > #### A note in RISC-V `no_std` Rust targets.
 >
 > There are [different flavors of RISC-V 32 target in Rust] covering the different [RISC-V extensions].
 
-
-The bare-metal targets can be installed by running:
-
-```bash
-rustup target add riscv32imc-unknown-none-elf
-```
-
-For `std` applications, the `riscv32imc-esp-espidf` target is currently [Tier 3] and does not have pre-built objects distributed through `rustup`, therefore, it does not need to be installed as the `no_std` targets. Furthermore, `std` projects, also require:
- - The `-Z build-std` [unstable cargo feature], this [unstable cargo feature] can also be added to `.cargo/config.toml` of your project. Our [template projects], which we will later discuss, already take care of this.
- - [`LLVM`] installed.
- - The rest of requisites listed in [Rust with `std` runtime]
+Furthermore, `std` projects, also require:
+- [`LLVM`] installed.
+- The rest of requisites listed in [Rust with `std` runtime]
+- To use the `-Z build-std` [unstable cargo feature], this [unstable cargo feature] can also be added to `.cargo/config.toml` of your project. Our [template projects], which we will later discuss, already take care of this.
 
 At this point, you should be ready to build Rust applications for all the Espressif chips based on `RISC-V` architecture.
 
 [`espup`, a tool that will be covered later]: #espup
-[Rust nightly toolchain]: https://rust-lang.github.io/rustup/concepts/channels.html#working-with-nightly-rust
+[`nightly` toolchain]: https://rust-lang.github.io/rustup/concepts/channels.html#working-with-nightly-rust
 [component]: https://rust-lang.github.io/rustup/concepts/components.html
 [template projects]: ../writing-your-own-application/generate-project-from-template.md
 [unstable cargo feature]: https://doc.rust-lang.org/cargo/reference/unstable.html

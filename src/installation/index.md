@@ -10,19 +10,14 @@ Let's take a moment to discuss the Rust support for the different architectures 
 
 To develop applications for ESP devices using Rust, you need to install the Rust compiler along with the appropriate toolchain and target(s). Depending on your device, it may be one of two architectures, each requiring a different setup.
 
-If you have not yet installed Rust on your system, you can do so easily using [rustup]. For _macOS_ and _Linux_, it can be installed by running the following command:
-
-```bash
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-```
-
-For installation on Windows or alternative installation methods, refer to the instructions on the [rustup] website.
+If you have not yet installed Rust on your system, you can do so easily using [rustup]. For installation on Windows or [alternative installation methods], refer to the instructions on the [rustup] website.
 
 If you are [running Windows as your host operating system, you must also install one of the available ABIs]:
 - MSVC: This is the recommended ABI. When installing `rustup`, it will check if all the requirements are installed, and, if they are not, it will prompt the user to install them.
 - GNU: `rustup` does not check for the requirements, and it is expected that the user installs them properly.
 
 [rustup]: https://rustup.rs/
+[alternative installation methods]: https://rust-lang.github.io/rustup/installation/other.html
 [running Windows as your host operating system, you must also install one of the available ABIs]: https://rust-lang.github.io/rustup/installation/windows.html
 
 ## Rust with `std` runtime

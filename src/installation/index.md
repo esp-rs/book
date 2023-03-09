@@ -8,7 +8,7 @@ Let's take a moment to discuss the Rust support for the different architectures 
 
 ## Rust installation
 
-To develop applications for ESP devices using Rust, you need to install the Rust compiler along with the appropriate toolchain and target(s). Depending on your device, it may be one of two architectures, each requiring a different setup.
+To develop applications for ESP devices using Rust, you need to install the Rust compiler along with the appropriate toolchain and target(s). Depending on the architecture of your target(s), which can be `Xtensa` or `RISC-V`, it will require a different setup.
 
 If you have not yet installed Rust on your system, you can do so easily using [rustup]. For installation on Windows or [alternative installation methods], refer to the instructions on the [rustup] website.
 

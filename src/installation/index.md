@@ -40,7 +40,7 @@ The `std` runtime uses [ESP-IDF] (Espressif IoT Development Framework) as hosted
 
 ## RISC-V targets
 
-The `RISC-V` architecture has support by the mainline Rust compiler, making the setup process relatively simple. There are two ways to proceed with the installation:
+The `RISC-V` architecture has support by the official Rust compiler, making the setup process relatively simple. There are two ways to proceed with the installation:
 - Using the official Rust tools
 - Using [`espup`, a tool that will be covered later]
 
@@ -81,16 +81,16 @@ After following these steps, you will be ready to build Rust applications for al
 
 ## Xtensa targets
 
-Currently, the mainline Rust compiler does not have support for `Xtensa` targets. However, Espressif maintains the [esp-rs/rust] fork that adds support for Espressif `Xtensa` targets.
+Currently, the official Rust compiler does not have support for `Xtensa` targets. However, Espressif maintains the [esp-rs/rust] fork that adds support for Espressif `Xtensa` targets.
 
-The main reason for `Xtensa` not being supported on Rust mainline is because `LLVM` does not support Xtensa targets. Therefore, Espressif also maintains a fork of `LLVM` with support for Espressif `Xtensa` targets in [espressif/llvm-project].
+The main reason for `Xtensa` not being supported on the official Rust is because `LLVM` does not support Xtensa targets. Therefore, Espressif also maintains a fork of `LLVM` with support for Espressif `Xtensa` targets in [espressif/llvm-project].
 
 > #### A note in upstreaming our forks.
 >
 > We are making efforts to upstream the changes in Espressif `LLVM` and Rust forks.
 > The first step is to upstream the `LLVM` project, this is already in progress,
 > and you can see the status at this [tracking issue].
-> If our `LLVM` changes are accepted in `LLVM` mainline, we will proceed with trying
+> If our `LLVM` changes are accepted in upstream `LLVM`, we will proceed with trying
 > to upstream the Rust compiler changes.
 
 Another consequence of `LLVM` not supporting Espressif `Xtensa` targets is that we need to provide our own linker. In other words, we need a [GCC toolchain] to use it as our linker.

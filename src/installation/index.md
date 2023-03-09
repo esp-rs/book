@@ -12,13 +12,15 @@ To develop applications for ESP devices using Rust, you need to install the Rust
 
 If you have not yet installed Rust on your system, you can do so easily using [rustup]. For installation on Windows or [alternative installation methods], refer to the instructions on the [rustup] website.
 
-If you are [running Windows as your host operating system, you must also install one of the available ABIs]:
-- MSVC: This is the recommended ABI. When installing `rustup`, it will check if all the requirements are installed, and, if they are not, it will prompt the user to install them.
-- GNU: `rustup` does not check for the requirements, and it is expected that the user installs them properly.
+If you are [running Windows as your host operating system, make sure you have installed one of the ABIs listed below]:
+- MSVC: This is the recommended ABI and, `rustup` allows the user to install it during Rust instalaltion.
+- GNU: `rustup` does not allow installting it. Useful for MinGW/MSYS2 interoperability.
+For more details on Windows ABIs, see ["Windows" chapter of The rustup book].
 
 [rustup]: https://rustup.rs/
 [alternative installation methods]: https://rust-lang.github.io/rustup/installation/other.html
-[running Windows as your host operating system, you must also install one of the available ABIs]: https://rust-lang.github.io/rustup/installation/windows.html
+[running Windows as your host operating system, make sure you have installed one of the ABIs listed below]: https://rust-lang.github.io/rustup/installation/windows.html
+["Windows" chapter of The rustup book]: https://rust-lang.github.io/rustup/installation/windows.html
 
 ## Rust with `std` runtime
 

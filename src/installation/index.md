@@ -27,13 +27,13 @@ If you are [running Windows as your host operating system, you must also install
 
 ## Rust with `std` runtime
 
-Regardless of the target architecture, to build a project using the [`std` approach], the following tools are required:
+Regardless of the target architecture (`Xtensa` or `RISC-V`), to build a project using the [`std` approach], the following tools are required:
 - [`python`]: Required by ESP-IDF
 - [`git`]: Required by ESP-IDF
 - [`ldproxy`] crate: Simple tool to forward linker arguments given to [`ldproxy`] to the actual linker executable. To install it, use the following command:
   - `cargo install ldproxy`
-- [ESP-IDF]: Espressif IoT Development Framework as it's used as our hosted environment.
-  - Users do not need to install ESP-IDf as it is automatically handled by [`esp-idf-sys`] (a crate that all `std` projects need to use).
+
+The `std` runtime uses [ESP-IDF] (Espressif IoT Development Framework) as hosted environment but, users do not need to install it. It is automatically handled by [`esp-idf-sys`] (a crate that all `std` projects need to use).
 
 [`std` approach]: ../overview/using-the-standard-library.md
 [`git`]: https://git-scm.com/downloads

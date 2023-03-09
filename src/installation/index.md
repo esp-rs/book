@@ -10,7 +10,7 @@ Let's take a moment to discuss the Rust support for the different architectures 
 
 To develop applications for ESP devices using Rust, you need to install the Rust compiler along with the appropriate toolchain and target(s). Depending on the architecture of your target(s), which can be `Xtensa` or `RISC-V`, it will require a different setup.
 
-If you have not yet installed Rust on your system, you can do so easily using [rustup]. For installation on Windows or [alternative installation methods], refer to the instructions on the [rustup] website.
+Make sure you have Rust installed. If not, it can easily be installed using [rustup]. For installation on Windows or [alternative installation methods], refer to the instructions on the [rustup] website.
 
 If you are [running Windows as your host operating system, make sure you have installed one of the ABIs listed below]:
 - MSVC: This is the recommended ABI and, `rustup` allows the user to install it during Rust instalaltion.

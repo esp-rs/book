@@ -157,7 +157,7 @@ The forked compiler can coexist with the standard Rust compiler, allowing both t
 
 ## `std` Development Requirements
 
-Regardless of the target architecture make sure you have the following required tools installed to build [`std`][rust-esp-book-overview-std] applications
+Regardless of the target architecture, make sure you have the following required tools installed to build [`std`][rust-esp-book-overview-std] applications:
 
 - [`python`][python-website-download]: Required by ESP-IDF
 - [`git`][git-website-download]: Required by ESP-IDF

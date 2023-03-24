@@ -181,7 +181,7 @@ Instead of installing directly on your local system, you can host the developmen
 
 You can find numerous tags for `linux/arm64` and `linux/amd64` platforms.
 
-For each Rust release, we generate the tag with the following naming conventions
+For each Rust release, we generate the tag with the following naming convention:
 
 - `std` applications
   - `<chip>_<esp-idf-version>_<rust-toolchain-version>`

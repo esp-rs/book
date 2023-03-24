@@ -1,15 +1,17 @@
 # Setting Up a Development Environment
 
-At the moment, Espressif SoCs are based on two different architectures -- RISC-V and Xtensa. Each architecture supports the `std` and `no_std` application development.
+At the moment, Espressif SoCs are based on two different architectures -- `RISC-V` and `Xtensa`. Each architecture supports the `std` and `no_std` application development.
 
-To set up the development environment, do the following
+To set up the development environment, do the following:
 
 1. [Install Rust][install-rust]
 2. Install requirements for the targets
     - [RISC-V targets][risc-v-targets]
     - [Xtensa targets][xtensa-targets]
 
-Alternatively, you can host the development environment with support for Xtensa in a [container][use-containers].
+As mentioned in the installation procedures below, for `std` development also don't forget to install [`std` Development Requirements][rust-esp-book-std-requirements].
+
+Please note that you can host the development environment with support for Xtensa in a [container][use-containers].
 
 
 [install-rust]: #install-rust
@@ -37,9 +39,9 @@ See also [alternative installation methods][rust-alt-installation].
 
 ## RISC-V targets
 
-To build Rust applications for the Espressif chips based on `RISC-V` architecture, do the following
+To build Rust applications for the Espressif chips based on `RISC-V` architecture, do the following:
 
-1. Install the [`nightly`][rustup-book-channel-nightly] toolchain with the `rust-src` [component][rustup-book-components]
+1. Install the [`nightly`][rustup-book-channel-nightly] toolchain with the `rust-src` [component][rustup-book-components]:
 
     ```bash
     rustup toolchain install nightly --component rust-src
@@ -49,8 +51,8 @@ To build Rust applications for the Espressif chips based on `RISC-V` architectur
 [rustup-book-components]: https://rust-lang.github.io/rustup/concepts/components.html
 
 
-2. Set the target
-    - For `no_std` (bare-metal) applications, run
+2. Set the target:
+    - For `no_std` (bare-metal) applications, run:
 
       ```bash
       rustup target add riscv32imc-unknown-none-elf
@@ -68,7 +70,7 @@ To build Rust applications for the Espressif chips based on `RISC-V` architectur
 [rust-lang-book--platform-support-tier3]: https://doc.rust-lang.org/nightly/rustc/platform-support.html#tier-3
 
 
-3. To build `std` projects, you also need to install
+3. To build `std` projects, you also need to install:
     - [`LLVM`][llvm-website] compiler infrastructure
     - Other [`std` developemnt requirements][rust-esp-book-std-requirements]
     - In your project's file `.cargo/config.toml`, add the unstable Cargo [feature][cargo-book-unstable-features] `-Z build-std`. Our [template projects][rust-esp-book-write-app-generate-project] that are discussed later in this book already have it added.
@@ -80,7 +82,7 @@ To build Rust applications for the Espressif chips based on `RISC-V` architectur
 [rust-esp-book-write-app-generate-project]: ../writing-your-own-application/generate-project-from-template.md
 
 
-Now you should be able to build and run projects on the Espressif's RISC-V chips.
+Now you should be able to build and run projects on the Espressif's `RISC-V` chips.
 
 
 ## Xtensa targets
@@ -89,7 +91,7 @@ Now you should be able to build and run projects on the Espressif's RISC-V chips
 
 [espup-github]: https://github.com/esp-rs/espup
 
-To install `espup`, run
+To install `espup`, run:
 ```sh
 cargo install espup
 ```
@@ -99,9 +101,9 @@ You can also directly download pre-compiled [release binaries] or use [cargo-bin
 [release binaries]: https://github.com/esp-rs/espup/releases
 [cargo-binstall]: https://github.com/cargo-bins/cargo-binstall
 
-Once `espup` is installed, do the following
+Once `espup` is installed, do the following:
 
-1. Install all the necessary tools to develop Rust applications for all supported ESP targets by running
+1. Install all the necessary tools to develop Rust applications for all supported Espressif targets by running:
     ```sh
     espup install
     ```
@@ -114,7 +116,7 @@ Once `espup` is installed, do the following
 2. Make sure to source this file in every terminal before building any application:
 
     - Unix systems, run `. $HOME/export-esp.sh`
-    - Windows, run `%USERPROFILE%\export-esp.ps1`
+    - Windows does not require sourcing any file
 
 
 After installing `espup`
@@ -132,13 +134,12 @@ After installing `espup`
 
 ### What espup Installs
 
-To enable support for Xtensa targets, `espup` installs the following tools
+To enable support for Xtensa targets, `espup` installs the following tools:
 
-- Rust compiler
-- Espressif fork for `Xtensa` targets
+- Espressif Rust fork for `Xtensa` targets
 - `nightly` toolchain with the necessary `RISC-V` targets
 - `LLVM` [fork][llvm-github-fork] that supports `Xtensa` targets
-- [GCC toolchain][gcc-toolchain-github-fork] as a custom linker that allows `LLVM` to support `Xtensa` targets
+- [GCC toolchain][gcc-toolchain-github-fork] as it is used as linker
 
 The forked compiler can coexist with the standard Rust compiler, allowing both to be installed on your system. The forked compiler is invoked when using the `esp` [channel][rustup-github-concepts-channel] instead of the defaults, `stable` or `nightly`.
 
@@ -155,8 +156,6 @@ The forked compiler can coexist with the standard Rust compiler, allowing both t
 
 
 ## `std` Development Requirements
-
-This section is part of the
 
 Regardless of the target architecture make sure you have the following required tools installed to build [`std`][rust-esp-book-overview-std] applications
 
@@ -194,7 +193,7 @@ For each Rust release, we generate the tag with the following naming conventions
 There are special cases
 
 - `<chip>` can be `all` which indicates compatibility with all ESP targets
-- `<rust-toolchain-version>` can be `latest` which indicates the latest release of the Xtensa Rust toolchain
+- `<rust-toolchain-version>` can be `latest` which indicates the latest release of the `Xtensa` Rust toolchain
 
 Depending on your operating system, you can choose any container runtime, such as [Docker], [Podman], or [Lima].
 

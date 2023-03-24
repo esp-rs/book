@@ -179,7 +179,7 @@ Required by all `std` projects and included in the project's file `.cargo/config
 
 Instead of installing directly on your local system, you can host the development environment inside a container. Espressif provides the [idf-rust] image that supports both `RISC-V` and `Xtensa` target architectures and enables both `std` and `no_std` development.
 
-You can find numerous tags for `linux/arm64` and `linux/amd64`.
+You can find numerous tags for `linux/arm64` and `linux/amd64` platforms.
 
 For each Rust release, we generate the tag with the following naming conventions
 

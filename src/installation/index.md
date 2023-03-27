@@ -113,10 +113,9 @@ Once `espup` is installed, do the following:
     - Unix systems - `$HOME/export-esp.sh`
     - Windows - `%USERPROFILE%\export-esp.ps1`
 
-2. Make sure to source this file in every terminal before building any application:
+2. On Unix systems, make sure to source this file in every terminal before building any application: `. $HOME/export-esp.sh`
 
-    - Unix systems, run `. $HOME/export-esp.sh`
-    - Windows does not require sourcing any file
+  > On Windows systems, the file is created to show the user the modified enviroment variables, but user does not require sourcing any file.
 
 
 After running `espup install`:
@@ -164,7 +163,7 @@ Regardless of the target architecture, make sure you have the following required
 - [`ldproxy`][embuild-github-ldproxy] crate: Simple tool to pass the `ldproxy` linker arguments to the actual linker executable. Install it  by running
   - `cargo install ldproxy`
 
-Required by all `std` projects and included in the project's file `.cargo/config.toml`, the crate [`esp-idf-sys`] also automatically downloads and installs ESP-IDF (Espressif IoT Development Framework).
+The std runtime uses [ESP-IDF][esp-idf-github] (Espressif IoT Development Framework) as hosted environment but, users do not need to install it. ESP-IDF is automatically downloaded and installed by [esp-idf-sys][esp-idf-sys-github], a crate that all std projects need to use, when building a std application.
 
 
 [rust-esp-book-overview-std]: ../overview/using-the-standard-library.md

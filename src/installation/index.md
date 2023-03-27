@@ -119,7 +119,7 @@ Once `espup` is installed, do the following:
     - Windows does not require sourcing any file
 
 
-After installing `espup`
+After running `espup install`:
 
 - `no_std` (bare-metal) applications should work out of the box
 - `std` applications require additional software covered in [`std` Development Requirements][rust-esp-book-std-requirements]
@@ -136,12 +136,12 @@ After installing `espup`
 
 To enable support for Xtensa targets, `espup` installs the following tools:
 
-- Espressif Rust fork for `Xtensa` targets
+- Espressif Rust fork with support for `Xtensa` targets
 - `nightly` toolchain with the necessary `RISC-V` targets
 - `LLVM` [fork][llvm-github-fork] that supports `Xtensa` targets
 - [GCC toolchain][gcc-toolchain-github-fork] as it is used as linker
 
-The forked compiler can coexist with the standard Rust compiler, allowing both to be installed on your system. The forked compiler is invoked when using the `esp` [channel][rustup-github-concepts-channel] instead of the defaults, `stable` or `nightly`.
+The forked compiler can coexist with the standard Rust compiler, allowing both to be installed on your system. The forked compiler is invoked when using any of the available [overriding methods][rustup-overrides].
 
 > **Note**: We are making efforts to upstream our forks
 
@@ -151,7 +151,7 @@ The forked compiler can coexist with the standard Rust compiler, allowing both t
 
 [llvm-github-fork]: https://github.com/espressif/llvm-project
 [gcc-toolchain-github-fork]: https://github.com/espressif/crosstool-NG/
-[rustup-github-concepts-channel]: https://rust-lang.github.io/rustup/concepts/channels.html
+[rustup-overrides]: https://rust-lang.github.io/rustup/overrides.html
 [llvm-github-fork-upstream issue]: https://github.com/espressif/llvm-project/issues/4
 
 

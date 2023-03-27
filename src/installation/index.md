@@ -26,7 +26,7 @@ Make sure you have Rust installed. If not, see the instructions on the [rustup][
 
 See also [alternative installation methods][rust-alt-installation].
 
-> **Note**: If you run Windows on your host machine, make sure you have installed one of the ABIs listed below. For more details, see the rustup book > [Chapter _Windows_][rustup-book-windows]
+> **Note**: If you run Windows on your host machine, make sure you have installed one of the ABIs listed below. For more details, see The rustup book > [Chapter _Windows_][rustup-book-windows]
 >
 > - **MSVC**: Recommended ABI, included in the list of `rustup` default requirements. Use it for interoperability with the software produced by Visual Studio.
 > - **GNU**: ABI used by the GCC toolchain. Install it yourself for interoperability with the software built with the MinGW/MSYS2 toolchain.
@@ -87,7 +87,7 @@ Now you should be able to build and run projects on the Espressif's `RISC-V` chi
 
 ## Xtensa targets
 
-[espup][espup-github] is a tool that simplifies installing and maintaining the components required to develop Rust applications for the `Xtensa` architecture.
+[`espup`][espup-github] is a tool that simplifies installing and maintaining the components required to develop Rust applications for the `Xtensa` architecture.
 
 [espup-github]: https://github.com/esp-rs/espup
 

@@ -22,7 +22,7 @@ Please note that you can host the development environment in a [container][use-c
 
 ## Install Rust
 
-Make sure you have Rust installed. If not, see the instructions on the [rustup][rustup.rs-website] website.
+Make sure you have [Rust][rust-lang-org] installed. If not, see the instructions on the [rustup][rustup.rs-website] website.
 
 See also [alternative installation methods][rust-alt-installation].
 
@@ -35,6 +35,7 @@ See also [alternative installation methods][rust-alt-installation].
 [rustup.rs-website]: https://rustup.rs/
 [rust-alt-installation]: https://rust-lang.github.io/rustup/installation/other.html
 [rustup-book-windows]: https://rust-lang.github.io/rustup/installation/windows.html
+[rust-lang-org]: https://www.rust-lang.org/
 
 
 ## RISC-V targets

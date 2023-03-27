@@ -11,7 +11,7 @@ To set up the development environment, do the following:
 
 As mentioned in the installation procedures below, for `std` development also don't forget to install [`std` Development Requirements][rust-esp-book-std-requirements].
 
-Please note that you can host the development environment with support for Xtensa in a [container][use-containers].
+Please note that you can host the development environment in a [container][use-containers].
 
 
 [install-rust]: #install-rust

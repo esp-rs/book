@@ -7,7 +7,7 @@ To set up the development environment, do the following:
 1. [Install Rust][install-rust]
 2. Install requirements based on your target(s)
     - [`RISC-V` targets][risc-v-targets]
-    - [Xtensa targets][xtensa-targets]
+    - [`Xtensa` and `RISC-V` targets][xtensa-targets]
 
 As mentioned in the installation procedures below, for `std` development also don't forget to install [`std` Development Requirements][rust-esp-book-std-requirements].
 

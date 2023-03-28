@@ -144,7 +144,6 @@ To enable support for Xtensa targets, `espup` installs the following tools:
 The forked compiler can coexist with the standard Rust compiler, allowing both to be installed on your system. The forked compiler is invoked when using any of the available [overriding methods][rustup-overrides].
 
 > **Note**: We are making efforts to upstream our forks
-
 > 1. Changes in `LLVM` fork. Already in progress, see the status in this [tracking issue][llvm-github-fork-upstream issue].
 > 2. Rust compiler forks. If `LLVM` changes are accepted, we will proceed with the Rust compiler changes.
 

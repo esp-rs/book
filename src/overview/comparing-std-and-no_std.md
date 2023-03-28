@@ -1,4 +1,4 @@
-Standard library (`std`) vs. Bare Metal (`no_std`)
+# Standard library (`std`) vs. Bare Metal (`no_std`)
 
 ## Support for Espressif Products
 

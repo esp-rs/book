@@ -127,7 +127,7 @@ After running `espup install`:
 ### Other installation methods
 
 - Using [esp-rs/rust-build] installation scripts. This was the recommended way in the past, but now the installation scripts are feature frozen and all new features will only be included in `espup`. See the repository README for instructions.
-- Building the Rust compiler with `Xtensa` support from source. This process is computationally expensive and can take one or more hours to complete depending on your system. It is not recommended unless there is a major reason to go for this approach. See instructions in the [Installing from Source section of the esp-rs/rust repository].
+- Building the Rust compiler with `Xtensa` support from source. This process is computationally expensive and can take one or more hours to complete depending on your system. It is not recommended unless there is a major reason to go for this approach. Here is the repository to build it from source: [esp-rs/rust repository].
 
 [esp-rs/rust-build]: https://github.com/esp-rs/rust-build#download-installer-in-bash
 [esp-rs/rust repository]: https://github.com/esp-rs/rust
@@ -192,7 +192,7 @@ For each Rust release, we generate the tag with the following naming convention:
 
 There are special cases
 
-- `<chip>` can be `all` which indicates compatibility with all ESP targets
+- `<chip>` can be `all` which indicates compatibility with all Espressif targets
 - `<rust-toolchain-version>` can be `latest` which indicates the latest release of the `Xtensa` Rust toolchain
 
 Depending on your operating system, you can choose any container runtime, such as [Docker], [Podman], or [Lima].

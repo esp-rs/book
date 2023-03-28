@@ -6,8 +6,8 @@ To set up the development environment, do the following:
 
 1. [Install Rust][install-rust]
 2. Install requirements based on your target(s)
-    - [`RISC-V` targets][risc-v-targets]
-    - [`Xtensa` and `RISC-V` targets][xtensa-targets]
+    - [`RISC-V` targets only][risc-v-targets]
+    - [`RISC-V` and `Xtensa` targets][xtensa-targets]
 
 As mentioned in the installation procedures below, for `std` development also don't forget to install [`std` Development Requirements][rust-esp-book-std-requirements].
 
@@ -38,7 +38,7 @@ See also [alternative installation methods][rust-alt-installation].
 [rust-lang-org]: https://www.rust-lang.org/
 
 
-## RISC-V targets
+## RISC-V targets only
 
 To build Rust applications for the Espressif chips based on `RISC-V` architecture, do the following:
 
@@ -86,7 +86,7 @@ To build Rust applications for the Espressif chips based on `RISC-V` architectur
 Now you should be able to build and run projects on the Espressif's `RISC-V` chips.
 
 
-## Xtensa targets
+## RISC-V and Xtensa targets
 
 [`espup`][espup-github] is a tool that simplifies installing and maintaining the components required to develop Rust applications for the `Xtensa` architecture.
 

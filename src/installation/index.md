@@ -129,7 +129,7 @@ After running `espup install`:
 - Using [esp-rs/rust-build] installation scripts. This was the recommended way in the past, but now the installation scripts are feature frozen and all new features will only be included in `espup`. See the repository README for instructions.
 - Building the Rust compiler with `Xtensa` support from source. This process is computationally expensive and can take one or more hours to complete depending on your system. It is not recommended unless there is a major reason to go for this approach. See instructions in the [Installing from Source section of the esp-rs/rust repository].
 
-[esp-rs/rust-build]: https://github.com/esp-rs/rust-build
+[esp-rs/rust-build]: https://github.com/esp-rs/rust-build#download-installer-in-bash
 [Installing from Source section of the esp-rs/rust repository]: https://github.com/esp-rs/rust#installing-from-source
 
 ### What espup Installs

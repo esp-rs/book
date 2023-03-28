@@ -1,128 +1,116 @@
 # Setting Up a Development Environment
 
-At the moment, Espressif SoCs are based on two different architectures -- `RISC-V` and `Xtensa`. Both architectures support `std` and `no_std` approaches.
+With an understanding of the ecosystem surrounding Rust on Espressif chips, we can move on to actual development. If you are not aware of the two possible development approaches or do not understand the differences between writing `std` and `no_std` applications, please first read the [Ecosystem Overview] chapter.
 
-To set up the development environment, do the following:
+Let's take a moment to discuss the Rust support for the different architectures of the Espressif chips and the different approaches in more detail. At this moment, Espressif SoCs are based on two different architectures: `RISC-V` and `Xtensa`. The support for those two architectures in the Rust programming language is very different.
 
-1. [Install Rust][install-rust]
-2. Install requirements based on your target(s)
-    - [`RISC-V` targets only][risc-v-targets]
-    - [`RISC-V` and `Xtensa` targets][rics-v-xtensa-targets]
+[Ecosystem Overview]: ../overview/index.md
 
-As mentioned in the installation procedures below, for `std` development also don't forget to install [`std` Development Requirements][rust-esp-book-std-requirements].
+## RISC-V targets
 
-Please note that you can host the development environment in a [container][use-containers].
+The `RISC-V` architecture has support in the mainline Rust compiler so, the setup is relatively simple. There are two ways of proceeding with the installation:
+- Using the official Rust tools
+- Using [`espup`, a tool that will be covered later]
 
+If you only want to use `RISC-V` targets, you can use the official Rust tools, for this approach we need [`rustup`] installed, and a [Rust nightly toolchain] with the `rust-src` [component]. We can install a nightly toolchain with the `rust-src` component via:
 
-[install-rust]: #install-rust
-[risc-v-targets]: #risc-v-targets
-[rics-v-xtensa-targets]: #xtensa-targets
-[use-containers]: #using-containers
+```bash
+rustup toolchain install nightly --component rust-src
+```
 
+These are the two recommended targets for most Espressif `RISC-V` chips:
+- For bare-metal (`no_std`) applications: `riscv32imc-unknown-none-elf`
+- For applications that require `std`: `riscv32imc-esp-espidf`
 
-## Install Rust
-
-Make sure you have [Rust][rust-lang-org] installed. If not, see the instructions on the [rustup][rustup.rs-website] website.
-
-See also [alternative installation methods][rust-alt-installation].
-
-> **Note**: If you run Windows on your host machine, make sure you have installed one of the ABIs listed below. For more details, see The rustup book > [Chapter _Windows_][rustup-book-windows]
+> #### A note in RISC-V `no_std` Rust targets.
 >
-> - **MSVC**: Recommended ABI, included in the list of `rustup` default requirements. Use it for interoperability with the software produced by Visual Studio.
-> - **GNU**: ABI used by the GCC toolchain. Install it yourself for interoperability with the software built with the MinGW/MSYS2 toolchain.
+> There are [different flavors of RISC-V 32 target in Rust] covering the different [RISC-V extensions].
 
 
-[rustup.rs-website]: https://rustup.rs/
-[rust-alt-installation]: https://rust-lang.github.io/rustup/installation/other.html
-[rustup-book-windows]: https://rust-lang.github.io/rustup/installation/windows.html
-[rust-lang-org]: https://www.rust-lang.org/
+The bare-metal targets can be installed by running:
 
+```bash
+rustup target add riscv32imc-unknown-none-elf
+```
 
-## RISC-V targets only
+For `std` applications, the `riscv32imc-esp-espidf` target is currently [Tier 3] and does not have pre-built objects distributed through `rustup`, therefore, it does not need to be installed as the `no_std` targets. Furthermore, `std` projects, also require:
+ - The `-Z build-std` [unstable cargo feature], this [unstable cargo feature] can also be added to `.cargo/config.toml` of your project. Our [template projects], which we will later discuss, already take care of this.
+ - [`LLVM`] installed.
+ - [`ldproxy`] installed.
+ - ESP-IDF (this will be installed by automatically by [`esp-idf-sys`]).
 
-To build Rust applications for the Espressif chips based on `RISC-V` architecture, do the following:
+At this point, you should be ready to build Rust applications for all the Espressif chips based on `RISC-V` architecture.
 
-1. Install the [`nightly`][rustup-book-channel-nightly] toolchain with the `rust-src` [component][rustup-book-components]:
+[`espup`, a tool that will be covered later]: #espup
+[`rustup`]: https://rustup.rs/
+[Rust nightly toolchain]: https://rust-lang.github.io/rustup/concepts/channels.html#working-with-nightly-rust
+[component]: https://rust-lang.github.io/rustup/concepts/components.html
+[template projects]: ../writing-your-own-application/generate-project-from-template.md
+[unstable cargo feature]: https://doc.rust-lang.org/cargo/reference/unstable.html
+[`LLVM`]: https://llvm.org/
+[different flavors of RISC-V 32 target in Rust]: https://doc.rust-lang.org/nightly/rustc/platform-support.html#tier-2
+[RISC-V extensions]: https://en.wikichip.org/wiki/risc-v/standard_extensions
+[Tier 3]: https://doc.rust-lang.org/nightly/rustc/platform-support.html#tier-3
+[`esp-idf-sys`]: https://github.com/esp-rs/esp-idf-sys
 
-    ```bash
-    rustup toolchain install nightly --component rust-src
-    ```
+## Xtensa targets
 
-[rustup-book-channel-nightly]: https://rust-lang.github.io/rustup/concepts/channels.html#working-with-nightly-rust
-[rustup-book-components]: https://rust-lang.github.io/rustup/concepts/components.html
+To this day, there is no `Xtensa` support in the mainline Rust compiler. For this reason, we maintain the [esp-rs/rust] fork that adds support for our `Xtensa` targets.
 
+The main reason for `Xtensa` not being supported on Rust mainline is because `LLVM` does not support Xtensa targets. Therefore, we also maintain a fork of `LLVM` with support for Espressif `Xtensa` targets in [espressif/llvm-project].
 
-2. Set the target:
-    - For `no_std` (bare-metal) applications, run:
+> #### A note in upstreaming our forks.
+>
+> We are trying to upstream the changes in our `LLVM` and Rust forks.
+> The first step is to upstream the `LLVM` project, this is already in progress
+> and you can see the status at this [tracking issue].
+> If our `LLVM` changes are accepted in `LLVM` mainline, we will proceed with trying
+> to upstream the Rust compiler changes.
 
-      ```bash
-      rustup target add riscv32imc-unknown-none-elf
-      ```
+Another consequence of `LLVM` not supporting our `Xtensa` targets is that we need to provide our own linker. In other words, we'll need to install a [GCC toolchain] to use it as our linker.
 
-      This target is currently [Tier 2][rust-lang-book--platform-support-tier2]; note the different flavors of `riscv32` target in Rust covering different [`RISC-V` extensions][wiki-riscv-standard-extensions].
+The forked compiler can coexist with the standard Rust compiler, so it is possible to have both installed on your system. The forked compiler is invoked when using the `esp` [channel] instead of the defaults, `stable` or `nightly`.
 
-    - For `std` applications, use the target `riscv32imc-esp-espidf`.
+Since the installation in this scenario is slightly complex, we have created a tool called `espup` to make it easier.
 
-      Since this target is currently [Tier 3][rust-lang-book--platform-support-tier3], it does not have pre-built objects distributed through `rustup`, and **it does not need to be installed** as the `no_std` target.
+[esp-rs/rust]: https://github.com/esp-rs/rust
+[espressif/llvm-project]: https://github.com/espressif/llvm-project
+[GCC toolchain]: https://github.com/espressif/crosstool-NG/
+[tracking issue]: https://github.com/espressif/llvm-project/issues/4
+[channel]: https://rust-lang.github.io/rustup/concepts/channels.html
 
+### espup
 
-[rust-lang-book--platform-support-tier2]: https://doc.rust-lang.org/nightly/rustc/platform-support.html#tier-2
-[wiki-riscv-standard-extensions]: https://en.wikichip.org/wiki/risc-v/standard_extensions
-[rust-lang-book--platform-support-tier3]: https://doc.rust-lang.org/nightly/rustc/platform-support.html#tier-3
+[esp-rs/espup] is a tool for installing and maintaining the necessary ecosystem to develop applications in Rust for Espressif SoC's (both `Xtensa` and `RISC-V` targets).
 
+`espup` takes care of installing the proper Rust compiler (our fork in case of `Xtensa` targets and the `nightly` toolchain with the necessary target for `RISC-V` targets), `LLVM` toolchain,  `GCC` toolchains, `rustup`, and many other things. For more details, [see Usage section of the `espup` Readme].
 
-3. To build `std` projects, you also need to install:
-    - [`LLVM`][llvm-website] compiler infrastructure
-    - Other [`std` developemnt requirements][rust-esp-book-std-requirements]
-    - In your project's file `.cargo/config.toml`, add the unstable Cargo [feature][cargo-book-unstable-features] `-Z build-std`. Our [template projects][rust-esp-book-write-app-generate-project] that are discussed later in this book already have it added.
-
-
-[llvm-website]: https://llvm.org/
-[rust-esp-book-std-requirements]: #std-development-requirements
-[cargo-book-unstable-features]: https://doc.rust-lang.org/cargo/reference/unstable.html
-[rust-esp-book-write-app-generate-project]: ../writing-your-own-application/generate-project-from-template.md
-
-
-Now you should be able to build and run projects on the Espressif's `RISC-V` chips.
-
-
-## RISC-V and Xtensa targets
-
-[`espup`][espup-github] is a tool that simplifies installing and maintaining the components required to develop Rust applications for the `Xtensa` architecture.
-
-[espup-github]: https://github.com/esp-rs/espup
-
-To install `espup`, run:
+To install `espup`, use the following command:
 ```sh
 cargo install espup
 ```
-
 You can also directly download pre-compiled [release binaries] or use [cargo-binstall].
 
+Once that `espup` is installed, you can simply run:
+```sh
+espup install
+```
+
+This will install all the necessary tools to develop Rust applications for all supported ESP targets.
+
+`espup` will create an export file, by default `$HOME/export-esp.sh` on Unix systems and `%USERPROFILE%\export-esp.ps1` on Windows. This file contains some environment variables required to build projects. Make sure to source this file in every terminal before building any application:
+
+```sh
+# Unix
+. $HOME/export-esp.sh
+# Windows
+%USERPROFILE%\export-esp.ps1
+```
+
+[esp-rs/espup]: https://github.com/esp-rs/espup
+[see Usage section of the `espup` Readme]: https://github.com/esp-rs/espup#usage
 [release binaries]: https://github.com/esp-rs/espup/releases
 [cargo-binstall]: https://github.com/cargo-bins/cargo-binstall
-
-Once `espup` is installed, do the following:
-
-1. Install all the necessary tools to develop Rust applications for all supported Espressif targets by running:
-    ```sh
-    espup install
-    ```
-
-    `espup` will create an export file that contains some environment variables required to build projects:
-
-    - Unix systems - `$HOME/export-esp.sh`
-    - Windows - `%USERPROFILE%\export-esp.ps1`
-
-2. On Unix systems, make sure to source this file in every terminal before building any application: `. $HOME/export-esp.sh`
-
-  > On Windows systems, the file is created to show the user the modified enviroment variables, but user does not require sourcing any file.
-
-
-After running `espup install`:
-
-- `no_std` (bare-metal) applications should work out of the box
-- `std` applications require additional software covered in [`std` Development Requirements][rust-esp-book-std-requirements]
 
 ### Other installation methods
 
@@ -132,73 +120,41 @@ After running `espup install`:
 [esp-rs/rust-build]: https://github.com/esp-rs/rust-build
 [Installing from Source section of the esp-rs/rust repository]: https://github.com/esp-rs/rust#installing-from-source
 
-### What espup Installs
+## Rust with `std` runtime
 
-To enable support for Xtensa targets, `espup` installs the following tools:
-
-- Espressif Rust fork with support for `Xtensa` targets
-- `nightly` toolchain with the necessary `RISC-V` targets
-- `LLVM` [fork][llvm-github-fork] that supports `Xtensa` targets
-- [GCC toolchain][gcc-toolchain-github-fork] as it is used as linker
-
-The forked compiler can coexist with the standard Rust compiler, allowing both to be installed on your system. The forked compiler is invoked when using any of the available [overriding methods][rustup-overrides].
-
-> **Note**: We are making efforts to upstream our forks
-
-> 1. Changes in `LLVM` fork. Already in progress, see the status in this [tracking issue][llvm-github-fork-upstream issue].
-> 2. Rust compiler forks. If `LLVM` changes are accepted, we will proceed with the Rust compiler changes.
-
-
-[llvm-github-fork]: https://github.com/espressif/llvm-project
-[gcc-toolchain-github-fork]: https://github.com/espressif/crosstool-NG/
-[rustup-overrides]: https://rust-lang.github.io/rustup/overrides.html
-[llvm-github-fork-upstream issue]: https://github.com/espressif/llvm-project/issues/4
-
-
-## `std` Development Requirements
-
-Regardless of the target architecture, make sure you have the following required tools installed to build [`std`][rust-esp-book-overview-std] applications:
-
-- [`python`][python-website-download]: Required by ESP-IDF
-- [`git`][git-website-download]: Required by ESP-IDF
-- [`ldproxy`][embuild-github-ldproxy] crate: Simple tool to pass the `ldproxy` linker arguments to the actual linker executable. Install it  by running
+Regardless of the target architecture, if you want to build a project using the [`std` approach], you will also need:
+- [ESP-IDF]: Espressif IoT Development Framework as it's used as our hosted environment.
+  - This is handled by [`esp-idf-sys`] (a crate that all `std` projects need to use) by default. See [ESP-IDF installation note] for details on how ESP-IDF can be installed.
+- [`ldproxy`] crate:  Simple tool to forward linker arguments given to [`ldproxy`] to the actual linker executable. The crate can be found in the [esp-rs/embuild] repository. To install it, use the following command:
   - `cargo install ldproxy`
 
-The std runtime uses [ESP-IDF][esp-idf-github] (Espressif IoT Development Framework) as hosted environment but, users do not need to install it. ESP-IDF is automatically downloaded and installed by [esp-idf-sys][esp-idf-sys-github], a crate that all std projects need to use, when building a std application.
 
-
-[rust-esp-book-overview-std]: ../overview/using-the-standard-library.md
-[python-website-download]: https://www.python.org/downloads/
-[git-website-download]: https://git-scm.com/downloads
-[embuild-github-ldproxy]: https://github.com/esp-rs/embuild/tree/master/ldproxy
-[esp-idf-sys-github]: https://github.com/esp-rs/esp-idf-sys
-[esp-idf-github]: https://github.com/espressif/esp-idf
-
+[ESP-IDF]: https://github.com/espressif/esp-idf
+[`std` approach]: ../overview/using-the-standard-library.md
+[`ldproxy`]: https://github.com/esp-rs/embuild/tree/master/ldproxy
+[esp-rs/embuild]: https://github.com/esp-rs/embuild
+[ESP-IDF installation note]: https://github.com/esp-rs/espup#esp-idf-instalation
 
 ## Using Containers
 
-Instead of installing directly on your local system, you can host the development environment inside a container. Espressif provides the [idf-rust] image that supports both `RISC-V` and `Xtensa` target architectures and enables both `std` and `no_std` development.
+As an alternative to installing the environment directly on your local system, it's also possible to run it inside a container.
 
-You can find numerous tags for `linux/arm64` and `linux/amd64` platforms.
+A number of container runtimes are available, and which one you should use depends on your operating system. Some popular options are:
 
-For each Rust release, we generate the tag with the following naming convention:
+- [Docker] (non-commercial use only without a license)
+- [Podman]
+- [Lima]
 
-- `std` applications
-  - `<chip>_<esp-idf-version>_<rust-toolchain-version>`
-  - For example, `esp32s3_v4.4_1.64.0.0` contains the ecosystem for developing `std` applications based on [ESP-IDF release/v4.4] for `ESP32-S3` with the `1.64.0.0` Rust toolchain.
-- `no_std` applications
-  - `<chip>_<rust-toolchain-version>`
-  - For example, `esp32_1.64.0.0` contains the ecosystem for developing `no_std` applications for `ESP32` with the `1.64.0.0` Rust toolchain
+Espressif provides the [idf-rust] container image which contains several tags (generated both for `linux/arm64` and `linux/amd64`) for every Rust release:
+- For `std` applications, the following naming convention is applied: `<chip>_<esp-idf-version>_<rust-toolchain-version>`. For example, [`esp32s3_v4.4_1.64.0.0`] contains the ecosystem for developing `std` applications based on [ESP-IDF release/v4.4] for `ESP32-S3` with the `1.64.0.0` Rust toolchain.
+- For `no_std` applications, the naming convention is: `<chip>_<rust-toolchain-version>`. For example, [`esp32_1.64.0.0`] contains the ecosystem for developing `non_std` applications for `ESP32` with the `1.64.0.0` Rust toolchain.
 
-There are special cases
-
-- `<chip>` can be `all` which indicates compatibility with all ESP targets
-- `<rust-toolchain-version>` can be `latest` which indicates the latest release of the `Xtensa` Rust toolchain
-
-Depending on your operating system, you can choose any container runtime, such as [Docker], [Podman], or [Lima].
-
+There is an `all` variant of `<chip>` that contains the environment required for all the ESP targets, and a `latest` variant of `<rust-toolchain-version>` that contains the latest Xtensa Rust toolchain.
 
 [Docker]: https://www.docker.com/
 [Podman]: https://podman.io/
 [Lima]: https://github.com/lima-vm/lima
 [idf-rust]: https://hub.docker.com/r/espressif/idf-rust/tags
+[`esp32s3_v4.4_1.64.0.0`]: https://hub.docker.com/layers/espressif/idf-rust/esp32s3_v4.4_1.64.0.0/images/sha256-6fa1e98d770e3edc67cbd565893aa04e5573024b1e3e373fae50907435e841e4?context=explore
+[ESP-IDF release/v4.4]: https://github.com/espressif/esp-idf/tree/release/v4.4
+[`esp32_1.64.0.0`]: https://hub.docker.com/layers/espressif/idf-rust/esp32_1.64.0.0/images/sha256-cc026ff9278a876f171d48978988e131940c07659485937a37cf750c44b28dfd?context=explore

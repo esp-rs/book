@@ -1,69 +1,37 @@
-# Comparing `std` and `no_std`
+Standard library (`std`) vs. Bare Metal (`no_std`)
 
-There are several factors that must be considered when choosing between `std` ([esp-idf-hal]) and `no_std` (eg. [esp-hal]). As stated previously, each approach has its own unique set of advantages and disadvantages. While we can't decide for you, this section will hopefully allow you to make an educated decision.
+## Support for Espressif Products
 
-[esp-idf-hal]: https://github.com/esp-rs/esp-idf-hal
-[esp-hal]: https://github.com/esp-rs/esp-hal
+|   Chip   | `std` | `no_std` |
+| :------: | :--------: | :---: |
+|  ESP32   |     ✅      |     ✅      |
+| ESP32-C2 | _planned_   |     ✅      |
+| ESP32-C3 |     ✅      |     ✅      |
+| ESP32-C6 |      ?      | _planned_  |
+| ESP32-S2 |     ✅      |     ✅      |
+| ESP32-S3 |     ✅      |     ✅      |
+| ESP32-H2 | _planned_   | _planned_  |
+| ESP8266  |     ❌      |     ✅      |
 
-## Application Runtimes
+The products supported in certain circumstances will be called _supported Espressif products_ throughout the book.
 
-In the case of applications (as opposed to libraries) the standard library provides a runtime that handles setting up stack overflow protection, spawning the main thread before an application's `main` function is invoked, and handling of command-line arguments.
+As of now, the Espressif products supported by the esp-idf framework are the ones supported for Rust `std` development.
 
-Applications targeting `no_std` will be responsible for initializing their own runtimes instead. Runtime initialization is generally handled by an external dependency, in our case the [riscv-rt] and [xtensa-lx-rt] libraries. You can refer to their READMEs and documentation for more information.
 
-One advantage of not including the default runtime is that you're able to write applications at a lower level. This is possible because the applications will have been linked against the `core` crate instead of `std`, which makes no assumptions about the system it is running on. As such, it's possible to write applications like bootloaders, firmware, or even operating system kernels using the `no_std` approach.
+## Software Stacks
 
-[riscv-rt]: https://github.com/rust-embedded/riscv-rt
-[xtensa-lx-rt]: https://github.com/esp-rs/xtensa-lx-rt
+`std`
 
-## `#![no_main]`
+- Rust `std` library
+- [newlib][newlib-env]
+- esp-idf
 
-Another interesting property of `no_std` applications is that we cannot use Rust's default `main` function as our entry point. It makes certain assumptions that are not necessarily valid in an embedded context (for example, it expects that command-line arguments exist).
+`no_std`
 
-Because of this, you will often see the `#![no_main]` attribute used to instruct the Rust compiler not to use the default entry point. Runtime crates will provide an `#[entry]` attribute which can be used to mark a diverging function as the application's entry point instead. For example, a minimal application might look something like this:
+- Rust `core` library
+- peripheral access crates (PAC)
+- hardware abstraction layers (HAL)
 
-```rust,ignore
-#![no_std]
-#![no_main]
+In both cases, LLVM/Clang is required for compilation.
 
-use riscv_rt::entry;
-
-#[entry]
-fn main() -> ! {
-    loop {}
-}
-```
-
-## Panic Handlers
-
-In addition to specifying the application's entry point, for `no_std` we must also define a panic handler. The default panic behaviour relies on `std`, as it prints to standard output.
-
-You can define a panic handler manually using the `#[panic_handler]` attribute. Note that this function's signature _must_ match the example below.
-
-```rust,ignore
-#![no_std]
-
-use core::panic::PanicInfo;
-
-#[panic_handler]
-fn panic(info: &PanicInfo) -> ! {
-    // Your implementation goes here!
-}
-```
-
-Alternatively, there are a number of external dependencies which define various panic handlers for us. Some possible choices are [panic-halt], [panic-semihosting], or [panic-never].
-
-These can be used simply by installing the relevant dependency, and then importing the crate:
-
-```rust,ignore
-#![no_std]
-
-use panic_halt as _;
-```
-
-Probably the most convenient panic handler for `no_std` on `esp-hal` is [esp-backtrace]
-
-[panic-halt]: https://github.com/korken89/panic-halt
-[panic-semihosting]: https://github.com/rust-embedded/cortex-m/tree/master/panic-semihosting
-[panic-never]: https://github.com/japaric/panic-never
-[esp-backtrace]: https://github.com/esp-rs/esp-backtrace
+[newlib-env]: https://sourceware.org/newlib/

@@ -3,7 +3,7 @@ Standard library (`std`) vs. Bare Metal (`no_std`)
 ## Support for Espressif Products
 
 |   Chip   | `std` | `no_std` |
-| :------: | :--------: | :---: |
+| -------- | :--------: | :---: |
 |  ESP32   |     ✅      |     ✅      |
 | ESP32-C2 | _planned_   |     ✅      |
 | ESP32-C3 |     ✅      |     ✅      |

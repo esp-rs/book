@@ -19,7 +19,7 @@ The table below covers what `no_std` features are supported by Espressif product
 > - Features marked with * must be installed for `no_std` to work.
 
 |         | [HAL][esp-rs/esp-hal]* | [PAC][esp-rs/esp-pacs]* | [Wi-Fi][esp-rs/esp-wifi] | [Bluetooth][esp-rs/esp-wifi] | [Heap][esp-rs/esp-alloc] | [Println][esp-rs/esp-println] | [Backtrace][esp-rs/esp-backtrace] | [Storage][esp-rs/esp-storage] |
-| :------: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| -------- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 |  ESP32   |   ✅   |   ✅   |   ✅   |   ✅   |   ✅   |   ✅   |   ✅   |   ✅   |
 | ESP32-C2 |   ✅   |   ✅   |   ✅   |   ✅   |   ❌   |   ✅   |   ✅   |   ✅   |
 | ESP32-C3 |   ✅   |   ✅   |   ✅   |   ✅   |   ✅   |   ✅   |   ✅   |   ✅   |

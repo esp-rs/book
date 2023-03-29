@@ -136,7 +136,7 @@ After running `espup install`:
 To enable support for Xtensa targets, `espup` installs the following tools:
 
 - Espressif Rust fork with support for `Xtensa` targets
-- `nightly` toolchain with the necessary `RISC-V` targets
+- `nightly` toolchain with support for `RISC-V` targets
 - `LLVM` [fork][llvm-github-fork] that supports `Xtensa` targets
 - [GCC toolchain][gcc-toolchain-github-fork] as it is used as linker
 

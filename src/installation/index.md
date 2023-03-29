@@ -88,7 +88,7 @@ Now you should be able to build and run projects on the Espressif's `RISC-V` chi
 
 ## RISC-V and Xtensa targets
 
-[`espup`][espup-github] is a tool that simplifies installing and maintaining the components required to develop Rust applications for the `Xtensa` architecture.
+[`espup`][espup-github] is a tool that simplifies installing and maintaining the components required to develop Rust applications for the `Xtensa` and `RISC-V` architectures.
 
 [espup-github]: https://github.com/esp-rs/espup
 

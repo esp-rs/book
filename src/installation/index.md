@@ -123,14 +123,6 @@ After running `espup install`:
 - `no_std` (bare-metal) applications should work out of the box
 - `std` applications require additional software covered in [`std` Development Requirements][rust-esp-book-std-requirements]
 
-### Other installation methods for Xtensa targets
-
-- Using [esp-rs/rust-build] installation scripts. This was the recommended way in the past, but now the installation scripts are feature frozen, and all new features will only be included in `espup`. See the repository README for instructions.
-- Building the Rust compiler with `Xtensa` support from source. This process is computationally expensive and can take one or more hours to complete depending on your system. It is not recommended unless there is a major reason to go for this approach. Here is the repository to build it from source: [esp-rs/rust repository].
-
-[esp-rs/rust-build]: https://github.com/esp-rs/rust-build#download-installer-in-bash
-[esp-rs/rust repository]: https://github.com/esp-rs/rust
-
 ### What espup Installs
 
 To enable support for Xtensa targets, `espup` installs the following tools:
@@ -151,6 +143,15 @@ The forked compiler can coexist with the standard Rust compiler, allowing both t
 [gcc-toolchain-github-fork]: https://github.com/espressif/crosstool-NG/
 [rustup-overrides]: https://rust-lang.github.io/rustup/overrides.html
 [llvm-github-fork-upstream issue]: https://github.com/espressif/llvm-project/issues/4
+
+
+### Other installation methods for Xtensa targets
+
+- Using [esp-rs/rust-build] installation scripts. This was the recommended way in the past, but now the installation scripts are feature frozen, and all new features will only be included in `espup`. See the repository README for instructions.
+- Building the Rust compiler with `Xtensa` support from source. This process is computationally expensive and can take one or more hours to complete depending on your system. It is not recommended unless there is a major reason to go for this approach. Here is the repository to build it from source: [esp-rs/rust repository].
+
+[esp-rs/rust-build]: https://github.com/esp-rs/rust-build#download-installer-in-bash
+[esp-rs/rust repository]: https://github.com/esp-rs/rust
 
 
 ## `std` Development Requirements

@@ -1,6 +1,6 @@
 # Setting Up a Development Environment
 
-At the moment, Espressif SoCs are based on two different architectures -- `RISC-V` and `Xtensa`. Both architectures support `std` and `no_std` approaches.
+At the moment, Espressif SoCs are based on two different architectures: `RISC-V` and `Xtensa`. Both architectures support `std` and `no_std` approaches.
 
 To set up the development environment, do the following:
 

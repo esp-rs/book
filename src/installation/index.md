@@ -123,7 +123,7 @@ After running `espup install`:
 - `no_std` (bare-metal) applications should work out of the box
 - `std` applications require additional software covered in [`std` Development Requirements][rust-esp-book-std-requirements]
 
-### Other installation methods
+### Other installation methods for Xtensa targets
 
 - Using [esp-rs/rust-build] installation scripts. This was the recommended way in the past, but now the installation scripts are feature frozen, and all new features will only be included in `espup`. See the repository README for instructions.
 - Building the Rust compiler with `Xtensa` support from source. This process is computationally expensive and can take one or more hours to complete depending on your system. It is not recommended unless there is a major reason to go for this approach. Here is the repository to build it from source: [esp-rs/rust repository].

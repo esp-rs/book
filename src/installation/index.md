@@ -160,8 +160,7 @@ Regardless of the target architecture, make sure you have the following required
 
 - [`python`][python-website-download]: Required by ESP-IDF
 - [`git`][git-website-download]: Required by ESP-IDF
-- [`ldproxy`][embuild-github-ldproxy] crate: Simple tool to pass the `ldproxy` linker arguments to the actual linker executable. Install it  by running
-  - `cargo install ldproxy`
+- [`ldproxy`][embuild-github-ldproxy] crate: Simple tool to pass the `ldproxy` linker arguments to the actual linker executable. Install it  by running:
 
 The std runtime uses [ESP-IDF][esp-idf-github] (Espressif IoT Development Framework) as hosted environment but, users do not need to install it. ESP-IDF is automatically downloaded and installed by [esp-idf-sys][esp-idf-sys-github], a crate that all std projects need to use, when building a std application.
 

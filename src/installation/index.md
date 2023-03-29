@@ -115,7 +115,6 @@ Once `espup` is installed, do the following:
     - Windows - `%USERPROFILE%\export-esp.ps1`
 
 2. On Unix systems, make sure to source this file in every terminal before building any application: `. $HOME/export-esp.sh`
-
   > On Windows systems, no need to source the file. It is only created to show the modified environment variables.
 
 

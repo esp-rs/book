@@ -1,5 +1,14 @@
 # Standard library (`std`) vs. Bare Metal (`no_std`)
 
+There are several factors that must be considered when choosing between `std` and `no_std` approaches. Each approach has its own unique set of advantages and disadvantages. While we can't decide for you, this section will hopefully allow you to make an educated decision.
+
+[esp-idf-hal]: https://github.com/esp-rs/esp-idf-hal
+[esp-hal]: https://github.com/esp-rs/esp-hal
+
+See also the comparison in [The Embedded Rust Book][embedded-rust-book-intro-std]
+
+[embedded-rust-book-intro-std]: https://docs.rust-embedded.org/book/intro/no-std.html#a-no_std-rust-environment
+
 ## Support for Espressif Products
 
 |   Chip   | `std` | `no_std` |

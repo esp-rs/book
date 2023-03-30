@@ -9,7 +9,7 @@ Espressif provides a C-based development framework called [esp-idf][esp-idf-gith
 [esp-idf-github]: https://github.com/espressif/esp-idf
 [newlib-env]: https://sourceware.org/newlib/
 
-### Supported `std` Features
+## Supported `std` Features
 
 When using `std`, you have access to a lot of features that exist in [esp-idf][esp-idf-github], including threads, mutexes and other synchronization primitives, collections, random number generation, sockets...
 

@@ -20,7 +20,7 @@ The table below covers the current support for `no_std` at this moment for diffe
 > - ✅ - the feature is implemented or supported
 > - ⏳ - the feature is under development
 > - ❌ - the feature is not supported
-> - ESP8266 HAL is in maintenance mode and no further development will be done for this chip
+> - [ESP8266 HAL][esp-rs/esp8266-hal] is in maintenance mode and no further development will be done for this chip
 
 |         | [HAL][esp-rs/esp-hal] | [PAC][esp-rs/esp-pacs] | [Wi-Fi][esp-rs/esp-wifi] | [Bluetooth][esp-rs/esp-wifi] | [Heap][esp-rs/esp-alloc] | [Println][esp-rs/esp-println] | [Backtrace][esp-rs/esp-backtrace] | [Storage][esp-rs/esp-storage] |
 | -------- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |

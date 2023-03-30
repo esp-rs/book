@@ -30,7 +30,7 @@ The table below covers the current support for `no_std` at this momment for the 
 | ESP32-H2 |   ❌   |   ✅   |   ❌   |   ❌   |   ❌   |   ✅   |   ❌   |   ❌   |
 | ESP8266  |   ✅   |   ✅   |   ❌   |   ❌   |   ❌   |   ✅   |   ❌   |   ❌   |
 
-The `no_std` features are elaborated on below.
+Here is a list with the relevant crates and small summary of what they do for `no_std`:
 
 - **HAL** -- Hardware abstraction layer, see [esp-rs/esp-hal] and [esp-rs/esp8266-hal]
 - **PAC** -- Peripheral access crates, see [esp-rs/esp-pacs]

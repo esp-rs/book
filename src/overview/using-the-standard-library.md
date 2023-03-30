@@ -21,8 +21,6 @@ When using `std`, you have access to a lot of features that exist in [esp-idf][e
 
 ### Relevant `esp-rs` crates
 
-[esp-idf-github]: https://github.com/espressif/esp-idf
-
 | Repository            | Description                                                                                                   |
 | --------------------- | ------------------------------------------------------------------------------------------------------------- |
 | [esp-rs/esp-idf-svc]  | An implementation of [embedded-svc] using `esp-idf` drivers.                                                  |

@@ -26,7 +26,7 @@ The [esp-rs organization] on GitHub is home to a number of repositories related 
 > - Repositories starting with `esp-` are focused on `no_std` apporach. E.g. `esp-hal`
 >
 > It is easy to remember as follows:
-
+>
 > - `no_std` works on top of bare metal, so `esp-` is an Espressif chip
 >- `std` apart from bare metal also needs an [additional layer](https://github.com/espressif/esp-idf), which is `esp-idf-`
 

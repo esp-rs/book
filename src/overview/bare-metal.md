@@ -11,7 +11,7 @@ It's important to note that since `no_std`uses the Rust core library, a subset o
 
 ## Current support
 
-The table below covers what `no_std` features are supported by Espressif products.
+The table below covers the current support for `no_std` at this momment for the different Espressif products.
 
 > **Notes**:
 >

@@ -7,6 +7,7 @@ Espressif provides a C-based development framework called [esp-idf][esp-idf-gith
 `esp-idf` in turn provides a [newlib][newlib-env] environment with enough functionality to build the Rust standard library (`std`) on top of it. This is the approach that is being taken to enable `std` support on ESP devices.
 
 [esp-idf-github]: https://github.com/espressif/esp-idf
+[newlib-env]: https://sourceware.org/newlib/
 
 ### Supported `std` Features
 

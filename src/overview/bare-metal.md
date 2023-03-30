@@ -9,7 +9,7 @@ It's important to note that since `no_std`uses the Rust core library, a subset o
 [embedded-rust-book-no-std]: https://docs.rust-embedded.org/book/intro/no-std.html
 
 
-## Relevant `esp-rs` crates
+## Current support
 
 The table below covers what `no_std` features are supported by Espressif products.
 

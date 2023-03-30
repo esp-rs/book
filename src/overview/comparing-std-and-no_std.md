@@ -5,18 +5,19 @@
 |   Chip   | `std` | `no_std` |
 | -------- | :--------: | :---: |
 |  ESP32   |     ✅      |     ✅      |
-| ESP32-C2 | _planned_   |     ✅      |
+| ESP32-C2 |     ⏳      |     ✅      |
 | ESP32-C3 |     ✅      |     ✅      |
-| ESP32-C6 |      ?      | ✅  |
+| ESP32-C6 |      ?      |     ✅      |
 | ESP32-S2 |     ✅      |     ✅      |
 | ESP32-S3 |     ✅      |     ✅      |
-| ESP32-H2 | _planned_   | _planned_  |
+| ESP32-H2 |     ⏳      |     ⏳      |
 | ESP8266  |     ❌      |     ✅      |
 
 The products supported in certain circumstances will be called _supported Espressif products_ throughout the book.
 
-As of now, the Espressif products supported by the esp-idf framework are the ones supported for Rust `std` development.
+As of now, the Espressif products supported by the [esp-idf framework][esp-idf-release-compatibility] are the ones supported for Rust `std` development.
 
+[esp-idf-release-compatibility]: https://github.com/espressif/esp-idf#esp-idf-release-and-soc-compatibility/
 
 ## Software Stacks
 

@@ -9,7 +9,11 @@ Espressif provides a C-based development framework called [esp-idf][esp-idf-gith
 [esp-idf-github]: https://github.com/espressif/esp-idf
 [newlib-env]: https://sourceware.org/newlib/
 
-## Supported `std` Features
+## Current Support
+
+As of now, the Espressif products supported by the [esp-idf framework][esp-idf-release-compatibility] are the ones supported for Rust `std` development.
+
+[esp-idf-release-compatibility]: https://github.com/espressif/esp-idf#esp-idf-release-and-soc-compatibility/
 
 When using `std`, you have access to a lot of features that exist in [esp-idf][esp-idf-github], including threads, mutexes and other synchronization primitives, collections, random number generation, sockets...
 

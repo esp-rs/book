@@ -74,7 +74,7 @@ To build Rust applications for the Espressif chips based on `RISC-V` architectur
 3. To build `std` projects, you also need to install:
     - [`LLVM`][llvm-website] compiler infrastructure
     - Other [`std` development requirements][rust-esp-book-std-requirements]
-    - In your project's file `.cargo/config.toml`, add the unstable Cargo [feature][cargo-book-unstable-features] `-Z build-std`. Our [template projects][rust-esp-book-write-app-generate-project] that are discussed later in this book already have it added.
+    - In your project's file `.cargo/config.toml`, add the unstable Cargo [feature][cargo-book-unstable-features] `-Z build-std`. Our [template projects][rust-esp-book-write-app-generate-project] that are discussed later in this book already include this.
 
 
 [llvm-website]: https://llvm.org/
@@ -130,7 +130,7 @@ To enable support for Xtensa targets, `espup` installs the following tools:
 - Espressif Rust fork with support for `Xtensa` targets
 - `nightly` toolchain with support for `RISC-V` targets
 - `LLVM` [fork][llvm-github-fork] with support for `Xtensa` targets
-- [GCC toolchain][gcc-toolchain-github-fork] as it is used as linker
+- [GCC toolchain][gcc-toolchain-github-fork] that compiles the ESP-IDF and links the final binary
 
 The forked compiler can coexist with the standard Rust compiler, allowing both to be installed on your system. The forked compiler is invoked when using any of the available [overriding methods][rustup-overrides].
 
@@ -160,7 +160,7 @@ Regardless of the target architecture, make sure you have the following required
 
 - [`python`][python-website-download]: Required by ESP-IDF
 - [`git`][git-website-download]: Required by ESP-IDF
-- [`ldproxy`][embuild-github-ldproxy] crate: Simple tool to pass the `ldproxy` linker arguments to the actual linker executable. Install it  by running:
+- [`ldproxy`][embuild-github-ldproxy] binary crate: A tool that forwards linker arguments to the actual linker that is also given as an argument to `ldproxy`. Install it by running:
     ```sh
     cargo install ldproxy
     ```

@@ -2,7 +2,7 @@
 
 There are the following approaches to use Rust on Espressif chips:
 
-- Using the `standard` library (`std`)
+- Using the `std` library, a.k.a Standard Library.
 - Using the `core` library (`no_std`), a.k.a. bare metal development
 
 Both approaches have their advantages and disadvantages, so you should make a decision based on your project's needs. This chapter contains an overview of the two approaches followed by a brief comparison between them.

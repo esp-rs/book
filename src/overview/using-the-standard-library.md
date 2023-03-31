@@ -17,8 +17,6 @@ As of now, the Espressif products supported by the [esp-idf framework][esp-idf-r
 
 When using `std`, you have access to a lot of features that exist in [esp-idf][esp-idf-github], including threads, mutexes and other synchronization primitives, collections, random number generation, sockets...
 
-[esp-rs/esp-idf-svc](https://github.com/esp-rs/esp-idf-svc) adds extra support for services/modules not available in the standard library, such as Wi-Fi management, NVS (non-volatile storage), networking services, such as `httpd` and `ping`, etc.
-
 ### Relevant `esp-rs` crates
 
 | Repository            | Description                                                                                                   |

@@ -2,9 +2,6 @@
 
 There are several factors that must be considered when choosing between `std` and `no_std` approaches. Each approach has its own unique set of advantages and disadvantages. While we can't decide for you, this section will hopefully allow you to make an educated decision.
 
-[esp-idf-hal]: https://github.com/esp-rs/esp-idf-hal
-[esp-hal]: https://github.com/esp-rs/esp-hal
-
 See also the comparison in [The Embedded Rust Book][embedded-rust-book-intro-std]
 
 [embedded-rust-book-intro-std]: https://docs.rust-embedded.org/book/intro/no-std.html#a-no_std-rust-environment
@@ -27,21 +24,3 @@ The products supported in certain circumstances will be called _supported Espres
 As of now, the Espressif products supported by the esp-idf framework are the ones supported for Rust `std` development. For details on different versions of esp-idf and support of Espressif chips, see [this table][esp-idf-release-compatibility].
 
 [esp-idf-release-compatibility]: https://github.com/espressif/esp-idf#esp-idf-release-and-soc-compatibility/
-
-## Software Stacks
-
-`std`
-
-- Rust `std` library
-- [newlib][newlib-env]
-- esp-idf
-
-`no_std`
-
-- Rust `core` library
-- peripheral access crates (PAC)
-- hardware abstraction layers (HAL)
-
-In both cases, LLVM/Clang is required for compilation.
-
-[newlib-env]: https://sourceware.org/newlib/

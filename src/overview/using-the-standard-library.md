@@ -1,8 +1,8 @@
 # Using the Standard Library (`std`)
 
-Espressif provides a C-based development framework called [esp-idf][esp-idf-github] which has support for all Espressif chips starting with the ESP32; note that this framework does _not_ support the ESP8266. See also Section [Support for Espressif Products][rust-esp-book-std-vs-no-std-support].
+Espressif provides a C-based development framework called [esp-idf][esp-idf-github] which has support for all Espressif chips starting with the ESP32; note that this framework does _not_ support the ESP8266. See also Section [Support for Espressif Products][rust-esp-book-overview-index].
 
-[rust-esp-book-std-vs-no-std-support]: ./comparing-std-and-no_std.html#support-for-espressif-products
+[rust-esp-book-overview-index]: index.md#support-for-espressif-products
 
 `esp-idf` in turn provides a [newlib][newlib-env] environment with enough functionality to build the Rust standard library (`std`) on top of it. This is the approach that is being taken to enable `std` support on ESP devices.
 
@@ -24,7 +24,7 @@ When using `std`, you have access to a lot of features that exist in [esp-idf][e
 | [esp-rs/esp-idf-svc]  | An implementation of [embedded-svc] using `esp-idf` drivers.                                                  |
 | [esp-rs/esp-idf-hal]  | An implementation of the `embedded-hal` and other traits using the `esp-idf` framework.                       |
 | [esp-rs/esp-idf-sys]  | Rust bindings to the `esp-idf` development framework. Gives raw (`unsafe`) access to drivers, Wi-Fi and more. |
-| [esp-rs/embedded-svc] | Abstraction traits for embedded services (`WiFi`, `Network`, `Httpd`, `Logging`, etc.)                       |
+| [esp-rs/embedded-svc] | Abstraction traits for embedded services (`WiFi`, `Network`, `Httpd`, `Logging`, etc.)                        |
 
 [newlib]: https://sourceware.org/newlib/
 [embedded-svc]: https://github.com/esp-rs/embedded-svc

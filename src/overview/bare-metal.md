@@ -37,7 +37,7 @@ Here is a list with the relevant crates and small summary of what they do for `n
 
 | Symbol | Repository | Description |
 | ------ | ---------- | ----------- |
-| **HAL** | [esp-rs/esp-hal] and [esp-rs/esp8266-hal] | Hardware abstraction layer |
+| **HAL** | [esp-rs/esp-hal] | Hardware abstraction layer |
 | **PAC** | [esp-rs/esp-pacs] | Peripheral access crates |
 | **Wi-Fi** | [esp-rs/esp-wifi] | Wi-Fi support |
 | **Bluetooth** | [esp-rs/esp-wifi] | Bluetooth LE support |

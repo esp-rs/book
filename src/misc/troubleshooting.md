@@ -113,3 +113,5 @@ Some of the LLVM 15 releases, `esp-15.0.0-20220922` and `esp-15.0.0-20221014`, r
 - Fedora: `sudo dnf install ncurses-compat-libs`
 - openSUSE: `sudo dnf install libncurses5`
 - Arch Linux: `sudo pacman -S ncurses5-compat-libs`
+
+## FAQ

@@ -5,17 +5,17 @@ There are the following approaches to use Rust on Espressif chips:
 - Using the `std` library, a.k.a Standard Library.
 - Using the `core` library (`no_std`), a.k.a. bare metal development
 
-Both approaches have their advantages and disadvantages, so you should make a decision based on your project's needs. This chapter contains an overview of the two approaches followed by a brief comparison between them.
+Both approaches have their advantages and disadvantages, so you should make a decision based on your project's needs. This chapter contains an overview of the two approaches:
 
-- [Standard library (`std`) vs. Bare Metal (`no_std`)][rust-esp-book-std-vs-no-std]
 - [Using the Standard Library (`std`)][rust-esp-book-std]
 - [Developing on Bare Metal (`no_std`)][rust-esp-book-no-std]
 
+[rust-esp-book-std]: ./using-the-standard-library.md
+[rust-esp-book-no-std]: ./bare-metal.md
 
-[rust-esp-book-std-vs-no-std]: ./comparing-std-and-no_std.html
-[rust-esp-book-std]: ./using-the-standard-library.html
-[rust-esp-book-no-std]: ./bare-metal.html
+See also the comparison of the different runtimes in [The Embedded Rust Book][embedded-rust-book-intro-std].
 
+[embedded-rust-book-intro-std]: https://docs.rust-embedded.org/book/intro/no-std.html#a-no_std-rust-environment
 
 The [esp-rs organization] on GitHub is home to a number of repositories related to running Rust on Espressif chips. Most of the required crates have their source code hosted here.
 
@@ -31,3 +31,28 @@ The [esp-rs organization] on GitHub is home to a number of repositories related 
 >- `std` apart from bare metal also needs an [additional layer](https://github.com/espressif/esp-idf), which is `esp-idf-`
 
 [esp-rs organization]: https://github.com/esp-rs/
+
+## Support for Espressif Products
+
+> **Notes**:
+>
+> - ✅ - The feature is implemented or supported
+> - ⏳ - The feature is under development
+> - ❌ - The feature is not supported
+
+| Chip     | `std` | `no_std` |
+| -------- | :---: | :------: |
+| ESP32    |   ✅   |    ✅     |
+| ESP32-C2 |   ⏳   |    ✅     |
+| ESP32-C3 |   ✅   |    ✅     |
+| ESP32-C6 |   ⏳   |    ✅     |
+| ESP32-S2 |   ✅   |    ✅     |
+| ESP32-S3 |   ✅   |    ✅     |
+| ESP32-H2 |   ⏳   |    ⏳     |
+| ESP8266  |   ❌   |    ✅     |
+
+The products supported in certain circumstances will be called _supported Espressif products_ throughout the book.
+
+As of now, the Espressif products supported by the esp-idf framework are the ones supported for Rust `std` development. For details on different versions of esp-idf and support of Espressif chips, see [this table][esp-idf-release-compatibility].
+
+[esp-idf-release-compatibility]: https://github.com/espressif/esp-idf#esp-idf-release-and-soc-compatibility

@@ -8,6 +8,12 @@ See also the comparison in [The Embedded Rust Book][embedded-rust-book-intro-std
 
 ## Support for Espressif Products
 
+> **Notes**:
+>
+> - ✅ - the feature is implemented or supported
+> - ⏳ - the feature is under development
+> - ❌ - the feature is not supported
+
 |   Chip   | `std` | `no_std` |
 | -------- | :--------: | :---: |
 |  ESP32   |     ✅      |     ✅      |

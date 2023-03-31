@@ -130,7 +130,7 @@ To enable support for Xtensa targets, `espup` installs the following tools:
 - Espressif Rust fork with support for `Xtensa` targets
 - `nightly` toolchain with support for `RISC-V` targets
 - `LLVM` [fork][llvm-github-fork] with support for `Xtensa` targets
-- [GCC toolchain][gcc-toolchain-github-fork] that compiles the ESP-IDF and links the final binary
+- [GCC toolchain][gcc-toolchain-github-fork] that links the final binary
 
 The forked compiler can coexist with the standard Rust compiler, allowing both to be installed on your system. The forked compiler is invoked when using any of the available [overriding methods][rustup-overrides].
 

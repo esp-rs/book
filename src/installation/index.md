@@ -126,7 +126,7 @@ After running `espup install`:
 
 ### What espup Installs
 
-To enable support for Xtensa targets, `espup` installs the following tools:
+To enable support for Espressif targets, `espup` installs the following tools:
 
 - Espressif Rust fork with support for Espressif targets
 - `nightly` toolchain with support for `RISC-V` targets

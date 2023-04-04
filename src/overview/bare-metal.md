@@ -33,16 +33,16 @@ The table below covers the current support for `no_std` at this moment for diffe
 
 Here is a list with the relevant crates and small summary of what they do for `no_std`:
 
-| Symbol | Repository | Description |
-| ------ | ---------- | ----------- |
-| **HAL** | [esp-rs/esp-hal] | Hardware abstraction layer |
-| **PAC** | [esp-rs/esp-pacs] | Peripheral access crates |
-| **Wi-Fi** | [esp-rs/esp-wifi] | Wi-Fi support |
-| **Bluetooth** | [esp-rs/esp-wifi] | Bluetooth LE support |
-| **Heap** | [esp-rs/esp-alloc] | Simple heap allocator |
-| **Println** | [esp-rs/esp-println] | `print!`,  `println!` |
-| **Backtrace** | [esp-rs/esp-backtrace] | Exception and panic handlers |
-| **Storage**  | [esp-rs/esp-storage] | Embedded-storage traits to access unencrypted flash memory |
+| Repository | Description |
+| ---------- | ----------- |
+| [esp-rs/esp-hal] | Hardware abstraction layer |
+| [esp-rs/esp-pacs] | Peripheral access crates |
+| [esp-rs/esp-wifi] | Wi-Fi support |
+| [esp-rs/esp-wifi] | Bluetooth LE support |
+| [esp-rs/esp-alloc] | Simple heap allocator |
+| [esp-rs/esp-println] | `print!`,  `println!` |
+| [esp-rs/esp-backtrace] | Exception and panic handlers |
+| [esp-rs/esp-storage] | Embedded-storage traits to access unencrypted flash memory |
 
 
 [esp-rs/esp-hal]: https://github.com/esp-rs/esp-hal "Hardware abstraction layer"

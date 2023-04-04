@@ -16,39 +16,39 @@ It's important to note that since `no_std`uses the Rust core library, a subset o
 The table below covers the current support for `no_std` at this moment for different Espressif products.
 
 
-|          | [HAL][esp-rs/esp-hal] | [PAC][esp-rs/esp-pacs] | [Wi-Fi][esp-rs/esp-wifi] | [Bluetooth][esp-rs/esp-wifi] | [Heap][esp-rs/esp-alloc] | [Println][esp-rs/esp-println] | [Backtrace][esp-rs/esp-backtrace] | [Storage][esp-rs/esp-storage] |
-| -------- | :-------------------: | :--------------------: | :----------------------: | :--------------------------: | :----------------------: | :---------------------------: | :-------------------------------: | :---------------------------: |
-| ESP32    |           ✅           |           ✅            |            ✅             |              ✅               |            ✅             |               ✅               |                 ✅                 |               ✅               |
-| ESP32-C2 |           ✅           |           ✅            |            ✅             |              ✅               |            ⏳             |               ✅               |                 ✅                 |               ✅               |
-| ESP32-C3 |           ✅           |           ✅            |            ✅             |              ✅               |            ✅             |               ✅               |                 ✅                 |               ✅               |
-| ESP32-C6 |           ✅           |           ✅            |            ✅             |              ⏳               |            ⏳             |               ✅               |                 ✅                 |               ❌               |
-| ESP32-S2 |           ✅           |           ✅            |            ✅             |              ❌               |            ✅             |               ✅               |                 ✅                 |               ✅               |
-| ESP32-S3 |           ✅           |           ✅            |            ✅             |              ✅               |            ✅             |               ✅               |                 ✅                 |               ✅               |
-| ESP32-H2 |           ⏳           |           ✅            |            ⏳             |              ⏳               |            ⏳             |               ✅               |                 ⏳                 |               ⏳               |
-| ESP8266  |           ✅           |           ✅            |            ❌             |              ❌               |            ❌             |               ✅               |                 ❌                 |               ❌               |
+|          | [HAL][esp-rs/esp-hal] | [Wi-Fi/BLE/ESP-NOW][esp-rs/esp-wifi] | [Backtrace][esp-rs/esp-backtrace] | [Storage][esp-rs/esp-storage] |
+| -------- | :-------------------: | :----------------------------------: | :-------------------------------: | :---------------------------: |
+| ESP32    |           ✅           |                  ✅                   |                 ✅                 |               ✅               |
+| ESP32-C2 |           ✅           |                  ✅                   |                 ✅                 |               ✅               |
+| ESP32-C3 |           ✅           |                  ✅                   |                 ✅                 |               ✅               |
+| ESP32-C6 |           ✅           |                  ✅                   |                 ✅                 |               ✅               |
+| ESP32-S2 |           ✅           |                  ✅                   |                 ✅                 |               ✅               |
+| ESP32-S3 |           ✅           |                  ✅                   |                 ✅                 |               ✅               |
+| ESP32-H2 |           ⏳           |                  ⏳                   |                 ⏳                 |               ⏳               |
 
 > **Note**:
 >
-> - [ESP8266 HAL][esp-rs/esp8266-hal] is in maintenance mode and no further development will be done for this chip
+> - ✅ in Wi-Fi/BLE/ESP-NOW means that the target supports, at least, one the listed technologies. For details see [Current support][esp-wifi-current-support] table of the esp-wifi repository.
+> - [ESP8266 HAL][esp-rs/esp8266-hal] is in maintenance mode and no further development will be done for this chip.
 
-Here is a list with the relevant crates and small summary of what they do for `no_std`:
+[esp-wifi-current-support]: https://github.com/esp-rs/esp-wifi#current-support
+### Relevant `esp-rs` crates
 
-| Repository | Description |
-| ---------- | ----------- |
-| [esp-rs/esp-hal] | Hardware abstraction layer |
-| [esp-rs/esp-pacs] | Peripheral access crates |
-| [esp-rs/esp-wifi] | Wi-Fi support |
-| [esp-rs/esp-wifi] | Bluetooth LE support |
-| [esp-rs/esp-alloc] | Simple heap allocator |
-| [esp-rs/esp-println] | `print!`,  `println!` |
-| [esp-rs/esp-backtrace] | Exception and panic handlers |
-| [esp-rs/esp-storage] | Embedded-storage traits to access unencrypted flash memory |
+| Repository             | Description                                                |
+| ---------------------- | ---------------------------------------------------------- |
+| [esp-rs/esp-hal]       | Hardware abstraction layer                                 |
+| [esp-rs/esp-pacs]      | Peripheral access crates                                   |
+| [esp-rs/esp-wifi]      | Wi-Fi, BLE and ESP-NOW support                             |
+| [esp-rs/esp-alloc]     | Simple heap allocator                                      |
+| [esp-rs/esp-println]   | `print!`,  `println!`                                      |
+| [esp-rs/esp-backtrace] | Exception and panic handlers                               |
+| [esp-rs/esp-storage]   | Embedded-storage traits to access unencrypted flash memory |
 
 
 [esp-rs/esp-hal]: https://github.com/esp-rs/esp-hal "Hardware abstraction layer"
-[esp-rs/esp8266-hal]: https://github.com/esp-rs/esp8266-hal
+[esp-rs/esp8266-hal]: https://github.com/esp-rs/esp8266-hal "ESP8266 Hardware abstraction layer"
 [esp-rs/esp-pacs]: https://github.com/esp-rs/esp-pacs "Peripheral access crates"
-[esp-rs/esp-wifi]: https://github.com/esp-rs/esp-wifi "Wi-Fi and Bluetooth LE support"
+[esp-rs/esp-wifi]: https://github.com/esp-rs/esp-wifi "Wi-Fi, BLE and ESP-NOW support"
 [esp-rs/esp-alloc]: https://github.com/esp-rs/esp-alloc "Simple heap allocator"
 [esp-rs/esp-println]: https://github.com/esp-rs/esp-println "print!, println!"
 [esp-rs/esp-backtrace]: https://github.com/esp-rs/esp-backtrace "Exception and panic handlers"

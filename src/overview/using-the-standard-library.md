@@ -21,14 +21,10 @@ When using `std`, you have access to a lot of features that exist in [esp-idf][e
 
 | Repository            | Description                                                                                                   |
 | --------------------- | ------------------------------------------------------------------------------------------------------------- |
+| [esp-rs/embedded-svc] | Abstraction traits for embedded services (`WiFi`, `Network`, `Httpd`, `Logging`, etc.)                        |
 | [esp-rs/esp-idf-svc]  | An implementation of [embedded-svc] using `esp-idf` drivers.                                                  |
 | [esp-rs/esp-idf-hal]  | An implementation of the `embedded-hal` and other traits using the `esp-idf` framework.                       |
 | [esp-rs/esp-idf-sys]  | Rust bindings to the `esp-idf` development framework. Gives raw (`unsafe`) access to drivers, Wi-Fi and more. |
-| [esp-rs/embedded-svc] | Abstraction traits for embedded services (`WiFi`, `Network`, `Httpd`, `Logging`, etc.)                        |
-
-[newlib]: https://sourceware.org/newlib/
-[embedded-svc]: https://github.com/esp-rs/embedded-svc
-[esp-idf-svc]: https://github.com/esp-rs/esp-idf-svc
 
 The aforementioned crates have interdependencies, and this relationship can be seen below.
 
@@ -38,6 +34,7 @@ graph TD;
     esp-idf-svc --> esp-idf-sys & esp-idf-hal & embedded-svc
 ```
 
+[embedded-svc]: https://github.com/esp-rs/embedded-svc
 [esp-rs/embedded-svc]: https://github.com/esp-rs/embedded-svc
 [esp-rs/esp-idf-svc]: https://github.com/esp-rs/esp-idf-svc
 [esp-rs/esp-idf-sys]: https://github.com/esp-rs/esp-idf-sys

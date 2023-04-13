@@ -18,7 +18,7 @@ We can use [`cargo-espflash`] to generate it:
 [`cargo-espflash`]: https://github.com/esp-rs/espflash/tree/main/cargo-espflash
 
 ```bash
-cargo espflash save-image --merge ESP32 <OUTFILE> --release
+cargo espflash save-image --chip esp32 --merge <OUTFILE> --release
 ```
 
 > If you prefer to use [`espflash`], you can achieve the same result by building the project first and then generating image:

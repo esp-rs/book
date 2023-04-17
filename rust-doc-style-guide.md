@@ -36,7 +36,6 @@ The style guide is based on the best practices collected from the following book
   - [Mode of Narration](#mode-of-narration)
   - [Terminology](#terminology)
     - [Recommended Terms](#recommended-terms)
-    - [Spelling issues](#spelling-issues)
   - [Appenndix A Existing Style Guides](#appenndix-a-existing-style-guides)
     - [Documentation](#documentation)
     - [Code](#code)
@@ -236,20 +235,29 @@ Monospace font can also be used in:
 
 ## Terminology
 
-The content here is split into two categories:
+This chapter lists the terms that have inconsistencies in spelling, usage, etc.
 
-- **Recommended terms** covers which terms are better to use in which circumstances
-- **Spelling issues** lists term spellings chosen by the team
+If you spot other issues with terminology, please add the terms here in alphabetical order using the formatting as follows:
+
+- _Recommended term_
+  - Avoid: Add typical phrases in which this term is found
+  - Use: Add recommended phrases
+  - Note: Add more information if needed
 
 ### Recommended Terms
 
-- _SoC_ and _chip_ -- these terms are used interchangeably. Should only one be used?
-- _Product_ -- suggested as an umbrella term for Espressif chips, modules, development boards, etc. Otherwise, you need to list all product types to avoid ambiguities.
-
-### Spelling issues
-
-- _ESP-IDF_ or _esp-idf_?
-- Cargo or cargo or `cargo`?
+- Cargo
+  - Avoid: cargo
+- ESP-IDF
+  - Avoid: esp-idf, esp-idf repo
+  - Use: ESP-IDF, ESP-IDF repo
+- _Product_
+  - Avoid: Espressif SoCs
+  - Use: Espressif products
+  - Note: In the content of running applications, suggested as an umbrella term for Espressif chips, modules, development boards, etc. Otherwise, it might be potentially ambiguous that running an app on an SoC is the same as running it on a module.
+- _SoC_
+  - Avoid: _chip_
+  - Note: see also _product_
 
 
 ## Appenndix A Existing Style Guides

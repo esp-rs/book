@@ -14,9 +14,7 @@ Again run the code.
 You should see something like this
 
 ```text
-
-
-!! A panic occured in 'src\main.rs', at line 25, column 5
+!! A panic occured in 'src/main.rs', at line 24, column 5
 
 PanicInfo {
     payload: Any { .. },
@@ -24,8 +22,8 @@ PanicInfo {
         This is a panic,
     ),
     location: Location {
-        file: "src\\main.rs",
-        line: 25,
+        file: "src/main.rs",
+        line: 24,
         col: 5,
     },
     can_unwind: true,
@@ -33,12 +31,12 @@ PanicInfo {
 
 Backtrace:
 
-0x420019aa
-0x420019aa - main
-    at C:\tmp\getting-started\src\main.rs:25
-0x4200014c
-0x4200014c - _start_rust
-    at ...\.cargo\registry\src\github.com-1ecc6299db9ec823\riscv-rt-0.9.0\src\lib.rs:389
+0x42001cf8
+0x42001cf8 - main
+    at ../esp-rust-app/src/main.rs:24
+0x42000120
+0x42000120 - _start_rust
+    at ../.cargo/registry/src/index.crates.io-6f17d22bba15001f/esp-riscv-rt-0.3.0/src/lib.rs:68
 ```
 
 We see where the panic occured and we even see a backtrace!
@@ -52,8 +50,7 @@ cargo run --release
 
 Now things are less pretty:
 ```text
-
-!! A panic occured in 'src\main.rs', at line 25, column 5
+!! A panic occured in 'src/main.rs', at line 24, column 5
 
 PanicInfo {
     payload: Any { .. },
@@ -61,8 +58,8 @@ PanicInfo {
         This is a panic,
     ),
     location: Location {
-        file: "src\\main.rs",
-        line: 25,
+        file: "src/main.rs",
+        line: 24,
         col: 5,
     },
     can_unwind: true,
@@ -70,8 +67,8 @@ PanicInfo {
 
 Backtrace:
 
-0x42000140
-0x42000140 - _start_rust
+0x4200010e
+0x4200010e - _start_rust
     at ??:??
 ```
 
@@ -81,10 +78,9 @@ That is because the compiler omitted debug information and optimized the code.
 
 But you might have noticed the difference in the size of the flashed binary.
 
-It went from 199056 bytes down to 86896 bytes!
+It went from 203904 bytes down to 91056 bytes!
 
 Please note that this is still huge for what we get. There are a lot of options to get the binary smaller which is beyond the scope of this book.
-<!-- (TODO: should we add a section about binary sizes?) -->
 
 Before going further remove the line causing the explicit panic.
 

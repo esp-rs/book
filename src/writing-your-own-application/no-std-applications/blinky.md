@@ -7,14 +7,14 @@ Change the code in `main.rs` to this
 #![no_std]
 #![no_main]
 
-use esp32c3_hal::{
-    clock::ClockControl, pac::Peripherals, prelude::*, timer::TimerGroup, Delay, Rtc, IO,
-};
 use esp_backtrace as _;
-
-#[riscv_rt::entry]
+use esp_println::println;
+use hal::{
+    clock::ClockControl, peripherals::Peripherals, prelude::*, timer::TimerGroup, Delay, Rtc, IO,
+};
+#[entry]
 fn main() -> ! {
-    let peripherals = Peripherals::take().unwrap();
+    let peripherals = Peripherals::take();
     let system = peripherals.SYSTEM.split();
     let clocks = ClockControl::boot_defaults(system.clock_control).freeze();
 
@@ -30,7 +30,7 @@ fn main() -> ! {
     wdt0.disable();
     wdt1.disable();
 
-    esp_println::println!("Hello World");
+    println!("Hello world!");
 
     // Set GPIO7 as an output, and set its state high initially.
     let io = IO::new(peripherals.GPIO, peripherals.IO_MUX);

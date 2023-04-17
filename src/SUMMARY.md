@@ -10,7 +10,6 @@
   - [Generating Projects from Templates](./writing-your-own-application/generate-project-from-template.md)
   - [Writing `no_std` Applications](./writing-your-own-application/no-std-applications/index.md)
     - [Understanding esp-template](./writing-your-own-application/no-std-applications/understanding-esp-template.md)
-    - [Hello World](./writing-your-own-application/no-std-applications/hello-world.md)
     - [Panic!](./writing-your-own-application/no-std-applications/panic.md)
     - [Blinky](./writing-your-own-application/no-std-applications/blinky.md)
     - [Detect a button press](./writing-your-own-application/no-std-applications/button.md)

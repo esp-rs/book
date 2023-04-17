@@ -6,14 +6,12 @@ Most of the dev-boards have a button, in our case, we will use the one labeled [
 #![no_std]
 #![no_main]
 
-use esp32c3_hal::{
-    clock::ClockControl, pac::Peripherals, prelude::*, timer::TimerGroup, Rtc, IO,
-};
 use esp_backtrace as _;
-
-#[riscv_rt::entry]
+use esp_println::println;
+use hal::{clock::ClockControl, peripherals::Peripherals, prelude::*, timer::TimerGroup, Rtc, IO};
+#[entry]
 fn main() -> ! {
-    let peripherals = Peripherals::take().unwrap();
+    let peripherals = Peripherals::take();
     let system = peripherals.SYSTEM.split();
     let clocks = ClockControl::boot_defaults(system.clock_control).freeze();
 
@@ -29,7 +27,9 @@ fn main() -> ! {
     wdt0.disable();
     wdt1.disable();
 
-    // Set GPIO7 as an output, GPIO9 as input
+    println!("Hello world!");
+
+    // Set GPIO7 as an output, and set its state high initially.
     let io = IO::new(peripherals.GPIO, peripherals.IO_MUX);
     let mut led = io.pins.gpio7.into_push_pull_output();
     let button = io.pins.gpio9.into_pull_up_input();

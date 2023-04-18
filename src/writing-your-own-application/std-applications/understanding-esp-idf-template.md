@@ -6,50 +6,50 @@ Now that we know how to [generate a std project], let's inspect what the generat
 
 When creating a project from [esp-idf-template] using:
 - MCU: `esp32c3`
-- ESP-IDF version: `v4.4`
-- STD support: `true`
-- Devcontainer support: `false`
+- Default values: `true`
+
+For this explanation we will use the default values, if you want further modifications, see the [addtional prompts] when not using default values.
 
 It should generate a file structure like this:
 
 ```text
-├── build.rs
 ├── .cargo
 │   └── config.toml
-├── Cargo.toml
-├── .gitignore
-├── rust-toolchain.toml
-├── sdkconfig.defaults
 └── src
     └── main.rs
+├── .gitignore
+├── build.rs
+├── Cargo.toml
+├── rust-toolchain.toml
+├── sdkconfig.defaults
 ```
 
 Before going further let's see what these files are for.
 
 - [.gitignore]
-    - tells `git` which folders and files to ignore
+    - Tells `git` which folders and files to ignore
 - [Cargo.toml]
-    - the usual Cargo manifest declaring some meta-data and dependencies of the project
+    - The usual Cargo manifest declaring some meta-data and dependencies of the project
 - LICENSE-APACHE, LICENSE_MIT
-    - those are the most common licenses used in the Rust ecosystem
-    - if you want to apply a different license you can delete these files and change the license in `Cargo.toml`
+    - Those are the most common licenses used in the Rust ecosystem
+    - Tf you want to apply a different license you can delete these files and change the license in `Cargo.toml`
 - [rust-toolchain.toml]
-    - defines which Rust toolchain to use
-    - depending on your target this will use `nightly` or `esp`
+    - Defines which Rust toolchain to use
+    - Depending on your target this will use `nightly` or `esp`
 - [.cargo/config.toml]
-    - the Cargo configuration
-    - contains our target
-    - contains `runner = "espflash --monitor"` - this means you can just use `cargo run` to flash and monitor your code
-    - contains the linker to use, in our case, [`ldproxy`]
-    - contains the unstable `build-std` cargo feature enabled.
-    - contains the `ESP-IDF-VERSION` envrionment variable that tells [`esp-idf-sys`] which ESP-IDF version the project will use.
-- src/main.rs
-    - the main source file of the newly created project
-    - we will examine its content in the next section
+    - The Cargo configuration
+    - Contains our target
+    - Contains `runner = "espflash --monitor"` - this means you can just use `cargo run` to flash and monitor your code
+    - Contains the linker to use, in our case, [`ldproxy`]
+    - Contains the unstable `build-std` cargo feature enabled.
+    - Contains the `ESP-IDF-VERSION` envrionment variable that tells [`esp-idf-sys`] which ESP-IDF version the project will use.
 - [build.rs]
-    - propagates linker arguments for `ldproxy`.
+    - Propagates linker arguments for `ldproxy`.
 - [sdkconfig.defaults]
-    - contains the overriden values from the ESP-IDF defaults.
+    - Contains the overriden values from the ESP-IDF defaults.
+- src/main.rs
+    - The main source file of the newly created project
+    - We will examine its content in the next section
 
 ## `main.rs`
 
@@ -57,10 +57,11 @@ Before going further let's see what these files are for.
 use esp_idf_sys as _; // If using the `binstart` feature of `esp-idf-sys`, always keep this module imported
 
 fn main() {
+    // It is necessary to call this function once. Otherwise some patches to the runtime
+    // implemented by esp-idf-sys might not link properly. See https://github.com/esp-rs/esp-idf-template/issues/71
     esp_idf_sys::link_patches();
     println!("Hello, world!");
 }
-
 ```
 The first line its an import that defines the esp-idf entry-point when the root crate is a binary crate that defines a main function.
 
@@ -82,20 +83,21 @@ Since our [`runner` configuration] also passes the `--monitor` argument to [`esp
 
 > Make sure that you have [`espflash`] installed, otherwise this step will fail. To install [`espflash`]:
 > `cargo install espflash`
+
 You should see something similar to this:
 ```text
-Connecting...
-
-Chip type:         ESP32-C3 (revision 3)
+[2023-04-18T08:05:09Z INFO ] Connecting...
+[2023-04-18T08:05:10Z INFO ] Using flash stub
+[2023-04-18T08:05:10Z WARN ] Setting baud rate higher than 115,200 can cause issues
+Chip type:         esp32c3 (revision v0.3)
 Crystal frequency: 40MHz
 Flash size:        4MB
-Features:          WiFi
+Features:          WiFi, BLE
 MAC address:       60:55:f9:c0:39:7c
-App/part. size:    409728/4128768 bytes, 9.92%
-[00:00:00] ########################################      12/12      segment 0x0
-[00:00:00] ########################################       1/1       segment 0x8000
-[00:00:04] ########################################     210/210     segment 0x10000
-Flashing has completed!
+App/part. size:    478,416/4,128,768 bytes, 11.59%
+[00:00:00] [========================================]      13/13      0x0
+[00:00:00] [========================================]       1/1       0x8000
+[00:00:04] [========================================]     227/227     0x10000                                                                   [2023-04-18T08:05:15Z INFO ] Flashing has completed!
 Commands:
     CTRL+R    Reset chip
     CTRL+C    Exit
@@ -103,69 +105,75 @@ Commands:
 ESP-ROM:esp32c3-api1-20210207
 Build:Feb  7 2021
 rst:0x15 (USB_UART_CHIP_RESET),boot:0xc (SPI_FAST_FLASH_BOOT)
-Saved PC:0x4004c97e
-0x4004c97e - chip726_phyrom_version_num
-    at ??:??
+Saved PC:0x40380816
+0x40380816 - esp_restart_noos
+    at /home/sergio/Documents/Espressif/tests/esp-rust-app/.embuild/espressif/esp-idf/release-v4.4/components/esp_system/port/soc/esp32c3/system_internal.c:106
 SPIWP:0xee
-mode:DIO, clock div:1
-load:0x3fcd6100,len:0x172c
-load:0x403ce000,len:0x928
-0x403ce000 - _iram_text_end
+mode:DIO, clock div:2
+load:0x3fcd5820,len:0x16ec
+0x3fcd5820 - _bss_end
     at ??:??
-load:0x403d0000,len:0x2ce0
-0x403d0000 - _iram_text_end
+load:0x403cc710,len:0x95c
+0x403cc710 - _iram_data_start
     at ??:??
-entry 0x403ce000
-0x403ce000 - _iram_text_end
+load:0x403ce710,len:0x2dc0
+0x403ce710 - _iram_data_start
     at ??:??
-I (24) boot: ESP-IDF v4.4-dev-2825-gb63ec47238 2nd stage bootloader
-I (24) boot: compile time 12:10:40
-I (24) boot: chip revision: 3
-I (28) boot_comm: chip revision: 3, min. bootloader chip revision: 0
-I (35) boot.esp32c3: SPI Speed      : 80MHz
-I (39) boot.esp32c3: SPI Mode       : DIO
-I (44) boot.esp32c3: SPI Flash Size : 4MB
-I (49) boot: Enabling RNG early entropy source...
-I (54) boot: Partition Table:
-I (58) boot: ## Label            Usage          Type ST Offset   Length
-I (65) boot:  0 nvs              WiFi data        01 02 00009000 00006000
-I (73) boot:  1 phy_init         RF data          01 01 0000f000 00001000
-I (80) boot:  2 factory          factory app      00 00 00010000 003f0000
-I (88) boot: End of partition table
-I (92) boot_comm: chip revision: 3, min. application chip revision: 0
-I (99) esp_image: segment 0: paddr=00010020 vaddr=3c050020 size=17640h ( 95808) map
-I (122) esp_image: segment 1: paddr=00027668 vaddr=3fc89c00 size=0146ch (  5228) load
-I (123) esp_image: segment 2: paddr=00028adc vaddr=40380000 size=0753ch ( 30012) load
-I (133) esp_image: segment 3: paddr=00030020 vaddr=42000020 size=419d8h (268760) map
-I (176) esp_image: segment 4: paddr=00071a00 vaddr=4038753c size=02644h (  9796) load
-I (178) esp_image: segment 5: paddr=0007404c vaddr=50000010 size=00010h (    16) load
-I (185) boot: Loaded app from partition at offset 0x10000
-I (188) boot: Disabling RNG early entropy source...
-I (205) cpu_start: Pro cpu up.
-I (213) cpu_start: Pro cpu start user code
-I (213) cpu_start: cpu freq: 160000000
-I (213) cpu_start: Application information:
-I (216) cpu_start: Project name:     libespidf
-I (221) cpu_start: App version:      1
-I (226) cpu_start: Compile time:     Nov  3 2022 13:16:23
-I (232) cpu_start: ELF file SHA256:  0000000000000000...
-I (238) cpu_start: ESP-IDF:          755ce10-dirty
-I (243) heap_init: Initializing. RAM available for dynamic allocation:
-I (250) heap_init: At 3FC8BF90 len 00050780 (321 KiB): DRAM
-I (257) heap_init: At 3FCDC710 len 00002950 (10 KiB): STACK/DRAM
-I (263) heap_init: At 50000020 len 00001FE0 (7 KiB): RTCRAM
-I (270) spi_flash: detected chip: generic
-I (274) spi_flash: flash io: dio
-I (279) sleep: Configure to isolate all GPIO pins in sleep state
-I (285) sleep: Enable automatic switching of GPIO sleep configuration
-I (292) cpu_start: Starting scheduler.
+SHA-256 comparison failed:
+Calculated: 692c10f3e7d531666ff34d02d3da161b3daa41ea629010d031fe3706fbada122
+Expected: 9fafed52ab0387e903bde368d0d6bfffe0dcc3d2f90dca069a4db891108c387c
+Attempting to boot anyway...
+entry 0x403cc710
+0x403cc710 - _iram_data_start
+    at ??:??
+I (43) boot: ESP-IDF v5.0-beta1-764-gdbcf640261 2nd stage bootloader
+I (43) boot: compile time 11:30:26
+I (43) boot: chip revision: V003
+I (46) boot.esp32c3: SPI Speed      : 40MHz
+I (51) boot.esp32c3: SPI Mode       : DIO
+I (56) boot.esp32c3: SPI Flash Size : 4MB
+I (61) boot: Enabling RNG early entropy source...
+I (66) boot: Partition Table:
+I (70) boot: ## Label            Usage          Type ST Offset   Length
+I (77) boot:  0 nvs              WiFi data        01 02 00009000 00006000
+I (84) boot:  1 phy_init         RF data          01 01 0000f000 00001000
+I (92) boot:  2 factory          factory app      00 00 00010000 003f0000
+I (99) boot: End of partition table
+I (103) esp_image: segment 0: paddr=00010020 vaddr=3c050020 size=23b88h (146312) map
+I (144) esp_image: segment 1: paddr=00033bb0 vaddr=3fc8a000 size=00cd8h (  3288) load
+I (145) esp_image: segment 2: paddr=00034890 vaddr=40380000 size=09ea0h ( 40608) load
+I (160) esp_image: segment 3: paddr=0003e738 vaddr=00000000 size=018e0h (  6368)
+I (161) esp_image: segment 4: paddr=00040020 vaddr=42000020 size=44c88h (281736) map
+I (231) boot: Loaded app from partition at offset 0x10000
+I (231) boot: Disabling RNG early entropy source...
+I (242) cpu_start: Pro cpu up.
+I (251) cpu_start: Pro cpu start user code
+I (251) cpu_start: cpu freq: 160000000
+I (251) cpu_start: Application information:
+I (254) cpu_start: Project name:     libespidf
+I (259) cpu_start: App version:      1
+I (264) cpu_start: Compile time:     Apr 18 2023 10:04:01
+I (270) cpu_start: ELF file SHA256:  0000000000000000...
+I (276) cpu_start: ESP-IDF:          424ddb3-dirty
+I (281) cpu_start: Min chip rev:     v0.3
+I (286) cpu_start: Max chip rev:     v0.99
+I (291) cpu_start: Chip rev:         v0.3
+I (295) heap_init: Initializing. RAM available for dynamic allocation:
+I (303) heap_init: At 3FC8BC00 len 00050B10 (322 KiB): DRAM
+I (309) heap_init: At 3FCDC710 len 00002950 (10 KiB): STACK/DRAM
+I (315) heap_init: At 50000020 len 00001FE0 (7 KiB): RTCRAM
+I (323) spi_flash: detected chip: generic
+I (327) spi_flash: flash io: dio
+I (331) sleep: Configure to isolate all GPIO pins in sleep state
+I (337) sleep: Enable automatic switching of GPIO sleep configuration
+I (344) cpu_start: Starting scheduler.
 Hello, world!
 ```
 As you can see, there are messages from the first and second stage bootloader and then, our "Hello, world!" its printed.
 
 You can reboot with `CTRL+R` or exit with `CTRL+C`.
 
-
+[addtional prompts]: https://github.com/esp-rs/esp-idf-template#generate-the-project
 [.gitignore]: https://git-scm.com/docs/gitignore
 [Cargo.toml]: https://doc.rust-lang.org/cargo/reference/manifest.html
 [rust-toolchain.toml]: https://rust-lang.github.io/rustup/overrides.html#the-toolchain-file

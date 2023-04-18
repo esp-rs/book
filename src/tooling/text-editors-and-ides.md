@@ -1,8 +1,4 @@
-# Text Editors and IDEs
-
-While an often contentious subject, using the right development environment can make a significant impact on your productivity with a given programming language. Below can be found a curated list of what we feel are the best options.
-
-## Visual Studio Code
+# Visual Studio Code
 
 One of the more common development environments is Microsoft's [Visual Studio Code] text editor along with the [Rust Analyzer] extension.
 
@@ -22,7 +18,7 @@ Alongside Rust Analyzer (RA), there are other extensions that might be very help
 [Even Better TOML]: https://marketplace.visualstudio.com/items?itemName=tamasfe.even-better-toml
 [crates]: https://marketplace.visualstudio.com/items?itemName=serayuzgur.crates
 
-### Tips and Tricks
+## Tips and Tricks
 
 If you are developing for a target that does not have `std` support Rust Analyzer can behave strangely, often reporting various errors. This can be resolved by creating a `.vscode/settings.json` file in your project and populating it with the following:
 
@@ -41,19 +37,10 @@ components = ["rustfmt", "rustc-dev"]
 targets = ["xtensa-esp32-none-elf"]
 ```
 
-## CLion
+## Other IDEs
 
-[CLion] is a cross-platform IDE for C and C++ from [JetBrains].
+There are other IDEs like [CLion] or [vim] that also have pretty good support for Rust,
+but we wont be convering them here.
 
 [CLion]: https://www.jetbrains.com/clion/
-[JetBrains]: https://www.jetbrains.com/
-
-## IntelliJ
-
-
-## vim
-
-[vim] is a highly configurable text editor based on vi that also [supports Rust Analyzer].
-
 [vim]: https://www.vim.org/
-[supports Rust Analyzer]: https://rust-analyzer.github.io/manual.html#vimneovim

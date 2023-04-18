@@ -17,7 +17,7 @@
   - [Writing `std` Applications](./writing-your-own-application/std-applications/index.md)
     - [Understanding esp-idf-template](./writing-your-own-application/std-applications/understanding-esp-idf-template.md)
 - [Tooling](./tooling/index.md)
-  - [Text Editors and IDEs](./tooling/text-editors-and-ides.md)
+  - [Visual Studio Code](./tooling/text-editors-and-ides.md)
   - [espflash](./tooling/espflash.md)
   - [espmonitor](./tooling/espmonitor.md)
   - [Debugging](./tooling/debugging/index.md)

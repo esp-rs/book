@@ -25,15 +25,14 @@ When using the Rust standard library (`std`) you can use the [esp-idf-template] 
 ```shell
 $ cargo generate esp-rs/esp-idf-template cargo
 🤷   Project Name: esp-rust-app
-🔧   Destination: /home/sergio/esp-rust-app ...
+🔧   Destination: .../esp-rust-app ...
 🔧   project-name: esp-rust-app ...
 🔧   Generating template ...
 ✔ 🤷   Which MCU to target? · esp32
 ✔ 🤷   Use the default template values? · true
-defaults: true
-🔧   Moving generated files into: `/home/sergio/esp-rust-app`...
+🔧   Moving generated files into: `.../esp-rust-app`...
 Initializing a fresh Git repository
-✨   Done! New project created /home/sergio/esp-rust-app
+✨   Done! New project created .../esp-rust-app
 ```
 See [Understanding esp-idf-template] for more details on the template project.
 ## esp-template
@@ -43,7 +42,7 @@ For bare-metal applications (`no_std`) you can instead use the [esp-template] te
 ```shell
 $ cargo generate -a esp-rs/esp-template
 🤷   Project Name: esp-rust-app
-🔧   Destination: /home/sergio/esp-rust-app ...
+🔧   Destination: .../esp-rust-app ...
 🔧   project-name: esp-rust-app ...
 🔧   Generating template ...
 ✔ 🤷   Which MCU to target? · esp32c3
@@ -56,9 +55,9 @@ $ cargo generate -a esp-rs/esp-template
 
 Use `cargo run` to flash and run your code
 
-🔧   Moving generated files into: `/home/sergio/esp-rust-app`...
+🔧   Moving generated files into: `.../esp-rust-app`...
 Initializing a fresh Git repository
-✨   Done! New project created /home/sergio/esp-rust-app
+✨   Done! New project created .../esp-rust-app
 ```
 See [Understanding esp-template] for more details on the template project.
 

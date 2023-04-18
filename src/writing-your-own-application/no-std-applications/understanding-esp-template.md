@@ -30,24 +30,24 @@ It should generate a file structure like this:
 Before going further let's see what these files are for.
 
 - [.gitignore]
-    - tells `git` which folders and files to ignore
+    - Tells `git` which folders and files to ignore
 - [Cargo.toml]
-    - the usual Cargo manifest declaring some meta-data and dependencies of the project
+    - The usual Cargo manifest declaring some meta-data and dependencies of the project
 - LICENSE-APACHE, LICENSE_MIT
-    - those are the most common licenses used in the Rust ecosystem
-    - if you want to apply a different license you can delete these files and change the license in `Cargo.toml`
+    - Those are the most common licenses used in the Rust ecosystem
+    - If you want to apply a different license you can delete these files and change the license in `Cargo.toml`
 - [rust-toolchain.toml]
-    - defines which Rust toolchain to use
-    - depending on your target this will use `nightly` or `esp`
+    - Defines which Rust toolchain to use
+    - Depending on your target this will use `nightly` or `esp`
 - [.cargo/config.toml]
-    - the Cargo configuration
-    - this defines a few options to correctly build the project
-    - also contains `runner = "espflash flash --monitor"` - this means you can just use `cargo run` to flash and monitor your code
+    - The Cargo configuration
+    - This defines a few options to correctly build the project
+    - Contains `runner = "espflash flash --monitor"` - this means you can just use `cargo run` to flash and monitor your code
 - .vscode/settings.json
-    - settings for Visual Studio Code - if you are not using VSCode you can delete the whole folder
+    - Settings for Visual Studio Code - if you are not using VSCode you can delete the whole folder
 - src/main.rs
-    - the main source file of the newly created project
-    - we will examine its content in the next section
+    - The main source file of the newly created project
+    - We will examine its content in the next section
 
 ## `main.rs`
 
@@ -98,7 +98,7 @@ That is quite a lot of code. Let's see what it is good for.
   - These are from `esp-hal`
 - `let peripherals = Peripherals::take().unwrap();`
   - HAL drivers usually take ownership of peripherals accessed via the PAC
-  - hHre we take all the peripherals from the PAC to pass them to the HAL drivers later
+  - Here we take all the peripherals from the PAC to pass them to the HAL drivers later
 - `let system = peripherals.SYSTEM.split();`
   - Sometimes a peripheral (here the System peripheral) is coarse-grained and doesn't exactly fit the HAL drivers - so here we split the System peripheral into smaller pieces which get passed to the drivers
 - `let clocks = ClockControl::boot_defaults(system.clock_control).freeze();`

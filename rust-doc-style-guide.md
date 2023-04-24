@@ -248,9 +248,9 @@ If you spot other issues with terminology, please add the terms here in alphabet
 
 - Cargo
   - Avoid: cargo
-- ESP-IDF
-  - Avoid: esp-idf, esp-idf repo
-  - Use: ESP-IDF, ESP-IDF repo
+- ESP-IDF or esp-idf
+  - Use: esp-idf when writing about the esp-idf repo
+  - Use: ESP-IDF when writing about the ESP-IDF framework or ESP-IDF programming guide
 - _Product_
   - Avoid: Espressif SoCs
   - Use: Espressif products

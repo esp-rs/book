@@ -67,18 +67,18 @@ Both template repositories have a prompt for Dev Containers support, when using 
 -  [VS Code Dev Containers]
 -  [GitHub Codespaces]
 
-Dev Containers use the `idf-rust` container image that was explained in the [Container section of the Installing Rust chapter] and provide an environment ready to develop Rust applications for Espressif chips with no installation required. Dev Containers also have integration with [Wokwi simulator], to simulate the project, and allow flashing from the container using [web flash].
+Dev Containers use the `idf-rust` container image that was explained in the [Container section] of the Installing Rust chapter and provide an environment ready to develop Rust applications for Espressif chips with no installation required. Dev Containers also have integration with [Wokwi simulator], to simulate the project, and allow flashing from the container using [web flash].
 
-For more details about on Dev Containers, see [Dev Container section of the template Readme].
+For more details about on Dev Containers, see [Dev Container] section of the template Readme.
 
 [cargo-generate]: https://github.com/cargo-generate/cargo-generate
 [esp-idf-template]: https://github.com/esp-rs/esp-idf-template
 [esp-template]: https://github.com/esp-rs/esp-template
 [VS Code Dev Containers]: https://code.visualstudio.com/docs/remote/containers#_quick-start-open-an-existing-folder-in-a-container
 [GitHub Codespaces]: https://docs.github.com/en/codespaces/developing-in-codespaces/creating-a-codespace
-[Container section of the Installing Rust chapter]: ../installation/index.md#using-containers
+[Container section]: ../installation/index.md#using-containers
 [Wokwi simulator]: https://wokwi.com/
 [web flash]: https://github.com/bjoernQ/esp-web-flash-server
-[Dev Container section of the template Readme]: https://github.com/esp-rs/esp-template/tree/main/docs#dev-containers
+[Dev Container]: https://github.com/esp-rs/esp-template/tree/main/docs#dev-containers
 [Understanding esp-template]: ./no-std-applications/understanding-esp-template.md
 [Understanding esp-idf-template]: ./std-applications/understanding-esp-idf-template.md

@@ -2,10 +2,11 @@
 
 With the appropriate Rust compiler and toolchain installed, you're now ready to create an application.
 
-There are essentially two ways to do this: generating from a template or starting from scratch using only `cargo`.
+You can write an application in the following ways:
 
-We strongly recomend starting projects from templates as it gives you a configured project saving all the time that would require
-to setup a project started from scratch with `cargo`.
+- Generate from a template: (**Strongly recommended**). Gives you a configured project, saves time and prevents possible errors.
+- Start from scratch using Cargo: Requires more expertise since you need to configure several parts of the project.
+
 
 This chapter won't cover the instructions on how to create a project from scratch with `cargo`, it will only focus on generating a project from template project.
 

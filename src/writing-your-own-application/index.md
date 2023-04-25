@@ -7,7 +7,7 @@ There are essentially two ways to do this: generating from a template or startin
 We strongly recomend starting projects from templates as it gives you a configured project saving all the time that would require
 to setup a project started from scratch with `cargo`.
 
-This chapter wont cover the instructions on how to create a project from scratch with `cargo`, it will only focus on generating a project from template poject.
+This chapter won't cover the instructions on how to create a project from scratch with `cargo`, it will only focus on generating a project from template project.
 
 During this chapter, we will use some tools that will be covered in more details in the next chapter, [Tooling][tooling], feel free to peek into it when required.
 

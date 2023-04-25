@@ -16,58 +16,18 @@ Both templates are based on [cargo-generate], a tool that allows you to create a
         ```shell
         cargo generate esp-rs/esp-idf-template cargo
         ```
+        See [Understanding esp-idf-template] for more details on the template project.
     - `no_std` template:
         ```shell
         cargo generate -a esp-rs/esp-template
         ```
+        See [Understanding esp-template] for more details on the template project.
+
     The generated application can be built as normal using the appropriate toolchain and target simply by running `cargo build` when using either templates.
 
     Using `cargo run` will compile the project, flash it, and open a serial monitor with our chip.
 
-## esp-idf-template
-
-When using the Rust standard library (`std`) you can use the [esp-idf-template] template, which will look something like:
-
-```shell
-$ cargo generate esp-rs/esp-idf-template cargo
-🤷   Project Name: esp-rust-app
-🔧   Destination: .../esp-rust-app ...
-🔧   project-name: esp-rust-app ...
-🔧   Generating template ...
-✔ 🤷   Which MCU to target? · esp32
-✔ 🤷   Use the default template values? · true
-🔧   Moving generated files into: `/home/alice/esp-rust-app`...
-Initializing a fresh Git repository
-✨   Done! New project created /home/alice/esp-rust-app
-```
-See [Understanding esp-idf-template] for more details on the template project.
-## esp-template
-
-For bare-metal applications (`no_std`) you can instead use the [esp-template] template:
-
-```shell
-$ cargo generate -a esp-rs/esp-template
-🤷   Project Name: esp-rust-app
-🔧   Destination: .../esp-rust-app ...
-🔧   project-name: esp-rust-app ...
-🔧   Generating template ...
-✔ 🤷   Which MCU to target? · esp32c3
-✔ 🤷   Enable allocations via the esp-alloc crate? · false
-✔ 🤷   Configure project to support Wokwi simulation with Wokwi VS Code extension? · false
-✔ 🤷   Configure project to use Dev Containers (VS Code and GitHub Codespaces)? · false
-
-💡 When using `espflash` version 1.x you need to edit `.cargo/config.toml`
-💡 Make the runner look like this `runner = "espflash --monitor"`
-
-Use `cargo run` to flash and run your code
-
-🔧   Moving generated files into: `/home/alice/esp-rust-app`...
-Initializing a fresh Git repository
-✨   Done! New project created /home/alice/esp-rust-app
-```
-See [Understanding esp-template] for more details on the template project.
-
-### Using Dev Containers in the templates
+## Using Dev Containers in the templates
 
 Both template repositories have a prompt for Dev Containers support, when using Dev Containers in the templates it will add support for:
 -  [VS Code Dev Containers]

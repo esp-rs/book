@@ -6,17 +6,23 @@ We currently maintin two template repositories:
 
 Both templates are based on [cargo-generate], a tool that allows you to create a new project based on some existing template. In our case [esp-idf-template] or [esp-template] can be used to generate an application with all the required configuration and dependencies.
 
-`cargo generate` can be installed by running:
+1. Install `cargo generate`:
+    ```shell
+    cargo install cargo-generate
+    ```
+    When the `cargo generate` subcommand is invoked, you will be prompted to answer a number of questions regarding the target of your application. Upon completion of this process you will have a buildable project with all the correct configuration.
+2. Generate a project based in one of the templates:
+    - `std` template:
+        ```shell
+        cargo generate esp-rs/esp-idf-template cargo
+        ```
+    - `no_std` template:
+        ```shell
+        cargo generate -a esp-rs/esp-template
+        ```
+    The generated application can be built as normal using the appropriate toolchain and target simply by running `cargo build` when using either templates.
 
-```shell
-cargo install cargo-generate
-```
-
-When the `cargo generate` subcommand is invoked, you will be prompted to answer a number of questions regarding the target of your application. Upon completion of this process you will have a buildable project with all the correct configuration.
-
-The generated application can be built as normal using the appropriate toolchain and target simply by running `cargo build` when using either templates.
-
-Using `cargo run` will compile the project, flash it, and open a serial monitor with our chip.
+    Using `cargo run` will compile the project, flash it, and open a serial monitor with our chip.
 
 ## esp-idf-template
 
@@ -30,9 +36,9 @@ $ cargo generate esp-rs/esp-idf-template cargo
 🔧   Generating template ...
 ✔ 🤷   Which MCU to target? · esp32
 ✔ 🤷   Use the default template values? · true
-🔧   Moving generated files into: `.../esp-rust-app`...
+🔧   Moving generated files into: `/home/alice/esp-rust-app`...
 Initializing a fresh Git repository
-✨   Done! New project created .../esp-rust-app
+✨   Done! New project created /home/alice/esp-rust-app
 ```
 See [Understanding esp-idf-template] for more details on the template project.
 ## esp-template
@@ -55,9 +61,9 @@ $ cargo generate -a esp-rs/esp-template
 
 Use `cargo run` to flash and run your code
 
-🔧   Moving generated files into: `.../esp-rust-app`...
+🔧   Moving generated files into: `/home/alice/esp-rust-app`...
 Initializing a fresh Git repository
-✨   Done! New project created .../esp-rust-app
+✨   Done! New project created /home/alice/esp-rust-app
 ```
 See [Understanding esp-template] for more details on the template project.
 

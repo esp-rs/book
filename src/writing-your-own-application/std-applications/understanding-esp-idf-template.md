@@ -4,9 +4,9 @@ Now that we know how to [generate a std project], let's inspect what the generat
 
 ## Inspecting the generated Project
 
-When creating a project from [esp-idf-template] using:
-- MCU: `esp32c3`
-- Default values: `true`
+When creating a project from [esp-idf-template] with the following answers:
+- Which MCU to target? · esp32c3
+- Use template default values? · true
 
 For this explanation we will use the default values, if you want further modifications, see the [addtional prompts] when not using default values.
 
@@ -26,16 +26,6 @@ It should generate a file structure like this:
 
 Before going further let's see what these files are for.
 
-- [.gitignore]
-    - Tells `git` which folders and files to ignore
-- [Cargo.toml]
-    - The usual Cargo manifest declaring some meta-data and dependencies of the project
-- LICENSE-APACHE, LICENSE_MIT
-    - Those are the most common licenses used in the Rust ecosystem
-    - Tf you want to apply a different license you can delete these files and change the license in `Cargo.toml`
-- [rust-toolchain.toml]
-    - Defines which Rust toolchain to use
-    - Depending on your target this will use `nightly` or `esp`
 - [.cargo/config.toml]
     - The Cargo configuration
     - Contains our target
@@ -43,13 +33,20 @@ Before going further let's see what these files are for.
     - Contains the linker to use, in our case, [`ldproxy`]
     - Contains the unstable `build-std` cargo feature enabled.
     - Contains the `ESP-IDF-VERSION` envrionment variable that tells [`esp-idf-sys`] which ESP-IDF version the project will use.
-- [build.rs]
-    - Propagates linker arguments for `ldproxy`.
-- [sdkconfig.defaults]
-    - Contains the overriden values from the ESP-IDF defaults.
 - src/main.rs
     - The main source file of the newly created project
     - We will examine its content in the next section
+- [.gitignore]
+    - Tells `git` which folders and files to ignore
+- [build.rs]
+    - Propagates linker arguments for `ldproxy`.
+- [Cargo.toml]
+    - The usual Cargo manifest declaring some meta-data and dependencies of the project
+- [rust-toolchain.toml]
+    - Defines which Rust toolchain to use
+    - Depending on your target this will use `nightly` or `esp`
+- [sdkconfig.defaults]
+    - Contains the overriden values from the ESP-IDF defaults.
 
 ## `main.rs`
 
@@ -65,7 +62,7 @@ fn main() {
 ```
 The first line its an import that defines the esp-idf entry-point when the root crate is a binary crate that defines a main function.
 
-Then, we have an usual main function with two lines on it:
+Then, we have an usual main function with few lines on it:
 - A call to `esp_idf_sys::link_patches` function that makes sure that a few patches to the ESP-IDF which are implemented in Rust are linked to the final executable.
 - We print in our console the famous "Hello World!".
 
@@ -178,7 +175,7 @@ You can reboot with `CTRL+R` or exit with `CTRL+C`.
 [Cargo.toml]: https://doc.rust-lang.org/cargo/reference/manifest.html
 [rust-toolchain.toml]: https://rust-lang.github.io/rustup/overrides.html#the-toolchain-file
 [.cargo/config.toml]: https://doc.rust-lang.org/cargo/reference/config.html
-[generate a std project]: ../generate-project-from-template.md#esp-idf-template
+[generate a std project]: ../generate-project-from-template.md
 [esp-idf-template]: https://github.com/esp-rs/esp-template
 [`esp-idf-sys`]: https://github.com/esp-rs/esp-idf-sys
 [`ldproxy`]: https://github.com/esp-rs/embuild/tree/master/ldproxy

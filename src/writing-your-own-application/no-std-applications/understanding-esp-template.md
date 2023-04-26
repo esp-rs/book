@@ -9,6 +9,9 @@ When creating a project from [esp-template] with the following answers:
 -  Which MCU to target? · esp32c3
 -  Use template default values? · true
 
+For this explanation we will use the default values, if you want further modifications, see the [addtional prompts] when not using default values.
+
+
 It should generate a file structure like this:
 
 ```text
@@ -195,7 +198,8 @@ You can reboot with `CTRL+R` or exit with `CTRL+C`.
 
 In the next chapters, we will be modifying this template to generate some more interesting applications.
 
-[generate a no_std project]: ../generate-project-from-template.md#esp-template
+[addtional prompts]: https://github.com/esp-rs/esp-template#esp-template
+[generate a no_std project]: ../generate-project-from-template.md
 [esp-template]: https://github.com/esp-rs/esp-template
 [.gitignore]: https://git-scm.com/docs/gitignore
 [Cargo.toml]: https://doc.rust-lang.org/cargo/reference/manifest.html

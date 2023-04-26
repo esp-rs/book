@@ -5,19 +5,15 @@ project contains and try to understand every part of it.
 
 ## Inspecting the generated Project
 
-When creating a project from [esp-template] using:
-- MCU: `esp32c3`
-- `esp-alloc` crate support: `flase`
-- Devcontainer support: `false`
-- Wokwi VS Code extension: `false`
+When creating a project from [esp-template] with the following answers:
+-  Which MCU to target? · esp32c3
+-  Use template default values? · true
 
 It should generate a file structure like this:
 
 ```text
 ├── .cargo
 │   └── config.toml
-├── .vscode
-│   └── settings.json
 ├── src
 │   └── main.rs
 ├── .gitignore
@@ -29,6 +25,13 @@ It should generate a file structure like this:
 
 Before going further let's see what these files are for.
 
+- [.cargo/config.toml]
+    - The Cargo configuration
+    - This defines a few options to correctly build the project
+    - Contains `runner = "espflash flash --monitor"` - this means you can just use `cargo run` to flash and monitor your code
+- src/main.rs
+    - The main source file of the newly created project
+    - We will examine its content in the next section
 - [.gitignore]
     - Tells `git` which folders and files to ignore
 - [Cargo.toml]
@@ -39,15 +42,6 @@ Before going further let's see what these files are for.
 - [rust-toolchain.toml]
     - Defines which Rust toolchain to use
     - Depending on your target this will use `nightly` or `esp`
-- [.cargo/config.toml]
-    - The Cargo configuration
-    - This defines a few options to correctly build the project
-    - Contains `runner = "espflash flash --monitor"` - this means you can just use `cargo run` to flash and monitor your code
-- .vscode/settings.json
-    - Settings for Visual Studio Code - if you are not using VSCode you can delete the whole folder
-- src/main.rs
-    - The main source file of the newly created project
-    - We will examine its content in the next section
 
 ## `main.rs`
 

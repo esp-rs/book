@@ -193,7 +193,7 @@ And that is exactly what the code is doing.
 
 You can reboot with `CTRL+R` or exit with `CTRL+C`.
 
-In the next chapter, we will add some more interesting output.
+In the next chapters, we will be modifying this template to generate some more interesting applications.
 
 [generate a no_std project]: ../generate-project-from-template.md#esp-template
 [esp-template]: https://github.com/esp-rs/esp-template

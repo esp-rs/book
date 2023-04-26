@@ -1,6 +1,6 @@
 # Generating Projects from Templates
 
-We currently maintin two template repositories:
+We currently maintain two template repositories:
 - [esp-template] - `no_std` template.
 - [esp-idf-template] - `std` template.
 

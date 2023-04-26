@@ -8,10 +8,9 @@ jobs:
   build:
     runs-on: ubuntu-20.04
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions-rs/toolchain@v1
+      - uses: actions/checkout@v3
+      - uses: dtolnay/rust-toolchain@v1
         with:
-          profile: minimal
           toolchain: stable
 
       - name: Install Python dependencies
@@ -21,23 +20,14 @@ jobs:
         run: echo "~/.local/bin" >> $GITHUB_PATH
 
       - name: Cache Cargo installed binaries
-        uses: actions/cache@v1
+        uses: actions/cache@v3
         id: cache-cargo
         with:
           path: ~/cargo-bin
           key: cache-cargo
-      - name: Install mdbook
+      - name: Install mdbook and mdbook-mermaid
         if: steps.cache-cargo.outputs.cache-hit != 'true'
-        uses: actions-rs/install@v0.1
-        with:
-          crate: mdbook
-          version: latest
-      - name: Install mdbook-mermaid
-        if: steps.cache-cargo.outputs.cache-hit != 'true'
-        uses: actions-rs/install@v0.1
-        with:
-          crate: mdbook-mermaid
-          version: latest
+        run: cargo install mdbook mdbook-mermaid
       - name: Copy mdbook and mdbook-mermaid to cache directory
         if: steps.cache-cargo.outputs.cache-hit != 'true'
         run: |

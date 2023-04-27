@@ -44,6 +44,13 @@ The table below covers the current support for `no_std` at this moment for diffe
 | [esp-rs/esp-backtrace] | Exception and panic handlers                               |
 | [esp-rs/esp-storage]   | Embedded-storage traits to access unencrypted flash memory |
 
+### When you might want to use bare metal (`no_std`)
+
+- Small memory footprint: If your embedded system has limited resources and needs to have a small memory footprint, you will likely want to use bare-metal because `std` features add a significant amount of final binary size and compilation time.
+- Direct hardware control: If your embedded system requires more direct control over the hardware, such as low-level device drivers or access to specialized hardware features you will likely want to use bare-metal because `std` adds abstractions that can make it harder to interact directly with the hardware.
+- Real-time constraints or time-critical applications: If your embedded system requires real-time performance or low-latency response times because `std` can introduce unpredictable delays and overhead that can affect real-time performance.
+- Custom requirements: bare-metal allows more customization and fine-grained control over the behavior of an application, which can be useful in specialized or non-standard environments.
+
 
 [esp-rs/esp-hal]: https://github.com/esp-rs/esp-hal "Hardware abstraction layer"
 [esp-rs/esp8266-hal]: https://github.com/esp-rs/esp8266-hal "ESP8266 Hardware abstraction layer"

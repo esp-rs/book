@@ -23,8 +23,8 @@ The [esp-rs organization] on GitHub is home to a number of repositories related 
 > 
 > In the [esp-rs organization] we use the folling wording:
 >
-> - Repositories starting with `esp-idf-` are focused on `std` apporach. E.g. `esp-idf-hal`
-> - Repositories starting with `esp-` are focused on `no_std` apporach. E.g. `esp-hal`
+> - Repositories starting with `esp-idf-` are focused on `std` approach. E.g. `esp-idf-hal`
+> - Repositories starting with `esp-` are focused on `no_std` approach. E.g. `esp-hal`
 >
 > It is easy to remember as follows:
 >

@@ -4,7 +4,6 @@
 - [Ecosystem Overview](./overview/index.md)
   - [Using the Standard Library (`std`)](./overview/using-the-standard-library.md)
   - [Bare Metal (`no_std`)](./overview/bare-metal.md)
-  - [Comparing `std` and `no_std`](./overview/comparing-std-and-no_std.md)
 - [Setting Up a Development Environment](./installation/index.md)
 - [Tooling](./tooling/index.md)
   - [Text Editors and IDEs](./tooling/text-editors-and-ides.md)

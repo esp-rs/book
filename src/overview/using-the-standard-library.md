@@ -1,6 +1,6 @@
 # Using the Standard Library (`std`)
 
-Espressif provides a C-based development framework called [esp-idf][esp-idf-github] which has support for all Espressif chips starting with the ESP32; note that this framework does _not_ support the ESP8266. See also Section [Support for Espressif Products][rust-esp-book-overview-index].
+Espressif provides a C-based development framework called [esp-idf][esp-idf-github] which has, or will have, support for all Espressif chips starting with the ESP32; note that this framework does _not_ support the ESP8266. See also [Support for Espressif Products][rust-esp-book-overview-index].
 
 [rust-esp-book-overview-index]: index.md#support-for-espressif-products
 

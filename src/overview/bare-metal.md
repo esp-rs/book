@@ -28,7 +28,7 @@ The table below covers the current support for `no_std` at this moment for diffe
 
 > **Note**:
 >
-> - ✅ in Wi-Fi/BLE/ESP-NOW means that the target supports, at least, one the listed technologies. For details see [Current support][esp-wifi-current-support] table of the esp-wifi repository.
+> - ✅ in Wi-Fi/BLE/ESP-NOW means that the target supports, at least, one of the listed technologies. For details, see [Current support][esp-wifi-current-support] table of the esp-wifi repository.
 > - [ESP8266 HAL][esp-rs/esp8266-hal] is in maintenance mode and no further development will be done for this chip.
 
 [esp-wifi-current-support]: https://github.com/esp-rs/esp-wifi#current-support

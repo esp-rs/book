@@ -24,7 +24,7 @@ The table below covers the current support for `no_std` at this moment for diffe
 | ESP32-C6 |           ✅           |                  ✅                   |                 ✅                 |               ✅               |
 | ESP32-S2 |           ✅           |                  ✅                   |                 ✅                 |               ✅               |
 | ESP32-S3 |           ✅           |                  ✅                   |                 ✅                 |               ✅               |
-| ESP32-H2 |           ⏳           |                  ⏳                   |                 ⏳                 |               ⏳               |
+| ESP32-H2 |           ⏳           |                  ⏳                   |                 ✅                 |               ⏳               |
 
 > **Note**:
 >

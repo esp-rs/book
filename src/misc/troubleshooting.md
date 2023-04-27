@@ -113,3 +113,51 @@ Some of the LLVM 15 releases, `esp-15.0.0-20220922` and `esp-15.0.0-20221014`, r
 - Fedora: `sudo dnf install ncurses-compat-libs`
 - openSUSE: `sudo dnf install libncurses5`
 - Arch Linux: `sudo pacman -S ncurses5-compat-libs`
+
+## FAQ
+
+### I updated my `sdkconfig.defaults` file but it doesn't appear to have had any effect
+
+You must clean your project and rebuild for changes in the `sdkconfig.defaults` to take effect:
+
+```shell,ignore
+cargo clean
+cargo build
+```
+
+### The documentation for the crates mentioned on this page is out of date or missing
+
+Due to the [resource limits] imposed by [docs.rs], internet access is blocked while building documentation and as such we are unable to build the documentation for `esp-idf-sys` or any crate depending on it.
+
+Instead, we are building the documentation and hosting it ourselves on GitHub Pages:
+
+- [`esp-idf-hal` Documentation]
+- [`esp-idf-svc` Documentation]
+- [`esp-idf-sys` Documentation]
+
+[resource limits]: https://docs.rs/about/builds#hitting-resource-limits
+[docs.rs]: https://docs.rs
+[`esp-idf-hal` documentation]: https://esp-rs.github.io/esp-idf-hal/esp_idf_hal/
+[`esp-idf-svc` documentation]: https://esp-rs.github.io/esp-idf-svc/esp_idf_svc/
+[`esp-idf-sys` documentation]: https://esp-rs.github.io/esp-idf-sys/esp_idf_sys/
+
+### \*\*\*ERROR\*\*\* A stack overflow in task main has been detected.
+
+If the second-stage bootloader reports this error, you likely need to increase the stack size for the main task. This can be accomplished by adding the following to the `sdkconfig.defaults` file:
+
+```ignore
+CONFIG_ESP_MAIN_TASK_STACK_SIZE=7000
+```
+
+In this example, we are allocating 7kB for the main task's stack.
+
+### How can I completely disable the watchdog timer(s)?
+
+Add to your `sdkconfig.defaults` file:
+
+```ignore
+CONFIG_INT_WDT=n
+CONFIG_ESP_TASK_WDT=n
+```
+
+Recall that you must clean your project before rebuilding when modifying these configuration files.

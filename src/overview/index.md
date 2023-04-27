@@ -1,6 +1,6 @@
 # Ecosystem Overview
 
-There are the following approaches to use Rust on Espressif chips:
+There are the following approaches to using Rust on Espressif chips:
 
 - Using the `std` library, a.k.a. Standard library.
 - Using the `core` library (`no_std`), a.k.a. bare metal development.

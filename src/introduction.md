@@ -6,12 +6,6 @@ Rust support for these devices is still a work in progress, and progress is bein
 
 For tools and libraries relating to Rust on ESP, please see the [esp-rs organization] on GitHub. This organization is managed by employees of Espressif as well as members of the community.
 
-> #### A note in SoCs support
->
-> The content of the books applies to ESP32, ESP32-S, and ESP32-C series of SoCs.
-> ESP8266 series is out of the scope of this book, support for Rust in ESP8266 is limited and only some parts
-> of the book are applicable for this SoC.
-
 [rust programming language]: https://www.rust-lang.org/
 [Espressif]: https://espressif.com/
 [esp-rs organization]: https://github.com/esp-rs/
@@ -24,6 +18,7 @@ For tools and libraries relating to Rust on ESP, please see the [esp-rs organiza
 > - ESP32 Series
 > - ESP32 C-Series
 > - ESP32 S-Series
+> - ESP32 H-Series
 >
 > The ESP8266 series is outside the scope of this book. Rust support for the
 > ESP8266 series is limited and is not being officially supported by Espressif.

@@ -19,6 +19,7 @@ For tools and libraries relating to Rust on ESP, please see the [esp-rs organiza
 > - ESP32 Series
 > - ESP32 C-Series
 > - ESP32 S-Series
+> - ESP32 H-Series
 >
 > The ESP8266 series is outside the scope of this book. Rust support for the
 > ESP8266 series is limited and is not being officially supported by Espressif.

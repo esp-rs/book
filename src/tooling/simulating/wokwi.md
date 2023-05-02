@@ -7,13 +7,19 @@ Wokwi offers WiFi simulation, Virtual Logic Analyzer, and [GDB debugging] among 
 
 ## Using Wokwi for VS Code extension
 Wokwi offers a VS Code extension that allows user to simulate their project directly from your code editor by only adding a few files. For more information see [Wokwi documentation][wokwi-vscode].
-You can also debug your code using the VS Code debugger, see [Debugging your code]
+You can also debug your code using the VS Code debugger, see [Debugging your code].
+
+When using any of the [templates], there is a prompt that generates the required files to use Wokwi VS Code extension.
 
 ## Using wokwi-server
 [wokwi-server] is a CLI tool for launching a Wokwi simulation of your project. I.e., it allows you
 to build a project on your machine, or in a container, and simulate the resulting binary.
 
 [wokwi-server] also allows simulating your resulting binary on other Wokwi projects, with more hardware parts other than the chip itself. See the [corresponding section of the wokwi-server Readme] for detailed instructions.
+
+## Custom chips
+Wokwi allows generating custom chips that let you to program the behaviour of a component that is not supported in Wokwi, for more details see the official [Wokwi documentation][wokwi-custom-chip]
+
 
 [Wokwi]: https://wokwi.com/
 [wokwi.com/rust]: https://wokwi.com/rust
@@ -24,3 +30,5 @@ to build a project on your machine, or in a container, and simulate the resultin
 [corresponding section of the wokwi-server Readme]: https://github.com/MabezDev/wokwi-server#simulating-your-binary-on-a-custom-wokwi-project
 [wokwi-vscode]: https://docs.wokwi.com/vscode/getting-started
 [Debugging your code]: https://docs.wokwi.com/vscode/debugging
+[templates]: ./../../writing-your-own-application/generate-project-from-template.md
+[wokwi-custom-chip]: https://docs.wokwi.com/chips-api/getting-started

@@ -15,8 +15,8 @@ Please note that you can host the development environment in a [container][use-c
 
 
 [install-rust]: #install-rust
-[risc-v-targets]: #risc-v-targets
-[rics-v-xtensa-targets]: #xtensa-targets
+[risc-v-targets]: #risc-v-targets-only
+[rics-v-xtensa-targets]: #risc-v-and-xtensa-targets
 [use-containers]: #using-containers
 
 

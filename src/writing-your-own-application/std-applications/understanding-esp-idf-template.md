@@ -29,7 +29,7 @@ Before going further let's see what these files are for.
 - [.cargo/config.toml]
     - The Cargo configuration
     - Contains our target
-    - Contains `runner = "espflash --monitor"` - this means you can just use `cargo run` to flash and monitor your code
+    - Contains `runner = "espflash flash --monitor"` - this means you can just use `cargo run` to flash and monitor your code
     - Contains the linker to use, in our case, [`ldproxy`]
     - Contains the unstable `build-std` cargo feature enabled.
     - Contains the `ESP-IDF-VERSION` envrionment variable that tells [`esp-idf-sys`] which ESP-IDF version the project will use.
@@ -44,7 +44,7 @@ Before going further let's see what these files are for.
     - The usual Cargo manifest declaring some meta-data and dependencies of the project
 - [rust-toolchain.toml]
     - Defines which Rust toolchain to use
-    - Depending on your target this will use `nightly` or `esp`
+      - The toolchain will be `nightly` or `esp` depending on your target.
 - [sdkconfig.defaults]
     - Contains the overriden values from the ESP-IDF defaults.
 

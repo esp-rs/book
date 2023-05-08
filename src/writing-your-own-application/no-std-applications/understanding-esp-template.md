@@ -44,7 +44,7 @@ Before going further let's see what these files are for.
     - If you want to apply a different license you can delete these files and change the license in `Cargo.toml`
 - [rust-toolchain.toml]
     - Defines which Rust toolchain to use
-    - Depending on your target this will use `nightly` or `esp`
+      - The toolchain will be `nightly` or `esp` depending on your target.
 
 ## `main.rs`
 

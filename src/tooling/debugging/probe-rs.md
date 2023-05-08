@@ -1,6 +1,6 @@
 # probe-rs
 
-The probe-rs project is a set of tools to interact with embedded MCU's using various debug probes. It is similar to openOCD, PyOCD, Segger tools, etc. There is support for ARM & RISCV architectures along with a collection of tools, including but not limited to:
+The [probe-rs] project is a set of tools to interact with embedded MCU's using various debug probes. It is similar to [openOCD], [PyOCD], [Segger tools], etc. There is support for `ARM` & `RISC-V` architectures along with a collection of tools, including but not limited to:
 
 - Debugger
   - GDB support.
@@ -10,7 +10,13 @@ The probe-rs project is a set of tools to interact with embedded MCU's using var
   - Similar to app_trace component of IDF.
 - Flashing algorithms
 
-More info about probe-rs & how to set up a project can be found on the [probe.rs](https://probe.rs/) website.
+More info about probe-rs & how to set up a project can be found on the [probe-rs] website.
+
+
+[probe-rs]: https://probe.rs/
+[openocd]: https://openocd.org/
+[PyOCD]: https://pyocd.io/
+[Segger tools]: https://www.segger.com/
 
 ## `USB-JTAG-SERIAL` peripheral for ESP32-C3
 

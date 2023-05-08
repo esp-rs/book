@@ -10,7 +10,6 @@ Both templates are based on [cargo-generate], a tool that allows you to create a
     ```shell
     cargo install cargo-generate
     ```
-    When the `cargo generate` subcommand is invoked, you will be prompted to answer a number of questions regarding the target of your application. Upon completion of this process you will have a buildable project with all the correct configuration.
 2. Generate a project based in one of the templates:
     - `std` template:
         ```shell
@@ -23,6 +22,8 @@ Both templates are based on [cargo-generate], a tool that allows you to create a
         ```
         See [Understanding esp-template] for more details on the template project.
 
+    When the `cargo generate` subcommand is invoked, you will be prompted to answer a number of questions regarding the target of your application. Upon completion of this process you will have a buildable project with all the correct configuration.
+
     The generated application can be built as normal using the appropriate toolchain and target simply by running `cargo build` when using either templates.
 
     Using `cargo run` will compile the project, flash it, and open a serial monitor with our chip.
@@ -33,7 +34,7 @@ Both template repositories have a prompt for Dev Containers support, when using 
 -  [VS Code Dev Containers]
 -  [GitHub Codespaces]
 
-Dev Containers use the `idf-rust` container image that was explained in the [Container section] of the Installing Rust chapter and provide an environment ready to develop Rust applications for Espressif chips with no installation required. Dev Containers also have integration with [Wokwi simulator], to simulate the project, and allow flashing from the container using [web flash].
+Dev Containers use the [`idf-rust` container image], that was explained in the [Container section] of the installation chapter, and provide an environment ready to develop Rust applications for Espressif chips with no installation required. Dev Containers also have integration with [Wokwi simulator], to simulate the project, and allow flashing from the container using [web flash].
 
 For more details about on Dev Containers, see [Dev Container] section of the template Readme.
 
@@ -48,3 +49,4 @@ For more details about on Dev Containers, see [Dev Container] section of the tem
 [Dev Container]: https://github.com/esp-rs/esp-template/tree/main/docs#dev-containers
 [Understanding esp-template]: ./no-std-applications/understanding-esp-template.md
 [Understanding esp-idf-template]: ./std-applications/understanding-esp-idf-template.md
+[`idf-rust` container image]: https://hub.docker.com/r/espressif/idf-rust/tags

@@ -1,8 +1,8 @@
 # espflash
 
-A serial flasher utility for ESP devices. Supports flashing _ESP32_, _ESP32-C2_, _ESP32-C3_, _ESP32-S2_, _ESP32-S3_, and _ESP8266_.
+A serial flasher utility for ESP devices. Supports flashing _ESP32_, _ESP32-C2_, _ESP32-C3_, _ESP32-C6_,, _ESP32-H2_ _ESP32-S2_, _ESP32-S3_, and _ESP8266_.
 
-The [esp-rs/espflash] repository contains two crates, `cargo-espflash` and `espflash`. You can find more information on both of these in their respective sections below.
+The [esp-rs/espflash] repository contains two crates, `cargo-espflash` and `espflash`. You can find more information on both of these in their respective sections below and in their corresponding README.
 
 > #### A note on `espflash` and `cargo-espflash`.
 >
@@ -12,7 +12,7 @@ The [esp-rs/espflash] repository contains two crates, `cargo-espflash` and `espf
 
 ## cargo-espflash
 
-Provides a subcommand for `cargo` that handles cross-compilation and flashing. Note that this requires the unstable `build-std` cargo feature; for more information on this please refer to [the cargo documentation].
+Provides a subcommand for `cargo` that handles cross-compilation and flashing.
 
 To install:
 
@@ -20,7 +20,7 @@ To install:
 cargo install cargo-espflash
 ```
 
-This command must be run within a Cargo project, ie. a directory containing a `Cargo.toml` file. For example, to build an example named 'blinky' in `release` mode, flash the resulting binary to a device, and then subsequently start a serial monitor:
+This command must be run within a Cargo project, ie. a directory containing a `Cargo.toml` file. For example, to build an example named 'blinky', flash the resulting binary to a device, and then subsequently start a serial monitor:
 
 ```bash
 cargo espflash flash --example=blinky --monitor
@@ -28,7 +28,6 @@ cargo espflash flash --example=blinky --monitor
 
 For more information please see to the [cargo-espflash README].
 
-[the cargo documentation]: https://doc.rust-lang.org/cargo/reference/unstable.html#build-std
 [cargo-espflash readme]: https://github.com/esp-rs/espflash/blob/master/cargo-espflash/README.md
 
 ## espflash

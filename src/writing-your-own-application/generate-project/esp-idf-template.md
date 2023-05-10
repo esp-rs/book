@@ -8,7 +8,7 @@ When creating a project from [esp-idf-template] with the following answers:
 - Which MCU to target? · `esp32c3`
 - Use template default values? · `true`
 
-For this explanation we will use the default values, if you want further modifications, see the [addtional prompts] when not using default values.
+For this explanation we will use the default values, if you want further modifications, see the [additional prompts] when not using default values.
 
 It should generate a file structure like this:
 
@@ -24,7 +24,7 @@ It should generate a file structure like this:
 ├── sdkconfig.defaults
 ```
 
-Before going further let's see what these files are for.
+Before going further, let's see what these files are for.
 
 - [.cargo/config.toml]
     - The Cargo configuration
@@ -32,7 +32,7 @@ Before going further let's see what these files are for.
     - Contains `runner = "espflash flash --monitor"` - this means you can just use `cargo run` to flash and monitor your code
     - Contains the linker to use, in our case, [`ldproxy`]
     - Contains the unstable `build-std` cargo feature enabled.
-    - Contains the `ESP-IDF-VERSION` envrionment variable that tells [`esp-idf-sys`] which ESP-IDF version the project will use.
+    - Contains the `ESP-IDF-VERSION` environment variable that tells [`esp-idf-sys`] which ESP-IDF version the project will use.
 - src/main.rs
     - The main source file of the newly created project
     - We will examine its content in the next section
@@ -46,7 +46,7 @@ Before going further let's see what these files are for.
     - Defines which Rust toolchain to use
       - The toolchain will be `nightly` or `esp` depending on your target.
 - [sdkconfig.defaults]
-    - Contains the overriden values from the ESP-IDF defaults.
+    - Contains the overridden values from the ESP-IDF defaults.
 
 ## `main.rs`
 
@@ -60,11 +60,11 @@ fn main() {
     println!("Hello, world!");
 }
 ```
-The first line its an import that defines the esp-idf entry-point when the root crate is a binary crate that defines a main function.
+The first line is an import that defines the esp-idf entry-point when the root crate is a binary crate that defines a main function.
 
-Then, we have an usual main function with few lines on it:
+Then, we have a usual main function with a  few lines on it:
 - A call to `esp_idf_sys::link_patches` function that makes sure that a few patches to the ESP-IDF which are implemented in Rust are linked to the final executable.
-- We print in our console the famous "Hello World!".
+- We print on our console the famous "Hello World!".
 
 ## Running the Code
 
@@ -166,11 +166,11 @@ I (337) sleep: Enable automatic switching of GPIO sleep configuration
 I (344) cpu_start: Starting scheduler.
 Hello, world!
 ```
-As you can see, there are messages from the first and second stage bootloader and then, our "Hello, world!" its printed.
+As you can see, there are messages from the first and second stage bootloader and then, our "Hello, world!" is printed.
 
 You can reboot with `CTRL+R` or exit with `CTRL+C`.
 
-[addtional prompts]: https://github.com/esp-rs/esp-idf-template#generate-the-project
+[additional prompts]: https://github.com/esp-rs/esp-idf-template#generate-the-project
 [.gitignore]: https://git-scm.com/docs/gitignore
 [Cargo.toml]: https://doc.rust-lang.org/cargo/reference/manifest.html
 [rust-toolchain.toml]: https://rust-lang.github.io/rustup/overrides.html#the-toolchain-file

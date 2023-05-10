@@ -9,7 +9,7 @@ When creating a project from [esp-template] with the following answers:
 -  Which MCU to target? · `esp32c3`
 -  Use template default values? · `true`
 
-For this explanation we will use the default values, if you want further modifications, see the [addtional prompts] when not using default values.
+For this explanation we will use the default values, if you want further modifications, see the [additional prompts] when not using default values.
 
 
 It should generate a file structure like this:
@@ -26,7 +26,7 @@ It should generate a file structure like this:
 └── rust-toolchain.toml
 ```
 
-Before going further let's see what these files are for.
+Before going further, let's see what these files are for.
 
 - [.cargo/config.toml]
     - The Cargo configuration
@@ -41,7 +41,7 @@ Before going further let's see what these files are for.
     - The usual Cargo manifest declaring some meta-data and dependencies of the project
 - LICENSE-APACHE, LICENSE_MIT
     - Those are the most common licenses used in the Rust ecosystem
-    - If you want to apply a different license you can delete these files and change the license in `Cargo.toml`
+    - If you want to apply a different license, you can delete these files and change the license in `Cargo.toml`
 - [rust-toolchain.toml]
     - Defines which Rust toolchain to use
       - The toolchain will be `nightly` or `esp` depending on your target.
@@ -84,12 +84,12 @@ That is quite a lot of code. Let's see what it is good for.
 - `#![no_std]`
   - This tells the Rust compiler that this code doesn't use `libstd`
 - `#![no_main]`
-  - The `no_main` attribute says that this program won't use the standard main interface, which is tailored for command-line applications that receive arguments. Instead of the standard main, we'll use the entry attribute from the `riscv-rt` crate to define a custom entry point. In this program we have named the entry point `main`, but any other name could have been used. The entry point function must be a [diverging function]. I.e. it has the signature `fn foo() -> !`; this type indicates that the function never returns – which means that the program never terminates.
+  - The `no_main` attribute says that this program won't use the standard main interface, which is tailored for command-line applications that receive arguments. Instead of the standard main, we'll use the entry attribute from the `riscv-rt` crate to define a custom entry point. In this program, we have named the entry point `main`, but any other name could have been used. The entry point function must be a [diverging function]. I.e. it has the signature `fn foo() -> !`; this type indicates that the function never returns – which means that the program never terminates.
 - `use esp_backtrace as _;`
-  - Since we are in a bare-metal environment we need a panic-handler that runs if a panic occurs in code
+  - Since we are in a bare-metal environment, we need a panic-handler that runs if a panic occurs in code
   - There are a few different crates you can use (e.g `panic-halt`) but `esp-backtrace` provides an implementation that prints the address of a backtrace - together with `espflash`/`espmonitor` these addresses can get decoded into source code locations
 - `use esp_println::println;`
-  - Provices `println!` implementation
+  - Provides `println!` implementation
 - `use hal:{...}`
   - We need to bring in some types we are going to use
   - These are from `esp-hal`
@@ -100,15 +100,15 @@ That is quite a lot of code. Let's see what it is good for.
   - Sometimes a peripheral (here the System peripheral) is coarse-grained and doesn't exactly fit the HAL drivers - so here we split the System peripheral into smaller pieces which get passed to the drivers
 - `let clocks = ClockControl::boot_defaults(system.clock_control).freeze();`
   - Here we configure the system clocks - in this case, we are fine with the defaults
-  - We freeze the clocks which means we cannot change them later
+  - We freeze the clocks, which means we cannot change them later
   - Some drivers need a reference to the clocks to know how to calculate rates and durations
-- The next block of code instantiates some peripherals (namely RTC and the two timer groups) to disable the watchdog which is armed after boot
+- The next block of code instantiates some peripherals (namely RTC and the two timer groups) to disable the watchdog, which is armed after boot
   - Without that code, the SoC would reboot after some time
   - There is another way to prevent the reboot: [feeding](https://docs.rs/esp32c3-hal/0.2.0/esp32c3_hal/prelude/trait._embedded_hal_watchdog_Watchdog.html#tymethod.feed) the watchdog
 - `println!("Hello world!");`
   - Prints "Hello Wolrd!"
 - `loop {}`
-  - Since our function is supposed to never return we just "do nothing" in a loop
+  - Since our function is supposed to never return, we just "do nothing" in a loop
 
 ## Running the Code
 
@@ -190,7 +190,7 @@ I (168) boot: Disabling RNG early entropy source...
 Hello world!
 ```
 
-What you see here are messages from the first and second stage bootloader and then ... our "Hello World" message!
+What you see here are messages from the first and second stage bootloader, and then ... our "Hello World" message!
 
 And that is exactly what the code is doing.
 
@@ -198,7 +198,7 @@ You can reboot with `CTRL+R` or exit with `CTRL+C`.
 
 In the next chapters, we will be modifying this template to generate some more interesting applications.
 
-[addtional prompts]: https://github.com/esp-rs/esp-template#esp-template
+[additional prompts]: https://github.com/esp-rs/esp-template#esp-template
 [generate a no_std project]: ./index.md
 [esp-template]: https://github.com/esp-rs/esp-template
 [.gitignore]: https://git-scm.com/docs/gitignore

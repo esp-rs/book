@@ -22,7 +22,7 @@ Both templates are based on [cargo-generate], a tool that allows you to create a
         ```
         See [Understanding esp-template] for more details on the template project.
 
-    When the `cargo generate` subcommand is invoked, you will be prompted to answer a number of questions regarding the target of your application. Upon completion of this process you will have a buildable project with all the correct configuration.
+    When the `cargo generate` subcommand is invoked, you will be prompted to answer a number of questions regarding the target of your application. Upon completion of this process, you will have a buildable project with all the correct configuration.
 
     The generated application can be built as normal using the appropriate toolchain and target simply by running `cargo build` when using either templates.
 
@@ -36,7 +36,7 @@ Both template repositories have a prompt for Dev Containers support, when using 
 
 Dev Containers use the [`idf-rust` container image], that was explained in the [Container section] of the installation chapter, and provide an environment ready to develop Rust applications for Espressif chips with no installation required. Dev Containers also have integration with [Wokwi simulator], to simulate the project, and allow flashing from the container using [web flash].
 
-For more details about on Dev Containers, see [Dev Container] section of the template Readme.
+For more details about on Dev Containers, see [Dev Container] section of the template README.
 
 [cargo-generate]: https://github.com/cargo-generate/cargo-generate
 [esp-idf-template]: https://github.com/esp-rs/esp-idf-template

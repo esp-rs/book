@@ -5,7 +5,7 @@ alongside [Ferrous Systems]:
 - [Book of training]
 - [Repository of the training]
 
-The training is based on [ESP32-C3-DevKit-RUST-1]. You can use any other Espressif development board but code changes and configuration changes might be needed.
+The training is based on [ESP32-C3-DevKit-RUST-1]. You can use any other Espressif development board, but code changes and configuration changes might be needed.
 
 The training is split into two parts:
 * [Introductory level examples]:
@@ -22,7 +22,7 @@ The training is split into two parts:
    * Driving an RGB LED
 
 
-> Note that there are several examples covering the use of specific peripherals under the examples folder of  `esp-idf-hal`. I.e. [`esp32-idf-hal/examples`].
+> Note that there are several examples covering the use of specific peripherals under the examples' folder of  `esp-idf-hal`. I.e. [`esp32-idf-hal/examples`].
 
 [Ferrous Systems]: https://ferrous-systems.com/
 [Book of training]: https://espressif-trainings.ferrous-systems.com/

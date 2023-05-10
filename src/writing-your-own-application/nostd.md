@@ -15,7 +15,7 @@ The training contains:
    * A button example (Source)
    * A button with interrupt example (Source)
 
-> Note that there are several examples covering the use of specific peripherals under the examples folder of every SoC [`esp-hal`]. E.g. [`esp32c3-hal/examples`]
+> Note that there are several examples covering the use of specific peripherals under the examples' folder of every SoC [`esp-hal`]. E.g. [`esp32c3-hal/examples`]
 
 [ESP32-C3-DevKit-RUST-1]: https://github.com/esp-rs/esp-rust-board
 [`esp-hal`]: https://github.com/esp-rs/esp-hal

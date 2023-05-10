@@ -11,16 +11,16 @@ Both templates are based on [cargo-generate], a tool that allows you to create a
     cargo install cargo-generate
     ```
 2. Generate a project based in one of the templates:
-    - `std` template:
-        ```shell
-        cargo generate esp-rs/esp-idf-template cargo
-        ```
-        See [Understanding esp-idf-template] for more details on the template project.
-    - `no_std` template:
+    - esp-template:
         ```shell
         cargo generate -a esp-rs/esp-template
         ```
         See [Understanding esp-template] for more details on the template project.
+    - esp-idf-template:
+        ```shell
+        cargo generate esp-rs/esp-idf-template cargo
+        ```
+        See [Understanding esp-idf-template] for more details on the template project.
 
     When the `cargo generate` subcommand is invoked, you will be prompted to answer a number of questions regarding the target of your application. Upon completion of this process, you will have a buildable project with all the correct configuration.
 

@@ -34,7 +34,7 @@ Both template repositories have a prompt for Dev Containers support, when using 
 -  [VS Code Dev Containers]
 -  [GitHub Codespaces]
 
-Dev Containers use the [`idf-rust` container image], that was explained in the [Container section] of the installation chapter, and provide an environment ready to develop Rust applications for Espressif chips with no installation required. Dev Containers also have integration with [Wokwi simulator], to simulate the project, and allow flashing from the container using [web flash].
+Dev Containers use the [`idf-rust` container image], that was explained in the [Using Container section] of the installation chapter, and provide an environment ready to develop Rust applications for Espressif chips with no installation required. Dev Containers also have integration with [Wokwi simulator], to simulate the project, and allow flashing from the container using [web flash].
 
 For more details about on Dev Containers, see [Dev Container] section of the template README.
 
@@ -43,7 +43,7 @@ For more details about on Dev Containers, see [Dev Container] section of the tem
 [esp-template]: https://github.com/esp-rs/esp-template
 [VS Code Dev Containers]: https://code.visualstudio.com/docs/remote/containers#_quick-start-open-an-existing-folder-in-a-container
 [GitHub Codespaces]: https://docs.github.com/en/codespaces/developing-in-codespaces/creating-a-codespace
-[Container section]: ../../installation/index.md#using-containers
+[Using Container section]: ../../installation/index.md#using-containers
 [Wokwi simulator]: https://wokwi.com/
 [web flash]: https://github.com/bjoernQ/esp-web-flash-server
 [Dev Container]: https://github.com/esp-rs/esp-template/tree/main/docs#dev-containers

@@ -43,10 +43,10 @@ For more details about on Dev Containers, see [Dev Container] section of the tem
 [esp-template]: https://github.com/esp-rs/esp-template
 [VS Code Dev Containers]: https://code.visualstudio.com/docs/remote/containers#_quick-start-open-an-existing-folder-in-a-container
 [GitHub Codespaces]: https://docs.github.com/en/codespaces/developing-in-codespaces/creating-a-codespace
-[Container section]: ../installation/index.md#using-containers
+[Container section]: ../../installation/index.md#using-containers
 [Wokwi simulator]: https://wokwi.com/
 [web flash]: https://github.com/bjoernQ/esp-web-flash-server
 [Dev Container]: https://github.com/esp-rs/esp-template/tree/main/docs#dev-containers
-[Understanding esp-template]: ./no-std-applications/understanding-esp-template.md
-[Understanding esp-idf-template]: ./std-applications/understanding-esp-idf-template.md
+[Understanding esp-template]: ./esp-template.md
+[Understanding esp-idf-template]: ./esp-idf-template.md
 [`idf-rust` container image]: https://hub.docker.com/r/espressif/idf-rust/tags

@@ -24,9 +24,9 @@ Both templates are based on [cargo-generate], a tool that allows you to create a
 
     When the `cargo generate` subcommand is invoked, you will be prompted to answer a number of questions regarding the target of your application. Upon completion of this process, you will have a buildable project with all the correct configuration.
 
-    The generated application can be built as normal using the appropriate toolchain and target simply by running `cargo build` when using either templates.
-
-    Using `cargo run` will compile the project, flash it, and open a serial monitor with our chip.
+3. Build/Run the generated project:
+   - Using `cargo build` will compile the project using the appropriate toolchain and target.
+   - Using `cargo run` will compile the project, flash it, and open a serial monitor with our chip.
 
 ## Using Dev Containers in the templates
 

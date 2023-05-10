@@ -199,7 +199,7 @@ You can reboot with `CTRL+R` or exit with `CTRL+C`.
 In the next chapters, we will be modifying this template to generate some more interesting applications.
 
 [addtional prompts]: https://github.com/esp-rs/esp-template#esp-template
-[generate a no_std project]: ../generate-project-from-template.md
+[generate a no_std project]: ./index.md
 [esp-template]: https://github.com/esp-rs/esp-template
 [.gitignore]: https://git-scm.com/docs/gitignore
 [Cargo.toml]: https://doc.rust-lang.org/cargo/reference/manifest.html

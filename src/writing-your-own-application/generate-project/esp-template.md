@@ -34,7 +34,7 @@ Before going further, let's see what these files are for.
     - Contains `runner = "espflash flash --monitor"` - this means you can just use `cargo run` to flash and monitor your code
 - src/main.rs
     - The main source file of the newly created project
-    - We will examine its content in the next section
+    - For details, see the [`main.rs`] section below.
 - [.gitignore]
     - Tells `git` which folders and files to ignore
 - [Cargo.toml]
@@ -199,6 +199,7 @@ You can reboot with `CTRL+R` or exit with `CTRL+C`.
 In the next chapters, we will be modifying this template to generate some more interesting applications.
 
 [additional prompts]: https://github.com/esp-rs/esp-template#esp-template
+[`main.rs`]: #mainrs
 [generate a no_std project]: ./index.md
 [esp-template]: https://github.com/esp-rs/esp-template
 [.gitignore]: https://git-scm.com/docs/gitignore

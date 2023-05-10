@@ -35,7 +35,7 @@ Before going further, let's see what these files are for.
     - Contains the `ESP-IDF-VERSION` environment variable that tells [`esp-idf-sys`] which ESP-IDF version the project will use.
 - src/main.rs
     - The main source file of the newly created project
-    - We will examine its content in the next section
+    - For details, see the [`main.rs`] section below.
 - [.gitignore]
     - Tells `git` which folders and files to ignore
 - [build.rs]
@@ -178,6 +178,7 @@ You can reboot with `CTRL+R` or exit with `CTRL+C`.
 [generate a std project]: ./index.md
 [esp-idf-template]: https://github.com/esp-rs/esp-template
 [`esp-idf-sys`]: https://github.com/esp-rs/esp-idf-sys
+[`main.rs`]: #mainrs
 [`ldproxy`]: https://github.com/esp-rs/embuild/tree/master/ldproxy
 [build.rs]: https://doc.rust-lang.org/cargo/reference/build-scripts.html
 [sdkconfig.defaults]: https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-guides/build-system.html#custom-sdkconfig-defaults

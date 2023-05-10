@@ -196,8 +196,6 @@ And that is exactly what the code is doing.
 
 You can reboot with `CTRL+R` or exit with `CTRL+C`.
 
-In the next chapters, we will be modifying this template to generate some more interesting applications.
-
 [additional prompts]: https://github.com/esp-rs/esp-template#esp-template
 [`main.rs`]: #mainrs
 [generate a no_std project]: ./index.md

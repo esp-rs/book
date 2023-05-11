@@ -18,7 +18,7 @@ to build a project on your machine, or in a container, and simulate the resultin
 [wokwi-server] also allows simulating your resulting binary on other Wokwi projects, with more hardware parts other than the chip itself. See the [corresponding section of the wokwi-server Readme] for detailed instructions.
 
 ## Custom chips
-Wokwi allows generating custom chips that let you to program the behaviour of a component that is not supported in Wokwi, for more details see the official [Wokwi documentation][wokwi-custom-chip]
+Wokwi allows generating custom chips that let you program the behaviour of a component not supported in Wokwi. For more details, see the official [Wokwi documentation][wokwi-custom-chip]
 
 
 [Wokwi]: https://wokwi.com/

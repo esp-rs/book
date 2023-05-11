@@ -1,6 +1,6 @@
 # espflash
 
-A serial flasher utility for ESP devices. Supports flashing _ESP32_, _ESP32-C2_, _ESP32-C3_, _ESP32-C6_,, _ESP32-H2_ _ESP32-S2_, _ESP32-S3_, and _ESP8266_.
+`espflash` provides a serial flasher utility for Espressif SoCs and modules based on [esptool.py].
 
 The [esp-rs/espflash] repository contains two crates, `cargo-espflash` and `espflash`. You can find more information on both of these in their respective sections below and in their corresponding README.
 
@@ -9,7 +9,7 @@ The [esp-rs/espflash] repository contains two crates, `cargo-espflash` and `espf
 > The `espflash` and `cargo-espflash` commands shown below, assume that version `2.0` or greater.
 
 [esp-rs/espflash]: https://github.com/esp-rs/espflash
-
+[esptool.py]: https://github.com/espressif/esptool
 ## cargo-espflash
 
 Provides a subcommand for `cargo` that handles cross-compilation and flashing.

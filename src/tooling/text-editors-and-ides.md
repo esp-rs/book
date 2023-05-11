@@ -20,7 +20,7 @@ Alongside Rust Analyzer (RA), there are other extensions that might be very help
 
 ## Tips and Tricks
 
-If you are developing for a target that does not have `std` support Rust Analyzer can behave strangely, often reporting various errors. This can be resolved by creating a `.vscode/settings.json` file in your project and populating it with the following:
+If you are developing for a target that does not have `std` support, Rust Analyzer can behave strangely, often reporting various errors. This can be resolved by creating a `.vscode/settings.json` file in your project and populating it with the following:
 
 ```json
 {

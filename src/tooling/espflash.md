@@ -26,7 +26,7 @@ This command must be run within a Cargo project, ie. a directory containing a `C
 cargo espflash flash --example=blinky --monitor
 ```
 
-For more information please see to the [cargo-espflash README].
+For more information, please see the [cargo-espflash README].
 
 [cargo-espflash readme]: https://github.com/esp-rs/espflash/blob/master/cargo-espflash/README.md
 
@@ -46,7 +46,7 @@ Assuming you have built an ELF binary by other means already, `espflash` can be 
 espflash flash build/blinky --monitor
 ```
 
-For more information please see to the [espflash README].
+For more information, please see the [espflash README].
 
 
 `espflash` can be used as a Cargo runner by adding the following to your project's `.cargo/config.toml` file:
@@ -54,7 +54,7 @@ For more information please see to the [espflash README].
 [target.'cfg(any(target_arch = "riscv32", target_arch = "xtensa"))']
 runner = "espflash flash --monitor"
 ```
-With this configuration you can flash and monitor you application using `cargo run`.
+With this configuration, you can flash and monitor your application using `cargo run`.
 
 [esp-idf]: https://github.com/espressif/esp-idf
 [espflash readme]: https://github.com/esp-rs/espflash/blob/master/espflash/README.md

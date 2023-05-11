@@ -9,7 +9,7 @@ Instructions on how to install `openocd-esp32` for your platform can be found in
 
 <!-- how to choose interface & chip -->
 
-Once installed, it's as simple as running `openocd` with the correct scripts. For chips with the builtin USB JTAG, there is normally a config that will work out of the box, for example on the ESP32-C3:
+Once installed, it's as simple as running `openocd` with the correct scripts. For chips with the built-in USB JTAG, there is normally a config that will work out of the box, for example on the ESP32-C3:
 
 ```ignore
 openocd -f board/esp32c3-builtin.cfg

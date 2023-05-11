@@ -20,7 +20,7 @@ More info about probe-rs & how to set up a project can be found on the [probe-rs
 
 ## `USB-JTAG-SERIAL` peripheral for ESP32-C3
 
-Starting from `probe-rs` v0.12, it is possible to flash and debug the ESP32-C3 with the builtin `USB-JTAG-SERIAL` peripheral, no need for any external hardware debugger. More info on configuring the interface can be found in the [official documentation].
+Starting from `probe-rs` v0.12, it is possible to flash and debug the ESP32-C3 with the built-in `USB-JTAG-SERIAL` peripheral, no need for any external hardware debugger. More info on configuring the interface can be found in the [official documentation].
 
 ## Support for Espressif chips
 

@@ -40,7 +40,7 @@ targets = ["xtensa-esp32-none-elf"]
 ## Other IDEs
 
 There are other IDEs like [CLion] or [vim] that also have pretty good support for Rust,
-but we wont be convering them here.
+but we won't be covering them here.
 
 [CLion]: https://www.jetbrains.com/clion/
 [vim]: https://www.vim.org/

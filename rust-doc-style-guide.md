@@ -87,9 +87,11 @@ The books on Rust usually use [link variables][stackoverflow-link-var] defined r
 
 [stackoverflow-link-var]: https://stackoverflow.com/a/27784490/10308406
 
+> ```
 > [`espup`][espup-github] is a tool that simplifies installing and maintaining the components required to develop Rust applications.
-
+>
 > [espup-github]: https://github.com/esp-rs/espup
+> ```
 
 ### Formatting
 
@@ -210,6 +212,8 @@ Monospace font can also be used in:
 - Emphasize important concepts or words
 
   > When `s` comes _into_ scope, it is valid. It remains valid until it goes _out of_ scope.
+
+- Don't use italics with Espressif product names, such as ESP32.
 
 
 ## Mode of Narration

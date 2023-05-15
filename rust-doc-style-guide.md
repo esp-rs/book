@@ -83,9 +83,14 @@ In hyphenated words, do not capitalize the parts following the hyphens.
 
 ### Adding Links
 
-The books on Rust usually use [link variables][stackoverflow-link-var] defined right after the paragraph where they are used. For variables, use names that give a clue on where the link leads. It will simplify link maintenance.
+To simplify link maintenance, follow the rules below:
+
+- Use [link variables][stackoverflow-link-var] with variable names that give a clue on where the link leads.
+- Define link variables right after the paragraphs where they are used.
 
 [stackoverflow-link-var]: https://stackoverflow.com/a/27784490/10308406
+
+Example:
 
 > ```
 > [`espup`][espup-github] is a tool that simplifies installing and maintaining the components required to develop Rust applications.

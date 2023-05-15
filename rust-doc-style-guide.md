@@ -246,11 +246,13 @@ If you spot other issues with terminology, please add the terms here in alphabet
 
 ### Recommended Terms
 
-- Cargo
-  - Avoid: cargo
+- _Cargo_
+  - Note: always use uppercase _C_
 - ESP-IDF or esp-idf
   - Use: esp-idf when writing about the esp-idf repo
   - Use: ESP-IDF when writing about the ESP-IDF framework or ESP-IDF programming guide
+- `no_std`
+  - Note: see `std`
 - _Product_
   - Avoid: Espressif SoCs
   - Use: Espressif products
@@ -258,6 +260,20 @@ If you spot other issues with terminology, please add the terms here in alphabet
 - _SoC_
   - Avoid: _chip_
   - Note: see also _product_
+- `std` / `no_std`
+  - Use only if necessary: bare metal development, hosted environment, Standard library, Core library
+  - Use `std` / `no_std` by default in patterns, such as:
+    - write, build, or choose between  `std` / `no_std` applications
+    - requires `std` for ...
+    - use `std` for ...
+    - compile in an `std` environment
+    - support for `no_std` requires ... (`std` support)
+    - using the `std` / `no_std` approach
+    - `std` projects / templates / features
+    - `std` / `no_std` development
+- _VS Code_
+  - Use VS Code by default
+  - Use only if necessary: Visual Studio Code
 
 
 ## Appenndix A Existing Style Guides

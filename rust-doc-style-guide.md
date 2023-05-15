@@ -1,3 +1,4 @@
+<!-- omit in toc -->
 # Rust Documentation Style Guide
 
 As [The Rust RFC Book](https://rust-lang.github.io/rfcs/2436-style-guide.html#drawbacks) states:
@@ -18,36 +19,35 @@ The style guide is based on the best practices collected from the following book
 - [The rustc book](https://doc.rust-lang.org/nightly/rustc/targets/index.html)
 - [The Rust on ESP Book](https://esp-rs.github.io/book/)
 
+<!-- omit in toc -->
 ## Contents of This Style Guide
 
-- [Rust Documentation Style Guide](#rust-documentation-style-guide)
-  - [Contents of This Style Guide](#contents-of-this-style-guide)
-  - [Heading Titles](#heading-titles)
-    - [Capitalization](#capitalization)
-  - [Linking](#linking)
-    - [Adding Links](#adding-links)
-    - [Formatting](#formatting)
-  - [Lists](#lists)
-    - [Types](#types)
-    - [Formatting](#formatting-1)
-  - [Using `monospace`](#using-monospace)
-    - [Monospace and Other Types of Formatting](#monospace-and-other-types-of-formatting)
-  - [Using _Italics_](#using-italics)
-  - [Mode of Narration](#mode-of-narration)
-  - [Terminology](#terminology)
-    - [Recommended Terms](#recommended-terms)
-  - [Admonitions](#admonitions)
-  - [Appenndix A Existing Style Guides](#appenndix-a-existing-style-guides)
-    - [Documentation](#documentation)
-    - [Code](#code)
+- [Heading Titles](#heading-titles)
+  - [Capitalization](#capitalization)
+- [Linking](#linking)
+  - [Adding Links](#adding-links)
+  - [Formatting](#formatting)
+- [Lists](#lists)
+  - [Types](#types)
+  - [Formatting](#formatting-1)
+- [Using `monospace`](#using-monospace)
+  - [Monospace and Other Types of Formatting](#monospace-and-other-types-of-formatting)
+- [Using _Italics_](#using-italics)
+- [Mode of Narration](#mode-of-narration)
+- [Terminology](#terminology)
+  - [Recommended Terms](#recommended-terms)
+- [Admonitions](#admonitions)
+- [Appenndix A Existing Style Guides](#appenndix-a-existing-style-guides)
+  - [Documentation](#documentation)
+  - [Code](#code)
 
 
 ## Heading Titles
 
 The books on Rust usually have the heading titles based on nouns or gerunds:
 
-> #### Design Patterns
-> #### Using Structs to Structure Related Data
+> **Design Patterns**<br>
+> **Using Structs to Structure Related Data**
 
 ### Capitalization
 
@@ -55,29 +55,29 @@ In heading titles, capitalize the first letter of every word **except for**:
 
 - Articles (a, an, the); unless an article is the first word.
 
-  > #### Defining an Enum
-  > #### A First Attempt at Rust
+  > **Defining an Enum**<br>
+  > **A First Attempt at Rust**
 
 - Coordinating conjunctions (and, but, for, or, nor).
 
-  > #### Packages and Crates
+  > **Packages and Crates**
 
 - Prepositions of four letters or less; unless these prepositions are the first or last words.
   - Prepositions of _five_ letters and above should be capitalized (Before, Through, Versus, Among, Under, Between, Without, etc.).
 
-  > #### Peripherals as State Machines
+  > **Peripherals as State Machines**
 
 Do not capitalize names of functions, commands, packages, websites, etc.
 
-> #### What is `rustc`
-> #### Publishing on crates.io
+> **What is `rustc`**<br>
+> **Publishing on crates.io**
 
-See also, the [Monospace and Other Formatting](#monospace-and-other-formatting) section.
+See also, the [Using `monospace`](#using-monospace) section.
 
 In hyphenated words, do not capitalize the parts following the hyphens.
 
-> #### Built-in Targets
-> #### Allowed-by-default Lints
+> **Built-in Targets**<br>
+> **Allowed-by-default Lints**
 
 
 ## Linking
@@ -93,11 +93,11 @@ To simplify link maintenance, follow the rules below:
 
 Example:
 
-> ```
-> [`espup`][espup-github] is a tool that simplifies installing and maintaining the components required to develop Rust applications.
->
-> [espup-github]: https://github.com/esp-rs/espup
-> ```
+```
+[`espup`][espup-github] is a tool that simplifies installing and maintaining the components required to develop Rust applications.
+
+[espup-github]: https://github.com/esp-rs/espup
+```
 
 ### Formatting
 
@@ -122,7 +122,7 @@ Also take into account the following
 
   > `espup` might have a section in a book and a github repo. In this case, see the [`espup`](#espup) section and [`espup` repo](https://hackmd.io/-cf0jVTqRqm9O7GM5JgLiA?both).
 
-See also, the [Monospace and Other Formatting](#monospace-and-other-formatting) section.
+See also, the [Using `monospace`](#using-monospace) section.
 
 ## Lists
 
@@ -142,7 +142,7 @@ The books on Rust usually use the following list formatting:
 - Capitalize the first letter of each bullet point.
 
   > Using C or C++ inside of a Rust project consists of two major parts:
-
+  >
   > - Wrapping the exposed C API for use with Rust
   > - Building your C or C++ code to be integrated with the Rust code
 
@@ -150,7 +150,7 @@ The books on Rust usually use the following list formatting:
   - If a list has at least one full stop, end all other list items with a full stop.
 
   > To reliably interact with these peripherals:
-
+  >
   > - Always use `volatile` methods to read or write to peripheral memory, as it can change at any time.
   > - In software, we should be able to share any number of read-only accesses to these peripherals.
   > - If some software should have read-write access to a peripheral, it should hold the only reference to that peripheral.
@@ -194,7 +194,7 @@ Use monospace font for the following items:
 - Images and containers: `idf-rust`
 - Architectures and targets
 
- > The `RISC-V` and `Xtensa` architectures.
+  > The `RISC-V` and `Xtensa` architectures.
 
 ### Monospace and Other Types of Formatting
 
@@ -206,7 +206,7 @@ Monospace font can also be used in:
 
 - headings
 
-  > ### A `no_std` Rust Environment
+  > **A `no_std` Rust Environment**
 
 
 ## Using _Italics_
@@ -220,7 +220,7 @@ Monospace font can also be used in:
 
   > When `s` comes _into_ scope, it is valid. It remains valid until it goes _out of_ scope.
 
-- Don't use italics with Espressif product names, such as ESP32.
+- Do NOT use italics with Espressif product names, such as ESP32.
 
 
 ## Mode of Narration
@@ -292,7 +292,7 @@ Use the following formatting for notes and warnings:
 
 - Note
 
-  > 🚧⚠️ **Note**: A note covering an important point or idea. Use sparingly or the readers will start ignoring them.
+  > ⚠️ **Note**: A note covering an important point or idea. Use sparingly or the readers will start ignoring them.
 
 - Warning
 
@@ -300,8 +300,8 @@ Use the following formatting for notes and warnings:
 
 In markdown:
 
-```
-> 🚧⚠️ **Note**: Write your note.
+```md
+> ⚠️ **Note**: Write your note.
 ```
 
 ## Appenndix A Existing Style Guides

@@ -190,6 +190,7 @@ Use monospace font for the following items:
 - Names of crates, traits, libraries,
 - Command line tools, plugins, packages
 - Files: `config.toml`
+- Images and containers: `idf-rust`
 - Architectures and targets
 
  > The `RISC-V` and `Xtensa` architectures.

@@ -36,6 +36,7 @@ The style guide is based on the best practices collected from the following book
   - [Mode of Narration](#mode-of-narration)
   - [Terminology](#terminology)
     - [Recommended Terms](#recommended-terms)
+  - [Admonitions](#admonitions)
   - [Appenndix A Existing Style Guides](#appenndix-a-existing-style-guides)
     - [Documentation](#documentation)
     - [Code](#code)
@@ -285,6 +286,23 @@ If you spot other issues with terminology, please add the terms here in alphabet
   - Use VS Code by default
   - Use only if necessary: Visual Studio Code
 
+## Admonitions
+
+Use the following formatting for notes and warnings:
+
+- Note
+
+  > 🚧⚠️ **Note**: A note covering an important point or idea. Use sparingly or the readers will start ignoring them.
+
+- Warning
+
+  > 🚨 **Warning**: Use in critical circumstances only, e.g., for irreversible actions or actions potentially harmful to hardware, software, etc.
+
+In markdown:
+
+```
+> 🚧⚠️ **Note**: Write your note.
+```
 
 ## Appenndix A Existing Style Guides
 

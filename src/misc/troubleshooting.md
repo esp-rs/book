@@ -94,17 +94,6 @@ If using GNU ABI, install [MinGW/MSYS2 toolchain].
 [Visual Studio 2013 (or later) or the Visual C++ Build Tools 2019]: https://rust-lang.github.io/rustup/installation/windows.html
 [MinGW/MSYS2 toolchain]: https://www.msys2.org/
 
-## Missing `libtinfo.so.5`
-
-```text
-thread 'main' panicked at 'Unable to find libclang: "the `libclang` shared library at /home/user/.espressif/tools/xtensa-esp32-elf-clang/esp-15.0.0-20221014-x86_64-unknown-linux-gnu/esp-clang/lib/libclang.so.15.0.0 could not be o
-pened: libtinfo.so.5: cannot open shared object file: No such file or directory"', /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/bindgen-0.60.1/src/lib.rs:2172:31
-```
-Some of the LLVM 15 releases, `esp-15.0.0-20220922` and `esp-15.0.0-20221014`, require `libtinfo.so.5`. This dependency was removed in `esp-15.0.0-20221201` LLVM releases. If you are using any of the versions that require it, make sure `libtinf5` is installed:
-- Ubuntu/Debian: `sudo apt-get install libtinfo5`
-- Fedora: `sudo dnf install ncurses-compat-libs`
-- openSUSE: `sudo dnf install libncurses5`
-- Arch Linux: `sudo pacman -S ncurses5-compat-libs`
 
 ## FAQ
 

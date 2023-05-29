@@ -24,15 +24,13 @@ Please note that you can host the development environment in a [container][use-c
 
 Make sure you have [Rust][rust-lang-org] installed. If not, see the instructions on the [rustup][rustup.rs-website] website.
 
+When using Windows, make sure you have installed one of the ABIs listed below. For more details, see the [Windows][rustup-book-windows] chapter in The rustup book.
+- **MSVC**: Recommended ABI, included in the list of `rustup` default requirements. Use it for interoperability with the software produced by Visual Studio.
+- **GNU**: ABI used by the GCC toolchain. Install it yourself for interoperability with the software built with the MinGW/MSYS2 toolchain.
+
+> **Warning**: When using Unix based systems, installing Rust via a system package manager (e.g. `brew`, `apt`, `dnf`, etc.) can result in various issues and incompatibilities, so it's best to use [rustup][rustup.rs-website] instead.
+
 See also [alternative installation methods][rust-alt-installation].
-
-> **Warning**: When using Windows, make sure you have installed one of the ABIs listed below. For more details, see the [Windows][rustup-book-windows] chapter in The rustup book.
->
-> - **MSVC**: Recommended ABI, included in the list of `rustup` default requirements. Use it for interoperability with the software produced by Visual Studio.
-> - **GNU**: ABI used by the GCC toolchain. Install it yourself for interoperability with the software built with the MinGW/MSYS2 toolchain.
-
-> **Warning**: When using Unix systems, installing Rust via a system package manager (eg. `brew`, `apt`, `dnf`, etc.) can result in various issues and incompatibilities, so it's best to use [rustup][rustup.rs-website] instead.
-
 
 [rustup.rs-website]: https://rustup.rs/
 [rust-alt-installation]: https://rust-lang.github.io/rustup/installation/other.html
@@ -95,6 +93,8 @@ Now you should be able to build and run projects on the Espressif's `RISC-V` chi
 
 [espup-github]: https://github.com/esp-rs/espup
 
+### 1. Install `espup`
+
 To install `espup`, run:
 ```sh
 cargo install espup
@@ -105,29 +105,37 @@ You can also directly download pre-compiled [release binaries] or use [cargo-bin
 [release binaries]: https://github.com/esp-rs/espup/releases
 [cargo-binstall]: https://github.com/cargo-bins/cargo-binstall
 
-Once `espup` is installed, do the following:
+### 2. Install neccesary toolchains
 
-1. Install all the necessary tools to develop Rust applications for all supported Espressif targets by running:
-    ```sh
-    espup install
-    ```
-2. Set up the environment variables. `espup` will create an export file that contains some environment variables required to build projects:
-    - Unix systems (`$HOME/export-esp.sh`). There are different ways of sourcing the file:
-      - Source this file in every terminal:
-        1. Source the export file: `. $HOME/export-esp.sh`
-        - This requires running the command in every new shell.
-      - Create an alias for executing the `export-esp.sh`:
-        1. Copy and paste the following command to your shell’s profile (`.profile`, `.bashrc`, `.zprofile`, etc.): `alias get_esprs='. $HOME/export-esp.sh'`
-        2. Refresh the configuration by restarting the terminal session or by running `source [path to profile]`, for example, `source ~/.bashrc`.
-        - This requires running the alias in every new shell.
-      - Add the environment variables to your shell`s profile directly:
-        1. Add the content of `$HOME/export-esp.sh` to your shell ’s profile: `cat $HOME/export-esp.sh >> [path to profile]`, for example, `cat $HOME/export-esp.sh >> ~/.bashrc`.
-        2. Refresh the configuration by restarting the terminal session or by running `source [path to profile]`, for example, `source ~/.bashrc`.
-        - The `export-esp.sh` script will be sourced automatically in every shell.
-    - Windows (`%USERPROFILE%\export-esp.ps1`)
-      - There is **no need** to execute the file for Windows users. It is only created to show the modified environment variables.
+Install all the necessary tools to develop Rust applications for all supported Espressif targets by running:
+```sh
+espup install
+```
 
 > **Note**: `std` applications require installing additional software covered in [`std` Development Requirements][rust-esp-book-std-requirements]
+
+### 3.Set up the environment variables
+`espup` will create an export file that contains some environment variables required to build projects.
+
+On Windows (`%USERPROFILE%\export-esp.ps1`)
+  - There is **no need** to execute the file for Windows users. It is only created to show the modified environment variables.
+
+On Unix based systems (`$HOME/export-esp.sh`). There are different ways of sourcing the file:
+- Source this file in every terminal:
+   1. Source the export file: `. $HOME/export-esp.sh`
+
+   This approach requires running the command in every new shell.
+- Create an alias for executing the `export-esp.sh`:
+   1. Copy and paste the following command to your shell’s profile (`.profile`, `.bashrc`, `.zprofile`, etc.): `alias get_esprs='. $HOME/export-esp.sh'`
+   2. Refresh the configuration by restarting the terminal session or by running `source [path to profile]`, for example, `source ~/.bashrc`.
+
+   This approach requires running the alias in every new shell.
+- Add the environment variables to your shell`s profile directly:
+   1. Add the content of `$HOME/export-esp.sh` to your shell ’s profile: `cat $HOME/export-esp.sh >> [path to profile]`, for example, `cat $HOME/export-esp.sh >> ~/.bashrc`.
+   2. Refresh the configuration by restarting the terminal session or by running `source [path to profile]`, for example, `source ~/.bashrc`.
+
+   This approach **does not** requires any sourcing. The `export-esp.sh` script will be sourced automatically in every shell.
+
 
 ### What espup Installs
 

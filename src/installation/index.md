@@ -109,20 +109,23 @@ Once `espup` is installed, do the following:
     ```sh
     espup install
     ```
+2. Set up the environment variables. `espup` will create an export file that contains some environment variables required to build projects:
+    - Unix systems (`$HOME/export-esp.sh`). There are different ways of sourcing the file:
+      - Source this file in every terminal:
+        1. Source the export file: `. $HOME/export-esp.sh`
+        - This requires running the command in every new shell.
+      - Create an alias for executing the `export-esp.sh`:
+        1. Copy and paste the following command to your shell’s profile (`.profile`, `.bashrc`, `.zprofile`, etc.): `alias get_esprs='. $HOME/export-esp.sh'`
+        2. Refresh the configuration by restarting the terminal session or by running `source [path to profile]`, for example, `source ~/.bashrc`.
+        - This requires running the alias in every new shell.
+      - Add the environment variables to your shell`s profile directly:
+        1. Add the content of `$HOME/export-esp.sh` to your shell ’s profile: `cat $HOME/export-esp.sh >> [path to profile]`, for example, `cat $HOME/export-esp.sh >> ~/.bashrc`.
+        2. Refresh the configuration by restarting the terminal session or by running `source [path to profile]`, for example, `source ~/.bashrc`.
+        - The `export-esp.sh` script will be sourced automatically in every shell.
+    - Windows (`%USERPROFILE%\export-esp.ps1`)
+      - There is **no need** to execute the file for Windows users. It is only created to show the modified environment variables.
 
-    `espup` will create an export file that contains some environment variables required to build projects:
-
-    - Unix systems - `$HOME/export-esp.sh`
-    - Windows - `%USERPROFILE%\export-esp.ps1`
-
-2. On Unix systems, make sure to source this file in every terminal before building any application: `. $HOME/export-esp.sh`
-    > On Windows systems, no need to source the file. It is only created to show the modified environment variables.
-
-
-After running `espup install`:
-
-- `no_std` (bare-metal) applications should work out of the box
-- `std` applications require additional software covered in [`std` Development Requirements][rust-esp-book-std-requirements]
+> **Note**: `std` applications require installing additional software covered in [`std` Development Requirements][rust-esp-book-std-requirements]
 
 ### What espup Installs
 

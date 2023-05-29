@@ -26,10 +26,12 @@ Make sure you have [Rust][rust-lang-org] installed. If not, see the instructions
 
 See also [alternative installation methods][rust-alt-installation].
 
-> **Note**: If you run Windows on your host machine, make sure you have installed one of the ABIs listed below. For more details, see the [Windows][rustup-book-windows] chapter in The rustup book.
+> **Warning**: When using Windows, make sure you have installed one of the ABIs listed below. For more details, see the [Windows][rustup-book-windows] chapter in The rustup book.
 >
 > - **MSVC**: Recommended ABI, included in the list of `rustup` default requirements. Use it for interoperability with the software produced by Visual Studio.
 > - **GNU**: ABI used by the GCC toolchain. Install it yourself for interoperability with the software built with the MinGW/MSYS2 toolchain.
+
+> **Warning**: When using Unix systems, installing Rust via a system package manager (eg. `brew`, `apt`, `dnf`, etc.) can result in various issues and incompatibilities, so it's best to use [rustup][rustup.rs-website] instead.
 
 
 [rustup.rs-website]: https://rustup.rs/

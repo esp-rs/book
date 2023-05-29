@@ -114,7 +114,7 @@ espup install
 
 > **Note**: `std` applications require installing additional software covered in [`std` Development Requirements][rust-esp-book-std-requirements]
 
-### 3.Set up the environment variables
+### 3. Set up the environment variables
 `espup` will create an export file that contains some environment variables required to build projects.
 
 On Windows (`%USERPROFILE%\export-esp.ps1`)

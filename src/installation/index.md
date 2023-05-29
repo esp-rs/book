@@ -130,7 +130,7 @@ On Unix based systems (`$HOME/export-esp.sh`). There are different ways of sourc
    2. Refresh the configuration by restarting the terminal session or by running `source [path to profile]`, for example, `source ~/.bashrc`.
 
    This approach requires running the alias in every new shell.
-- Add the environment variables to your shell`s profile directly:
+- Add the environment variables to your shell's profile directly:
    1. Add the content of `$HOME/export-esp.sh` to your shell ’s profile: `cat $HOME/export-esp.sh >> [path to profile]`, for example, `cat $HOME/export-esp.sh >> ~/.bashrc`.
    2. Refresh the configuration by restarting the terminal session or by running `source [path to profile]`, for example, `source ~/.bashrc`.
 

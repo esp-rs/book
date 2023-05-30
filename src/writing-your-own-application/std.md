@@ -5,7 +5,7 @@ alongside [Ferrous Systems]:
 - [Book of training]
 - [Repository of the training]
 
-The training is based on [ESP32-C3-DevKit-RUST-1]. You can use any other ESP32, ESP32-C3, ESP32-S2, or ESP32-S3 development board but code changes and configuration changes might be needed.
+The training is based on [ESP32-C3-DevKit-RUST-1]. You can use any other Espressif development board, but code changes and configuration changes might be needed.
 
 The training is split into two parts:
 * [Introductory level examples]:
@@ -22,7 +22,7 @@ The training is split into two parts:
    * Driving an RGB LED
 
 
-> Note that there are several examples covering the use of specific peripherals under the examples folder of  `esp-idf-hal`. I.e. [`esp32-idf-hal/examples`].
+> Note that there are several examples covering the use of specific peripherals under the examples' folder of  [`esp-idf-hal`]. I.e. [`esp-idf-hal/examples`].
 
 [Ferrous Systems]: https://ferrous-systems.com/
 [Book of training]: https://espressif-trainings.ferrous-systems.com/
@@ -30,4 +30,5 @@ The training is split into two parts:
 [ESP32-C3-DevKit-RUST-1]: https://github.com/esp-rs/esp-rust-board
 [Introductory level examples]: https://github.com/ferrous-systems/espressif-trainings/tree/main/intro
 [Advanced level examples]: https://github.com/ferrous-systems/espressif-trainings/tree/main/advanced
-[`esp32-idf-hal/examples`]: https://github.com/esp-rs/esp-idf-hal/tree/master/examples
+[`esp-idf-hal/examples`]: https://github.com/esp-rs/esp-idf-hal/tree/master/examples
+[`esp-idf-hal`]: https://github.com/esp-rs/esp-idf-hal

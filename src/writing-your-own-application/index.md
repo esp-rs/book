@@ -2,11 +2,15 @@
 
 With the appropriate Rust compiler and toolchain installed, you're now ready to create an application.
 
-There are essentially two ways to do this: generating from a template or starting from scratch using only `cargo`.
+You can write an application in the following ways:
 
-We strongly recomend starting projects from templates as it gives you a configured project saving all the time that would require
-to setup a project started from scratch with `cargo`.
+- Generate from a template: (**Strongly recommended**). Gives you a configured project, saves time and prevents possible errors.
+- Start from scratch using Cargo: Requires more expertise since you need to configure several parts of the project.
+    > Note: Starting a project with Cargo does not provide any advantage, only mentioned here since it's the usual way of generating a project in Rust.
 
-> If you are looking for inspiration, check the [Projects section of our Awesome ESP Rust repository]
 
-[Projects section of our Awesome ESP Rust repository]: https://github.com/esp-rs/awesome-esp-rust#projects
+This chapter won't cover the instructions on how to create a project from scratch with `cargo`, it will only focus on generating a project from template project.
+
+During this chapter, we will use some tools that will be covered in more details in the next chapter, [Tooling][tooling], feel free to peek into it when required.
+
+[tooling]: ../tooling/index.md

@@ -13,12 +13,10 @@ As mentioned in the installation procedures below, for `std` development also do
 
 Please note that you can host the development environment in a [container][use-containers].
 
-
 [install-rust]: #install-rust
 [risc-v-targets]: #risc-v-targets-only
 [rics-v-xtensa-targets]: #risc-v-and-xtensa-targets
 [use-containers]: #using-containers
-
 
 ## Install Rust
 
@@ -36,7 +34,6 @@ See also [alternative installation methods][rust-alt-installation].
 [rust-alt-installation]: https://rust-lang.github.io/rustup/installation/other.html
 [rustup-book-windows]: https://rust-lang.github.io/rustup/installation/windows.html
 [rust-lang-org]: https://www.rust-lang.org/
-
 
 ## RISC-V targets only
 
@@ -81,7 +78,7 @@ To build Rust applications for the Espressif chips based on `RISC-V` architectur
 [llvm-website]: https://llvm.org/
 [rust-esp-book-std-requirements]: #std-development-requirements
 [cargo-book-unstable-features]: https://doc.rust-lang.org/cargo/reference/unstable.html
-[rust-esp-book-write-app-generate-project]: ../writing-your-own-application/generate-project-from-template.md
+[rust-esp-book-write-app-generate-project]: ../writing-your-own-application/generate-project/index.md
 
 
 Now you should be able to build and run projects on the Espressif's `RISC-V` chips.

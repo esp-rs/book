@@ -56,7 +56,7 @@ If you are unfamiliar or less experienced with anything mentioned above, or if y
 [the rust programming language]: https://doc.rust-lang.org/book/
 [the embedded rust book]: https://docs.rust-embedded.org/book/index.html
 [the embedonomicon]: https://docs.rust-embedded.org/embedonomicon/
-[embedded rust on espressif]: https://espressif-trainings.ferrous-systems.com/
+[embedded rust on espressif]: https://esp-rs.github.io/std-training/
 [ferrous systems]: https://ferrous-systems.com/
 
 ### Translations

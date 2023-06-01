@@ -11,16 +11,16 @@ The training is based on [ESP32-C3-DevKit-RUST-1]. You can use any other Espress
 The training is split into two parts:
 
 * [Introductory level examples]:
-   * A basic hardware-check ([Source](https://github.com/ferrous-systems/espressif-trainings/tree/main/intro/hardware-check))
-   * An HTTP Client ([Source](https://github.com/ferrous-systems/espressif-trainings/tree/main/intro/http-client))
-   * An HTTP Server ([Source](https://github.com/ferrous-systems/espressif-trainings/tree/main/intro/http-server))
-   * An MQTT Client ([Source](https://github.com/ferrous-systems/espressif-trainings/tree/main/intro/mqtt))
+   * A basic hardware-check ([Source](https://github.com/esp-rs/std-training/tree/main/intro/hardware-check))
+   * An HTTP Client ([Source](https://github.com/esp-rs/std-training/tree/main/intro/http-client))
+   * An HTTP Server ([Source](https://github.com/esp-rs/std-training/tree/main/intro/http-server))
+   * An MQTT Client ([Source](https://github.com/esp-rs/std-training/tree/main/intro/mqtt))
 * [Advanced level examples]:
    * Low-level GPIO
    * Interrupts in General
-   * I2C Driver ([Source](https://github.com/ferrous-systems/espressif-trainings/tree/main/advanced/i2c-driver))
-   * I2C Sensor Reading ([Source](https://github.com/ferrous-systems/espressif-trainings/tree/main/advanced/i2c-sensor-reading))
-   * GPIO/Button Interrupts ([Source](https://github.com/ferrous-systems/espressif-trainings/tree/main/advanced/button-interrupt))
+   * I2C Driver ([Source](https://github.com/esp-rs/std-training/tree/main/advanced/i2c-driver))
+   * I2C Sensor Reading ([Source](https://github.com/esp-rs/std-training/tree/main/advanced/i2c-sensor-reading))
+   * GPIO/Button Interrupts ([Source](https://github.com/esp-rs/std-training/tree/main/advanced/button-interrupt))
    * Driving an RGB LED
 
 
@@ -28,9 +28,9 @@ The training is split into two parts:
 
 [Ferrous Systems]: https://ferrous-systems.com/
 [Book of training]: https://espressif-trainings.ferrous-systems.com/
-[Repository of the training]: https://github.com/ferrous-systems/espressif-trainings
+[Repository of the training]: https://github.com/esp-rs/std-training
 [ESP32-C3-DevKit-RUST-1]: https://github.com/esp-rs/esp-rust-board
-[Introductory level examples]: https://github.com/ferrous-systems/espressif-trainings/tree/main/intro
-[Advanced level examples]: https://github.com/ferrous-systems/espressif-trainings/tree/main/advanced
+[Introductory level examples]: https://github.com/esp-rs/std-training/tree/main/intro
+[Advanced level examples]: https://github.com/esp-rs/std-training/tree/main/advanced
 [`esp-idf-hal/examples`]: https://github.com/esp-rs/esp-idf-hal/tree/master/examples
 [`esp-idf-hal`]: https://github.com/esp-rs/esp-idf-hal

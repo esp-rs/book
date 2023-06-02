@@ -304,7 +304,7 @@ In markdown:
 > ⚠️ **Note**: Write your note.
 ```
 
-## Appenndix A Existing Style Guides
+## Appendix A Existing Style Guides
 
 ### Documentation
 

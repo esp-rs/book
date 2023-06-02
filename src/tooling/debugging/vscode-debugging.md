@@ -6,7 +6,7 @@ There is also a possibility to debug with graphical output directly in Visual St
 
 ### Hardware Setup
 
-ESP32 doesn't have a built-in JTAG interface so, you have to connect an external JTAG adapter to the ESP32 board, for example, [ESP-Prog](https://docs.espressif.com/projects/espressif-esp-iot-solution/en/latest/hw-reference/ESP-Prog_guide.html) can be used.
+ESP32 doesn't have a built-in JTAG interface, so you have to connect an external JTAG adapter to the ESP32 board, for example, [ESP-Prog](https://docs.espressif.com/projects/espressif-esp-iot-solution/en/latest/hw-reference/ESP-Prog_guide.html) can be used.
 
 |  ESP32 Pin  | JTAG Signal |
 | :---------: | :---------: |

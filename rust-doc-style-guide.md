@@ -1,5 +1,5 @@
 <!-- omit in toc -->
-# Rust Documentation Style Guide
+# Rust Doc Style Guide
 
 As [The Rust RFC Book](https://rust-lang.github.io/rfcs/2436-style-guide.html#drawbacks) states:
 
@@ -13,6 +13,7 @@ As [The Rust RFC Book](https://rust-lang.github.io/rfcs/2436-style-guide.html#dr
 The style guide is based on the best practices collected from the following books:
 
 - [The Rust Programming Language](https://doc.rust-lang.org/book/foreword.html)
+  - [Style Guide](https://github.com/rust-lang/book/blob/main/style-guide.md)
 - [The Embedded Rust Book](https://docs.rust-embedded.org/book/intro/index.html)
 - [The rustup book](https://rust-lang.github.io/rustup/installation/windows.html)
 - [The Cargo Book](https://doc.rust-lang.org/cargo/reference/specifying-dependencies.html)

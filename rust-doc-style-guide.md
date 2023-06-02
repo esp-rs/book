@@ -1,5 +1,5 @@
 <!-- omit in toc -->
-# Rust Doc Style Guide
+# Rust Documentation Style Guide
 
 As [The Rust RFC Book](https://rust-lang.github.io/rfcs/2436-style-guide.html#drawbacks) states:
 
@@ -38,7 +38,7 @@ The style guide is based on the best practices collected from the following book
 - [Terminology](#terminology)
   - [Recommended Terms](#recommended-terms)
 - [Admonitions](#admonitions)
-- [Appenndix A Existing Style Guides](#appenndix-a-existing-style-guides)
+- [Appendix A Existing Style Guides](#appendix-a-existing-style-guides)
   - [Documentation](#documentation)
   - [Code](#code)
 

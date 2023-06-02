@@ -36,7 +36,7 @@ Both template repositories have a prompt for Dev Containers support, when using 
 
 Dev Containers use the [`idf-rust` container image], that was explained in the [Using Container section] of the installation chapter, and provide an environment ready to develop Rust applications for Espressif chips with no installation required. Dev Containers also have integration with [Wokwi simulator], to simulate the project, and allow flashing from the container using [web flash].
 
-For more details about on Dev Containers, see [Dev Container] section of the template README.
+For more details on Dev Containers, see [Dev Container] section of the template README.
 
 [cargo-generate]: https://github.com/cargo-generate/cargo-generate
 [esp-idf-template]: https://github.com/esp-rs/esp-idf-template

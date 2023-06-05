@@ -13,7 +13,6 @@ As [The Rust RFC Book](https://rust-lang.github.io/rfcs/2436-style-guide.html#dr
 The style guide is based on the best practices collected from the following books:
 
 - [The Rust Programming Language](https://doc.rust-lang.org/book/foreword.html)
-  - [Style Guide](https://github.com/rust-lang/book/blob/main/style-guide.md)
 - [The Embedded Rust Book](https://docs.rust-embedded.org/book/intro/index.html)
 - [The rustup book](https://rust-lang.github.io/rustup/installation/windows.html)
 - [The Cargo Book](https://doc.rust-lang.org/cargo/reference/specifying-dependencies.html)
@@ -108,7 +107,7 @@ The books on Rust usually use the following link formatting:
 
 > For more details, see the [Windows](rustup-book-windows) chapter in The rustup book.
 
-[book-ja](https://github.com/rust-lang-ja/book-ja/blob/master-ja/style-guide.md) also suggests:
+[The Rust Programming Language](https://github.com/rust-lang/book/blob/main/style-guide.md) book also suggests:
 
 - Make intra-book links relative, so they work both online and locally
 
@@ -179,7 +178,7 @@ Use monospace font for the following items:
   - Output of previous commands should not start with `$`
   - For PowerShell-specific examples, use `>` instead of `$`
 
-  [book-ja](https://github.com/rust-lang-ja/book-ja/blob/master-ja/style-guide.md) also suggests:
+  [The Rust Programming Language](https://github.com/rust-lang-ja/book-ja/blob/master-ja/style-guide.md) book also suggests:
 
   - Use `bash` syntax highlighting
 
@@ -309,7 +308,7 @@ In markdown:
 
 ### Documentation
 
-- [book-ja](https://github.com/rust-lang-ja/book-ja/blob/master-ja/style-guide.md)
+- [The Rust Programming Language Style Guide](https://github.com/rust-lang-ja/book-ja/blob/master-ja/style-guide.md)
 
 ### Code
 

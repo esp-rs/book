@@ -10,7 +10,9 @@ Wokwi offers Wi-Fi simulation, Virtual Logic Analyzer, and [GDB debugging] among
 Wokwi offers a VS Code extension that allows users to simulate their project directly from your code editor by only adding a few files. For more information, see [Wokwi documentation][wokwi-vscode].
 You can also debug your code using the VS Code debugger, see [Debugging your code].
 
-When using any of the [templates], there is a prompt that generates the required files to use Wokwi VS Code extension.
+When using any of the [templates] and not using the default values, there is a prompt (`Configure project to support Wokwi simulation with Wokwi VS Code extension?`) that generates the required files to use Wokwi VS Code extension.
+
+![Wokwi VS Code example](../../assets/wokwi-vscode.png)
 
 ## Using wokwi-server
 
@@ -20,7 +22,9 @@ to build a project on your machine, or in a container, and simulate the resultin
 [wokwi-server] also allows simulating your resulting binary on other Wokwi projects, with more hardware parts other than the chip itself. See the [corresponding section of the wokwi-server README] for detailed instructions.
 
 ## Custom chips
-Wokwi allows generating custom chips that let you program the behavior of a component not supported in Wokwi. For more details, see the official [Wokwi documentation][wokwi-custom-chip]
+Wokwi allows generating custom chips that let you program the behavior of a component not supported in Wokwi. For more details, see the official [Wokwi documentation][wokwi-custom-chip].
+
+Custom chips can also be written in Rust!  See [Wokwi Custom Chip API][rust-chip-api] for more information. E.g:  custom [inverter chip][custom-chip-example] written in Rust.
 
 
 [Wokwi]: https://wokwi.com/
@@ -34,3 +38,5 @@ Wokwi allows generating custom chips that let you program the behavior of a comp
 [Debugging your code]: https://docs.wokwi.com/vscode/debugging
 [templates]: ./../../writing-your-own-application/generate-project/index.md
 [wokwi-custom-chip]: https://docs.wokwi.com/chips-api/getting-started
+[custom-chip-example]: https://github.com/wokwi/rust_chip_inverter
+[rust-chip-api]: https://github.com/wokwi/wokwi_chip_ll

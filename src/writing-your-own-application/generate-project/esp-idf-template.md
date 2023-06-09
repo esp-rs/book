@@ -176,7 +176,7 @@ You can reboot with `CTRL+R` or exit with `CTRL+C`.
 [rust-toolchain.toml]: https://rust-lang.github.io/rustup/overrides.html#the-toolchain-file
 [.cargo/config.toml]: https://doc.rust-lang.org/cargo/reference/config.html
 [generate a std project]: ./index.md
-[esp-idf-template]: https://github.com/esp-rs/esp-template
+[esp-idf-template]: https://github.com/esp-rs/esp-idf-template
 [`esp-idf-sys`]: https://github.com/esp-rs/esp-idf-sys
 [`main.rs`]: #mainrs
 [`ldproxy`]: https://github.com/esp-rs/embuild/tree/master/ldproxy

@@ -19,7 +19,6 @@ jobs:
       - uses: jontze/action-mdbook@v2
         with:
           token: ${{secrets.GITHUB_TOKEN}}
-          # Optional Plugins have to be enabled
           use-mermaid: true
 
       - name: Build book

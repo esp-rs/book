@@ -61,7 +61,7 @@ To build Rust applications for the Espressif chips based on `RISC-V` architectur
 
     - For `std` applications:
 
-      Since this target is currently [Tier 3][rust-lang-book--platform-support-tier3], it does not have pre-built objects distributed through `rustup` and, unlike the `no_std` target, **nothing needs to be installed**. Specify the correct target for your device:
+      Since this target is currently [Tier 3][rust-lang-book--platform-support-tier3], it does not have pre-built objects distributed through `rustup` and, unlike the `no_std` target, **nothing needs to be installed**. Refer to the [rustc](https://github.com/rust-lang/rust/blob/master/src/doc/rustc/src/platform-support/esp-idf.md) book for the correct target for your device. 
       
       - `riscv32imc-esp-espidf` for MCUs which do not support atomics, like ESP32-C2 and ESP32-C3
       - `riscv32imac-esp-espidf` for MCUs which support atomics, like ESP32-C6, ESP32-H2, and ESP32-P4

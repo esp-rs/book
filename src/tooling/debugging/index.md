@@ -4,7 +4,7 @@ Debugging Rust applications is also possible using different tools that will be 
 
 Refer to the table below to see which chip is supported in every debugging method:
 
-|              | **probe-rs** | **openODC** | **VS Code** |
+|              | **probe-rs** | **openOCD** | **VS Code** |
 | :----------: | :----------: | :---------: | :---------: |
 |  **ESP32**   |      ❌       |      ✅      |      ✅      |
 | **ESP32-C2** |      ✅       |      ✅      |      ✅      |

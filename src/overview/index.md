@@ -49,7 +49,7 @@ The [esp-rs organization] on GitHub is home to a number of repositories related 
 | ESP32-C6 |   ✅   |    ✅     |
 | ESP32-S2 |   ✅   |    ✅     |
 | ESP32-S3 |   ✅   |    ✅     |
-| ESP32-H2 |   ✅   |    ⏳     |
+| ESP32-H2 |   ✅   |    ✅     |
 | ESP8266  |   ❌   |    ✅     |
 
 The products supported in certain circumstances will be called _supported Espressif products_ throughout the book.

@@ -6,7 +6,7 @@ Now that we know how to [generate a std project], let's inspect what the generat
 
 When creating a project from [esp-idf-template] with the following answers:
 - Which MCU to target? · `esp32c3`
-- Use template default values? · `true`
+- Configure advanced template options? · `false`
 
 For this explanation we will use the default values, if you want further modifications, see the [additional prompts] when not using default values.
 

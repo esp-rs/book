@@ -7,7 +7,7 @@ project contains and try to understand every part of it.
 
 When creating a project from [esp-template] with the following answers:
 -  Which MCU to target? · `esp32c3`
--  Use template default values? · `true`
+- Configure advanced template options? · `false`
 
 For this explanation we will use the default values, if you want further modifications, see the [additional prompts] when not using default values.
 
@@ -59,15 +59,22 @@ use hal::{clock::ClockControl, peripherals::Peripherals, prelude::*, timer::Time
 #[entry]
 fn main() -> ! {
     let peripherals = Peripherals::take();
-    let system = peripherals.SYSTEM.split();
+    let mut system = peripherals.SYSTEM.split();
     let clocks = ClockControl::boot_defaults(system.clock_control).freeze();
 
     // Disable the RTC and TIMG watchdog timers
     let mut rtc = Rtc::new(peripherals.RTC_CNTL);
-    let timer_group0 = TimerGroup::new(peripherals.TIMG0, &clocks);
+    let timer_group0 = TimerGroup::new(
+        peripherals.TIMG0,
+        &clocks,
+        &mut system.peripheral_clock_control,
+    );
     let mut wdt0 = timer_group0.wdt;
-    let timer_group1 = TimerGroup::new(peripherals.TIMG1, &clocks);
-    let mut wdt1 = timer_group1.wdt;
+    let timer_group1 = TimerGroup::new(
+        peripherals.TIMG1,
+        &clocks,
+        &mut system.peripheral_clock_control,
+    );
     rtc.swd.disable();
     rtc.rwdt.disable();
     wdt0.disable();
@@ -96,7 +103,7 @@ That is quite a lot of code. Let's see what it is good for.
 - `let peripherals = Peripherals::take().unwrap();`
   - HAL drivers usually take ownership of peripherals accessed via the PAC
   - Here we take all the peripherals from the PAC to pass them to the HAL drivers later
-- `let system = peripherals.SYSTEM.split();`
+- `let mut system = peripherals.SYSTEM.split();`
   - Sometimes a peripheral (here the System peripheral) is coarse-grained and doesn't exactly fit the HAL drivers - so here we split the System peripheral into smaller pieces which get passed to the drivers
 - `let clocks = ClockControl::boot_defaults(system.clock_control).freeze();`
   - Here we configure the system clocks - in this case, we are fine with the defaults
@@ -104,7 +111,7 @@ That is quite a lot of code. Let's see what it is good for.
   - Some drivers need a reference to the clocks to know how to calculate rates and durations
 - The next block of code instantiates some peripherals (namely RTC and the two timer groups) to disable the watchdog, which is armed after boot
   - Without that code, the SoC would reboot after some time
-  - There is another way to prevent the reboot: [feeding](https://docs.rs/esp32c3-hal/0.2.0/esp32c3_hal/prelude/trait._embedded_hal_watchdog_Watchdog.html#tymethod.feed) the watchdog
+  - There is another way to prevent the reboot: [feeding](https://docs.rs/esp32c3-hal/0.10.0/esp32c3_hal/prelude/trait._embedded_hal_watchdog_Watchdog.html#tymethod.feed) the watchdog
 - `println!("Hello world!");`
   - Prints "Hello Wolrd!"
 - `loop {}`

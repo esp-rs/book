@@ -13,7 +13,7 @@ Both templates are based on [cargo-generate], a tool that allows you to create a
 2. Generate a project based in one of the templates:
     - esp-template:
         ```shell
-        cargo generate -a esp-rs/esp-template
+        cargo generate esp-rs/esp-template
         ```
         See [Understanding esp-template] for more details on the template project.
     - esp-idf-template:

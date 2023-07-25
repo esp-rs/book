@@ -1,20 +1,22 @@
 # espflash
 
-`espflash` provides a serial flasher utility for Espressif SoCs and modules based on [esptool.py].
+`espflash` is a serial flasher utility, based on [esptool.py], for Espressif SoCs and modules.
 
-The [esp-rs/espflash] repository contains two crates, `cargo-espflash` and `espflash`. You can find more information on both of these in their respective sections below and in their corresponding README.
+The [esp-rs/espflash] repository contains two crates, `cargo-espflash` and `espflash`. For more information on these crates, see the respective sections below.
+
 
 > #### A note on `espflash` and `cargo-espflash`.
 >
-> The `espflash` and `cargo-espflash` commands shown below, assume that version `2.0` or greater.
+> The `espflash` and `cargo-espflash` commands shown below, assume that version `2.0` or greater is used.
 
 [esp-rs/espflash]: https://github.com/esp-rs/espflash
 [esptool.py]: https://github.com/espressif/esptool
+
 ## cargo-espflash
 
 Provides a subcommand for `cargo` that handles cross-compilation and flashing.
 
-To install:
+To install, run:
 
 ```bash
 cargo install cargo-espflash
@@ -34,13 +36,13 @@ For more information, please see the [cargo-espflash README].
 
 Provides a standalone command-line application that flashes an ELF file to a device.
 
-To install:
+To install, run:
 
 ```bash
 cargo install espflash
 ```
 
-Assuming you have built an ELF binary by other means already, `espflash` can be used to download it to your device and monitor the serial port. For example, if you have built the `getting-started/blinky` example from [esp-idf] using `idf.py` you might run something like:
+Assuming you have built an ELF binary by other means already, `espflash` can be used to download it to your device and monitor the serial port. For example, if you have built the `getting-started/blinky` example from [esp-idf] using `idf.py`, you might run something like:
 
 ```bash
 espflash flash build/blinky --monitor

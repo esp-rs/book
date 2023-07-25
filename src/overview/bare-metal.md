@@ -2,19 +2,16 @@
 
 Using `no_std` may be more familiar to embedded Rust developers; it does not use `std` (the Rust [`standard`][rust-lib-std] library) but instead uses a subset, the [`core`][rust-lib-core] library. [The Embedded Rust Book][embedded-rust-book] has a great [section][embedded-rust-book-no-std] on this.
 
-It's important to note that since `no_std` uses the Rust `core` library, a subset of the Rust `standard` library,  a `no_std` crate can compile in `std` environment but the opposite is not true. Therefore, when creating crates it's worth keeping in mind if it needs the `standard` library to function.
-
+It is important to note that `no_std` uses the Rust `core` library. As this library is part of the Rust `standard` library, a `no_std` crate can compile in `std` environment. However, the opposite is not true: an `std` crate cannot compile in `no_std` environment.  This information is worth remembering when deciding which library to choose.
 
 [embedded-rust-book]: https://docs.rust-embedded.org/
 [embedded-rust-book-no-std]: https://docs.rust-embedded.org/book/intro/no-std.html
 [rust-lib-core]: https://doc.rust-lang.org/core/index.html
 [rust-lib-std]: https://doc.rust-lang.org/std/index.html
 
-
 ## Current support
 
 The table below covers the current support for `no_std` at this moment for different Espressif products.
-
 
 |          | [HAL][esp-rs/esp-hal] | [Wi-Fi/BLE/ESP-NOW][esp-rs/esp-wifi] | [Backtrace][esp-rs/esp-backtrace] | [Storage][esp-rs/esp-storage] |
 | -------- | :-------------------: | :----------------------------------: | :-------------------------------: | :---------------------------: |
@@ -32,6 +29,7 @@ The table below covers the current support for `no_std` at this moment for diffe
 > - [ESP8266 HAL][esp-rs/esp8266-hal] is in maintenance mode and no further development will be done for this chip.
 
 [esp-wifi-current-support]: https://github.com/esp-rs/esp-wifi#current-support
+
 ### Relevant `esp-rs` crates
 
 | Repository             | Description                                                |

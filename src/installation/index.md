@@ -22,11 +22,11 @@ Please note that you can host the development environment in a [container][use-c
 
 Make sure you have [Rust][rust-lang-org] installed. If not, see the instructions on the [rustup][rustup.rs-website] website.
 
+> **Warning**: When using Unix based systems, installing Rust via a system package manager (e.g. `brew`, `apt`, `dnf`, etc.) can result in various issues and incompatibilities, so it's best to use [rustup][rustup.rs-website] instead.
+
 When using Windows, make sure you have installed one of the ABIs listed below. For more details, see the [Windows][rustup-book-windows] chapter in The rustup book.
 - **MSVC**: Recommended ABI, included in the list of `rustup` default requirements. Use it for interoperability with the software produced by Visual Studio.
 - **GNU**: ABI used by the GCC toolchain. Install it yourself for interoperability with the software built with the MinGW/MSYS2 toolchain.
-
-> **Warning**: When using Unix based systems, installing Rust via a system package manager (e.g. `brew`, `apt`, `dnf`, etc.) can result in various issues and incompatibilities, so it's best to use [rustup][rustup.rs-website] instead.
 
 See also [alternative installation methods][rust-alt-installation].
 
@@ -61,22 +61,20 @@ To build Rust applications for the Espressif chips based on `RISC-V` architectur
 
     - For `std` applications:
 
-      Since this target is currently [Tier 3][rust-lang-book--platform-support-tier3], it does not have pre-built objects distributed through `rustup` and, unlike the `no_std` target, **nothing needs to be installed**. Refer to the [*-esp-idf][rust-lang-book--platform-support--esp-idf] section of the rustc book for the correct target for your device. 
-      
-      - `riscv32imc-esp-espidf` for MCUs which do not support atomics, like ESP32-C2 and ESP32-C3
-      - `riscv32imac-esp-espidf` for MCUs which support atomics, like ESP32-C6, ESP32-H2, and ESP32-P4
+      Since this target is currently [Tier 3][rust-lang-book--platform-support-tier3], it does not have pre-built objects distributed through `rustup` and, unlike the `no_std` target, **nothing needs to be installed**. Refer to the [*-esp-idf][rust-lang-book--platform-support--esp-idf] section of the rustc book for the correct target for your device.
+
+      - `riscv32imc-esp-espidf` for SoCs which do not support atomics, like ESP32-C2 and ESP32-C3
+      - `riscv32imac-esp-espidf` for SoCs which support atomics, like ESP32-C6, ESP32-H2, and ESP32-P4
 
 [rust-lang-book--platform-support-tier2]: https://doc.rust-lang.org/nightly/rustc/platform-support.html#tier-2
 [wiki-riscv-standard-extensions]: https://en.wikichip.org/wiki/risc-v/standard_extensions
 [rust-lang-book--platform-support-tier3]: https://doc.rust-lang.org/nightly/rustc/platform-support.html#tier-3
 [rust-lang-book--platform-support--esp-idf]: https://doc.rust-lang.org/nightly/rustc/platform-support/esp-idf.html
 
-
 3. To build `std` projects, you also need to install:
     - [`LLVM`][llvm-website] compiler infrastructure
     - Other [`std` development requirements][rust-esp-book-std-requirements]
     - In your project's file `.cargo/config.toml`, add the unstable Cargo [feature][cargo-book-unstable-features] `-Z build-std`. Our [template projects][rust-esp-book-write-app-generate-project] that are discussed later in this book already include this.
-
 
 [llvm-website]: https://llvm.org/
 [rust-esp-book-std-requirements]: #std-development-requirements
@@ -152,12 +150,12 @@ The forked compiler can coexist with the standard Rust compiler, allowing both t
 > 1. Changes in `LLVM` fork. Already in progress, see the status in this [tracking issue][llvm-github-fork-upstream issue].
 > 2. Rust compiler forks. If `LLVM` changes are accepted, we will proceed with the Rust compiler changes.
 
-
 [llvm-github-fork]: https://github.com/espressif/llvm-project
 [gcc-toolchain-github-fork]: https://github.com/espressif/crosstool-NG/
 [rustup-overrides]: https://rust-lang.github.io/rustup/overrides.html
 [llvm-github-fork-upstream issue]: https://github.com/espressif/llvm-project/issues/4
 
+If you run into an error, please, check the [Troubleshooting][troubleshooting] chapter.
 
 ### Other installation methods for Xtensa targets
 
@@ -181,7 +179,7 @@ Regardless of the target architecture, make sure you have the following required
 
 The std runtime uses [ESP-IDF][esp-idf-github] (Espressif IoT Development Framework) as hosted environment but, users do not need to install it. ESP-IDF is automatically downloaded and installed by [esp-idf-sys][esp-idf-sys-github], a crate that all std projects need to use, when building a std application.
 
-
+[troubleshooting]: ../misc/troubleshooting.md
 [rust-esp-book-overview-std]: ../overview/using-the-standard-library.md
 [python-website-download]: https://www.python.org/downloads/
 [git-website-download]: https://git-scm.com/downloads
@@ -201,13 +199,12 @@ For each Rust release, we generate the tag with the following naming convention:
 - `<chip>_<rust-toolchain-version>`
   - For example, `esp32_1.64.0.0` contains the ecosystem for developing `std`, and `no_std` applications for `ESP32` with the `1.64.0.0` Xtensa Rust toolchain.
 
-There are special cases
+There are special cases:
 
 - `<chip>` can be `all` which indicates compatibility with all Espressif targets
 - `<rust-toolchain-version>` can be `latest` which indicates the latest release of the `Xtensa` Rust toolchain
 
 Depending on your operating system, you can choose any container runtime, such as [Docker], [Podman], or [Lima].
-
 
 [Docker]: https://www.docker.com/
 [Podman]: https://podman.io/

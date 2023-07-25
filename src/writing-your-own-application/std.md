@@ -1,10 +1,8 @@
 # Writing std applications
 
-If you want to learn how to develop `std` application, there is a training developed
-alongside [Ferrous Systems]:
-
-- [Book of training]
-- [Repository of the training]
+If you want to learn how to develop `std` application, see the following training materials developed alongside [Ferrous Systems]:
+- The book [Embedded Rust on Espressif]
+- The repository [esp-rs/std-training]
 
 The training is based on [ESP32-C3-DevKit-RUST-1]. You can use any other Espressif development board, but code changes and configuration changes might be needed.
 
@@ -27,8 +25,8 @@ The training is split into two parts:
 > Note that there are several examples covering the use of specific peripherals under the examples' folder of  [`esp-idf-hal`]. I.e. [`esp-idf-hal/examples`].
 
 [Ferrous Systems]: https://ferrous-systems.com/
-[Book of training]: https://esp-rs.github.io/std-training/
-[Repository of the training]: https://github.com/esp-rs/std-training
+[Embedded Rust on Espressif]: https://esp-rs.github.io/std-training/
+[esp-rs/std-training]: https://github.com/esp-rs/std-training
 [ESP32-C3-DevKit-RUST-1]: https://github.com/esp-rs/esp-rust-board
 [Introductory level examples]: https://github.com/esp-rs/std-training/tree/main/intro
 [Advanced level examples]: https://github.com/esp-rs/std-training/tree/main/advanced

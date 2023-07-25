@@ -10,25 +10,12 @@ For tools and libraries relating to Rust on ESP, please see the [esp-rs organiza
 [Espressif]: https://espressif.com/
 [esp-rs organization]: https://github.com/esp-rs/
 
-> **A Note on Device Support**
->
-> The contents of this book apply to the ESP32 series of devices only; this
-> includes:
->
-> - ESP32 Series
-> - ESP32 C-Series
-> - ESP32 S-Series
-> - ESP32 H-Series
->
-> The ESP8266 series is outside the scope of this book. Rust support for the
-> ESP8266 series is limited and is not being officially supported by Espressif.
-
 ## Who This Book is For
 
-This book is intended for people with some experience with Rust, and also assumes rudimentary knowledge of embedded development and electronics. For those without prior experience, we recommend first reading the [Assumptions and Prerequisites] and [Other Resources] sections to get up to speed.
+This book is intended for people with some experience with Rust, and also assumes rudimentary knowledge of embedded development and electronics. For those without prior experience, we recommend first reading the [Assumptions and Prerequisites] and [Resources] sections to get up to speed.
 
 [assumptions and prerequisites]: #assumptions-and-prerequisites
-[other resources]: #other-resources
+[resources]: #resources
 
 ### Assumptions and Prerequisites
 
@@ -42,7 +29,7 @@ This book is intended for people with some experience with Rust, and also assume
 
 [2021 edition]: https://doc.rust-lang.org/edition-guide/rust-2021/index.html
 
-### Other Resources
+### Resources
 
 If you are unfamiliar or less experienced with anything mentioned above, or if you would just like more information about a particular topic mentioned in this book, you may find these resources helpful.
 
@@ -59,7 +46,7 @@ If you are unfamiliar or less experienced with anything mentioned above, or if y
 [embedded rust on espressif]: https://esp-rs.github.io/std-training/
 [ferrous systems]: https://ferrous-systems.com/
 
-### Translations
+## Translations
 
 This book is currently available in English only. Once the contents of the book stabilize somewhat, we plan on translating the book into additional languages. As translations become available, this section will be updated to include them.
 

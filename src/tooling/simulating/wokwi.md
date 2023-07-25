@@ -4,10 +4,11 @@
 see [wokwi.com/rust] for a list of examples and a way to start new projects.
 
 Wokwi offers Wi-Fi simulation, Virtual Logic Analyzer, and [GDB debugging] among many other features, see
-[Wokwi documentation] for more details. For ESP chips, there is a [table of simulation features that are currently supported].
+[Wokwi documentation] for more details. For ESP chips, there is a table of [simulation features] that are currently supported.
 
 ## Using Wokwi for VS Code extension
-Wokwi offers a VS Code extension that allows users to simulate their project directly from your code editor by only adding a few files. For more information, see [Wokwi documentation][wokwi-vscode].
+Wokwi offers a VS Code extension that allows you to simulate a project directly in the code editor by only adding a few files.
+For more information, see [Wokwi documentation][wokwi-vscode].
 You can also debug your code using the VS Code debugger, see [Debugging your code].
 
 When using any of the [templates] and not using the default values, there is a prompt (`Configure project to support Wokwi simulation with Wokwi VS Code extension?`) that generates the required files to use Wokwi VS Code extension.
@@ -31,7 +32,7 @@ Custom chips can also be written in Rust!  See [Wokwi Custom Chip API][rust-chip
 [wokwi.com/rust]: https://wokwi.com/rust
 [GDB debugging]: https://docs.wokwi.com/gdb-debugging
 [Wokwi documentation]: https://docs.wokwi.com/
-[table of simulation features that are currently supported]: https://docs.wokwi.com/guides/esp32#simulation-features
+[simulation features]: https://docs.wokwi.com/guides/esp32#simulation-features
 [wokwi-server]: https://github.com/MabezDev/wokwi-server
 [corresponding section of the wokwi-server Readme]: https://github.com/MabezDev/wokwi-server#simulating-your-binary-on-a-custom-wokwi-project
 [wokwi-vscode]: https://docs.wokwi.com/vscode/getting-started

@@ -9,7 +9,7 @@ Espressif provides a C-based development framework called [esp-idf][esp-idf-gith
 
 ## Current Support
 
-The Espressif products supported by the esp-idf framework are the ones supported for Rust `std` development. For details on different versions of esp-idf and support of Espressif chips, see [this table][esp-idf-release-compatibility].
+The Espressif products supported for Rust `std` development are the ones supported by the esp-idf framework. For details on different versions of esp-idf and support of Espressif chips, see [this table][esp-idf-release-compatibility].
 
 [esp-idf-release-compatibility]: https://github.com/espressif/esp-idf#esp-idf-release-and-soc-compatibility/
 

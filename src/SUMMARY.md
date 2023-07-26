@@ -1,9 +1,9 @@
 # Summary
 
 - [Introduction](./introduction.md)
-- [Ecosystem Overview](./overview/index.md)
+- [Overview of Development Approaches](./overview/index.md)
   - [Using the Standard Library (`std`)](./overview/using-the-standard-library.md)
-  - [Bare Metal (`no_std`)](./overview/bare-metal.md)
+  - [Using the Core Library (`no_std`)](./overview/bare-metal.md)
 - [Setting Up a Development Environment](./installation/index.md)
 - [Writing Your Own Application](./writing-your-own-application/index.md)
   - [Generating Projects from Templates](./writing-your-own-application/generate-project/index.md)

@@ -1,4 +1,4 @@
-# Ecosystem Overview
+# Overview of Development Approaches
 
 There are the following approaches to using Rust on Espressif chips:
 

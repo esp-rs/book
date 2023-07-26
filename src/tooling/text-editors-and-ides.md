@@ -20,6 +20,8 @@ Alongside Rust Analyzer (RA), there are other extensions that might be very help
 
 ## Tips and Tricks
 
+### Using Rust Analyzer with `no_std`
+
 If you are developing for a target that does not have `std` support, Rust Analyzer can behave strangely, often reporting various errors. This can be resolved by creating a `.vscode/settings.json` file in your project and populating it with the following:
 
 ```json
@@ -27,6 +29,8 @@ If you are developing for a target that does not have `std` support, Rust Analyz
   "rust-analyzer.checkOnSave.allTargets": false
 }
 ```
+
+### Cargo hints when using custom toolchains
 
 If you are using a custom toolchain, as you would with Xtensa targets, you can provide some hints to `cargo` via the `rust-toolchain.toml` file to improve the user experience:
 
@@ -39,8 +43,7 @@ targets = ["xtensa-esp32-none-elf"]
 
 ## Other IDEs
 
-There are other IDEs like [CLion] or [vim] that also have pretty good support for Rust,
-but we won't be covering them here.
+Eventhough we have only covered VS Code because it has good support for Rust and is very popular, there are other IDEs like [CLion] or [vim] that also have pretty good support for Rust, but we won't be covering them here.
 
 [CLion]: https://www.jetbrains.com/clion/
 [vim]: https://www.vim.org/

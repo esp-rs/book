@@ -51,14 +51,14 @@ Before going further, let's see what these files are for.
 ### Understanding `main.rs`
 
 ```rust,ignore
-use esp_idf_sys as _; // If using the `binstart` feature of `esp-idf-sys`, always keep this module imported
-
-fn main() {
-    // It is necessary to call this function once. Otherwise some patches to the runtime
-    // implemented by esp-idf-sys might not link properly. See https://github.com/esp-rs/esp-idf-template/issues/71
-    esp_idf_sys::link_patches();
-    println!("Hello, world!");
-}
+1 use esp_idf_sys as _; // If using the `binstart` feature of `esp-idf-sys`, always keep this module imported
+2
+3 fn main() {
+4     // It is necessary to call this function once. Otherwise some patches to the runtime
+5     // implemented by esp-idf-sys might not link properly. See https://github.com/esp-rs/esp-idf-template/issues/71
+6     esp_idf_sys::link_patches();
+7     println!("Hello, world!");
+8 }
 ```
 The first line is an import that defines the esp-idf entry-point when the root crate is a binary crate that defines a main function.
 

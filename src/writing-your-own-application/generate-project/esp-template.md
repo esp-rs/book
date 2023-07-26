@@ -49,49 +49,20 @@ Before going further, let's see what these files are for.
 ### Understanding `main.rs`
 
 ```rust,ignore
-#![no_std]
-#![no_main]
-
-use esp_backtrace as _;
-use esp_println::println;
-use hal::{clock::ClockControl, peripherals::Peripherals, prelude::*, timer::TimerGroup, Rtc};
-
-#[entry]
-fn main() -> ! {
-    let peripherals = Peripherals::take();
-    let mut system = peripherals.SYSTEM.split();
-    let clocks = ClockControl::boot_defaults(system.clock_control).freeze();
-
-    // Disable the RTC and TIMG watchdog timers
-    let mut rtc = Rtc::new(peripherals.RTC_CNTL);
-    let timer_group0 = TimerGroup::new(
-        peripherals.TIMG0,
-        &clocks,
-        &mut system.peripheral_clock_control,
-    );
-    let mut wdt0 = timer_group0.wdt;
-    let timer_group1 = TimerGroup::new(
-        peripherals.TIMG1,
-        &clocks,
-        &mut system.peripheral_clock_control,
-    );
-    rtc.swd.disable();
-    rtc.rwdt.disable();
-    wdt0.disable();
-    wdt1.disable();
-
-    println!("Hello world!");
-
-    loop {}
-}
-```
-
-That is quite a lot of code. Let's see what it is good for.
+ 1 #![no_std]
+ 2 #![no_main]
+ ```
 
 - `#![no_std]`
   - This tells the Rust compiler that this code doesn't use `libstd`
 - `#![no_main]`
   - The `no_main` attribute says that this program won't use the standard main interface, which is tailored for command-line applications that receive arguments. Instead of the standard main, we'll use the entry attribute from the `riscv-rt` crate to define a custom entry point. In this program, we have named the entry point `main`, but any other name could have been used. The entry point function must be a [diverging function]. I.e. it has the signature `fn foo() -> !`; this type indicates that the function never returns – which means that the program never terminates.
+
+```rust,ignore
+ 4 use esp_backtrace as _;
+ 5 use esp_println::println;
+ 6 use hal::{clock::ClockControl, peripherals::Peripherals, prelude::*, timer::TimerGroup, Rtc};
+```
 - `use esp_backtrace as _;`
   - Since we are in a bare-metal environment, we need a panic-handler that runs if a panic occurs in code
   - There are a few different crates you can use (e.g `panic-halt`) but `esp-backtrace` provides an implementation that prints the address of a backtrace - together with `espflash`/`espmonitor` these addresses can get decoded into source code locations
@@ -100,6 +71,38 @@ That is quite a lot of code. Let's see what it is good for.
 - `use hal:{...}`
   - We need to bring in some types we are going to use
   - These are from `esp-hal`
+
+```rust,ignore
+ 8 #[entry]
+ 9 fn main() -> ! {
+10    let peripherals = Peripherals::take();
+11    let mut system = peripherals.SYSTEM.split();
+12    let clocks = ClockControl::boot_defaults(system.clock_control).freeze();
+13
+14    // Disable the RTC and TIMG watchdog timers
+15    let mut rtc = Rtc::new(peripherals.RTC_CNTL);
+16    let timer_group0 = TimerGroup::new(
+17        peripherals.TIMG0,
+18        &clocks,
+19        &mut system.peripheral_clock_control,
+20    );
+21    let mut wdt0 = timer_group0.wdt;
+22    let timer_group1 = TimerGroup::new(
+23        peripherals.TIMG1,
+24        &clocks,
+25        &mut system.peripheral_clock_control,
+26    );
+27    rtc.swd.disable();
+28    rtc.rwdt.disable();
+29    wdt0.disable();
+30    wdt1.disable();
+31
+32    println!("Hello world!");
+33
+34    loop {}
+35 }
+```
+Inside the `main` function we can find:
 - `let peripherals = Peripherals::take().unwrap();`
   - HAL drivers usually take ownership of peripherals accessed via the PAC
   - Here we take all the peripherals from the PAC to pass them to the HAL drivers later

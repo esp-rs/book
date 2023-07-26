@@ -1,4 +1,4 @@
-# Developing on Bare Metal (`no_std`)
+# Using the Core Library (`no_std`)
 
 Using `no_std` may be more familiar to embedded Rust developers; it does not use `std` (the Rust [`standard`][rust-lib-std] library) but instead uses a subset, the [`core`][rust-lib-core] library. [The Embedded Rust Book][embedded-rust-book] has a great [section][embedded-rust-book-no-std] on this.
 

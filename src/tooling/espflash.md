@@ -15,13 +15,13 @@ Provides a subcommand for `cargo` that handles cross-compilation and flashing.
 
 To install, run:
 
-```bash
+```shell
 cargo install cargo-espflash
 ```
 
 This command must be run within a Cargo project, ie. a directory containing a `Cargo.toml` file. For example, to build an example named 'blinky', flash the resulting binary to a device, and then subsequently start a serial monitor:
 
-```bash
+```shell
 cargo espflash flash --example=blinky --monitor
 ```
 
@@ -35,13 +35,13 @@ Provides a standalone command-line application that flashes an ELF file to a dev
 
 To install, run:
 
-```bash
+```shell
 cargo install espflash
 ```
 
 Assuming you have built an ELF binary by other means already, `espflash` can be used to download it to your device and monitor the serial port. For example, if you have built the `getting-started/blinky` example from [esp-idf] using `idf.py`, you might run something like:
 
-```bash
+```shell
 espflash flash build/blinky --monitor
 ```
 

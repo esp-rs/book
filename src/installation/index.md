@@ -41,13 +41,13 @@ To build Rust applications for the Espressif chips based on `RISC-V` architectur
 
 1. Install the [`nightly`][rustup-book-channel-nightly] toolchain with the `rust-src` [component][rustup-book-components]:
 
-    ```bash
+    ```shell
     rustup toolchain install nightly --component rust-src
     ```
 2. Set the target:
     - For `no_std` (bare-metal) applications, run:
 
-      ```bash
+      ```shell
       rustup target add riscv32imc-unknown-none-elf # For ESP32-C2 and ESP32-C3
       rustup target add riscv32imac-unknown-none-elf # For ESP32-C6 and ESP32-H2
       ```
@@ -86,7 +86,7 @@ Now you should be able to build and run projects on the Espressif's `RISC-V` chi
 ### 1. Install `espup`
 
 To install `espup`, run:
-```sh
+```shell
 cargo install espup
 ```
 
@@ -99,7 +99,7 @@ You can also directly download pre-compiled [release binaries] or use [cargo-bin
 ### 2. Install neccesary toolchains
 
 Install all the necessary tools to develop Rust applications for all supported Espressif targets by running:
-```sh
+```shell
 espup install
 ```
 
@@ -164,7 +164,7 @@ Regardless of the target architecture, make sure you have the following required
 - [`python`][python-website-download]: Required by ESP-IDF
 - [`git`][git-website-download]: Required by ESP-IDF
 - [`ldproxy`][embuild-github-ldproxy] binary crate: A tool that forwards linker arguments to the actual linker that is also given as an argument to `ldproxy`. Install it by running:
-    ```sh
+    ```shell
     cargo install ldproxy
     ```
 

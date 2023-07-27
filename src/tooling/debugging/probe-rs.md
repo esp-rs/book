@@ -38,7 +38,7 @@ Starting from `probe-rs` v0.12, it is possible to flash and debug the ESP32-C3 w
 
 On Linux, you may run into permission issues trying to interact with Espressif probes. Installing the following `udev` rules and reloading should fix that issue.
 
-```udev
+```text
 # Espressif dev kit FTDI
 ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6010", MODE="660", GROUP="plugdev", TAG+="uaccess"
 

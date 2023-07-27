@@ -22,7 +22,7 @@ Please note that you can host the development environment in a [container][use-c
 
 Make sure you have [Rust][rust-lang-org] installed. If not, see the instructions on the [rustup][rustup.rs-website] website.
 
-> **Warning**: When using Unix based systems, installing Rust via a system package manager (e.g. `brew`, `apt`, `dnf`, etc.) can result in various issues and incompatibilities, so it's best to use [rustup][rustup.rs-website] instead.
+> 🚨 **Warning**: When using Unix based systems, installing Rust via a system package manager (e.g. `brew`, `apt`, `dnf`, etc.) can result in various issues and incompatibilities, so it's best to use [rustup][rustup.rs-website] instead.
 
 When using Windows, make sure you have installed one of the ABIs listed below. For more details, see the [Windows][rustup-book-windows] chapter in The rustup book.
 - **MSVC**: Recommended ABI, included in the list of `rustup` default requirements. Use it for interoperability with the software produced by Visual Studio.
@@ -103,7 +103,7 @@ Install all the necessary tools to develop Rust applications for all supported E
 espup install
 ```
 
-> **Note**: `std` applications require installing additional software covered in [`std` Development Requirements][rust-esp-book-std-requirements]
+> ⚠️ **Note**: `std` applications require installing additional software covered in [`std` Development Requirements][rust-esp-book-std-requirements]
 
 ### 3. Set up the environment variables
 `espup` will create an export file that contains some environment variables required to build projects.
@@ -138,7 +138,7 @@ To enable support for Espressif targets, `espup` installs the following tools:
 
 The forked compiler can coexist with the standard Rust compiler, allowing both to be installed on your system. The forked compiler is invoked when using any of the available [overriding methods][rustup-overrides].
 
-> **Note**: We are making efforts to upstream our forks
+> ⚠️ **Note**: We are making efforts to upstream our forks
 > 1. Changes in `LLVM` fork. Already in progress, see the status in this [tracking issue][llvm-github-fork-upstream issue].
 > 2. Rust compiler forks. If `LLVM` changes are accepted, we will proceed with the Rust compiler changes.
 

@@ -17,7 +17,7 @@ There is also a possibility to debug with graphical output directly in Visual St
 |     3V3     |    VJTAG    |
 |     GND     |     GND     |
 
-**Note**: On Windows `USB Serial Converter A 0403 6010 00` driver should be WinUSB.
+> ⚠️ **Note**: On Windows `USB Serial Converter A 0403 6010 00` driver should be WinUSB.
 
 2. Set up VSCode
    1. Install [Cortex-Debug][cortex-debug] extension for VScode.
@@ -87,7 +87,8 @@ espflash board-info
 |     3V3      |    VJTAG    |
 |     GND      |     GND     |
 
-**Note**: On Windows `USB Serial Converter A 0403 6010 00` driver should be WinUSB.
+> ⚠️**Note**: On Windows `USB Serial Converter A 0403 6010 00` driver should be WinUSB.
+
 2. Set up VSCode
    1. Install [Cortex-Debug][cortex-debug] extension for VScode.
    2. Create the `.vscode/launch.json` file in the project tree you want to debug.

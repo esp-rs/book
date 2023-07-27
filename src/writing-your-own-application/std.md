@@ -21,7 +21,7 @@ The training is split into two parts:
    * GPIO/Button Interrupts ([Source][button-interrupt])
    * Driving an RGB LED
 
-> Note that there are several examples covering the use of specific peripherals under the examples' folder of  [`esp-idf-hal`][esp-idf-hal]. I.e. [`esp-idf-hal/examples`][esp-idf-hal-examples].
+> ⚠️ **Note**: There are several examples covering the use of specific peripherals under the examples' folder of  [`esp-idf-hal`][esp-idf-hal]. I.e. [`esp-idf-hal/examples`][esp-idf-hal-examples].
 
 [ferrous-systems]: https://ferrous-systems.com/
 [std-book]: https://esp-rs.github.io/std-training/

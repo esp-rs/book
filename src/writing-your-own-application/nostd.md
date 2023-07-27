@@ -13,7 +13,7 @@ The training contains:
    * A button example ([Source][button])
    * A button with interrupt example ([Source][button-interrupt])
 
-> Note that there are several examples covering the use of specific peripherals under the examples' folder of every SoC [`esp-hal`][esp-hal]. E.g. [`esp32c3-hal/examples`][esp32c3-hal-examples]
+> ⚠️ **Note**: There are several examples covering the use of specific peripherals under the examples' folder of every SoC [`esp-hal`][esp-hal]. E.g. [`esp32c3-hal/examples`][esp32c3-hal-examples]
 
 [no-std-book]: https://esp-rs.github.io/no_std-training/
 [no-std-repository]: https://github.com/esp-rs/no_std-training

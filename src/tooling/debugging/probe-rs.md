@@ -32,7 +32,7 @@ Starting from `probe-rs` v0.12, it is possible to flash and debug the ESP32-C3 w
 | :------: | :------: | :-------: |
 | ESP32-C3 |    ✅     |     ⚠️     |
 
-**Note**: _Items marked with ⚠️ are currently work in progress, usable but expect bugs._
+> ⚠️ **Note**: _Items marked with ⚠️ are currently work in progress, usable but expect bugs._
 
 ## Permissions - Linux
 

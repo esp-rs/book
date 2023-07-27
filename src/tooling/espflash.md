@@ -7,9 +7,7 @@ The [esp-rs/espflash][espflash] repository contains two crates, `cargo-espflash`
 [esptool]: https://github.com/espressif/esptool
 [espflash]: https://github.com/esp-rs/espflash
 
-> #### A note on `espflash` and `cargo-espflash`.
->
-> The `espflash` and `cargo-espflash` commands shown below, assume that version `2.0` or greater is used.
+> ⚠️ **Note**: The `espflash` and `cargo-espflash` commands shown below, assume that version `2.0` or greater is used.
 
 ## cargo-espflash
 

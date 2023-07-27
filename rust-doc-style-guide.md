@@ -120,7 +120,7 @@ Also take into account the following
 - Do not provide a link to the same location repeatedly in the same or adjacent paragraphs without a good reason, especially using different link text.
 - Do not use the same link text to refer to different locations.
 
-  > `espup` might have a section in a book and a github repo. In this case, see the [`espup`](#espup) section and [`espup` repo](https://hackmd.io/-cf0jVTqRqm9O7GM5JgLiA?both).
+  > `espup` might have a section in a book and a github repo. In this case, see the [`espup`](https://esp-rs.github.io/book/installation/index.html#risc-v-and-xtensa-targets) section and [`espup` repo](https://github.com/esp-rs/espup).
 
 See also, the [Using `monospace`](#using-monospace) section.
 

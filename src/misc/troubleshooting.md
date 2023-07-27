@@ -96,7 +96,6 @@ If using GNU ABI, install [MinGW/MSYS2 toolchain].
 [Visual Studio 2013 (or later) or the Visual C++ Build Tools 2019]: https://rust-lang.github.io/rustup/installation/windows.html
 [MinGW/MSYS2 toolchain]: https://www.msys2.org/
 
-
 ## FAQ
 
 ### I updated my `sdkconfig.defaults` file but it doesn't appear to have had any effect

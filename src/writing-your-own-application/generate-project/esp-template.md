@@ -13,7 +13,6 @@ When creating a project from [esp-template][esp-template] with the following ans
 
 For this explanation we will use the default values, if you want further modifications, see the [additional prompts][prompts] when not using default values.
 
-
 It should generate a file structure like this:
 
 ```text

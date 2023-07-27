@@ -58,7 +58,6 @@ This book generally assumes that you are reading it front-to-back; content cover
 
 The work on this book is coordinated in [this repository][book-repository].
 
-
 If you have trouble following the instructions in this book or find that some section of the book is not clear enough or hard to follow, then that's a bug, and it should be reported in [the issue tracker][book-issues] of this book.
 
 Pull requests fixing typos and adding new content are very welcome!

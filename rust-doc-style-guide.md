@@ -41,7 +41,6 @@ The style guide is based on the best practices collected from the following book
   - [Documentation](#documentation)
   - [Code](#code)
 
-
 ## Heading Titles
 
 The books on Rust usually have the heading titles based on nouns or gerunds:
@@ -78,7 +77,6 @@ In hyphenated words, do not capitalize the parts following the hyphens.
 
 > **Built-in Targets**<br>
 > **Allowed-by-default Lints**
-
 
 ## Linking
 
@@ -165,7 +163,6 @@ The books on Rust usually use the following list formatting:
   -  For an example using bold font, see the list in the [Modules Cheat Sheet](https://doc.rust-lang.org/book/ch07-02-defining-modules-to-control-scope-and-privacy.html#modules-cheat-sheet) section in The Rust Programming Language book.
   -  For an example using monospace font, see the [Panicking](https://docs.rust-embedded.org/book/start/panicking.html#panicking) section in The Embedded Rust Book.
 
-
 ## Using `monospace`
 
 Use monospace font for the following items:
@@ -208,7 +205,6 @@ Monospace font can also be used in:
 
   > **A `no_std` Rust Environment**
 
-
 ## Using _Italics_
 
 - Introduce new terms
@@ -221,7 +217,6 @@ Monospace font can also be used in:
   > When `s` comes _into_ scope, it is valid. It remains valid until it goes _out of_ scope.
 
 - Do NOT use italics with Espressif product names, such as ESP32.
-
 
 ## Mode of Narration
 
@@ -242,7 +237,6 @@ Monospace font can also be used in:
 - Use _the third person_ (the user, it) when describing how things work from the perspective of hardware or software
 
   > A driver has to be initialized with an instance of type that implements a certain `trait` of the embedded-hal which is ensured via trait bound and provides its own type instance with a custom set of methods allowing to interact with the driven device.
-
 
 ## Terminology
 

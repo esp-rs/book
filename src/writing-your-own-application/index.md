@@ -8,7 +8,6 @@ You can write an application in the following ways:
 - Start from scratch using Cargo: Requires more expertise since you need to configure several parts of the project.
     > ⚠️ **Note**: Starting a project with Cargo does not provide any advantage, only mentioned here since it's the usual way of generating a project in Rust.
 
-
 This chapter won't cover the instructions on how to create a project from scratch with `cargo`, it will only focus on generating a project from a template project.
 
 The tools used in this chapter will be covered in more detail in the next chapter [Tooling][tooling], feel free to refer to it when required.

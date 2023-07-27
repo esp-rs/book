@@ -47,7 +47,6 @@ espflash flash build/blinky --monitor
 
 For more information, please see the [espflash README].
 
-
 `espflash` can be used as a Cargo runner by adding the following to your project's `.cargo/config.toml` file:
 ```toml
 [target.'cfg(any(target_arch = "riscv32", target_arch = "xtensa"))']

@@ -12,7 +12,6 @@ The [probe-rs][probe-rs] project is a set of tools to interact with embedded MCU
 
 More info about probe-rs & how to set up a project can be found on the [probe-rs] website.
 
-
 [probe-rs]: https://probe.rs/
 [openocd]: https://openocd.org/
 [pyocd]: https://pyocd.io/

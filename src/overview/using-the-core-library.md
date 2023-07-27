@@ -57,5 +57,3 @@ The table below covers the current support for `no_std` at this moment for diffe
 [esp-rs/esp-println]: https://github.com/esp-rs/esp-println "print!, println!"
 [esp-rs/esp-backtrace]: https://github.com/esp-rs/esp-backtrace "Exception and panic handlers"
 [esp-rs/esp-storage]: https://github.com/esp-rs/esp-storage "Embedded-storage traits to access unencrypted flash memory"
-
-

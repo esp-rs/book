@@ -49,7 +49,6 @@ The table below covers the current support for `no_std` at this moment for diffe
 - Real-time constraints or time-critical applications: If your embedded system requires real-time performance or low-latency response times because `std` can introduce unpredictable delays and overhead that can affect real-time performance.
 - Custom requirements: bare-metal allows more customization and fine-grained control over the behavior of an application, which can be useful in specialized or non-standard environments.
 
-
 [esp-rs/esp-hal]: https://github.com/esp-rs/esp-hal "Hardware abstraction layer"
 [esp-rs/esp8266-hal]: https://github.com/esp-rs/esp8266-hal "ESP8266 Hardware abstraction layer"
 [esp-rs/esp-pacs]: https://github.com/esp-rs/esp-pacs "Peripheral access crates"

@@ -1,14 +1,16 @@
 # Understanding esp-idf-template
 
-Now that we know how to [generate a std project], let's inspect what the generated project contains and try to understand every part of it.
+Now that we know how to [generate a std project][generate-std], let's inspect what the generated project contains and try to understand every part of it.
+
+[generate-std]: ./index.md
 
 ## Inspecting the generated Project
 
-When creating a project from [esp-idf-template] with the following answers:
+When creating a project from [esp-idf-template][esp-idf-template] with the following answers:
 - Which MCU to target? · `esp32c3`
 - Configure advanced template options? · `false`
 
-For this explanation we will use the default values, if you want further modifications, see the [additional prompts] when not using default values.
+For this explanation we will use the default values, if you want further modifications, see the [additional prompts][prompts] when not using default values.
 
 It should generate a file structure like this:
 
@@ -26,27 +28,39 @@ It should generate a file structure like this:
 
 Before going further, let's see what these files are for.
 
-- [.cargo/config.toml]
+- [.cargo/config.toml][config-toml]
     - The Cargo configuration
     - Contains our target
     - Contains `runner = "espflash flash --monitor"` - this means you can just use `cargo run` to flash and monitor your code
-    - Contains the linker to use, in our case, [`ldproxy`]
+    - Contains the linker to use, in our case, [`ldproxy`][ldproxy]
     - Contains the unstable `build-std` cargo feature enabled.
-    - Contains the `ESP-IDF-VERSION` environment variable that tells [`esp-idf-sys`] which ESP-IDF version the project will use.
+    - Contains the `ESP-IDF-VERSION` environment variable that tells [`esp-idf-sys`][esp-idf-sys] which ESP-IDF version the project will use.
 - src/main.rs
     - The main source file of the newly created project
-    - For details, see the [Understanding `main.rs`] section below.
-- [.gitignore]
+    - For details, see the [Understanding `main.rs`][main-rs] section below.
+- [.gitignore][gitignore]
     - Tells `git` which folders and files to ignore
-- [build.rs]
+- [build.rs][build-rs]
     - Propagates linker arguments for `ldproxy`.
-- [Cargo.toml]
+- [Cargo.toml][cargo-toml]
     - The usual Cargo manifest declaring some meta-data and dependencies of the project
-- [rust-toolchain.toml]
+- [rust-toolchain.toml][rust-toolchain-toml]
     - Defines which Rust toolchain to use
       - The toolchain will be `nightly` or `esp` depending on your target.
-- [sdkconfig.defaults]
+- [sdkconfig.defaults][sdkconfig-defaults]
     - Contains the overridden values from the ESP-IDF defaults.
+
+[esp-idf-template]: https://github.com/esp-rs/esp-idf-template
+[prompts]: https://github.com/esp-rs/esp-idf-template#generate-the-project
+[main-rs]:#understanding-mainrs
+[config-toml]: https://doc.rust-lang.org/cargo/reference/config.html
+[ldproxy]: https://github.com/esp-rs/embuild/tree/master/ldproxy
+[esp-idf-sys]: https://github.com/esp-rs/esp-idf-sys
+[gitignore]: https://git-scm.com/docs/gitignore
+[build-rs]: https://doc.rust-lang.org/cargo/reference/build-scripts.html
+[cargo-toml]: https://doc.rust-lang.org/cargo/reference/manifest.html
+[rust-toolchain-toml]: https://rust-lang.github.io/rustup/overrides.html#the-toolchain-file
+[sdkconfig-defaults]: https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-guides/build-system.html#custom-sdkconfig-defaults
 
 ### Understanding `main.rs`
 
@@ -74,11 +88,11 @@ Building and running the code is as easy as
 cargo run
 ```
 
-This builds the code according to the configuration and executes [`espflash`] to flash the code to the board.
+This builds the code according to the configuration and executes [`espflash`][espflash]  to flash the code to the board.
 
-Since our [`runner` configuration] also passes the `--monitor` argument to [`espflash`] we can see what the code is printing.
+Since our [`runner` configuration][runner-config] also passes the `--monitor` argument to [`espflash`][espflash]  we can see what the code is printing.
 
-> Make sure that you have [`espflash`] installed, otherwise this step will fail. To install [`espflash`]:
+> Make sure that you have [`espflash`][espflash] installed, otherwise this step will fail. To install [`espflash`][espflash] :
 > `cargo install espflash`
 
 You should see something similar to this:
@@ -109,19 +123,6 @@ You can reboot with `CTRL+R` or exit with `CTRL+C`.
 
 If you encoutner any issues while building the project, please, see the [Troubleshooting][troubleshooting] chapter.
 
-
-[additional prompts]: https://github.com/esp-rs/esp-idf-template#generate-the-project
-[.gitignore]: https://git-scm.com/docs/gitignore
-[Cargo.toml]: https://doc.rust-lang.org/cargo/reference/manifest.html
-[rust-toolchain.toml]: https://rust-lang.github.io/rustup/overrides.html#the-toolchain-file
-[.cargo/config.toml]: https://doc.rust-lang.org/cargo/reference/config.html
-[generate a std project]: ./index.md
-[esp-idf-template]: https://github.com/esp-rs/esp-idf-template
-[`esp-idf-sys`]: https://github.com/esp-rs/esp-idf-sys
-[Understanding `main.rs`]:#understanding-mainrs
-[`ldproxy`]: https://github.com/esp-rs/embuild/tree/master/ldproxy
-[build.rs]: https://doc.rust-lang.org/cargo/reference/build-scripts.html
-[sdkconfig.defaults]: https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-guides/build-system.html#custom-sdkconfig-defaults
-[`espflash`]: https://github.com/esp-rs/espflash/tree/main/espflash
-[`runner` configuration]: https://doc.rust-lang.org/cargo/reference/config.html#targettriplerunner
+[espflash]: https://github.com/esp-rs/espflash/tree/main/espflash
+[runner-config]: https://doc.rust-lang.org/cargo/reference/config.html#targettriplerunner
 [troubleshooting]: ../../misc/troubleshooting.md

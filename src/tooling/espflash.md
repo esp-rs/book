@@ -1,16 +1,15 @@
 # espflash
 
-`espflash` is a serial flasher utility, based on [esptool.py], for Espressif SoCs and modules.
+`espflash` is a serial flasher utility, based on [esptool.py][esptool], for Espressif SoCs and modules.
 
-The [esp-rs/espflash] repository contains two crates, `cargo-espflash` and `espflash`. For more information on these crates, see the respective sections below.
+The [esp-rs/espflash][espflash] repository contains two crates, `cargo-espflash` and `espflash`. For more information on these crates, see the respective sections below.
 
+[esptool]: https://github.com/espressif/esptool
+[espflash]: https://github.com/esp-rs/espflash
 
 > #### A note on `espflash` and `cargo-espflash`.
 >
 > The `espflash` and `cargo-espflash` commands shown below, assume that version `2.0` or greater is used.
-
-[esp-rs/espflash]: https://github.com/esp-rs/espflash
-[esptool.py]: https://github.com/espressif/esptool
 
 ## cargo-espflash
 
@@ -28,9 +27,9 @@ This command must be run within a Cargo project, ie. a directory containing a `C
 cargo espflash flash --example=blinky --monitor
 ```
 
-For more information, please see the [cargo-espflash README].
+For more information, please see the [cargo-espflash][cargo-espflash] README.
 
-[cargo-espflash readme]: https://github.com/esp-rs/espflash/blob/master/cargo-espflash/README.md
+[cargo-espflash]: https://github.com/esp-rs/espflash/blob/master/cargo-espflash/README.md
 
 ## espflash
 

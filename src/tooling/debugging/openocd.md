@@ -1,9 +1,13 @@
 
 # OpenOCD
 
-Similar to [probe-rs](./probe-rs.md), OpenOCD does not have support for the Xtensa architecture. However, Espressif does maintain a fork of OpenOCD under [espressif/openocd-esp32](https://github.com/espressif/openocd-esp32) which has support for Espressif's chips.
+Similar to [probe-rs][probe-rs], OpenOCD does not have support for the Xtensa architecture. However, Espressif does maintain a fork of OpenOCD under [espressif/openocd-esp32][espressif-openocd-esp32] which has support for Espressif's chips.
 
-Instructions on how to install `openocd-esp32` for your platform can be found in [the Espressif documentation](https://docs.espressif.com/projects/esp-idf/en/latest/esp32c3/api-guides/jtag-debugging/index.html#setup-of-openocd).
+Instructions on how to install `openocd-esp32` for your platform can be found in [the Espressif documentation][espressif-documentation].
+
+[probe-rs]: ./probe-rs.md
+[espressif-openocd-esp32]: https://github.com/espressif/openocd-esp32
+[espressif-documentation]: https://docs.espressif.com/projects/esp-idf/en/latest/esp32c3/api-guides/jtag-debugging/index.html#setup-of-openocd
 
 ## Setup for Espressif chips
 

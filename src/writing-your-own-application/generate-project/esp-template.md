@@ -1,15 +1,17 @@
 # Understanding esp-template
 
-Now that we know how to [generate a no_std project], let's inspect what the generated
+Now that we know how to [generate a no_std project][generate-no-std], let's inspect what the generated
 project contains, try to understand every part and run it.
+
+[generate-no-std]: ./index.md
 
 ## Inspecting the generated Project
 
-When creating a project from [esp-template] with the following answers:
+When creating a project from [esp-template][esp-template] with the following answers:
 -  Which MCU to target? · `esp32c3`
 - Configure advanced template options? · `false`
 
-For this explanation we will use the default values, if you want further modifications, see the [additional prompts] when not using default values.
+For this explanation we will use the default values, if you want further modifications, see the [additional prompts][prompts] when not using default values.
 
 
 It should generate a file structure like this:
@@ -28,23 +30,31 @@ It should generate a file structure like this:
 
 Before going further, let's see what these files are for.
 
-- [.cargo/config.toml]
+- [.cargo/config.toml][config-toml]
     - The Cargo configuration
     - This defines a few options to correctly build the project
     - Contains `runner = "espflash flash --monitor"` - this means you can just use `cargo run` to flash and monitor your code
 - src/main.rs
     - The main source file of the newly created project
-    - For details, see the [Understanding `main.rs`] section below.
-- [.gitignore]
+    - For details, see the [Understanding `main.rs`][main-rs] section below.
+- [.gitignore][gitignore]
     - Tells `git` which folders and files to ignore
-- [Cargo.toml]
+- [Cargo.toml][cargo-toml]
     - The usual Cargo manifest declaring some meta-data and dependencies of the project
 - LICENSE-APACHE, LICENSE_MIT
     - Those are the most common licenses used in the Rust ecosystem
     - If you want to apply a different license, you can delete these files and change the license in `Cargo.toml`
-- [rust-toolchain.toml]
+- [rust-toolchain.toml][rust-toolchain-toml]
     - Defines which Rust toolchain to use
       - The toolchain will be `nightly` or `esp` depending on your target.
+
+[esp-template]: https://github.com/esp-rs/esp-template
+[prompts]: https://github.com/esp-rs/esp-template#esp-template
+[main-rs]: #understanding-mainrs
+[cargo-toml]: https://doc.rust-lang.org/cargo/reference/manifest.html
+[gitignore]: https://git-scm.com/docs/gitignore
+[config-toml]: https://doc.rust-lang.org/cargo/reference/config.html
+[rust-toolchain-toml]: https://rust-lang.github.io/rustup/overrides.html#the-toolchain-file
 
 ### Understanding `main.rs`
 
@@ -56,7 +66,7 @@ Before going further, let's see what these files are for.
 - `#![no_std]`
   - This tells the Rust compiler that this code doesn't use `libstd`
 - `#![no_main]`
-  - The `no_main` attribute says that this program won't use the standard main interface, which is tailored for command-line applications that receive arguments. Instead of the standard main, we'll use the entry attribute from the `riscv-rt` crate to define a custom entry point. In this program, we have named the entry point `main`, but any other name could have been used. The entry point function must be a [diverging function]. I.e. it has the signature `fn foo() -> !`; this type indicates that the function never returns – which means that the program never terminates.
+  - The `no_main` attribute says that this program won't use the standard main interface, which is tailored for command-line applications that receive arguments. Instead of the standard main, we'll use the entry attribute from the `riscv-rt` crate to define a custom entry point. In this program, we have named the entry point `main`, but any other name could have been used. The entry point function must be a [diverging function][diverging-function]. I.e. it has the signature `fn foo() -> !`; this type indicates that the function never returns – which means that the program never terminates.
 
 ```rust,ignore
  4 use esp_backtrace as _;
@@ -114,11 +124,14 @@ Inside the `main` function we can find:
   - Some drivers need a reference to the clocks to know how to calculate rates and durations
 - The next block of code instantiates some peripherals (namely RTC and the two timer groups) to disable the watchdog, which is armed after boot
   - Without that code, the SoC would reboot after some time
-  - There is another way to prevent the reboot: [feeding](https://docs.rs/esp32c3-hal/0.10.0/esp32c3_hal/prelude/trait._embedded_hal_watchdog_Watchdog.html#tymethod.feed) the watchdog
+  - There is another way to prevent the reboot: [feeding][wtd-feeding] the watchdog
 - `println!("Hello world!");`
   - Prints "Hello Wolrd!"
 - `loop {}`
   - Since our function is supposed to never return, we just "do nothing" in a loop
+
+[diverging-function]: https://doc.rust-lang.org/beta/rust-by-example/fn/diverging.html
+[wtd-feeding]: https://docs.rs/esp32c3-hal/0.10.0/esp32c3_hal/prelude/trait._embedded_hal_watchdog_Watchdog.html#tymethod.feed
 
 ## Running the Code
 
@@ -128,11 +141,11 @@ Building and running the code is as easy as
 cargo run
 ```
 
-This builds the code according to the configuration and executes [`espflash`] to flash the code to the board.
+This builds the code according to the configuration and executes [`espflash`][espflash] to flash the code to the board.
 
-Since our [`runner` configuration] also passes the `--monitor` argument to [`espflash`] we can see what the code is printing.
+Since our [`runner` configuration][runner-config] also passes the `--monitor` argument to [`espflash`][espflash] we can see what the code is printing.
 
-> Make sure that you have [`espflash`] installed, otherwise this step will fail. To install [`espflash`]:
+> Make sure that you have [`espflash`][espflash] installed, otherwise this step will fail. To install [`espflash`][espflash]:
 > `cargo install espflash`
 
 You should see something similar to this:
@@ -166,15 +179,6 @@ You can reboot with `CTRL+R` or exit with `CTRL+C`.
 
 If you encoutner any issues while building the project, please, see the [Troubleshooting][troubleshooting] chapter.
 
-[additional prompts]: https://github.com/esp-rs/esp-template#esp-template
-[Understanding `main.rs`]: #understanding-mainrs
-[generate a no_std project]: ./index.md
-[esp-template]: https://github.com/esp-rs/esp-template
-[.gitignore]: https://git-scm.com/docs/gitignore
-[Cargo.toml]: https://doc.rust-lang.org/cargo/reference/manifest.html
-[rust-toolchain.toml]: https://rust-lang.github.io/rustup/overrides.html#the-toolchain-file
-[.cargo/config.toml]: https://doc.rust-lang.org/cargo/reference/config.html
-[`espflash`]: https://github.com/esp-rs/espflash/tree/main/espflash
-[`runner` configuration]: https://doc.rust-lang.org/cargo/reference/config.html#targettriplerunner
-[diverging function]: https://doc.rust-lang.org/beta/rust-by-example/fn/diverging.html
+[espflash]: https://github.com/esp-rs/espflash/tree/main/espflash
+[runner-config]: https://doc.rust-lang.org/cargo/reference/config.html#targettriplerunner
 [troubleshooting]: ../../misc/troubleshooting.md

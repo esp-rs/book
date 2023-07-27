@@ -10,14 +10,14 @@ Both approaches have their advantages and disadvantages, so you should make a de
 - [Using the Standard Library (`std`)][rust-esp-book-std]
 - [Using the Core Library (`no_std`)][rust-esp-book-no-std]
 
-[rust-esp-book-std]: ./using-the-standard-library.md
-[rust-esp-book-no-std]: ./using-the-core-library.md
-
 See also the comparison of the different runtimes in [The Embedded Rust Book][embedded-rust-book-intro-std].
 
-[embedded-rust-book-intro-std]: https://docs.rust-embedded.org/book/intro/no-std.html#a-no_std-rust-environment
-
 The [esp-rs organization] on GitHub is home to a number of repositories related to running Rust on Espressif chips. Most of the required crates have their source code hosted here.
+
+[rust-esp-book-std]: ./using-the-standard-library.md
+[rust-esp-book-no-std]: ./using-the-core-library.md
+[embedded-rust-book-intro-std]: https://docs.rust-embedded.org/book/intro/no-std.html#a-no_std-rust-environment
+[esp-rs organization]: https://github.com/esp-rs/
 
 ## Repository naming convention
 
@@ -25,9 +25,9 @@ In the [esp-rs organization] we use the following wording:
 - Repositories starting with `esp-` are focused on `no_std` approach. E.g. `esp-hal`
   - `no_std` works on top of bare metal, so `esp-` is an Espressif chip
 - Repositories starting with `esp-idf-` are focused on `std` approach. E.g. `esp-idf-hal`
-  - `std`, apart from bare metal, also needs an [additional layer](https://github.com/espressif/esp-idf), which is `esp-idf-`
+  - `std`, apart from bare metal, also needs an [additional layer], which is `esp-idf-`
 
-[esp-rs organization]: https://github.com/esp-rs/
+[additional layer]: https://github.com/espressif/esp-idf
 
 ## Support for Espressif Products
 

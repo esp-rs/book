@@ -6,7 +6,7 @@ There is also a possibility to debug with graphical output directly in Visual St
 
 ### Configuration
 
-1. Connect an external JTAG adapter: [ESP-Prog](https://docs.espressif.com/projects/espressif-esp-iot-solution/en/latest/hw-reference/ESP-Prog_guide.html) can be used.
+1. Connect an external JTAG adapter: [ESP-Prog][esp-prog] can be used.
 
 |  ESP32 Pin  | JTAG Signal |
 | :---------: | :---------: |
@@ -20,8 +20,8 @@ There is also a possibility to debug with graphical output directly in Visual St
 **Note**: On Windows `USB Serial Converter A 0403 6010 00` driver should be WinUSB.
 
 2. Set up VSCode
-   1. Install [Cortex-Debug](https://marketplace.visualstudio.com/items?itemName=marus25.cortex-debug) extension for VScode.
-   2. Create the `.vscode/launch.json` file in the project tree you want to debug. [This](https://github.com/esp-rs/esp32-hal/blob/master/.vscode/launch.json) can be used as a template file.
+   1. Install [Cortex-Debug][cortex-debug] extension for VScode.
+   2. Create the `.vscode/launch.json` file in the project tree you want to debug.
    3. Update `executable`, `svdFile`, `serverpath` paths, and `toolchainPrefix` field.
 
 ```jsonc
@@ -56,6 +56,9 @@ There is also a possibility to debug with graphical output directly in Visual St
 }
 ```
 
+[esp-prog]: https://docs.espressif.com/projects/espressif-esp-iot-solution/en/latest/hw-reference/ESP-Prog_guide.html
+[cortex-debug]: https://marketplace.visualstudio.com/items?itemName=marus25.cortex-debug
+
 ## ESP32-C3
 
 The availability of built-in JTAG interface depends on the ESP32-C3 revision:
@@ -73,7 +76,7 @@ espflash board-info
 
 ### Configuration
 
-1. (**Only for revisions older than 3**) Connect an external JTAG adapter, [ESP-Prog](https://docs.espressif.com/projects/espressif-esp-iot-solution/en/latest/hw-reference/ESP-Prog_guide.html) can be used.
+1. (**Only for revisions older than 3**) Connect an external JTAG adapter, [ESP-Prog][esp-prog] can be used.
 
 | ESP32-C3 Pin | JTAG Signal |
 | :----------: | :---------: |
@@ -86,8 +89,8 @@ espflash board-info
 
 **Note**: On Windows `USB Serial Converter A 0403 6010 00` driver should be WinUSB.
 2. Set up VSCode
-   1. Install [Cortex-Debug](https://marketplace.visualstudio.com/items?itemName=marus25.cortex-debug) extension for VScode.
-   2. Create the `.vscode/launch.json` file in the project tree you want to debug. [This](https://github.com/esp-rs/esp32-hal/blob/master/.vscode/launch.json) can be used as a template file.
+   1. Install [Cortex-Debug][cortex-debug] extension for VScode.
+   2. Create the `.vscode/launch.json` file in the project tree you want to debug.
    3. Update `executable`, `svdFile`, `serverpath` paths, and `toolchainPrefix` field.
 ```jsonc
 {

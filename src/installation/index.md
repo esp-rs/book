@@ -44,11 +44,6 @@ To build Rust applications for the Espressif chips based on `RISC-V` architectur
     ```bash
     rustup toolchain install nightly --component rust-src
     ```
-
-[rustup-book-channel-nightly]: https://rust-lang.github.io/rustup/concepts/channels.html#working-with-nightly-rust
-[rustup-book-components]: https://rust-lang.github.io/rustup/concepts/components.html
-
-
 2. Set the target:
     - For `no_std` (bare-metal) applications, run:
 
@@ -65,31 +60,28 @@ To build Rust applications for the Espressif chips based on `RISC-V` architectur
 
       - `riscv32imc-esp-espidf` for SoCs which do not support atomics, like ESP32-C2 and ESP32-C3
       - `riscv32imac-esp-espidf` for SoCs which support atomics, like ESP32-C6, ESP32-H2, and ESP32-P4
-
-[rust-lang-book--platform-support-tier2]: https://doc.rust-lang.org/nightly/rustc/platform-support.html#tier-2
-[wiki-riscv-standard-extensions]: https://en.wikichip.org/wiki/risc-v/standard_extensions
-[rust-lang-book--platform-support-tier3]: https://doc.rust-lang.org/nightly/rustc/platform-support.html#tier-3
-[rust-lang-book--platform-support--esp-idf]: https://doc.rust-lang.org/nightly/rustc/platform-support/esp-idf.html
-
 3. To build `std` projects, you also need to install:
     - [`LLVM`][llvm-website] compiler infrastructure
     - Other [`std` development requirements][rust-esp-book-std-requirements]
     - In your project's file `.cargo/config.toml`, add the unstable Cargo [feature][cargo-book-unstable-features] `-Z build-std`. Our [template projects][rust-esp-book-write-app-generate-project] that are discussed later in this book already include this.
 
+Now you should be able to build and run projects on the Espressif's `RISC-V` chips.
+
+[rustup-book-channel-nightly]: https://rust-lang.github.io/rustup/concepts/channels.html#working-with-nightly-rust
+[rustup-book-components]: https://rust-lang.github.io/rustup/concepts/components.html
+[rust-lang-book--platform-support-tier2]: https://doc.rust-lang.org/nightly/rustc/platform-support.html#tier-2
+[wiki-riscv-standard-extensions]: https://en.wikichip.org/wiki/risc-v/standard_extensions
+[rust-lang-book--platform-support-tier3]: https://doc.rust-lang.org/nightly/rustc/platform-support.html#tier-3
+[rust-lang-book--platform-support--esp-idf]: https://doc.rust-lang.org/nightly/rustc/platform-support/esp-idf.html
 [llvm-website]: https://llvm.org/
 [rust-esp-book-std-requirements]: #std-development-requirements
 [cargo-book-unstable-features]: https://doc.rust-lang.org/cargo/reference/unstable.html
 [rust-esp-book-write-app-generate-project]: ../writing-your-own-application/generate-project/index.md
 
-
-Now you should be able to build and run projects on the Espressif's `RISC-V` chips.
-
-
 ## RISC-V and Xtensa targets
 
 [`espup`][espup-github] is a tool that simplifies installing and maintaining the components required to develop Rust applications for the `Xtensa` and `RISC-V` architectures.
 
-[espup-github]: https://github.com/esp-rs/espup
 
 ### 1. Install `espup`
 
@@ -100,6 +92,7 @@ cargo install espup
 
 You can also directly download pre-compiled [release binaries] or use [cargo-binstall].
 
+[espup-github]: https://github.com/esp-rs/espup
 [release binaries]: https://github.com/esp-rs/espup/releases
 [cargo-binstall]: https://github.com/cargo-bins/cargo-binstall
 
@@ -134,7 +127,6 @@ On Unix based systems (`$HOME/export-esp.sh`). There are different ways of sourc
 
    This approach **does not** require any sourcing. The `export-esp.sh` script will be sourced automatically in every shell.
 
-
 ### What espup Installs
 
 To enable support for Espressif targets, `espup` installs the following tools:
@@ -150,12 +142,12 @@ The forked compiler can coexist with the standard Rust compiler, allowing both t
 > 1. Changes in `LLVM` fork. Already in progress, see the status in this [tracking issue][llvm-github-fork-upstream issue].
 > 2. Rust compiler forks. If `LLVM` changes are accepted, we will proceed with the Rust compiler changes.
 
+If you run into an error, please, check the [Troubleshooting][troubleshooting] chapter.
+
 [llvm-github-fork]: https://github.com/espressif/llvm-project
 [gcc-toolchain-github-fork]: https://github.com/espressif/crosstool-NG/
 [rustup-overrides]: https://rust-lang.github.io/rustup/overrides.html
 [llvm-github-fork-upstream issue]: https://github.com/espressif/llvm-project/issues/4
-
-If you run into an error, please, check the [Troubleshooting][troubleshooting] chapter.
 
 ### Other installation methods for Xtensa targets
 
@@ -164,7 +156,6 @@ If you run into an error, please, check the [Troubleshooting][troubleshooting] c
 
 [esp-rs/rust-build]: https://github.com/esp-rs/rust-build#download-installer-in-bash
 [esp-rs/rust repository]: https://github.com/esp-rs/rust
-
 
 ## `std` Development Requirements
 
@@ -186,7 +177,6 @@ The std runtime uses [ESP-IDF][esp-idf-github] (Espressif IoT Development Framew
 [embuild-github-ldproxy]: https://github.com/esp-rs/embuild/tree/master/ldproxy
 [esp-idf-sys-github]: https://github.com/esp-rs/esp-idf-sys
 [esp-idf-github]: https://github.com/espressif/esp-idf
-
 
 ## Using Containers
 

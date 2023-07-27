@@ -87,7 +87,7 @@ In hyphenated words, do not capitalize the parts following the hyphens.
 To simplify link maintenance, follow the rules below:
 
 - Use [link variables][stackoverflow-link-var] with variable names that give a clue on where the link leads.
-- Define link variables right after the paragraphs where they are used.
+- Define link variables right before the end of the section/subsection where they are used.
 
 [stackoverflow-link-var]: https://stackoverflow.com/a/27784490/10308406
 

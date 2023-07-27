@@ -11,7 +11,7 @@ Both approaches have their advantages and disadvantages, so you should make a de
 - [Using the Core Library (`no_std`)][rust-esp-book-no-std]
 
 [rust-esp-book-std]: ./using-the-standard-library.md
-[rust-esp-book-no-std]: ./bare-metal.md
+[rust-esp-book-no-std]: ./using-the-core-library.md
 
 See also the comparison of the different runtimes in [The Embedded Rust Book][embedded-rust-book-intro-std].
 

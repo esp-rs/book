@@ -91,7 +91,7 @@ To simplify link maintenance, follow the rules below:
 
 Example:
 
-```
+```md
 [`espup`][espup-github] is a tool that simplifies installing and maintaining the components required to develop Rust applications.
 
 [espup-github]: https://github.com/esp-rs/espup

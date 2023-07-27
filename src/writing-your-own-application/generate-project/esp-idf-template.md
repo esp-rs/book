@@ -74,6 +74,7 @@ Before going further, let's see what these files are for.
 7     println!("Hello, world!");
 8 }
 ```
+
 The first line is an import that defines the esp-idf entry-point when the root crate is a binary crate that defines a main function.
 
 Then, we have a usual main function with a  few lines on it:
@@ -96,6 +97,7 @@ Since our [`runner` configuration][runner-config] also passes the `--monitor` ar
 > `cargo install espflash`
 
 You should see something similar to this:
+
 ```text
 [2023-04-18T08:05:09Z INFO ] Connecting...
 [2023-04-18T08:05:10Z INFO ] Using flash stub
@@ -117,6 +119,7 @@ Commands:
 I (344) cpu_start: Starting scheduler.
 Hello, world!
 ```
+
 As you can see, there are messages from the first and second stage bootloader and then, our "Hello, world!" is printed.
 
 You can reboot with `CTRL+R` or exit with `CTRL+C`.

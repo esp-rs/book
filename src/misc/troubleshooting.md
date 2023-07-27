@@ -102,7 +102,7 @@ If using GNU ABI, install [MinGW/MSYS2 toolchain].
 
 You must clean your project and rebuild for changes in the `sdkconfig.defaults` to take effect:
 
-```shell,ignore
+```shell
 cargo clean
 cargo build
 ```
@@ -127,7 +127,7 @@ Instead, we are building the documentation and hosting it ourselves on GitHub Pa
 
 If the second-stage bootloader reports this error, you likely need to increase the stack size for the main task. This can be accomplished by adding the following to the `sdkconfig.defaults` file:
 
-```ignore
+```text
 CONFIG_ESP_MAIN_TASK_STACK_SIZE=7000
 ```
 
@@ -137,7 +137,7 @@ In this example, we are allocating 7kB for the main task's stack.
 
 Add to your `sdkconfig.defaults` file:
 
-```ignore
+```text
 CONFIG_INT_WDT=n
 CONFIG_ESP_TASK_WDT=n
 ```

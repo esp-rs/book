@@ -22,9 +22,9 @@ The [esp-rs organization] on GitHub is home to a number of repositories related 
 ## Repository naming convention
 
 In the [esp-rs organization] we use the following wording:
-- Repositories starting with `esp-` are focused on `no_std` approach. E.g. `esp-hal`
+- Repositories starting with `esp-` are focused on `no_std` approach. For example, `esp-hal`
   - `no_std` works on top of bare metal, so `esp-` is an Espressif chip
-- Repositories starting with `esp-idf-` are focused on `std` approach. E.g. `esp-idf-hal`
+- Repositories starting with `esp-idf-` are focused on `std` approach. For example, `esp-idf-hal`
   - `std`, apart from bare metal, also needs an [additional layer], which is `esp-idf-`
 
 [additional layer]: https://github.com/espressif/esp-idf

@@ -148,6 +148,7 @@ Since our [`runner` configuration][runner-config] also passes the `--monitor` ar
 > `cargo install espflash`
 
 You should see something similar to this:
+
 ```text
 [2023-04-17T14:17:08Z INFO ] Serial port: '/dev/ttyACM0'
 [2023-04-17T14:17:08Z INFO ] Connecting...
@@ -161,7 +162,8 @@ MAC address:       60:55:f9:c0:39:7c
 App/part. size:    203,920/4,128,768 bytes, 4.94%
 [00:00:00] [========================================]      13/13      0x0
 [00:00:00] [========================================]       1/1       0x8000
-[00:00:01] [========================================]      64/64      0x10000                                                                                                                    [2023-04-17T14:17:11Z INFO ] Flashing has completed!
+[00:00:01] [========================================]      64/64      0x10000
+[2023-04-17T14:17:11Z INFO ] Flashing has completed!
 Commands:
     CTRL+R    Reset chip
     CTRL+C    Exit

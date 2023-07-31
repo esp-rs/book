@@ -23,7 +23,7 @@ This book is intended for people with some experience with Rust, and also assume
 - You should be familiar with the idioms of the [2021 edition][rust-2021], as this book targets Rust 2021.
 - You are comfortable developing embedded systems in another language such as C or C++, and are familiar with concepts such as:
   - Cross-compilation
-  - Common digital interfaces like `UART`, `SPI`, `I²C`, etc.
+  - Common digital interfaces like `UART`, `SPI`, `I2C`, etc.
   - Memory-mapped peripherals
   - Interrupts
 

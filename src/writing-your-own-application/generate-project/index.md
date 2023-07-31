@@ -42,7 +42,7 @@ Dev Containers use the [`idf-rust`][idf-rust] container image, that was explaine
 
 [dev-container]: https://github.com/esp-rs/esp-template/tree/main/docs#dev-containers
 [idf-rust]: https://hub.docker.com/r/espressif/idf-rust/tags
-[using-container]: ../../installation/index.md#using-containers
+[using-container]: ../../installation/using-containers.md
 [wokwi]: https://wokwi.com/
 [web-flash]: https://github.com/bjoernQ/esp-web-flash-server
 [setting-env]: ../../installation/index.md

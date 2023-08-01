@@ -4,13 +4,13 @@ This book is a work in progress.
 
 ## Quickstart
 
-This book is generated using [mdbook], and additionally uses the [mdbook-mermaid] preprocessor to add support for diagrams. To install these tools:
+This book is generated using [`mdbook`] and additionally uses the [`mdbook-mermaid`] preprocessor to add support for diagrams. To install these tools:
 
 ```shell
 cargo install mdbook mdbook-mermaid
 ```
 
-With `mdbook` and `mdbook-mermaid` installed you can clone the respository and start a development server by running:
+With `mdbook` and `mdbook-mermaid` installed, you can clone the repository and start a development server by running:
 
 ```shell
 git clone https://github.com/esp-rs/book
@@ -18,8 +18,8 @@ cd book/
 mdbook serve
 ```
 
-[mdbook]: https://github.com/rust-lang/mdBook
-[mdbook-mermaid]: https://github.com/badboy/mdbook-mermaid
+[`mdbook`]: https://github.com/rust-lang/mdBook
+[`mdbook-mermaid`]: https://github.com/badboy/mdbook-mermaid
 
 ## License
 
@@ -39,3 +39,5 @@ The Rust on ESP Book is distributed under the following licenses:
 Unless you explicitly state otherwise, any contribution intentionally submitted for inclusion in the
 work by you, as defined in the Apache-2.0 license, shall be licensed as above, without any
 additional terms or conditions.
+
+Please, be sure to follow the [Style [Guide](rust-doc-style-guide.md) when contributing.

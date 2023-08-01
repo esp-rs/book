@@ -1,6 +1,6 @@
 # probe-rs
 
-The [probe-rs] project is a set of tools to interact with embedded MCU's using various debug probes. It is similar to [openOCD], [PyOCD], [Segger tools], etc. There is support for `ARM` & `RISC-V` architectures along with a collection of tools, including but not limited to:
+The [probe-rs][probe-rs] project is a set of tools to interact with embedded MCU's using various debug probes. It is similar to [openOCD][openocd], [PyOCD][pyocd], [Segger tools][segger-tools], etc. There is support for `ARM` & `RISC-V` architectures along with a collection of tools, including but not limited to:
 
 - Debugger
   - GDB support.
@@ -12,15 +12,16 @@ The [probe-rs] project is a set of tools to interact with embedded MCU's using v
 
 More info about probe-rs & how to set up a project can be found on the [probe-rs] website.
 
-
 [probe-rs]: https://probe.rs/
 [openocd]: https://openocd.org/
-[PyOCD]: https://pyocd.io/
-[Segger tools]: https://www.segger.com/
+[pyocd]: https://pyocd.io/
+[segger-tools]: https://www.segger.com/
 
 ## `USB-JTAG-SERIAL` peripheral for ESP32-C3
 
-Starting from `probe-rs` v0.12, it is possible to flash and debug the ESP32-C3 with the built-in `USB-JTAG-SERIAL` peripheral, no need for any external hardware debugger. More info on configuring the interface can be found in the [official documentation].
+Starting from `probe-rs` v0.12, it is possible to flash and debug the ESP32-C3 with the built-in `USB-JTAG-SERIAL` peripheral, no need for any external hardware debugger. More info on configuring the interface can be found in the [official documentation][official-documentation].
+
+[official-documentation]: https://docs.espressif.com/projects/esp-idf/en/latest/esp32c3/api-guides/jtag-debugging/configure-builtin-jtag.html
 
 ## Support for Espressif chips
 
@@ -30,15 +31,13 @@ Starting from `probe-rs` v0.12, it is possible to flash and debug the ESP32-C3 w
 | :------: | :------: | :-------: |
 | ESP32-C3 |    ✅     |     ⚠️     |
 
-**Note**: _Items marked with ⚠️ are currently work in progress, usable but expect bugs._
-
-[official documentation]: https://docs.espressif.com/projects/esp-idf/en/latest/esp32c3/api-guides/jtag-debugging/configure-builtin-jtag.html
+> ⚠️ **Note**: _Items marked with ⚠️ are currently work in progress, usable but expect bugs._
 
 ## Permissions - Linux
 
 On Linux, you may run into permission issues trying to interact with Espressif probes. Installing the following `udev` rules and reloading should fix that issue.
 
-```udev
+```text
 # Espressif dev kit FTDI
 ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6010", MODE="660", GROUP="plugdev", TAG+="uaccess"
 

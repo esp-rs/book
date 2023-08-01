@@ -1,53 +1,51 @@
 # espflash
 
-`espflash` provides a serial flasher utility for Espressif SoCs and modules based on [esptool.py].
+`espflash` is a serial flasher utility, based on [esptool.py][esptool], for Espressif SoCs and modules.
 
-The [esp-rs/espflash] repository contains two crates, `cargo-espflash` and `espflash`. You can find more information on both of these in their respective sections below and in their corresponding README.
+The [esp-rs/espflash][espflash] repository contains two crates, `cargo-espflash` and `espflash`. For more information on these crates, see the respective sections below.
 
-> #### A note on `espflash` and `cargo-espflash`.
->
-> The `espflash` and `cargo-espflash` commands shown below, assume that version `2.0` or greater.
+[esptool]: https://github.com/espressif/esptool
+[espflash]: https://github.com/esp-rs/espflash
 
-[esp-rs/espflash]: https://github.com/esp-rs/espflash
-[esptool.py]: https://github.com/espressif/esptool
+> ⚠️ **Note**: The `espflash` and `cargo-espflash` commands shown below, assume that version `2.0` or greater is used.
+
 ## cargo-espflash
 
 Provides a subcommand for `cargo` that handles cross-compilation and flashing.
 
-To install:
+To install, run:
 
-```bash
+```shell
 cargo install cargo-espflash
 ```
 
 This command must be run within a Cargo project, ie. a directory containing a `Cargo.toml` file. For example, to build an example named 'blinky', flash the resulting binary to a device, and then subsequently start a serial monitor:
 
-```bash
+```shell
 cargo espflash flash --example=blinky --monitor
 ```
 
-For more information, please see the [cargo-espflash README].
+For more information, please see the [cargo-espflash][cargo-espflash] README.
 
-[cargo-espflash readme]: https://github.com/esp-rs/espflash/blob/master/cargo-espflash/README.md
+[cargo-espflash]: https://github.com/esp-rs/espflash/blob/master/cargo-espflash/README.md
 
 ## espflash
 
 Provides a standalone command-line application that flashes an ELF file to a device.
 
-To install:
+To install, run:
 
-```bash
+```shell
 cargo install espflash
 ```
 
-Assuming you have built an ELF binary by other means already, `espflash` can be used to download it to your device and monitor the serial port. For example, if you have built the `getting-started/blinky` example from [esp-idf] using `idf.py` you might run something like:
+Assuming you have built an ELF binary by other means already, `espflash` can be used to download it to your device and monitor the serial port. For example, if you have built the `getting-started/blinky` example from [esp-idf] using `idf.py`, you might run something like:
 
-```bash
+```shell
 espflash flash build/blinky --monitor
 ```
 
 For more information, please see the [espflash README].
-
 
 `espflash` can be used as a Cargo runner by adding the following to your project's `.cargo/config.toml` file:
 ```toml

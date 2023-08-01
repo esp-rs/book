@@ -41,7 +41,6 @@ The style guide is based on the best practices collected from the following book
   - [Documentation](#documentation)
   - [Code](#code)
 
-
 ## Heading Titles
 
 The books on Rust usually have the heading titles based on nouns or gerunds:
@@ -79,7 +78,6 @@ In hyphenated words, do not capitalize the parts following the hyphens.
 > **Built-in Targets**<br>
 > **Allowed-by-default Lints**
 
-
 ## Linking
 
 ### Adding Links
@@ -87,13 +85,13 @@ In hyphenated words, do not capitalize the parts following the hyphens.
 To simplify link maintenance, follow the rules below:
 
 - Use [link variables][stackoverflow-link-var] with variable names that give a clue on where the link leads.
-- Define link variables right after the paragraphs where they are used.
+- Define link variables right before the end of the section/subsection where they are used.
 
 [stackoverflow-link-var]: https://stackoverflow.com/a/27784490/10308406
 
 Example:
 
-```
+```md
 [`espup`][espup-github] is a tool that simplifies installing and maintaining the components required to develop Rust applications.
 
 [espup-github]: https://github.com/esp-rs/espup
@@ -120,7 +118,7 @@ Also take into account the following
 - Do not provide a link to the same location repeatedly in the same or adjacent paragraphs without a good reason, especially using different link text.
 - Do not use the same link text to refer to different locations.
 
-  > `espup` might have a section in a book and a github repo. In this case, see the [`espup`](#espup) section and [`espup` repo](https://hackmd.io/-cf0jVTqRqm9O7GM5JgLiA?both).
+  > `espup` might have a section in a book and a github repo. In this case, see the [`espup`](https://esp-rs.github.io/book/installation/index.html#risc-v-and-xtensa-targets) section and [`espup` repo](https://github.com/esp-rs/espup).
 
 See also, the [Using `monospace`](#using-monospace) section.
 
@@ -165,7 +163,6 @@ The books on Rust usually use the following list formatting:
   -  For an example using bold font, see the list in the [Modules Cheat Sheet](https://doc.rust-lang.org/book/ch07-02-defining-modules-to-control-scope-and-privacy.html#modules-cheat-sheet) section in The Rust Programming Language book.
   -  For an example using monospace font, see the [Panicking](https://docs.rust-embedded.org/book/start/panicking.html#panicking) section in The Embedded Rust Book.
 
-
 ## Using `monospace`
 
 Use monospace font for the following items:
@@ -208,7 +205,6 @@ Monospace font can also be used in:
 
   > **A `no_std` Rust Environment**
 
-
 ## Using _Italics_
 
 - Introduce new terms
@@ -221,7 +217,6 @@ Monospace font can also be used in:
   > When `s` comes _into_ scope, it is valid. It remains valid until it goes _out of_ scope.
 
 - Do NOT use italics with Espressif product names, such as ESP32.
-
 
 ## Mode of Narration
 
@@ -242,7 +237,6 @@ Monospace font can also be used in:
 - Use _the third person_ (the user, it) when describing how things work from the perspective of hardware or software
 
   > A driver has to be initialized with an instance of type that implements a certain `trait` of the embedded-hal which is ensured via trait bound and provides its own type instance with a custom set of methods allowing to interact with the driven device.
-
 
 ## Terminology
 

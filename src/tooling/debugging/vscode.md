@@ -4,9 +4,9 @@ There is also a possibility to debug with graphical output directly in Visual St
 
 ## ESP32
 
-### Hardware Setup
+### Configuration
 
-ESP32 doesn't have a built-in JTAG interface, so you have to connect an external JTAG adapter to the ESP32 board, for example, [ESP-Prog](https://docs.espressif.com/projects/espressif-esp-iot-solution/en/latest/hw-reference/ESP-Prog_guide.html) can be used.
+1. Connect an external JTAG adapter: [ESP-Prog][esp-prog] can be used.
 
 |  ESP32 Pin  | JTAG Signal |
 | :---------: | :---------: |
@@ -17,15 +17,14 @@ ESP32 doesn't have a built-in JTAG interface, so you have to connect an external
 |     3V3     |    VJTAG    |
 |     GND     |     GND     |
 
-**Note**: On Windows `USB Serial Converter A 0403 6010 00` driver should be WinUSB.
+> ⚠️ **Note**: On Windows `USB Serial Converter A 0403 6010 00` driver should be WinUSB.
 
-## Set up VSCode
+2. Set up VSCode
+   1. Install [Cortex-Debug][cortex-debug] extension for VScode.
+   2. Create the `.vscode/launch.json` file in the project tree you want to debug.
+   3. Update `executable`, `svdFile`, `serverpath` paths, and `toolchainPrefix` field.
 
-1. Install [Cortex-Debug](https://marketplace.visualstudio.com/items?itemName=marus25.cortex-debug) extension for VScode.
-2. Create the `.vscode/launch.json` file in the project tree you want to debug. [This](https://github.com/esp-rs/esp32-hal/blob/master/.vscode/launch.json) can be used as a template file.
-3. Update **executable**, **svdFile**, **serverpath** paths, and **toolchainPrefix** field.
-
-```jsonc
+```json
 {
   // Use IntelliSense to learn about possible attributes.
   // Hover to view descriptions of existing attributes.
@@ -57,17 +56,27 @@ ESP32 doesn't have a built-in JTAG interface, so you have to connect an external
 }
 ```
 
+[esp-prog]: https://docs.espressif.com/projects/espressif-esp-iot-solution/en/latest/hw-reference/ESP-Prog_guide.html
+[cortex-debug]: https://marketplace.visualstudio.com/items?itemName=marus25.cortex-debug
+
 ## ESP32-C3
 
-Older versions with **revision < 3** **don't** have built-in JTAG interface.
+The availability of built-in JTAG interface depends on the ESP32-C3 revision:
 
-ESP32-C3 with **revision 3** **does** have a built-in JTAG interface, and you don't have to connect an external device to be able to debug. To get the chip revision, run the `cargo espflash board-info` command.
+- Revisions older than 3 **don't** a have built-in JTAG interface.
+- Revitions 3 (and newer) **do** have a built-in JTAG interface, and you don't have to connect an external device to be able to debug.
 
-### Hardware Setup
+To find your ESP32-C3 revision, run:
 
-If your ESP32-C3's revision is lesser than 3, follow these instructions, if you have revision 3 you can jump to the [**Set up VSCode**](#set-up-vscode-1) step.
+```shell
+cargo espflash board-info
+# or
+espflash board-info
+```
 
-ESP32-C3 **revision 1** and **revision 2** don't have a built-in JTAG interface, so you have to connect an external JTAG adapter to the ESP32-C3 board, for example, [ESP-Prog](https://docs.espressif.com/projects/espressif-esp-iot-solution/en/latest/hw-reference/ESP-Prog_guide.html) can be used.
+### Configuration
+
+1. (**Only for revisions older than 3**) Connect an external JTAG adapter, [ESP-Prog][esp-prog] can be used.
 
 | ESP32-C3 Pin | JTAG Signal |
 | :----------: | :---------: |
@@ -78,15 +87,13 @@ ESP32-C3 **revision 1** and **revision 2** don't have a built-in JTAG interface,
 |     3V3      |    VJTAG    |
 |     GND      |     GND     |
 
-**Note**: On Windows `USB Serial Converter A 0403 6010 00` driver should be WinUSB.
+> ⚠️**Note**: On Windows `USB Serial Converter A 0403 6010 00` driver should be WinUSB.
 
-### Set up VSCode
-
-1. Install [Cortex-Debug](https://marketplace.visualstudio.com/items?itemName=marus25.cortex-debug) extension for VScode.
-2. Create the `.vscode/launch.json` file in the project tree you want to debug. [This](https://github.com/esp-rs/esp32-hal/blob/master/.vscode/launch.json) can be used as a template file.
-3. Update **executable**, **svdFile**, **serverpath** paths, and **toolchainPrefix** field.
-
-```jsonc
+2. Set up VSCode
+   1. Install [Cortex-Debug][cortex-debug] extension for VScode.
+   2. Create the `.vscode/launch.json` file in the project tree you want to debug.
+   3. Update `executable`, `svdFile`, `serverpath` paths, and `toolchainPrefix` field.
+```json
 {
   // Use IntelliSense to learn about possible attributes.
   // Hover to view descriptions of existing attributes.

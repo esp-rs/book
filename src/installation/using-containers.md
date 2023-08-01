@@ -7,7 +7,7 @@ You can find numerous tags for `linux/arm64`, and `linux/amd64` platforms.
 For each Rust release, we generate the tag with the following naming convention:
 
 - `<chip>_<rust-toolchain-version>`
-  - For example, `esp32_1.64.0.0` contains the ecosystem for developing `std`, and `no_std` applications for `ESP32` with the `1.64.0.0` Xtensa Rust toolchain.
+  - For example, `esp32_1.64.0.0` contains the ecosystem for developing `std`, and `no_std` applications for `ESP32` with the `1.64.0.0` `Xtensa` Rust toolchain.
 
 There are special cases:
 

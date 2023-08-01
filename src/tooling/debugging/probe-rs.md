@@ -1,12 +1,12 @@
-# probe-rs
+# `probe-rs`
 
-The [probe-rs][probe-rs] project is a set of tools to interact with embedded MCU's using various debug probes. It is similar to [openOCD][openocd], [PyOCD][pyocd], [Segger tools][segger-tools], etc. There is support for `ARM` & `RISC-V` architectures along with a collection of tools, including but not limited to:
+The [`probe-rs`][probe-rs] project is a set of tools to interact with embedded MCU's using various debug probes. It is similar to [OpenOCD][openocd], [pyOCD][pyocd], [Segger tools][segger-tools], etc. There is support for `ARM` & `RISC-V` architectures along with a collection of tools, including but not limited to:
 
 - Debugger
   - GDB support.
   - CLI for interactive debugging.
-  - VSCode extension.
-- RTT (Real Time Transfer)
+  - VS Code extension.
+- Real Time Transfer (RTT)
   - Similar to app_trace component of IDF.
 - Flashing algorithms
 
@@ -17,13 +17,13 @@ More info about probe-rs & how to set up a project can be found on the [probe-rs
 [pyocd]: https://pyocd.io/
 [segger-tools]: https://www.segger.com/
 
-## `USB-JTAG-SERIAL` peripheral for ESP32-C3
+## `USB-JTAG-SERIAL` Peripheral for ESP32-C3
 
 Starting from `probe-rs` v0.12, it is possible to flash and debug the ESP32-C3 with the built-in `USB-JTAG-SERIAL` peripheral, no need for any external hardware debugger. More info on configuring the interface can be found in the [official documentation][official-documentation].
 
 [official-documentation]: https://docs.espressif.com/projects/esp-idf/en/latest/esp32c3/api-guides/jtag-debugging/configure-builtin-jtag.html
 
-## Support for Espressif chips
+## Support for Espressif Chips
 
 `probe-rs` currently only supports `ARM` & `RISC-V`, therefore this limits the number of Espressif chips that can be used at the moment.
 

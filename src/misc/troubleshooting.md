@@ -2,7 +2,7 @@
 
 Here, we will present a list of common errors that may appear when building a project alongside the reason and a solution to them.
 
-## Environment variable LIBCLANG_PATH not set
+## Environment Variable `LIBCLANG_PATH` Not Set
 
 ```text
 thread 'main' panicked at 'Unable to find libclang: "couldn't find any valid shared libraries matching: ['libclang.so', 'libclang-*.so', 'libclang.so.*', 'libclang-*.so.*'], set the `LIBCLANG_PATH` environment variable to a path where one of these files can be found (invalid: [])"', /home/esp/.cargo/registry/src/github.com-1ecc6299db9ec823/bindgen-0.60.1/src/lib.rs:2172:31
@@ -31,7 +31,7 @@ cargo install ldproxy
 [`ldproxy`]: https://github.com/esp-rs/embuild/tree/master/ldproxy
 [rust-esp-book-std-requirements]: ./../installation/std-requirements.md
 
-## Using a wrong Rust toolchain
+## Using a Wrong Rust Toolchain
 
 ```text
 $ cargo build
@@ -43,7 +43,7 @@ Caused by:
   error: Error loading target specification: Could not find specification for target "xtensa-esp32-espidf". Run `rustc --print target-list` for a list of built-in targets
 ```
 
-If you are encountering the previous error or a similar one, you are probably not using the proper Rust toolchain, remember that for Xtensa targets, you need to use Espressif Rust fork toolchain, there are several ways to do it:
+If you are encountering the previous error or a similar one, you are probably not using the proper Rust toolchain. Remember that for `Xtensa` targets, you need to use Espressif Rust fork toolchain, there are several ways to do it:
 - A [toolchain override] shorthand used on the command-line: `cargo +esp`.
 - Set `RUSTUP_TOOLCHAIN` environment variable to `esp`.
 - Set a [directory override]: `rustup override set esp`
@@ -64,7 +64,7 @@ For more information on toolchain overriding, see the [Overrides chapter of The 
 
 ## Windows
 
-### Long path names
+### Long Path Names
 
 When using Windows, you may encounter issues building a new project if using long path names. Follow these steps to substitute the path of your project:
 ```powershell
@@ -98,7 +98,7 @@ If using GNU ABI, install [MinGW/MSYS2 toolchain].
 
 ## FAQ
 
-### I updated my `sdkconfig.defaults` file but it doesn't appear to have had any effect
+### `sdkconfig.defaults` File is Updated but it Doesn't Appear to Have Had Any Effect
 
 You must clean your project and rebuild for changes in the `sdkconfig.defaults` to take effect:
 
@@ -107,9 +107,9 @@ cargo clean
 cargo build
 ```
 
-### The documentation for the crates mentioned on this page is out of date or missing
+### The Documentation for the Crates Mentioned on This Page is out of Date or Missing
 
-Due to the [resource limits] imposed by [docs.rs], internet access is blocked while building documentation and as such we are unable to build the documentation for `esp-idf-sys` or any crate depending on it.
+Due to the [resource limits] imposed by [docs.rs], internet access is blocked while building documentation. For this reason, we are unable to build the documentation for `esp-idf-sys` or any crate depending on it.
 
 Instead, we are building the documentation and hosting it ourselves on GitHub Pages:
 
@@ -123,7 +123,7 @@ Instead, we are building the documentation and hosting it ourselves on GitHub Pa
 [`esp-idf-svc` documentation]: https://esp-rs.github.io/esp-idf-svc/esp_idf_svc/
 [`esp-idf-sys` documentation]: https://esp-rs.github.io/esp-idf-sys/esp_idf_sys/
 
-### \*\*\*ERROR\*\*\* A stack overflow in task main has been detected.
+### A Stack Overflow in Task `main` has Been Detected
 
 If the second-stage bootloader reports this error, you likely need to increase the stack size for the main task. This can be accomplished by adding the following to the `sdkconfig.defaults` file:
 
@@ -131,9 +131,9 @@ If the second-stage bootloader reports this error, you likely need to increase t
 CONFIG_ESP_MAIN_TASK_STACK_SIZE=7000
 ```
 
-In this example, we are allocating 7kB for the main task's stack.
+In this example, we are allocating 7 kB for the main task's stack.
 
-### How can I completely disable the watchdog timer(s)?
+### How to Disable Watchdog Timer(s)?
 
 Add to your `sdkconfig.defaults` file:
 

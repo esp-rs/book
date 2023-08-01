@@ -2,7 +2,7 @@
 
 The goal of this book is to provide a comprehensive guide on using the [Rust Programming Language][rust] with [Espressif][espressif] devices.
 
-Rust support for these devices is still a work in progress, and progress is being made rapidly. Because of this, parts of this documentation may be out of date or change dramatically between readings.
+Rust support for these devices is still a work in progress, and progress is being made. Because of this, parts of this documentation may be out of date or change dramatically between readings.
 
 For tools and libraries relating to Rust on ESP, please see the [esp-rs organization][esp-rs] on GitHub. This organization is managed by employees of Espressif as well as members of the community.
 
@@ -10,7 +10,7 @@ For tools and libraries relating to Rust on ESP, please see the [esp-rs organiza
 [espressif]: https://espressif.com/
 [esp-rs]: https://github.com/esp-rs/
 
-## Who This Book is For
+## Who This Book Is For
 
 This book is intended for people with some experience with Rust, and also assumes rudimentary knowledge of embedded development and electronics. For those without prior experience, we recommend first reading the [Assumptions and Prerequisites][prerequisites] and [Resources][resources] sections to get up to speed.
 
@@ -31,7 +31,7 @@ This book is intended for people with some experience with Rust, and also assume
 
 ### Resources
 
-If you are unfamiliar or less experienced with anything mentioned above, or if you would just like more information about a particular topic mentioned in this book, you may find these resources helpful.
+If you are unfamiliar or less experienced with anything mentioned above, or if you would just like more information about a particular topic mentioned in this book. You may find these resources helpful.
 
 | Resource                                     | Description                                                                          |
 | -------------------------------------------- | ------------------------------------------------------------------------------------ |
@@ -52,31 +52,31 @@ This book is currently available in English only. Once the contents of the book 
 
 ## How to Use This Book
 
-This book generally assumes that you are reading it front-to-back; content covered in later chapters may not make sense without context from previous chapters.
+This book assumes that you are reading it front-to-back. Content covered in later chapters may not make sense without context from previous chapters.
 
 ## Contributing to This Book
 
 The work on this book is coordinated in [this repository][book-repository].
 
-If you have trouble following the instructions in this book or find that some section of the book is not clear enough or hard to follow, then that's a bug, and it should be reported in [the issue tracker][book-issues] of this book.
+If you have trouble following the instructions in this book or find that some section of the book is not clear enough, then that's a bug. Please report it in [the issue tracker][book-issues] of this book.
 
-Pull requests fixing typos and adding new content are very welcome!
+Pull requests fixing typos and adding new content are welcome!
 
 [book-issues]: https://github.com/esp-rs/book/issues/
 [book-repository]: https://github.com/esp-rs/book
 
-## Re-using This Material
+## Re-Using This Material
 
 This book is distributed under the following licenses:
 
 - The code samples and freestanding Cargo projects contained within this book are licensed under the terms of both the [MIT License][mit-license] and the [Apache License v2.0][apache-license].
 - The written prose, pictures, and diagrams contained within this book are licensed under the terms of the Creative Commons [CC-BY-SA v4.0][cc-license] license.
 
-TL;DR: If you want to use our text or images in your work, you need to:
+In summary, to use our text or images in your work, you need to:
 
 - Give the appropriate credit (i.e. mention this book on your slide, and provide a link to the relevant page)
-- Provide a link to the [CC-BY-SA v4.0][cc-license] licence
-- Indicate if you have changed the material in any way, and make any changes to our material available under the same licence
+- Provide a link to the [CC-BY-SA v4.0][cc-license] license
+- Indicate if you have changed the material in any way, and make any changes to our material available under the same license
 
 Please do let us know if you find this book useful!
 

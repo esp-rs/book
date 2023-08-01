@@ -6,7 +6,7 @@ Visual Studio Code is an open-source and cross-platform graphical text editor wi
 
 Visual Studio Code can be installed via most popular package managers, and installers are available on the official website. The [Rust Analyzer extension][rust-analyzer-extension] can be installed in Visual Studio Code via the built-in extension manager.
 
-Alongside Rust Analyzer there are other extensions that might be very helpful:
+Alongside Rust Analyzer there are other extensions that might be helpful:
 
 - [Even Better TOML][even-better-toml] for editing TOML-based configuration files
 - [crates][crates] to help manage Rust dependencies
@@ -30,9 +30,9 @@ If you are developing for a target that does not have `std` support, Rust Analyz
 }
 ```
 
-### Cargo hints when using custom toolchains
+### Cargo Hints When Using Custom Toolchains
 
-If you are using a custom toolchain, as you would with Xtensa targets, you can provide some hints to `cargo` via the `rust-toolchain.toml` file to improve the user experience:
+If you are using a custom toolchain, as you would with `Xtensa` targets, you can provide some hints to `cargo` via the `rust-toolchain.toml` file to improve the user experience:
 
 ```toml
 [toolchain]
@@ -43,7 +43,7 @@ targets = ["xtensa-esp32-none-elf"]
 
 ## Other IDEs
 
-Eventhough we have only covered VS Code because it has good support for Rust and is very popular, there are other IDEs like [CLion][clion] or [vim][vim] that also have pretty good support for Rust, but we won't be covering them here.
+Even though we have only covered VS Code because it has good support for Rust and is popular, there are other suitables IDEs. [CLion][clion] or [vim][vim] also have pretty good support for Rust, but we won't be covering them here.
 
-[cLion]: https://www.jetbrains.com/clion/
+[clion]: https://www.jetbrains.com/clion/
 [vim]: https://www.vim.org/

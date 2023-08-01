@@ -19,7 +19,7 @@ The [esp-rs organization] on GitHub is home to a number of repositories related 
 [embedded-rust-book-intro-std]: https://docs.rust-embedded.org/book/intro/no-std.html#a-no_std-rust-environment
 [esp-rs organization]: https://github.com/esp-rs/
 
-## Repository naming convention
+## Repository Naming Convention
 
 In the [esp-rs organization] we use the following wording:
 - Repositories starting with `esp-` are focused on `no_std` approach. For example, `esp-hal`

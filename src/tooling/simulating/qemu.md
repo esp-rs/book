@@ -8,7 +8,7 @@ Once you have built QEMU, you should have the `qemu-system-xtensa` file.
 [espressif-qemu]: https://github.com/espressif/qemu
 [qemu-wiki]: https://github.com/espressif/qemu/wiki
 
-## Running your project using QEMU
+## Running Your Project Using QEMU
 
 > ⚠️ **Note**: Only ESP32 is currently supported, so make sure you are compiling for `xtensa-esp32-espidf` target.
 

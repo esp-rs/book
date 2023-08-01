@@ -1,4 +1,4 @@
-# `std`  Development Requirements
+# `std` Development Requirements
 
 Regardless of the target architecture, make sure you have the following required tools installed to build [`std`][rust-esp-book-overview-std] applications:
 
@@ -9,7 +9,7 @@ Regardless of the target architecture, make sure you have the following required
     cargo install ldproxy
     ```
 
-The std runtime uses [ESP-IDF][esp-idf-github] (Espressif IoT Development Framework) as hosted environment but, users do not need to install it. ESP-IDF is automatically downloaded and installed by [esp-idf-sys][esp-idf-sys-github], a crate that all std projects need to use, when building a std application.
+The `std` runtime uses [ESP-IDF][esp-idf-github] (Espressif IoT Development Framework) as hosted environment but, users do not need to install it. ESP-IDF is automatically downloaded and installed by [esp-idf-sys][esp-idf-sys-github], a crate that all `std` projects need to use, when building a `std` application.
 
 [rust-esp-book-overview-std]: ../overview/using-the-standard-library.md
 [python-website-download]: https://www.python.org/downloads/

@@ -11,7 +11,7 @@ The training contains:
    * A panic example ([Source][panic])
    * A blinky example ([Source][blinky])
    * A button example ([Source][button])
-   * A button with interrupt example ([Source][button-interrupt])
+   * A button with an interrupt example ([Source][button-interrupt])
 
 > ⚠️ **Note**: There are several examples covering the use of specific peripherals under the examples' folder of every SoC [`esp-hal`][esp-hal]. E.g. [`esp32c3-hal/examples`][esp32c3-hal-examples]
 

@@ -10,7 +10,7 @@ When creating a project from [esp-idf-template][esp-idf-template] with the follo
 - Which MCU to target? · `esp32c3`
 - Configure advanced template options? · `false`
 
-For this explanation we will use the default values, if you want further modifications, see the [additional prompts][prompts] when not using default values.
+For this explanation, we will use the default values, if you want further modifications, see the [additional prompts][prompts] when not using default values.
 
 It should generate a file structure like this:
 
@@ -75,7 +75,7 @@ Before going further, let's see what these files are for.
 8 }
 ```
 
-The first line is an import that defines the esp-idf entry-point when the root crate is a binary crate that defines a main function.
+The first line is an import that defines the esp-idf entry point when the root crate is a binary crate that defines a main function.
 
 Then, we have a usual main function with a  few lines on it:
 - A call to `esp_idf_sys::link_patches` function that makes sure that a few patches to the ESP-IDF which are implemented in Rust are linked to the final executable.
@@ -91,7 +91,7 @@ cargo run
 
 This builds the code according to the configuration and executes [`espflash`][espflash]  to flash the code to the board.
 
-Since our [`runner` configuration][runner-config] also passes the `--monitor` argument to [`espflash`][espflash]  we can see what the code is printing.
+Since our [`runner` configuration][runner-config] also passes the `--monitor` argument to [`espflash`][espflash] we can see what the code is printing.
 
 > Make sure that you have [`espflash`][espflash] installed, otherwise this step will fail. To install [`espflash`][espflash] :
 > `cargo install espflash`
@@ -121,11 +121,11 @@ I (344) cpu_start: Starting scheduler.
 Hello, world!
 ```
 
-As you can see, there are messages from the first and second stage bootloader and then, our "Hello, world!" is printed.
+As you can see, there are messages from the first and second-stage bootloader and then, our "Hello, world!" is printed.
 
 You can reboot with `CTRL+R` or exit with `CTRL+C`.
 
-If you encoutner any issues while building the project, please, see the [Troubleshooting][troubleshooting] chapter.
+If you encounter any issues while building the project, please, see the [Troubleshooting][troubleshooting] chapter.
 
 [espflash]: https://github.com/esp-rs/espflash/tree/main/espflash
 [runner-config]: https://doc.rust-lang.org/cargo/reference/config.html#targettriplerunner

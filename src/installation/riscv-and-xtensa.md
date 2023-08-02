@@ -1,4 +1,4 @@
-# RISC-V and Xtensa targets
+# `RISC-V` and `Xtensa` Targets
 
 [`espup`][espup-github] is a tool that simplifies installing and maintaining the components required to develop Rust applications for the `Xtensa` and `RISC-V` architectures.
 
@@ -9,13 +9,13 @@ To install `espup`, run:
 cargo install espup
 ```
 
-You can also directly download pre-compiled [release binaries] or use [cargo-binstall].
+You can also directly download pre-compiled [release binaries][release-binaries] or use [`cargo-binstall`][cargo-binstall].
 
 [espup-github]: https://github.com/esp-rs/espup
-[release binaries]: https://github.com/esp-rs/espup/releases
+[release-binaries]: https://github.com/esp-rs/espup/releases
 [cargo-binstall]: https://github.com/cargo-bins/cargo-binstall
 
-### 2. Install necessary toolchains
+### 2. Install Necessary Toolchains
 
 Install all the necessary tools to develop Rust applications for all supported Espressif targets by running:
 ```shell
@@ -26,7 +26,7 @@ espup install
 
 [rust-esp-book-std-requirements]: ./std-requirements.md
 
-### 3. Set up the environment variables
+### 3. Set Up the Environment Variables
 `espup` will create an export file that contains some environment variables required to build projects.
 
 On Windows (`%USERPROFILE%\export-esp.ps1`)
@@ -48,7 +48,7 @@ On Unix-based systems (`$HOME/export-esp.sh`). There are different ways of sourc
 
    This approach **does not** require any sourcing. The `export-esp.sh` script will be sourced automatically in every shell.
 
-### What espup Installs
+### What `espup` Installs
 
 To enable support for Espressif targets, `espup` installs the following tools:
 
@@ -71,10 +71,10 @@ If you run into an error, please, check the [Troubleshooting][troubleshooting] c
 [llvm-github-fork-upstream issue]: https://github.com/espressif/llvm-project/issues/4
 [troubleshooting]: ../misc/troubleshooting.md
 
-### Other installation methods for Xtensa targets
+### Other Installation Methods for `Xtensa` Targets
 
-- Using [esp-rs/rust-build] installation scripts. This was the recommended way in the past, but now the installation scripts are feature frozen, and all new features will only be included in `espup`. See the repository README for instructions.
-- Building the Rust compiler with `Xtensa` support from source. This process is computationally expensive and can take one or more hours to complete depending on your system. It is not recommended unless there is a major reason to go for this approach. Here is the repository to build it from source: [esp-rs/rust repository].
+- Using [`rust-build`][rust-build] installation scripts. This was the recommended way in the past, but now the installation scripts are feature frozen, and all new features will only be included in `espup`. See the repository README for instructions.
+- Building the Rust compiler with `Xtensa` support from source. This process is computationally expensive and can take one or more hours to complete depending on your system. It is not recommended unless there is a major reason to go for this approach. Here is the repository to build it from source: [`esp-rs/rust` repository][esp-rs-rust].
 
-[esp-rs/rust-build]: https://github.com/esp-rs/rust-build#download-installer-in-bash
-[esp-rs/rust repository]: https://github.com/esp-rs/rust
+[rust-build]: https://github.com/esp-rs/rust-build#download-installer-in-bash
+[esp-rs-rust]: https://github.com/esp-rs/rust

@@ -1,24 +1,24 @@
-# Writing std applications
+# Writing `std` Applications
 
 If you want to learn how to develop `std` application, see the following training materials developed alongside [Ferrous Systems][ferrous-systems]:
 - The book [Embedded Rust on Espressif][std-book]
-- The repository [esp-rs/std-training][std-repository]
+- The repository [`std-training`][std-repository]
 
 The training is based on [ESP32-C3-DevKit-RUST-1][esp-rust-board]. You can use any other Espressif development board, but code changes and configuration changes might be needed.
 
 The training is split into two parts:
 
 * [Introductory level examples][intro]:
-   * A basic hardware-check ([Source][hardware-check]s)
-   * An HTTP Client ([Source][http-client])
-   * An HTTP Server ([Source][http-server])
-   * An MQTT Client ([Source][mqtt])
+   * [A basic hardware-check][hardware-check]
+   * [An HTTP Client][http-client]
+   * [An HTTP Server][http-server]
+   * [An MQTT Client][mqtt]
 * [Advanced level examples][advanced]:
    * Low-level GPIO
    * Interrupts in General
-   * I2C Driver ([Source][i2c-driver])
-   * I2C Sensor Reading ([Source][i2c-sensor-reading])
-   * GPIO/Button Interrupts ([Source][button-interrupt])
+   * [I2C Driver][i2c-driver]
+   * [I2C Sensor Reading][i2c-sensor-reading]
+   * [GPIO/Button Interrupts][button-interrupt]
    * Driving an RGB LED
 
 > ⚠️ **Note**: There are several examples covering the use of specific peripherals under the examples' folder of  [`esp-idf-hal`][esp-idf-hal]. I.e. [`esp-idf-hal/examples`][esp-idf-hal-examples].

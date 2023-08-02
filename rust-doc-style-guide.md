@@ -43,7 +43,7 @@ The style guide is based on the best practices collected from the following book
 
 ## Heading Titles
 
-The books on Rust usually have the heading titles based on nouns or gerunds:
+The books on Rust usually have heading titles based on nouns or gerunds:
 
 > **Design Patterns**<br>
 > **Using Structs to Structure Related Data**
@@ -113,7 +113,7 @@ Do NOT turn long phrases into links
 
   > ❌ See the [Rust Reference’s section on constant evaluation](https://doc.rust-lang.org/book/ch03-01-variables-and-mutability.html) for more information on what operations can be used when declaring constants.
 
-Also take into account the following
+Also, consider the following:
 
 - Do not provide a link to the same location repeatedly in the same or adjacent paragraphs without a good reason, especially using different link text.
 - Do not use the same link text to refer to different locations.

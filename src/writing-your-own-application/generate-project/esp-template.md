@@ -1,13 +1,13 @@
-# Understanding esp-template
+# Understanding `esp-template`
 
-Now that we know how to [generate a no_std project][generate-no-std], let's inspect what the generated
+Now that we know how to [generate a `no_std` project][generate-no-std], let's inspect what the generated
 project contains, try to understand every part of it, and run it.
 
 [generate-no-std]: ./index.md
 
-## Inspecting the generated Project
+## Inspecting the Generated Project
 
-When creating a project from [esp-template][esp-template] with the following answers:
+When creating a project from [`esp-template`][esp-template] with the following answers:
 -  Which MCU to target? · `esp32c3`
 - Configure advanced template options? · `false`
 
@@ -29,23 +29,23 @@ It should generate a file structure like this:
 
 Before going further, let's see what these files are for.
 
-- [.cargo/config.toml][config-toml]
+- [`.cargo/config.toml`][config-toml]
     - The Cargo configuration
     - This defines a few options to correctly build the project
     - Contains `runner = "espflash flash --monitor"` - this means you can just use `cargo run` to flash and monitor your code
-- src/main.rs
+- `src/main.rs`
     - The main source file of the newly created project
-    - For details, see the [Understanding `main.rs`][main-rs] section below.
-- [.gitignore][gitignore]
+    - For details, see the [Understanding `main.rs`][main-rs] section below
+- [`.gitignore`][gitignore]
     - Tells `git` which folders and files to ignore
-- [Cargo.toml][cargo-toml]
-    - The usual Cargo manifest declaring some meta-data and dependencies of the project
-- LICENSE-APACHE, LICENSE_MIT
+- [`Cargo.toml`][cargo-toml]
+    - The usual Cargo manifest declares some meta-data and dependencies of the project
+- `LICENSE-APACHE`, `LICENSE_MIT`
     - Those are the most common licenses used in the Rust ecosystem
     - If you want to use a different license, you can delete these files and change the license in `Cargo.toml`
-- [rust-toolchain.toml][rust-toolchain-toml]
+- [`rust-toolchain.toml`][rust-toolchain-toml]
     - Defines which Rust toolchain to use
-      - The toolchain will be `nightly` or `esp` depending on your target.
+      - The toolchain will be `nightly` or `esp` depending on your target
 
 [esp-template]: https://github.com/esp-rs/esp-template
 [prompts]: https://github.com/esp-rs/esp-template#esp-template
@@ -172,7 +172,7 @@ Commands:
 Hello world!
 ```
 
-What you see here are messages from the first and second stage bootloader, and then ... our "Hello World" message!
+What you see here are messages from the first and second stage bootloader, and then, our "Hello World" message!
 
 And that is exactly what the code is doing.
 

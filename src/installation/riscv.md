@@ -28,7 +28,7 @@ To build Rust applications for the Espressif chips based on `RISC-V` architectur
     - Other [`std` development requirements][rust-esp-book-std-requirements]
     - In your project's file `.cargo/config.toml`, add the unstable Cargo [feature][cargo-book-unstable-features] `-Z build-std`. Our [template projects][rust-esp-book-write-app-generate-project] that are discussed later in this book already include this.
 
-Now you should be able to build and run projects on the Espressif's `RISC-V` chips.
+Now you should be able to build and run projects on Espressif's `RISC-V` chips.
 
 [rustup-book-channel-nightly]: https://rust-lang.github.io/rustup/concepts/channels.html#working-with-nightly-rust
 [rustup-book-components]: https://rust-lang.github.io/rustup/concepts/components.html

@@ -4,7 +4,7 @@ Simulating projects can be handy. It allows users to test projects using CI, try
 
 At the moment, there are a few ways of simulating Rust projects on Espressif chips, all them have some limitations, but it's evolving and getting better every day.
 
-In this chapter, we will discuss the different simulation tools that are available.
+In this chapter, we will discuss currently available simulation tools.
 
 Refer to the table below to see which chip is supported in every simulating method:
 

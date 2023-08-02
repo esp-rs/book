@@ -12,14 +12,14 @@ For tools and libraries relating to Rust on ESP, please see the [esp-rs organiza
 
 ## Who This Book Is For
 
-This book is intended for people with some experience with Rust, and also assumes rudimentary knowledge of embedded development and electronics. For those without prior experience, we recommend first reading the [Assumptions and Prerequisites][prerequisites] and [Resources][resources] sections to get up to speed.
+This book is intended for people with some experience in Rust and also assumes rudimentary knowledge of embedded development and electronics. For those without prior experience, we recommend first reading the [Assumptions and Prerequisites][prerequisites] and [Resources][resources] sections to get up to speed.
 
 [prerequisites]: #assumptions-and-prerequisites
 [resources]: #resources
 
 ### Assumptions and Prerequisites
 
-- You are comfortable using the Rust Programming Language, and have written and run applications in a desktop environment.
+- You are comfortable using the Rust programming language and have written and run applications in a desktop environment.
 - You should be familiar with the idioms of the [2021 edition][rust-2021], as this book targets Rust 2021.
 - You are comfortable developing embedded systems in another language such as C or C++, and are familiar with concepts such as:
   - Cross-compilation

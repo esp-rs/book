@@ -41,7 +41,7 @@ graph TD;
 
 - Rich functionality: If your embedded system requires lots of functionality like support for networking protocols, file I/O, or complex data structures, you will likely want to use hosted-environment approach because `std` libraries provide a wide range of functionality that can be used to build complex applications.
 - Portability: The `std` crate provides a standardized set of APIs that can be used across different platforms and architectures, making it easier to write code that is portable and reusable.
-- Rapid development: The `std` crate provides a rich set of functionality that can be used to build applications fast and efficiently, without worrying, too much, about low-level details.
+- Rapid development: The `std` crate provides a rich set of functionality that can be used to build applications quickly and efficiently, without worrying, too much, about low-level details.
 
 
 

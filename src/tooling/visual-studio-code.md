@@ -43,7 +43,7 @@ targets = ["xtensa-esp32-none-elf"]
 
 ## Other IDEs
 
-Even though we have only covered VS Code because it has good support for Rust and is popular, there are other suitable IDEs. [CLion][clion] or [vim][vim] also have pretty good support for Rust, but we won't be covering them here.
+We chose to cover VS Code because it has good support for Rust and is popular among developers. There are also other IDEs available that have comparable Rust support, such as [CLion][clion] and [vim][vim], but these are outside of this book's scope.
 
 [clion]: https://www.jetbrains.com/clion/
 [vim]: https://www.vim.org/

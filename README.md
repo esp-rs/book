@@ -40,4 +40,4 @@ Unless you explicitly state otherwise, any contribution intentionally submitted 
 work by you, as defined in the Apache-2.0 license, shall be licensed as above, without any
 additional terms or conditions.
 
-Please, be sure to follow the [Style [Guide](rust-doc-style-guide.md) when contributing.
+While contributing, please follow the [Rust Documentation Style Guide](rust-doc-style-guide.md).

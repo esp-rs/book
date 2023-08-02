@@ -2,7 +2,7 @@
 
 The goal of this book is to provide a comprehensive guide on using the [Rust Programming Language][rust] with [Espressif][espressif] devices.
 
-Rust support for these devices is still a work in progress, and progress is being made. Because of this, parts of this documentation may be out of date or change dramatically between readings.
+Rust support for these devices is still a work in progress, and progress is being made rapidly. Because of this, parts of this documentation may be out of date or change dramatically between readings.
 
 For tools and libraries relating to Rust on ESP, please see the [esp-rs organization][esp-rs] on GitHub. This organization is managed by employees of Espressif as well as members of the community.
 
@@ -52,7 +52,7 @@ This book is currently available in English only. Once the contents of the book 
 
 ## How to Use This Book
 
-This book assumes that you are reading it front-to-back. Content covered in later chapters may not make sense without context from previous chapters.
+This book assumes that you are reading it front-to-back. Content covered in later chapters may not make much sense without the context from previous chapters.
 
 ## Contributing to This Book
 

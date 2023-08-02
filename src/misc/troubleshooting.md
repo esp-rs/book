@@ -31,7 +31,7 @@ cargo install ldproxy
 [`ldproxy`]: https://github.com/esp-rs/embuild/tree/master/ldproxy
 [rust-esp-book-std-requirements]: ./../installation/std-requirements.md
 
-## Using a Wrong Rust Toolchain
+## Using the Wrong Rust Toolchain
 
 ```text
 $ cargo build

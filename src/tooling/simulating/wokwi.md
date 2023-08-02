@@ -38,7 +38,7 @@ to build a project on your machine, or in a container, and simulate the resultin
 ## Custom Chips
 Wokwi allows generating custom chips that let you program the behavior of a component not supported in Wokwi. For more details, see the official [Wokwi documentation][wokwi-custom-chip].
 
-Custom chips can also be written in Rust. See [Wokwi Custom Chip API][rust-chip-api] for more information. For example, custom [inverter chip][custom-chip-example] in Rust.
+Custom chips can also be written in Rust! See [Wokwi Custom Chip API][rust-chip-api] for more information. For example, custom [inverter chip][custom-chip-example] in Rust.
 
 [wokwi-custom-chip]: https://docs.wokwi.com/chips-api/getting-started
 [rust-chip-api]: https://github.com/wokwi/wokwi_chip_ll

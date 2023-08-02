@@ -4,7 +4,7 @@ With the appropriate Rust compiler and toolchain installed, you're now ready to 
 
 You can write an application in the following ways:
 
-- (**Strongly recommended**) Generate from a template: Gives you a configured project, saves time and, prevents possible errors.
+- (**Strongly recommended**) Generate from a template: Gives you a configured project, saves time, and prevents possible errors.
 - Start from scratch using Cargo: Requires more expertise since you need to configure several parts of the project.
     > ⚠️ **Note**: Starting a project with Cargo does not provide any advantage, only mentioned here since it's the usual way of generating a project in Rust.
 

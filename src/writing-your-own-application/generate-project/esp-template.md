@@ -1,7 +1,7 @@
 # Understanding esp-template
 
 Now that we know how to [generate a no_std project][generate-no-std], let's inspect what the generated
-project contains, try to understand every part and, run it.
+project contains, try to understand every part of it, and run it.
 
 [generate-no-std]: ./index.md
 
@@ -39,10 +39,10 @@ Before going further, let's see what these files are for.
 - [.gitignore][gitignore]
     - Tells `git` which folders and files to ignore
 - [Cargo.toml][cargo-toml]
-    - The usual Cargo manifest declares some meta-data and dependencies of the project
+    - The usual Cargo manifest declaring some meta-data and dependencies of the project
 - LICENSE-APACHE, LICENSE_MIT
     - Those are the most common licenses used in the Rust ecosystem
-    - If you want to apply for a different license, you can delete these files and change the license in `Cargo.toml`
+    - If you want to use a different license, you can delete these files and change the license in `Cargo.toml`
 - [rust-toolchain.toml][rust-toolchain-toml]
     - Defines which Rust toolchain to use
       - The toolchain will be `nightly` or `esp` depending on your target.
@@ -142,7 +142,7 @@ cargo run
 
 This builds the code according to the configuration and executes [`espflash`][espflash] to flash the code to the board.
 
-Since our [`runner` configuration][runner-config] also passes the `--monitor` argument to [`espflash`][espflash] we can see what the code is printing.
+Since our [`runner` configuration][runner-config] also passes the `--monitor` argument to [`espflash`][espflash], we can see what the code is printing.
 
 > Make sure that you have [`espflash`][espflash] installed, otherwise this step will fail. To install [`espflash`][espflash]:
 > `cargo install espflash`

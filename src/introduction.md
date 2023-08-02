@@ -1,3 +1,5 @@
+<p style="text-align:center;"><img src="./assets/esp-logo-black.svg" width="50%"></p>
+
 # Introduction
 
 The goal of this book is to provide a comprehensive guide on using the [Rust Programming Language][rust] with [Espressif][espressif] devices.

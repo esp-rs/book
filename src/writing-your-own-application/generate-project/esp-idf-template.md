@@ -93,8 +93,8 @@ This builds the code according to the configuration and executes [`espflash`][es
 
 Since our [`runner` configuration][runner-config] also passes the `--monitor` argument to [`espflash`][espflash], we can see what the code is printing.
 
-> Make sure that you have [`espflash`][espflash] installed, otherwise this step will fail. To install [`espflash`][espflash]:
-> `cargo install espflash`
+Make sure that you have [`espflash`][espflash] installed, otherwise this step will fail. To install [`espflash`][espflash]:
+`cargo install espflash`
 
 You should see something similar to this:
 

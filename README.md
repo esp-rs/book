@@ -1,6 +1,6 @@
 # The Rust on ESP Book
 
-This book is a work in progress.
+This repository contains the source of "The Rust on ESP" book.
 
 ## Quickstart
 

@@ -1,4 +1,4 @@
-# Rust instalaltion
+# Rust installation
 
 Make sure you have [Rust][rust-lang-org] installed. If not, see the instructions on the [rustup][rustup.rs-website] website.
 

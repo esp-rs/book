@@ -4,7 +4,7 @@ One of the more common development environments is Microsoft's [Visual Studio Co
 
 Visual Studio Code is an open-source and cross-platform graphical text editor with a rich ecosystem of extensions. The [Rust Analyzer extension][rust-analyzer-extension] provides an implementation of the [Language Server Protocol][language-server-protocol] for Rust and additionally includes features like autocompletion, go-to definition, and more.
 
-Visual Studio Code can be installed via most popular package managers, and installers are available on the official website. The [Rust Analyzer extension][rust-analyzer-extension] can be installed in Visual Studio Code via the built-in extension manager.
+Visual Studio Code can be installed via the most popular package managers, and installers are available on the official website. The [Rust Analyzer extension][rust-analyzer-extension] can be installed in Visual Studio Code via the built-in extension manager.
 
 Alongside Rust Analyzer there are other extensions that might be very helpful:
 
@@ -43,7 +43,7 @@ targets = ["xtensa-esp32-none-elf"]
 
 ## Other IDEs
 
-Eventhough we have only covered VS Code because it has good support for Rust and is very popular, there are other IDEs like [CLion][clion] or [vim][vim] that also have pretty good support for Rust, but we won't be covering them here.
+Even though we have only covered VS Code because it has good support for Rust and is very popular, there are other IDEs like [CLion][clion] or [vim][vim] that also have pretty good support for Rust, but we won't be covering them here.
 
 [cLion]: https://www.jetbrains.com/clion/
 [vim]: https://www.vim.org/

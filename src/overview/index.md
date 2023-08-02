@@ -12,7 +12,7 @@ Both approaches have their advantages and disadvantages, so you should make a de
 
 See also the comparison of the different runtimes in [The Embedded Rust Book][embedded-rust-book-intro-std].
 
-The [esp-rs organization] on GitHub is home to a number of repositories related to running Rust on Espressif chips. Most of the required crates have their source code hosted here.
+The [esp-rs organization] on GitHub is home to several repositories related to running Rust on Espressif chips. Most of the required crates have their source code hosted here.
 
 [rust-esp-book-std]: ./using-the-standard-library.md
 [rust-esp-book-no-std]: ./using-the-core-library.md
@@ -21,7 +21,7 @@ The [esp-rs organization] on GitHub is home to a number of repositories related 
 
 ## Repository naming convention
 
-In the [esp-rs organization] we use the following wording:
+In the [esp-rs organization], we use the following wording:
 - Repositories starting with `esp-` are focused on `no_std` approach. For example, `esp-hal`
   - `no_std` works on top of bare metal, so `esp-` is an Espressif chip
 - Repositories starting with `esp-idf-` are focused on `std` approach. For example, `esp-idf-hal`

@@ -22,7 +22,7 @@ There is also a possibility to debug with graphical output directly in Visual St
 2. Set up VSCode
    1. Install [Cortex-Debug][cortex-debug] extension for VScode.
    2. Create the `.vscode/launch.json` file in the project tree you want to debug.
-   3. Update `executable`, `svdFile`, `serverpath` paths, and `toolchainPrefix` field.
+   3. Update `executable`, `svdFile`, `serverpath` paths, and `toolchainPrefix` fields.
 
 ```json
 {
@@ -64,7 +64,7 @@ There is also a possibility to debug with graphical output directly in Visual St
 The availability of built-in JTAG interface depends on the ESP32-C3 revision:
 
 - Revisions older than 3 **don't** a have built-in JTAG interface.
-- Revitions 3 (and newer) **do** have a built-in JTAG interface, and you don't have to connect an external device to be able to debug.
+- Revisions 3 (and newer) **do** have a built-in JTAG interface, and you don't have to connect an external device to be able to debug.
 
 To find your ESP32-C3 revision, run:
 
@@ -92,7 +92,7 @@ espflash board-info
 2. Set up VSCode
    1. Install [Cortex-Debug][cortex-debug] extension for VScode.
    2. Create the `.vscode/launch.json` file in the project tree you want to debug.
-   3. Update `executable`, `svdFile`, `serverpath` paths, and `toolchainPrefix` field.
+   3. Update `executable`, `svdFile`, `serverpath` paths, and `toolchainPrefix` fields.
 ```json
 {
   // Use IntelliSense to learn about possible attributes.

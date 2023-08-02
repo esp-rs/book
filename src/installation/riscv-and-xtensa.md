@@ -15,7 +15,7 @@ You can also directly download pre-compiled [release binaries] or use [cargo-bin
 [release binaries]: https://github.com/esp-rs/espup/releases
 [cargo-binstall]: https://github.com/cargo-bins/cargo-binstall
 
-### 2. Install neccesary toolchains
+### 2. Install necessary toolchains
 
 Install all the necessary tools to develop Rust applications for all supported Espressif targets by running:
 ```shell
@@ -32,7 +32,7 @@ espup install
 On Windows (`%USERPROFILE%\export-esp.ps1`)
   - There is **no need** to execute the file for Windows users. It is only created to show the modified environment variables.
 
-On Unix based systems (`$HOME/export-esp.sh`). There are different ways of sourcing the file:
+On Unix-based systems (`$HOME/export-esp.sh`). There are different ways of sourcing the file:
 - Source this file in every terminal:
    1. Source the export file: `. $HOME/export-esp.sh`
 
@@ -42,8 +42,8 @@ On Unix based systems (`$HOME/export-esp.sh`). There are different ways of sourc
    2. Refresh the configuration by restarting the terminal session or by running `source [path to profile]`, for example, `source ~/.bashrc`.
 
    This approach requires running the alias in every new shell.
-- Add the environment variables to your shell's profile directly:
-   1. Add the content of `$HOME/export-esp.sh` to your shell ’s profile: `cat $HOME/export-esp.sh >> [path to profile]`, for example, `cat $HOME/export-esp.sh >> ~/.bashrc`.
+- Add the environment variables to your shell profile directly:
+   1. Add the content of `$HOME/export-esp.sh` to your shell’s profile: `cat $HOME/export-esp.sh >> [path to profile]`, for example, `cat $HOME/export-esp.sh >> ~/.bashrc`.
    2. Refresh the configuration by restarting the terminal session or by running `source [path to profile]`, for example, `source ~/.bashrc`.
 
    This approach **does not** require any sourcing. The `export-esp.sh` script will be sourced automatically in every shell.

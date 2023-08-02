@@ -1,7 +1,7 @@
 # Understanding esp-template
 
 Now that we know how to [generate a no_std project][generate-no-std], let's inspect what the generated
-project contains, try to understand every part and run it.
+project contains, try to understand every part of it, and run it.
 
 [generate-no-std]: ./index.md
 
@@ -11,7 +11,7 @@ When creating a project from [esp-template][esp-template] with the following ans
 -  Which MCU to target? · `esp32c3`
 - Configure advanced template options? · `false`
 
-For this explanation we will use the default values, if you want further modifications, see the [additional prompts][prompts] when not using default values.
+For this explanation, we will use the default values, if you want further modifications, see the [additional prompts][prompts] when not using default values.
 
 It should generate a file structure like this:
 
@@ -42,7 +42,7 @@ Before going further, let's see what these files are for.
     - The usual Cargo manifest declaring some meta-data and dependencies of the project
 - LICENSE-APACHE, LICENSE_MIT
     - Those are the most common licenses used in the Rust ecosystem
-    - If you want to apply a different license, you can delete these files and change the license in `Cargo.toml`
+    - If you want to use a different license, you can delete these files and change the license in `Cargo.toml`
 - [rust-toolchain.toml][rust-toolchain-toml]
     - Defines which Rust toolchain to use
       - The toolchain will be `nightly` or `esp` depending on your target.
@@ -73,7 +73,7 @@ Before going further, let's see what these files are for.
  6 use hal::{clock::ClockControl, peripherals::Peripherals, prelude::*, timer::TimerGroup, Rtc};
 ```
 - `use esp_backtrace as _;`
-  - Since we are in a bare-metal environment, we need a panic-handler that runs if a panic occurs in code
+  - Since we are in a bare-metal environment, we need a panic handler that runs if a panic occurs in code
   - There are a few different crates you can use (e.g `panic-halt`) but `esp-backtrace` provides an implementation that prints the address of a backtrace - together with `espflash`/`espmonitor` these addresses can get decoded into source code locations
 - `use esp_println::println;`
   - Provides `println!` implementation
@@ -142,7 +142,7 @@ cargo run
 
 This builds the code according to the configuration and executes [`espflash`][espflash] to flash the code to the board.
 
-Since our [`runner` configuration][runner-config] also passes the `--monitor` argument to [`espflash`][espflash] we can see what the code is printing.
+Since our [`runner` configuration][runner-config] also passes the `--monitor` argument to [`espflash`][espflash], we can see what the code is printing.
 
 > Make sure that you have [`espflash`][espflash] installed, otherwise this step will fail. To install [`espflash`][espflash]:
 > `cargo install espflash`
@@ -178,7 +178,7 @@ And that is exactly what the code is doing.
 
 You can reboot with `CTRL+R` or exit with `CTRL+C`.
 
-If you encoutner any issues while building the project, please, see the [Troubleshooting][troubleshooting] chapter.
+If you encounter any issues while building the project, please, see the [Troubleshooting][troubleshooting] chapter.
 
 [espflash]: https://github.com/esp-rs/espflash/tree/main/espflash
 [runner-config]: https://doc.rust-lang.org/cargo/reference/config.html#targettriplerunner

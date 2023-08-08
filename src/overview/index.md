@@ -35,7 +35,7 @@ In the [esp-rs organization], we use the following wording:
 >
 > - ✅ - The feature is implemented or supported
 > - ⏳ - The feature is under development
-> - ❌ - The feature is not supported
+> - ❌ - The feature isn't supported
 
 | Chip     | `std` | `no_std` |
 | -------- | :---: | :------: |
@@ -49,6 +49,6 @@ In the [esp-rs organization], we use the following wording:
 | ESP8266  |   ❌   |    ✅     |
 
 > ⚠️ **Note**: The ESP8266 series is outside the scope of this book. Rust support for the
-> ESP8266 series is limited and is not being officially supported by Espressif.
+> ESP8266 series is limited and isn't being officially supported by Espressif.
 
 The products supported in certain circumstances will be called _supported Espressif products_ throughout the book.

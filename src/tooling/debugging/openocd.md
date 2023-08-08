@@ -1,7 +1,7 @@
 
 # OpenOCD
 
-Similar to [probe-rs][probe-rs], OpenOCD does not have support for the `Xtensa` architecture. However, Espressif does maintain a fork of OpenOCD under [espressif/openocd-esp32][espressif-openocd-esp32] which has support for Espressif's chips.
+Similar to [`probe-rs`][probe-rs], OpenOCD doesn't have support for the `Xtensa` architecture. However, Espressif does maintain a fork of OpenOCD under [espressif/openocd-esp32][espressif-openocd-esp32] which has support for Espressif's chips.
 
 Instructions on how to install `openocd-esp32` for your platform can be found in [the Espressif documentation][espressif-documentation].
 

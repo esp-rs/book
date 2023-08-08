@@ -1,8 +1,8 @@
 # Using the Core Library (`no_std`)
 
-Using `no_std` may be more familiar to embedded Rust developers. It does not use `std` (the Rust [`standard`][rust-lib-std] library) but instead uses a subset, the [`core`][rust-lib-core] library. [The Embedded Rust Book][embedded-rust-book] has a great [section][embedded-rust-book-no-std] on this.
+Using `no_std` may be more familiar to embedded Rust developers. It doesn't use `std` (the Rust [`standard`][rust-lib-std] library) but instead uses a subset, the [`core`][rust-lib-core] library. [The Embedded Rust Book][embedded-rust-book] has a great [section][embedded-rust-book-no-std] on this.
 
-It is important to note that `no_std` uses the Rust `core` library. As this library is part of the Rust `standard` library, a `no_std` crate can compile in `std` environment. However, the opposite is not true: an `std` crate can't compile in `no_std` environment. This information is worth remembering when deciding which library to choose.
+It is important to note that `no_std` uses the Rust `core` library. As this library is part of the Rust `standard` library, a `no_std` crate can compile in `std` environment. However, the opposite isn't true: an `std` crate can't compile in `no_std` environment. This information is worth remembering when deciding which library to choose.
 
 [embedded-rust-book]: https://docs.rust-embedded.org/
 [embedded-rust-book-no-std]: https://docs.rust-embedded.org/book/intro/no-std.html

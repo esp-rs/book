@@ -1,6 +1,6 @@
 # Using the Standard Library (`std`)
 
-Espressif provides a C-based development framework called [ESP-IDF][esp-idf-github]. It has, or will have, support for all Espressif chips starting with the ESP32, note that this framework does _not_ support the ESP8266.
+Espressif provides a C-based development framework called [ESP-IDF][esp-idf-github]. It has, or will have, support for all Espressif chips starting with the ESP32, note that this framework  _doesnn't_ support the ESP8266.
 
 ESP-IDF, in turn, provides a [newlib][newlib-env] environment with enough functionality to build the Rust standard library (`std`) on top of it. This is the approach that is being taken to enable `std` support on Epressif devices.
 

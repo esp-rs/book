@@ -37,7 +37,7 @@ If you are unfamiliar or less experienced with anything mentioned above, or if y
 
 | Resource                                     | Description                                                                          |
 | -------------------------------------------- | ------------------------------------------------------------------------------------ |
-| [The Rust Programming Language][rust-book]   | If you are not familiar with Rust we recommend reading this book first.              |
+| [The Rust Programming Language][rust-book]   | If you aren't familiar with Rust we recommend reading this book first.               |
 | [The Embedded Rust Book][embedded-rust-book] | Here you can find several other resources provided by Rust's Embedded Working Group. |
 | [The Embedonomicon][embedonomicon]           | The nitty-gritty details when doing embedded programming in Rust.                    |
 | [Embedded Rust on Espressif][std-training]   | Training material created in cooperation with [Ferrous Systems][ferrous-systems].    |
@@ -60,7 +60,7 @@ This book assumes that you are reading it front-to-back. Content covered in late
 
 The work on this book is coordinated in [this repository][book-repository].
 
-If you have trouble following the instructions in this book or find that some section of the book is not clear enough, then that's a bug. Please report it in [the issue tracker][book-issues] of this book.
+If you have trouble following the instructions in this book or find that some section of the book isn't clear enough, then that's a bug. Please report it in [the issue tracker][book-issues] of this book.
 
 Pull requests fixing typos and adding new content are welcome!
 

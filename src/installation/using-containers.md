@@ -1,6 +1,6 @@
 # Using Containers
 
-Instead of installing directly on your local system, you can host the development environment inside a container. Espressif provides the [idf-rust] image that supports both `RISC-V` and `Xtensa` target architectures and enables both `std` and `no_std` development.
+Instead of installing directly on your local system, you can host the development environment inside a container. Espressif provides the [`idf-rust`][idf-rust] image that supports both `RISC-V` and `Xtensa` target architectures and enables both `std` and `no_std` development.
 
 You can find numerous tags for `linux/arm64`, and `linux/amd64` platforms.
 
@@ -14,9 +14,9 @@ There are special cases:
 - `<chip>` can be `all` which indicates compatibility with all Espressif targets
 - `<rust-toolchain-version>` can be `latest` which indicates the latest release of the `Xtensa` Rust toolchain
 
-Depending on your operating system, you can choose any container runtime, such as [Docker], [Podman], or [Lima].
+Depending on your operating system, you can choose any container runtime, such as [Docker][docker], [Podman][podman], or [Lima][lima].
 
-[Docker]: https://www.docker.com/
-[Podman]: https://podman.io/
-[Lima]: https://github.com/lima-vm/lima
+[docker]: https://www.docker.com/
+[podman]: https://podman.io/
+[lima]: https://github.com/lima-vm/lima
 [idf-rust]: https://hub.docker.com/r/espressif/idf-rust/tags

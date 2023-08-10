@@ -36,7 +36,7 @@ Both templates are based on [`cargo-generate`][cargo-generate], a tool that allo
 
 ## Using Dev Containers in the Templates
 
-Both template repositories have a prompt for Dev Containers support, see details in [Dev Container][dev-container] section of the template README.
+Both template repositories have a prompt for Dev Containers support, see details in [Dev Containers][dev-container] section of the template README.
 
 Dev Containers use the [`idf-rust`][idf-rust] container image, which was explained in the [Using Container][using-container] section of the [Setting up a Development Environment][setting-env] chapter. This image provides an environment ready to develop Rust applications for Espressif chips with no installation required. Dev Containers also have integration with [Wokwi simulator][wokwi], to simulate the project, and allow flashing from the container using [`web-flash`][web-flash].
 

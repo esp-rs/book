@@ -18,7 +18,7 @@
   - [Writing `std` Applications](./writing-your-own-application/std.md)
 - [Tooling](./tooling/index.md)
   - [Visual Studio Code](./tooling/visual-studio-code.md)
-  - [espflash](./tooling/espflash.md)
+  - [`espflash`](./tooling/espflash.md)
   - [Debugging](./tooling/debugging/index.md)
     - [probe-rs](./tooling/debugging/probe-rs.md)
     - [OpenOCD](./tooling/debugging/openocd.md)

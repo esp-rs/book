@@ -119,7 +119,7 @@ Inside the `main` function we can find:
   - Sometimes a peripheral (here the System peripheral) is coarse-grained and doesn't exactly fit the HAL drivers - so here we split the System peripheral into smaller pieces which get passed to the drivers
 - `let clocks = ClockControl::boot_defaults(system.clock_control).freeze();`
   - Here we configure the system clocks - in this case, we are fine with the defaults
-  - We freeze the clocks, which means we cannot change them later
+  - We freeze the clocks, which means we can't change them later
   - Some drivers need a reference to the clocks to know how to calculate rates and durations
 - The next block of code instantiates some peripherals (namely RTC and the two timer groups) to disable the watchdog, which is armed after boot
   - Without that code, the SoC would reboot after some time

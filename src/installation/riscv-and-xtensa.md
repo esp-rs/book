@@ -46,7 +46,7 @@ On Unix-based systems (`$HOME/export-esp.sh`). There are different ways of sourc
    1. Add the content of `$HOME/export-esp.sh` to your shell’s profile: `cat $HOME/export-esp.sh >> [path to profile]`, for example, `cat $HOME/export-esp.sh >> ~/.bashrc`.
    2. Refresh the configuration by restarting the terminal session or by running `source [path to profile]`, for example, `source ~/.bashrc`.
 
-   This approach **does not** require any sourcing. The `export-esp.sh` script will be sourced automatically in every shell.
+   This approach **doesn't** require any sourcing. The `export-esp.sh` script will be sourced automatically in every shell.
 
 ### What `espup` Installs
 
@@ -74,7 +74,7 @@ If you run into an error, please, check the [Troubleshooting][troubleshooting] c
 ### Other Installation Methods for `Xtensa` Targets
 
 - Using [`rust-build`][rust-build] installation scripts. This was the recommended way in the past, but now the installation scripts are feature frozen, and all new features will only be included in `espup`. See the repository README for instructions.
-- Building the Rust compiler with `Xtensa` support from source. This process is computationally expensive and can take one or more hours to complete depending on your system. It is not recommended unless there is a major reason to go for this approach. Here is the repository to build it from source: [`esp-rs/rust` repository][esp-rs-rust].
+- Building the Rust compiler with `Xtensa` support from source. This process is computationally expensive and can take one or more hours to complete depending on your system. It isn't recommended unless there is a major reason to go for this approach. Here is the repository to build it from source: [`esp-rs/rust` repository][esp-rs-rust].
 
 [rust-build]: https://github.com/esp-rs/rust-build#download-installer-in-bash
 [esp-rs-rust]: https://github.com/esp-rs/rust

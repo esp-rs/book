@@ -45,7 +45,7 @@ Assuming you have built an ELF binary by other means already, `espflash` can be 
 espflash flash build/blinky --monitor
 ```
 
-For more information, please see the [espflash README].
+For more information, please see the [`espflash` README][espflash-readme].
 
 `espflash` can be used as a Cargo runner by adding the following to your project's `.cargo/config.toml` file:
 ```toml
@@ -55,4 +55,4 @@ runner = "espflash flash --monitor"
 With this configuration, you can flash and monitor your application using `cargo run`.
 
 [esp-idf]: https://github.com/espressif/esp-idf
-[espflash readme]: https://github.com/esp-rs/espflash/blob/master/espflash/README.md
+[espflash-readme]: https://github.com/esp-rs/espflash/blob/master/espflash/README.md

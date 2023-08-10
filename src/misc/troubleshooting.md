@@ -22,13 +22,13 @@ error: linker `ldproxy` not found
   = note: No such file or directory (os error 2)
 ```
 
-If you are trying to build a `std` application [`ldproxy`] must be installed. See [`std` Development Requirements][rust-esp-book-std-requirements]
+If you are trying to build a `std` application [`ldproxy`][ldproxy] must be installed. See [`std` Development Requirements][rust-esp-book-std-requirements]
 
 ```shell
 cargo install ldproxy
 ```
 
-[`ldproxy`]: https://github.com/esp-rs/embuild/tree/master/ldproxy
+[ldproxy]: https://github.com/esp-rs/embuild/tree/master/ldproxy
 [rust-esp-book-std-requirements]: ./../installation/std-requirements.md
 
 ## Using the Wrong Rust Toolchain
@@ -44,23 +44,23 @@ Caused by:
 ```
 
 If you are encountering the previous error or a similar one, you are probably not using the proper Rust toolchain. Remember that for `Xtensa` targets, you need to use Espressif Rust fork toolchain, there are several ways to do it:
-- A [toolchain override] shorthand used on the command-line: `cargo +esp`.
+- A [toolchain override][toolchain-override] shorthand used on the command-line: `cargo +esp`.
 - Set `RUSTUP_TOOLCHAIN` environment variable to `esp`.
-- Set a [directory override]: `rustup override set esp`
-- Add a [rust-toolchain.toml] file to you project:
+- Set a [directory override][directory-override]: `rustup override set esp`
+- Add a [`rust-toolchain.toml`][rust-toolchain-toml] file to you project:
   ```toml
   [toolchain]
   channel = "esp"
   ```
-- Set `esp` as [default toolchain].
+- Set `esp` as [default toolchain][default-toolchain].
 
-For more information on toolchain overriding, see the [Overrides chapter of The rustup book].
+For more information on toolchain overriding, see the [Overrides chapter][overrides-rust-book] of The rustup book.
 
-[toolchain override]: https://rust-lang.github.io/rustup/overrides.html#toolchain-override-shorthand
-[directory override]: https://rust-lang.github.io/rustup/overrides.html#directory-overrides
-[rust-toolchain.toml]: https://rust-lang.github.io/rustup/overrides.html#the-toolchain-file
-[default toolchain]: https://rust-lang.github.io/rustup/overrides.html#default-toolchain
-[Overrides chapter of The rustup book]: https://rust-lang.github.io/rustup/overrides.html#overrides
+[toolchain-override]: https://rust-lang.github.io/rustup/overrides.html#toolchain-override-shorthand
+[directory-override]: https://rust-lang.github.io/rustup/overrides.html#directory-overrides
+[rust-toolchain-toml]: https://rust-lang.github.io/rustup/overrides.html#the-toolchain-file
+[default-toolchain]: https://rust-lang.github.io/rustup/overrides.html#default-toolchain
+[overrides-rust-book]: https://rust-lang.github.io/rustup/overrides.html#overrides
 
 ## Windows
 
@@ -89,7 +89,7 @@ warning: build failed, waiting for other jobs to finish...
 error: build failed
 ```
 
-The reason for this error is that we are missing the MSVC C++, hence we are not meeting the [Compile-time Requirements], please install [Visual Studio 2013 (or later) or the Visual C++ Build Tools 2019]. For Visual Studio, make sure to check the "C++ tools" and "Windows 10 SDK" options.
+The reason for this error is that we are missing the MSVC C++, hence we aren't meeting the [Compile-time Requirements]. Please,  install [Visual Studio 2013 (or later) or the Visual C++ Build Tools 2019]. For Visual Studio, make sure to check the "C++ tools" and "Windows 10 SDK" options.
 If using GNU ABI, install [MinGW/MSYS2 toolchain].
 
 [Compile-time Requirements]: https://github.com/rust-lang/cc-rs#compile-time-requirements

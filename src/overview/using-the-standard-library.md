@@ -21,8 +21,8 @@ When using `std`, you have access to a lot of features that exist in [ESP-IDF][e
 | ------------------------------ | ------------------------------------------------------------------------------------------------------------- |
 | [`embedded-svc`][embedded-svc] | Abstraction traits for embedded services (`WiFi`, `Network`, `Httpd`, `Logging`, etc.)                        |
 | [`esp-idf-svc`][esp-idf-svc]   | An implementation of [embedded-svc] using `esp-idf` drivers.                                                  |
-| [`esp-idf-hal`][esp-idf-sys]   | An implementation of the `embedded-hal` and other traits using the `esp-idf` framework.                       |
-| [`esp-idf-sys`][esp-idf-hal]   | Rust bindings to the `esp-idf` development framework. Gives raw (`unsafe`) access to drivers, Wi-Fi and more. |
+| [`esp-idf-hal`][esp-idf-hal]   | An implementation of the `embedded-hal` and other traits using the `esp-idf` framework.                       |
+| [`esp-idf-sys`][esp-idf-sys]   | Rust bindings to the `esp-idf` development framework. Gives raw (`unsafe`) access to drivers, Wi-Fi and more. |
 
 The aforementioned crates have interdependencies, and this relationship can be seen below.
 

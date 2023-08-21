@@ -32,7 +32,7 @@ The training is split into two parts:
 [http-client]: https://github.com/esp-rs/std-training/tree/main/intro/http-client
 [http-server]: https://github.com/esp-rs/std-training/tree/main/intro/http-server
 [mqtt]: https://github.com/esp-rs/std-training/tree/main/intro/mqtt
-[advanced]: https://github.com/esp-rs/std-training/tree/main/advancedç
+[advanced]: https://github.com/esp-rs/std-training/tree/main/advanced
 [i2c-driver]: https://github.com/esp-rs/std-training/tree/main/advanced/i2c-driver
 [i2c-sensor-reading]: https://github.com/esp-rs/std-training/tree/main/advanced/i2c-sensor-reading
 [button-interrupt]: https://github.com/esp-rs/std-training/tree/main/advanced/button-interrupt

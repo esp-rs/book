@@ -17,13 +17,13 @@ It should generate a file structure like this:
 ```text
 ├── .cargo
 │   └── config.toml
-└── src
-    └── main.rs
+├── src
+│   └── main.rs
 ├── .gitignore
 ├── build.rs
 ├── Cargo.toml
 ├── rust-toolchain.toml
-├── sdkconfig.defaults
+└── sdkconfig.defaults
 ```
 
 Before going further, let's see what these files are for.

@@ -60,7 +60,7 @@ Before going further, let's see what these files are for.
 ```rust,ignore
  1 #![no_std]
  2 #![no_main]
- ```
+```
 
 - `#![no_std]`
   - This tells the Rust compiler that this code doesn't use `libstd`
@@ -125,7 +125,7 @@ Inside the `main` function we can find:
   - Without that code, the SoC would reboot after some time
   - There is another way to prevent the reboot: [feeding][wtd-feeding] the watchdog
 - `println!("Hello world!");`
-  - Prints "Hello Wolrd!"
+  - Prints "Hello world!"
 - `loop {}`
   - Since our function is supposed to never return, we just "do nothing" in a loop
 
@@ -172,7 +172,7 @@ Commands:
 Hello world!
 ```
 
-What you see here are messages from the first and second stage bootloader, and then, our "Hello World" message!
+What you see here are messages from the first and second stage bootloader, and then, our "Hello world" message!
 
 And that is exactly what the code is doing.
 

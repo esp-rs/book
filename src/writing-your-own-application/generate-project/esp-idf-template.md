@@ -79,7 +79,7 @@ The first line is an import that defines the ESP-IDF entry point when the root c
 
 Then, we have a usual main function with a  few lines on it:
 - A call to `esp_idf_sys::link_patches` function that makes sure that a few patches to the ESP-IDF which are implemented in Rust are linked to the final executable
-- We print on our console the famous "Hello World!"
+- We print on our console the famous "Hello, world!"
 
 ## Running the Code
 

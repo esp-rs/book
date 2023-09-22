@@ -50,7 +50,9 @@ If you are unfamiliar or less experienced with anything mentioned above, or if y
 
 ## Translations
 
-This book is currently available in English only. Once the contents of the book stabilize somewhat, we plan on translating the book into additional languages. As translations become available, this section will be updated to include them.
+This book has been translated by generous volunteers. If you would like your translation listed here, please open a PR to add it.
+
+- [简体中文](https://narukara.github.io/rust-on-esp-book-zh-cn/) ([repository](https://github.com/Narukara/rust-on-esp-book-zh-cn))
 
 ## How to Use This Book
 

@@ -13,7 +13,7 @@ The [`espflash`][espflash] repository contains two crates, `cargo-espflash` and 
 
 Provides a subcommand for `cargo` that handles cross-compilation and flashing.
 
-To install, run:
+To install `cargo-espflash`, ensure that you have the [necessary dependencies][cargo-espflash-dependencies] installed, and then execute the following command:
 
 ```shell
 cargo install cargo-espflash
@@ -28,12 +28,13 @@ cargo espflash flash --example=blinky --monitor
 For more information, please see the [`cargo-espflash`][cargo-espflash] README.
 
 [cargo-espflash]: https://github.com/esp-rs/espflash/blob/master/cargo-espflash/README.md
+[cargo-espflash-dependencies]: https://github.com/esp-rs/espflash/blob/main/cargo-espflash/README.md#installation
 
 ## `espflash`
 
 Provides a standalone command-line application that flashes an ELF file to a device.
 
-To install, run:
+To install `espflash`, ensure that you have the [necessary dependencies][espflash-dependencies] installed, and then execute the following command:
 
 ```shell
 cargo install espflash
@@ -56,3 +57,4 @@ With this configuration, you can flash and monitor your application using `cargo
 
 [esp-idf]: https://github.com/espressif/esp-idf
 [espflash-readme]: https://github.com/esp-rs/espflash/blob/master/espflash/README.md
+[espflash-dependencies]:https://github.com/esp-rs/espflash/blob/main/espflash/README.md#installation

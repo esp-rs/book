@@ -66,11 +66,17 @@ For more information on toolchain overriding, see the [Overrides chapter][overri
 
 ### Long Path Names
 
-When using Windows, you may encounter issues building a new project if using long path names. Follow these steps to substitute the path of your project:
-```powershell
-subst r: <pathToYourProject>
-cd r:\
-```
+When using Windows, you may encounter issues building a new project if using long path names.
+Moreover - and if you are trying to build a `std` application - the build will fail with a hard error if your project path
+is longer than ~ 10 characters.
+
+To workaround the problem, you need to shorten your project name, and move it to the drive root, as in e.g. `C:\myproj`.
+Note also that while using the Windows `subst` utility (as in e.g. `subst r: <pathToYourProject>`) might look like an easy
+solution for using short paths during build while still keeping your project location intact,
+it simply *does not work*, as the short, substituted paths are expanded to their actual (long) locations by the Windows APIs.
+
+Another alternative is to install Windows Subsystem for Linux (WSL), move your project(s) inside the native Linux file partition,
+build inside WSL and only flash the compiled MCU ELF file from outside of WSL.
 
 ### Missing ABI
 

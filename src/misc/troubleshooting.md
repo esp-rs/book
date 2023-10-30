@@ -73,7 +73,7 @@ is longer than ~ 10 characters.
 To workaround the problem, you need to shorten your project name, and move it to the drive root, as in e.g. `C:\myproj`.
 Note also that while using the Windows `subst` utility (as in e.g. `subst r: <pathToYourProject>`) might look like an easy
 solution for using short paths during build while still keeping your project location intact,
-it simply *does not work*, as the short, substitued paths are expanded to their actual (long) locations by the Windows APIs.
+it simply *does not work*, as the short, substituted paths are expanded to their actual (long) locations by the Windows APIs.
 
 Another alternative is to install Windows Subsystem for Linux (WSL), move your project(s) inside the native Linux file partition,
 build inside WSL and only flash the compiled MCU ELF file from outside of WSL.

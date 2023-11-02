@@ -11,6 +11,7 @@ Regardless of the target architecture, make sure you have the following required
 
 The `std` runtime uses [ESP-IDF][esp-idf-github] (Espressif IoT Development Framework) as hosted environment but, users don't need to install it. ESP-IDF is automatically downloaded and installed by [esp-idf-sys][esp-idf-sys-github], a crate that all `std` projects need to use, when building a `std` application. 
 
+
 For Linux/MacOS users it's required to have the [ESP-IDF prerequisites][esp-idf-install-guide] installed.
 
 [rust-esp-book-overview-std]: ../overview/using-the-standard-library.md

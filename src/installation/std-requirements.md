@@ -9,7 +9,9 @@ Regardless of the target architecture, make sure you have the following required
     cargo install ldproxy
     ```
 
-The `std` runtime uses [ESP-IDF][esp-idf-github] (Espressif IoT Development Framework) as hosted environment but, users don't need to install it. ESP-IDF is automatically downloaded and installed by [esp-idf-sys][esp-idf-sys-github], a crate that all `std` projects need to use, when building a `std` application.
+The `std` runtime uses [ESP-IDF][esp-idf-github] (Espressif IoT Development Framework) as hosted environment but, users don't need to install it. ESP-IDF is automatically downloaded and installed by [esp-idf-sys][esp-idf-sys-github], a crate that all `std` projects need to use, when building a `std` application. 
+
+For Linux/MacOS users its requiret is to have the [ESP-IDF prerequisites][esp-idf-install-guide] installed.
 
 [rust-esp-book-overview-std]: ../overview/using-the-standard-library.md
 [python-website-download]: https://www.python.org/downloads/
@@ -17,3 +19,4 @@ The `std` runtime uses [ESP-IDF][esp-idf-github] (Espressif IoT Development Fram
 [embuild-github-ldproxy]: https://github.com/esp-rs/embuild/tree/master/ldproxy
 [esp-idf-sys-github]: https://github.com/esp-rs/esp-idf-sys
 [esp-idf-github]: https://github.com/espressif/esp-idf
+[esp-idf-install-guide]: https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/linux-macos-setup.html#step-1-install-prerequisites

@@ -12,6 +12,8 @@ The [`probe-rs`][probe-rs] project is a set of tools to interact with embedded M
 
 Follow the [installation][prober-rs-installation] and [setup][prober-rs-setup] instructions at the [probe-rs] website.
 
+Espressif products containing the [`USB-JTAG-SERIAL` peripheral][usb-jtag-serial] can use `probe-rs` without any external hardware.
+
 [probe-rs]: https://probe.rs/
 [openocd]: https://openocd.org/
 [pyocd]: https://pyocd.io/
@@ -20,19 +22,7 @@ Follow the [installation][prober-rs-installation] and [setup][prober-rs-setup] i
 [rtt]: https://wiki.segger.com/RTT
 [prober-rs-installation]: https://probe.rs/docs/getting-started/installation/
 [prober-rs-setup]: https://probe.rs/docs/getting-started/probe-setup/
-
-## `USB-JTAG-SERIAL` Peripheral
-
-Some of our recent products contain the `USB-JTAG-SERIAL` peripheral that allows for debugging without any external hardware debugger. More info on configuring the interface can be found in the official documentation for the chips that support this peripheral:
-- [ESP32-C3][esp32c3-docs]
-- [ESP32-C6][esp32c6-docs]
-- [ESP32-H2][esp32h2-docs]
-- ESP32-S3 also has the `USB-JTAG-SERIAL` peripheral but since it's `Xtensa` based, it isn't yet supported by `probe-rs`.
-
-[esp32c3-docs]: https://docs.espressif.com/projects/esp-idf/en/latest/esp32c3/api-guides/jtag-debugging/configure-builtin-jtag.html
-[esp32c6-docs]: https://docs.espressif.com/projects/esp-idf/en/latest/esp32c6/api-guides/jtag-debugging/configure-builtin-jtag.html
-[esp32h2-docs]: https://docs.espressif.com/projects/esp-idf/en/latest/esp32h2/api-guides/jtag-debugging/configure-builtin-jtag.html
-
+[usb-jtag-serial]: index.md#usb-jtag-serial-peripheral
 
 ## Flashing with `probe-rs`
 

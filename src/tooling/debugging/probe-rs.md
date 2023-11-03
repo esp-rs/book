@@ -21,29 +21,13 @@ Follow the [installation][prober-rs-installation] and [setup][prober-rs-setup] i
 [prober-rs-installation]: https://probe.rs/docs/getting-started/installation/
 [prober-rs-setup]: https://probe.rs/docs/getting-started/probe-setup/
 
-
-## Permissions - Linux (TO BE REMOVED (?))
-On Linux, you may run into permission issues trying to interact with Espressif probes. To avoid those: Installing the following `udev` rules and reloading should fix that issue.
-
-```text
-# Espressif dev kit FTDI
-ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6010", MODE="660", GROUP="plugdev", TAG+="uaccess"
-
-# Espressif USB JTAG/serial debug unit
-ATTRS{idVendor}=="303a", ATTRS{idProduct}=="1001", MODE="660", GROUP="plugdev", TAG+="uaccess"
-
-# Espressif USB Bridge
-ATTRS{idVendor}=="303a", ATTRS{idProduct}=="1002", MODE="660", GROUP="plugdev", TAG+="uaccess"
-```
-
-
 ## `USB-JTAG-SERIAL` Peripheral
 
 Some of our recent products contain the `USB-JTAG-SERIAL` peripheral that allows for debugging without any external hardware debugger. More info on configuring the interface can be found in the official documentation for the chips that support this peripheral:
 - [ESP32-C3][esp32c3-docs]
 - [ESP32-C6][esp32c6-docs]
 - [ESP32-H2][esp32h2-docs]
-- ESP32-S3 also has the `USB-JTAG-SERIAL` peripheral but since its `Xtensa` based, it isn't yet supported by `probe-rs`.
+- ESP32-S3 also has the `USB-JTAG-SERIAL` peripheral but since it's `Xtensa` based, it isn't yet supported by `probe-rs`.
 
 [esp32c3-docs]: https://docs.espressif.com/projects/esp-idf/en/latest/esp32c3/api-guides/jtag-debugging/configure-builtin-jtag.html
 [esp32c6-docs]: https://docs.espressif.com/projects/esp-idf/en/latest/esp32c6/api-guides/jtag-debugging/configure-builtin-jtag.html
@@ -52,7 +36,7 @@ Some of our recent products contain the `USB-JTAG-SERIAL` peripheral that allows
 
 ## Flashing with `probe-rs`
 
-`probe-rs` can be use to flash your applications to your target, there are 2 supported image formats:
+`probe-rs` can be used to flash your applications to your target, there are 2 supported image formats:
 - [ESP-IDF image format][idf-image]: This is the default format used by `espflash` and `cargo-espflash` and can be used in `probe-rs` using the `--format idf` argument
   - Example command for flashing an ESP32-C3: `probe-rs run --chip esp32c3 --format idf`
 - `direct-boot`: Only supported in some Espressif products.
@@ -67,7 +51,10 @@ runner = "probe-rs run --chip esp32c3 --format idf"
 
 With this configuration, you can flash and monitor your application using `cargo run`.
 
+[`esp-flash-loader`][esp-flash-loader] is home to the `probe-rs` flash loader for Espressif products.
+
 [idf-image]: https://docs.espressif.com/projects/esptool/en/latest/esp32c3/advanced-topics/firmware-image-format.html
+[esp-flash-loader]: https://github.com/esp-rs/esp-flash-loader
 
 ## VS Code Extension
 
@@ -139,4 +126,16 @@ There is a `probe-rs` extension in VS Code, see `probe-rs` [VS Code documentatio
 [esp-println]: https://github.com/esp-rs/esp-println
 [esp-backtrace]: https://github.com/esp-rs/esp-backtrace?tab=readme-ov-file#features
 
-<!-- TODO: when probe-rs can actually debug at least a C3 with decent back traces etc, add a section here with an example config: see https://github.com/probe-rs/probe-rs/issues/877 -->
+## `cargo-flash` and `cargo-embed`
+
+`probe-rs` comes with along with this two tools:
+- [`cargo-flash`][cargo-flash]: A flash tool that downloads your binary to the target and runs it.
+- [`cargo-embed`][cargo-embed]: Superset of `cargo-flash` that also allows opening a RTT terminal or a GDB server. A [configuration file][cargo-embed-config] can used to define the behavior.
+-
+[cargo-flash]: https://probe.rs/docs/tools/cargo-flash/
+[cargo-embed]: https://probe.rs/docs/tools/cargo-embed/
+[cargo-embed-config]: https://probe.rs/docs/tools/cargo-embed/#configuration
+
+## Using `probe-rs` as an OpenOCD Replacement
+
+`probe-rs` has a `gdb` command that runs a GDB server, by default in port, `1337`

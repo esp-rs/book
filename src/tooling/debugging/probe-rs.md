@@ -126,6 +126,6 @@ There is a `probe-rs` extension in VS Code, see `probe-rs` [VS Code documentatio
 [cargo-embed]: https://probe.rs/docs/tools/cargo-embed/
 [cargo-embed-config]: https://probe.rs/docs/tools/cargo-embed/#configuration
 
-## Using `probe-rs` as an OpenOCD Replacement
+## GDB Integration
 
-`probe-rs` has a `gdb` command that runs a GDB server, by default in port, `1337`
+`probe-rs` includes a GDB stub to integrate into your usual workflow with common tools. The `gdb` command runs a GDB server, by default in port, `1337`.

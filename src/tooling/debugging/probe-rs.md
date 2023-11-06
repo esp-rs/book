@@ -41,10 +41,7 @@ runner = "probe-rs run --chip esp32c3 --format idf"
 
 With this configuration, you can flash and monitor your application using `cargo run`.
 
-[`esp-flash-loader`][esp-flash-loader] is home to the `probe-rs` flash loader for Espressif products.
-
 [idf-image]: https://docs.espressif.com/projects/esptool/en/latest/esp32c3/advanced-topics/firmware-image-format.html
-[esp-flash-loader]: https://github.com/esp-rs/esp-flash-loader
 
 ## VS Code Extension
 
@@ -111,17 +108,26 @@ There is a `probe-rs` extension in VS Code, see `probe-rs` [VS Code documentatio
 ```
 
 > ⚠️ **Note**: The example `launch.json` uses `rtt`, which may require enabling such feature in some crates, like [`esp-println`][esp-println] and [`esp-backtrace`][esp-backtrace]
+> Eg: ESP32-C3 `no_std` project that uses `esp-println` and `esp-backtrace`:
+> ```toml
+> esp-backtrace = { version = "0.9.0", features = ["esp32c3", "panic-handler", "exception-handler", "print-rtt"] }
+> esp-println = { version = "0.7.0", features = ["esp32c3", "rtt"] }
+> ```
+
+The `Launch` configuration will flash the device and start debugging process while `Attach` will start the debuggin in the already running application of the device. See VS Code documentation on [diferences between launch and attach][vscode-configs] for more details.
+
 
 [probe-rs-vscode]: https://probe.rs/docs/tools/vscode/
 [esp-println]: https://github.com/esp-rs/esp-println
 [esp-backtrace]: https://github.com/esp-rs/esp-backtrace?tab=readme-ov-file#features
+[vscode-configs]: https://code.visualstudio.com/docs/editor/debugging#_launch-versus-attach-configurations
 
 ## `cargo-flash` and `cargo-embed`
 
 `probe-rs` comes along with these two tools:
 - [`cargo-flash`][cargo-flash]: A flash tool that downloads your binary to the target and runs it.
 - [`cargo-embed`][cargo-embed]: Superset of `cargo-flash` that also allows opening an RTT terminal or a GDB server. A [configuration file][cargo-embed-config] can used to define the behavior.
--
+
 [cargo-flash]: https://probe.rs/docs/tools/cargo-flash/
 [cargo-embed]: https://probe.rs/docs/tools/cargo-embed/
 [cargo-embed-config]: https://probe.rs/docs/tools/cargo-embed/#configuration

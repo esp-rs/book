@@ -57,6 +57,7 @@ OpenOCD can be used in VS Code via the [`cortex-debug`][cortex-debug] extension 
       "toolchainPrefix": "xtensa-esp32-elf", //!MODIFY
       "openOCDPreConfigLaunchCommands": ["set ESP_RTOS none"],
       "serverpath": "C:/Espressif/tools/openocd-esp32/v0.11.0-esp32-20220411/openocd-esp32/bin/openocd.exe", //!MODIFY
+      "gdbPath": "C:/Espressif/tools/riscv32-esp-elf-gdb/12.1_20221002/riscv32-esp-elf-gdb/bin/riscv32-esp-elf-gdb", //!MODIFY
       "configFiles": ["board/esp32-wrover-kit-3.3v.cfg"], //!MODIFY
       "overrideAttachCommands": [
         "set remote hardware-watchpoint-limit 2",

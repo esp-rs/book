@@ -134,4 +134,8 @@ The `Launch` configuration will flash the device and start debugging process whi
 
 ## GDB Integration
 
-`probe-rs` includes a GDB stub to integrate into your usual workflow with common tools. The `gdb` command runs a GDB server, by default in port, `1337`.
+`probe-rs` includes a GDB stub to integrate into your usual workflow with common tools. The `probe-rs gdb` command runs a GDB server, by default in port, `1337`.
+
+GDB with all the Espressif products supported can be obtained in [`espressif/binutils-gdb`][binutils-repo]
+
+[binutils-repo]: https://github.com/espressif/binutils-gdb

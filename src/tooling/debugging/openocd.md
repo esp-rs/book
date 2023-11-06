@@ -11,7 +11,7 @@ Once installed, it's as simple as running `openocd` with the correct arguments. 
 openocd -f board/esp32c3-builtin.cfg
 ```
 
-For other configurations it may require specifying the chip and the interface, for example, ESP32 with a J-Link:
+For other configurations, it may require specifying the chip and the interface, for example, ESP32 with a J-Link:
 
 ```shell
 openocd -f interface/jlink.cfg -f target/esp32.cfg

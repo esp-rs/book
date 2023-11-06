@@ -7,10 +7,10 @@ The [`probe-rs`][probe-rs] project is a set of tools to interact with embedded M
   - CLI for interactive debugging.
   - VS Code extension.
 - [Real Time Transfer (RTT)][rtt]
-  - Similar to [app_trace component of IDF][app-trace-idf].
+  - Similar to [`app_trace` component of IDF][app-trace-idf].
 - Flashing algorithms
 
-Follow the [installation][prober-rs-installation] and [setup][prober-rs-setup] instructions at the [probe-rs] website.
+Follow the [installation][prober-rs-installation] and [setup][prober-rs-setup] instructions at the [`probe-rs`][probe-rs] website.
 
 Espressif products containing the [`USB-JTAG-SERIAL` peripheral][usb-jtag-serial] can use `probe-rs` without any external hardware.
 
@@ -118,9 +118,9 @@ There is a `probe-rs` extension in VS Code, see `probe-rs` [VS Code documentatio
 
 ## `cargo-flash` and `cargo-embed`
 
-`probe-rs` comes with along with this two tools:
+`probe-rs` comes along with these two tools:
 - [`cargo-flash`][cargo-flash]: A flash tool that downloads your binary to the target and runs it.
-- [`cargo-embed`][cargo-embed]: Superset of `cargo-flash` that also allows opening a RTT terminal or a GDB server. A [configuration file][cargo-embed-config] can used to define the behavior.
+- [`cargo-embed`][cargo-embed]: Superset of `cargo-flash` that also allows opening an RTT terminal or a GDB server. A [configuration file][cargo-embed-config] can used to define the behavior.
 -
 [cargo-flash]: https://probe.rs/docs/tools/cargo-flash/
 [cargo-embed]: https://probe.rs/docs/tools/cargo-embed/

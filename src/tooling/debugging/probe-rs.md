@@ -108,7 +108,7 @@ There is a `probe-rs` extension in VS Code, see `probe-rs` [VS Code documentatio
 > Eg: ESP32-C3 `no_std` project that uses `esp-println` and `esp-backtrace`:
 > ```toml
 > esp-backtrace = { version = "0.9.0", features = ["esp32c3", "panic-handler", "exception-handler", "print-rtt"] }
-> esp-println = { version = "0.7.0", features = ["esp32c3", "rtt"] }
+> esp-println = { version = "0.7.0", features = ["esp32c3", "rtt"], default-features = flase }
 > ```
 
 The `Launch` configuration will flash the device and start debugging process while `Attach` will start the debugging in the already running application of the device. See VS Code documentation on [differences between launch and attach][vscode-configs] for more details.

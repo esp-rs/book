@@ -111,10 +111,10 @@ There is a `probe-rs` extension in VS Code, see `probe-rs` [VS Code documentatio
 > esp-println = { version = "0.7.0", features = ["esp32c3", "rtt"] }
 > ```
 
-The `Launch` configuration will flash the device and start debugging process while `Attach` will start the debuggin in the already running application of the device. See VS Code documentation on [diferences between launch and attach][vscode-configs] for more details.
+The `Launch` configuration will flash the device and start debugging process while `Attach` will start the debugging in the already running application of the device. See VS Code documentation on [differences between launch and attach][vscode-configs] for more details.
 
 
-[probe-rs-vscode]: https://probe.rs/docs/tools/vscode/
+[probe-rs-vscode]: https://probe.rs/docs/tools/debugger/
 [esp-println]: https://github.com/esp-rs/esp-println
 [esp-backtrace]: https://github.com/esp-rs/esp-backtrace?tab=readme-ov-file#features
 [vscode-configs]: https://code.visualstudio.com/docs/editor/debugging#_launch-versus-attach-configurations

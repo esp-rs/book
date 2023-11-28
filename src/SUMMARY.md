@@ -27,3 +27,4 @@
     - [QEMU](tooling/simulating/qemu.md)
 - [Troubleshooting](./troubleshooting/index.md)
   - [`esp-idf-hal` based projects](./troubleshooting/std.md)
+  - [`espflash`](./troubleshooting/espflash.md)

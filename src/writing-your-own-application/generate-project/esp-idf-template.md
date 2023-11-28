@@ -129,4 +129,4 @@ If you encounter any issues while building the project, please, see the [Trouble
 
 [espflash]: https://github.com/esp-rs/espflash/tree/main/espflash
 [runner-config]: https://doc.rust-lang.org/cargo/reference/config.html#targettriplerunner
-[troubleshooting]: ../../misc/troubleshooting.md
+[troubleshooting]: ../../troubleshooting/index.md

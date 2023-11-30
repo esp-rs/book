@@ -25,6 +25,6 @@
   - [Simulating](./tooling/simulating/index.md)
     - [Wokwi](./tooling/simulating/wokwi.md)
     - [QEMU](tooling/simulating/qemu.md)
----
-
-[Appendix A: Troubleshooting](./misc/troubleshooting.md)
+- [Troubleshooting](./troubleshooting/index.md)
+  - [`esp-idf-hal` based projects](./troubleshooting/std.md)
+  - [`espflash`](./troubleshooting/espflash.md)

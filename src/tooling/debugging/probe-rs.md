@@ -71,7 +71,7 @@ There is a `probe-rs` extension in VS Code, see `probe-rs` [VS Code documentatio
                     "rttEnabled": true,
                     "rttChannelFormats": [
                         {
-                            "channelNumer": "0",
+                            "channelNumber": "0",
                             "dataFormat": "String",
                             "showTimestamp": true,
                         }
@@ -92,7 +92,7 @@ There is a `probe-rs` extension in VS Code, see `probe-rs` [VS Code documentatio
                     "rttEnabled": true,
                     "rttChannelFormats": [
                         {
-                            "channelNumer": "0",
+                            "channelNumber": "0",
                             "dataFormat": "String",
                             "showTimestamp": true,
                         }

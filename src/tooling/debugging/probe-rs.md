@@ -33,7 +33,7 @@ The flashing command can be set as a custom Cargo runner by adding the following
 
 ```toml
 [target.'cfg(any(target_arch = "riscv32", target_arch = "xtensa"))']
-runner = "probe-rs run --chip esp32c3 --format idf"
+runner = "probe-rs run --chip esp32c3"
 ```
 
 With this configuration, you can flash and monitor your application using `cargo run`.
@@ -67,11 +67,11 @@ There is a `probe-rs` extension in VS Code, see `probe-rs` [VS Code documentatio
             "coreConfigs": [
                 {
                     "coreIndex": 0,
-                    "programBinary": "./target/riscv32imc-unknown-none-elf/debug/${workspaceFolderBasename}", //!MODIFY
+                    "programBinary": "target/riscv32imc-unknown-none-elf/debug/${workspaceFolderBasename}", //!MODIFY
                     "rttEnabled": true,
                     "rttChannelFormats": [
                         {
-                            "channelNumber": "0",
+                            "channelNumber": 0,
                             "dataFormat": "String",
                             "showTimestamp": true,
                         }
@@ -88,11 +88,11 @@ There is a `probe-rs` extension in VS Code, see `probe-rs` [VS Code documentatio
             "coreConfigs": [
                 {
                     "coreIndex": 0,
-                    "programBinary": "./target/riscv32imc-unknown-none-elf/debug/${workspaceFolderBasename}", //!MODIFY
+                    "programBinary": "target/riscv32imc-unknown-none-elf/debug/${workspaceFolderBasename}", //!MODIFY
                     "rttEnabled": true,
                     "rttChannelFormats": [
                         {
-                            "channelNumber": "0",
+                            "channelNumber": 0,
                             "dataFormat": "String",
                             "showTimestamp": true,
                         }

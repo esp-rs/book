@@ -7,6 +7,14 @@ To build Rust applications for the Espressif chips based on `RISC-V` architectur
     ```shell
     rustup toolchain install nightly --component rust-src
     ```
+
+    The above command downloads the rust source code. `rust-src` contains things like the std-lib, core-lib and build-config files.  
+    Downloading the `rust-src` is important because of two reasons : 
+    - **Determinism** - You get the chance to inspect the internals of the core and std library. If you are building software that needs to be determinate, you may need to inspect the libraries that you are using.  
+    - **Building custom targets** - The `rustc` uses the `rust-src` to create the components of a new custom-target. If you are targeting a triple-target that is not yet supported by rust, it becomes essential to download the `rust-src`.
+
+   For more info on custom targets, read this [Chapter][embedonomicon-creating-a-custom-target] from the [Embedonomicon][embedonomicon-official-book].
+
 2. Set the target:
     - For `no_std` (bare-metal) applications, run:
 
@@ -40,3 +48,5 @@ Now you should be able to build and run projects on Espressif's `RISC-V` chips.
 [cargo-book-unstable-features]: https://doc.rust-lang.org/cargo/reference/unstable.html
 [rust-esp-book-write-app-generate-project]: ../writing-your-own-application/generate-project/index.md
 [rust-esp-book-std-requirements]: ./std-requirements.md
+[embedonomicon-creating-a-custom-target]: https://docs.rust-embedded.org/embedonomicon/custom-target.html
+[embedonomicon-official-book]: https://docs.rust-embedded.org/embedonomicon/

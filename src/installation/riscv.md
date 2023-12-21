@@ -23,7 +23,7 @@ To build Rust applications for the Espressif chips based on `RISC-V` architectur
       rustup target add riscv32imac-unknown-none-elf # For ESP32-C6 and ESP32-H2
       ```
 
-      This target is currently [Tier 2][rust-lang-book--platform-support-tier2]. Note the different flavors of `riscv32` target in Rust covering different [`RISC-V` extensions][wiki-riscv-standard-extensions].  
+      This target is currently [Tier 2][rust-lang-book--platform-support-tier2]. Note the different flavors of `riscv32` target in Rust covering different [`RISC-V` extensions][wiki-riscv-standard-extensions].
 
     - For `std` applications:
 

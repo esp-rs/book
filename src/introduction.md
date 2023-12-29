@@ -35,18 +35,19 @@ This book is intended for people with some experience in Rust and also assumes r
 
 If you are unfamiliar or less experienced with anything mentioned above, or if you would just like more information about a particular topic mentioned in this book. You may find these resources helpful.
 
-| Resource                                     | Description                                                                          |
-| -------------------------------------------- | ------------------------------------------------------------------------------------ |
-| [The Rust Programming Language][rust-book]   | If you aren't familiar with Rust we recommend reading this book first.               |
-| [The Embedded Rust Book][embedded-rust-book] | Here you can find several other resources provided by Rust's Embedded Working Group. |
-| [The Embedonomicon][embedonomicon]           | The nitty-gritty details when doing embedded programming in Rust.                    |
-| [Embedded Rust on Espressif][std-training]   | Training material created in cooperation with [Ferrous Systems][ferrous-systems].    |
+| Resource                                               | Description                                                                          |
+| ------------------------------------------------------ | ------------------------------------------------------------------------------------ |
+| [The Rust Programming Language][rust-book]             | If you aren't familiar with Rust we recommend reading this book first.               |
+| [The Embedded Rust Book][embedded-rust-book]           | Here you can find several other resources provided by Rust's Embedded Working Group. |
+| [The Embedonomicon][embedonomicon]                     | The nitty-gritty details when doing embedded programming in Rust.                    |
+| [Embedded Rust (std) on Espressif][std-training]       | Getting started guide on using `std` for Espressif SoCs                              |
+| [Embedded Rust (no_std) on Espressif][no_std-training] | Getting started guide on using `no_std` for Espressif SoCs                           |
 
 [rust-book]: https://doc.rust-lang.org/book/
 [embedded-rust-book]: https://docs.rust-embedded.org/book/index.html
 [embedonomicon]: https://docs.rust-embedded.org/embedonomicon/
 [std-training]: https://esp-rs.github.io/std-training/
-[ferrous-systems]: https://ferrous-systems.com/
+[no_std-training]: https://esp-rs.github.io/no_std-training/
 
 ## Translations
 

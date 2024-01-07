@@ -47,7 +47,7 @@ solution for using short paths during build while still keeping your project loc
 it simply *does not work*, as the short, substituted paths are expanded to their actual (long) locations by the Windows APIs.
 
 Another alternative is to install Windows Subsystem for Linux (WSL), move your project(s) inside the native Linux file partition,
-build inside WSL and only flash the compiled MCU ELF file from outside of WSL. A third is to use USB/IP to show the development board within WSL itself, and flash it from there <sub>[ESP32-WSL](https://github.com/lure23/ESP32-WSL)</sub>. Pick your poison.
+build inside WSL and only flash the compiled MCU ELF file from outside of WSL.
 
 ### Missing ABI
 

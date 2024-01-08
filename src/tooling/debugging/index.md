@@ -19,8 +19,8 @@ Refer to the table below to see which chip is supported in every debugging metho
 Some of our recent products contain the `USB-JTAG-SERIAL` peripheral that allows for debugging without any external hardware debugger. More info on configuring the interface can be found in the official documentation for the chips that support this peripheral:
 - [ESP32-C3][esp32c3-docs]
     - The availability of built-in JTAG interface depends on the ESP32-C3 revision:
-      - Revisions older than 3 **don't** a have built-in JTAG interface.
-      - Revisions 3 (and newer) **do** have a built-in JTAG interface, and you don't have to connect an external device to be able to debug.
+      - Revisions older than 0.3 **don't** have a built-in JTAG interface.
+      - Revisions 0.3 (and newer) **do** have a built-in JTAG interface, and you don't have to connect an external device to be able to debug.
 
     To find your ESP32-C3 revision, run:
     ```shell

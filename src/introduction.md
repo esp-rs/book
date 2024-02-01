@@ -8,9 +8,12 @@ Rust support for these devices is still a work in progress, and progress is bein
 
 For tools and libraries relating to Rust on ESP, please see the [esp-rs organization][esp-rs] on GitHub. This organization is managed by employees of Espressif as well as members of the community.
 
+Feel free to join the [`esp-rs` community on Matrix][matrix] for all technical questions and issues! The community is open to everyone.
+
 [rust]: https://www.rust-lang.org/
 [espressif]: https://espressif.com/
 [esp-rs]: https://github.com/esp-rs/
+[matrix]: https://matrix.to/#/#esp-rs:matrix.org
 
 ## Who This Book Is For
 

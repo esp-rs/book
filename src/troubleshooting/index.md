@@ -1,6 +1,8 @@
 # Troubleshooting
 
-This chapter lists certain questions and common problems we have encountered over the time, along with their solutions. This page collects common issues independent of the chosen ESP ecosystem.
+This chapter lists certain questions and common problems we have encountered over time, along with their solutions. This page collects common issues independent of the chosen ESP ecosystem. If you can't find your issue listed here, feel free to open an issue in the appropriate repository or ask on our [Matrix room][matrix].
+
+[matrix]: https://matrix.to/#/#esp-rs:matrix.org
 
 ## Using the Wrong Rust Toolchain
 

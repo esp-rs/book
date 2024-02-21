@@ -75,3 +75,6 @@ OpenOCD can be used in VS Code via the [`cortex-debug`][cortex-debug] extension 
 
 [jtag-interfaces-esp32]: https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-guides/jtag-debugging/configure-other-jtag.html
 
+# Debugging with Multiple Cores
+
+Sometimes you may need to debug each core individually in GDB or with VSCode. In this case, change `set ESP_RTOS none` to `set ESP_RTOS hwthread`. This will make each core appear as a hardware thread in GDB. This is not currently documented in Espressif official documentation but in OpenOCD docs: https://openocd.org/doc/html/GDB-and-OpenOCD.html

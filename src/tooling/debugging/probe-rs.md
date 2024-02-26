@@ -68,14 +68,6 @@ There is a `probe-rs` extension in VS Code, see `probe-rs` [VS Code documentatio
                 {
                     "coreIndex": 0,
                     "programBinary": "target/riscv32imc-unknown-none-elf/debug/${workspaceFolderBasename}", //!MODIFY
-                    "rttEnabled": true,
-                    "rttChannelFormats": [
-                        {
-                            "channelNumber": 0,
-                            "dataFormat": "String",
-                            "showTimestamp": true,
-                        }
-                    ]
                 }
             ]
         },
@@ -89,14 +81,6 @@ There is a `probe-rs` extension in VS Code, see `probe-rs` [VS Code documentatio
                 {
                     "coreIndex": 0,
                     "programBinary": "target/riscv32imc-unknown-none-elf/debug/${workspaceFolderBasename}", //!MODIFY
-                    "rttEnabled": true,
-                    "rttChannelFormats": [
-                        {
-                            "channelNumber": 0,
-                            "dataFormat": "String",
-                            "showTimestamp": true,
-                        }
-                    ]
                 }
             ]
         }
@@ -104,19 +88,10 @@ There is a `probe-rs` extension in VS Code, see `probe-rs` [VS Code documentatio
 }
 ```
 
-> ⚠️ **Note**: The example `launch.json` uses `rtt`, which may require enabling such feature in some crates, like [`esp-println`][esp-println] and [`esp-backtrace`][esp-backtrace]
-> Eg: ESP32-C3 `no_std` project that uses `esp-println` and `esp-backtrace`:
-> ```toml
-> esp-backtrace = { version = "0.9.0", features = ["esp32c3", "panic-handler", "exception-handler", "print-rtt"] }
-> esp-println = { version = "0.7.0", features = ["esp32c3", "rtt"], default-features = flase }
-> ```
-
 The `Launch` configuration will flash the device and start debugging process while `Attach` will start the debugging in the already running application of the device. See VS Code documentation on [differences between launch and attach][vscode-configs] for more details.
 
 
 [probe-rs-vscode]: https://probe.rs/docs/tools/debugger/
-[esp-println]: https://github.com/esp-rs/esp-println
-[esp-backtrace]: https://github.com/esp-rs/esp-backtrace?tab=readme-ov-file#features
 [vscode-configs]: https://code.visualstudio.com/docs/editor/debugging#_launch-versus-attach-configurations
 
 ## `cargo-flash` and `cargo-embed`

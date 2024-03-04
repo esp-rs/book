@@ -15,20 +15,20 @@ Once you have built QEMU, you should have the `qemu-system-xtensa` file.
 For running our project in QEMU, we need a firmware/image with bootloader and partition table merged in it.
 We can use [`cargo-espflash`][cargo-espflash] to generate it:
 
-```console
+```bash
 cargo espflash save-image --chip esp32 --merge <OUTFILE> --release
 ```
 
 If you prefer to use [`espflash`][espflash], you can achieve the same result by building the project first and then generating image:
 
-```console
+```bash
 cargo build --release
 espflash save-image --chip ESP32 --merge target/xtensa-esp32-espidf/release/<NAME> <OUTFILE>
 ```
 
 Now, run the image in QEMU:
 
-```console
+```bash
 /path/to/qemu-system-xtensa -nographic -machine esp32 -drive file=<OUTFILE>,if=mtd,format=raw
 ```
 

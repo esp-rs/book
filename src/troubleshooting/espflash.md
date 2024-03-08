@@ -20,13 +20,3 @@ one.
 
 If you want to use `espflash`, you need to specify an appropriate bootloader image using
 `--bootloader`. You can find the bootloader in `target/<your MCU's target folder>/<debug or release depending on your build>/build/esp-idf-sys-*/build/bootloader/bootloader.bin`
-
-### If you are building an `esp-hal` based project
-
-Make sure your HAL ([ESP32](https://docs.rs/esp32-hal/latest/esp32_hal/), [ESP32-C2](https://docs.rs/esp32c2-hal/latest/esp32c2_hal/))
-is configured to the correct crystal frequency. To do this, you must disable the default features
-and enable `xtal-26mhz` (besides the other default features).
-
-When flashing, you need to specify an appropriate bootloader image using `--bootloader`. Currently,
-you will need to build this bootloader using an `esp-idf` based project (Rust or C based should work
-equally, we recommend a project set up with [esp-idf-template](https://github.com/esp-rs/esp-idf-template)).

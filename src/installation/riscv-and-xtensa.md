@@ -30,7 +30,7 @@ espup install
 `espup` will create an export file that contains some environment variables required to build projects.
 
 On Windows (`%USERPROFILE%\export-esp.ps1`)
-  - There is **no need** to execute the file for Windows users. It is only created to show the modified environment variables.
+  - If all goes well, there is **no need** to execute the file for Windows users. However if espup install is not run as administrator, you may still need to run the file as a command in every shell before compiling will work.
 
 On Unix-based systems (`$HOME/export-esp.sh`). There are different ways of sourcing the file:
 - Source this file in every terminal:

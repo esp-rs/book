@@ -1,4 +1,22 @@
-# `esp-idf-hal` based projects
+# `esp-idf-sys` based projects
+
+## Wrong Xtal Frequency
+
+Using a 26 Mhz crystal instead of a 40 MHz requires modifying the [`sdkconfig`][sdkconfig]. Add the following configuration option to your `sdkconfig` file:
+
+```
+CONFIG_XTAL_FREQ_26=y
+```
+
+After making this adjustment, execute `cargo clean` to ensure that the changes are properly incorporated into your project. See [`sdkconfig` section](#sdkconfigdefaults-file-is-updated-but-it-doesnt-appear-to-have-had-any-effect).
+
+When using an `esp-idf-sys` based project, you should also prefer using `cargo-espflash` instead of `espflash`. `cargo-espflash` integrates with your
+project and it will flash the bootloader and partition table that is built for your project instead of the default one, see the corresponding [`cargo-espflash` readme section][cargo-espflash-bootloader].
+
+If you want to use `espflash`, you can specify an appropriate bootloader and partition table using `--bootloader` and `--partition-table`. You can find the bootloader in `target/<your MCU's target folder>/<debug or release depending on your build>/bootloader.bin` and partition table in `target/<your MCU's target folder>/<debug or release depending on your build>/partition-table.bin`
+
+[sdkconfig]: ttps://github.com/esp-rs/esp-idf-sys/blob/master/BUILD-OPTIONS.md#sdkconfig
+[cargo-espflash-bootloader]: https://github.com/esp-rs/espflash/tree/main/cargo-espflash#bootloader-and-partition-table
 
 ## Environment Variable `LIBCLANG_PATH` Not Set
 

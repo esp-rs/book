@@ -13,7 +13,9 @@ The training contains:
    * [A button example][button]
    * [A button with an interrupt example][button-interrupt]
 
-> ⚠️ **Note**: There are several examples covering the use of specific peripherals under the examples' folder of every SoC [`esp-hal`][esp-hal]. E.g. [`esp32c3-hal/examples`][esp32c3-hal-examples]
+> ⚠️ **Note**: There are several examples covering the use of specific peripherals under the [`examples`][esp-hal-examples] folder [`esp-hal`][esp-hal]. For running instructions and device compatibility for a given example, refer to the [`examples` README][examples-readme].
+
+
 
 [no-std-book]: https://esp-rs.github.io/no_std-training/
 [no-std-repository]: https://github.com/esp-rs/no_std-training
@@ -24,4 +26,5 @@ The training contains:
 [button]: https://github.com/esp-rs/no_std-training/tree/main/intro/button
 [button-interrupt]: https://github.com/esp-rs/no_std-training/tree/main/intro/button-interrupt
 [esp-hal]: https://github.com/esp-rs/esp-hal
-[esp32c3-hal-examples]: https://github.com/esp-rs/esp-hal/tree/main/esp32c3-hal/examples
+[esp-hal-examples]: https://github.com/esp-rs/esp-hal/tree/main/examples
+[examples-readme]: https://github.com/esp-rs/esp-hal/blob/main/examples/README.md

@@ -15,7 +15,7 @@ project and it will flash the bootloader and partition table that is built for y
 
 If you want to use `espflash`, you can specify an appropriate bootloader and partition table using `--bootloader` and `--partition-table`. You can find the bootloader in `target/<your MCU's target folder>/<debug or release depending on your build>/bootloader.bin` and partition table in `target/<your MCU's target folder>/<debug or release depending on your build>/partition-table.bin`
 
-[sdkconfig]: ttps://github.com/esp-rs/esp-idf-sys/blob/master/BUILD-OPTIONS.md#sdkconfig
+[sdkconfig]: https://github.com/esp-rs/esp-idf-sys/blob/master/BUILD-OPTIONS.md#sdkconfig
 [cargo-espflash-bootloader]: https://github.com/esp-rs/espflash/tree/main/cargo-espflash#bootloader-and-partition-table
 
 ## Environment Variable `LIBCLANG_PATH` Not Set

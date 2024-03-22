@@ -27,3 +27,4 @@ The training contains:
 [button-interrupt]: https://github.com/esp-rs/no_std-training/tree/main/intro/button-interrupt
 [esp-hal]: https://github.com/esp-rs/esp-hal
 [esp-hal-examples]: https://github.com/esp-rs/esp-hal/tree/main/examples
+[examples-readme]: https://github.com/esp-rs/esp-hal/blob/main/examples/README.md

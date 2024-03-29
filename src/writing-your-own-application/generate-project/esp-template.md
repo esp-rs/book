@@ -102,9 +102,6 @@ Inside the `main` function we can find:
   - Here we configure the system clocks - in this case, boost to the maxiumum for the chip
   - We freeze the clocks, which means we can't change them later
   - Some drivers need a reference to the clocks to know how to calculate rates and durations
-- The next block of code instantiates some peripherals (namely RTC and the two timer groups) to disable the watchdog, which is armed after boot
-  - Without that code, the SoC would reboot after some time
-  - There is another way to prevent the reboot: feeding the watchdog
 - `println!("Hello world!");`
   - Prints "Hello world!"
 - `loop {}`

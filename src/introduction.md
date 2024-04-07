@@ -57,7 +57,7 @@ If you are unfamiliar or less experienced with anything mentioned above, or if y
 This book has been translated by generous volunteers. If you would like your translation listed here, please open a PR to add it.
 
 - [简体中文](https://narukara.github.io/rust-on-esp-book-zh-cn/) ([repository](https://github.com/Narukara/rust-on-esp-book-zh-cn))
-
+- [한국어](https://ing03201.github.io/rust-on-esp-book-ko-kr/) ([repository](https://github.com/ing03201/rust-on-esp-book-ko-kr))
 ## How to Use This Book
 
 This book assumes that you are reading it front-to-back. Content covered in later chapters may not make much sense without the context from previous chapters.

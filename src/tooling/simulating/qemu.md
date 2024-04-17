@@ -23,13 +23,13 @@ If you prefer to use [`espflash`][espflash], you can achieve the same result by 
 
 ```shell
 cargo build --release
-espflash save-image --chip ESP32 --merge target/xtensa-esp32-espidf/release/<NAME> <OUTFILE>
+espflash save-image --chip esp32 --merge target/xtensa-esp32-espidf/release/<NAME> <OUTFILE>
 ```
 
 Now, run the image in QEMU:
 
 ```shell
-/path/to/qemu-system-xtensa -nographic -machine esp32 -drive file=<OUTFILE>,if=mtd,format=raw
+/path/to/qemu-system-xtensa -nographic -machine esp32 -drive file=<OUTFILE>,if=mtd,format=raw -m 4M
 ```
 
 [cargo-espflash]: https://github.com/esp-rs/espflash/tree/main/cargo-espflash

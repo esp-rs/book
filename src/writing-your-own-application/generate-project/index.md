@@ -18,7 +18,7 @@ Both templates are based on [`cargo-generate`][cargo-generate], a tool that allo
         See [Understanding `esp-template`][understanding-esp-template] for more details on the template project.
     - `esp-idf-template`:
         ```shell
-        cargo generate esp-rs/esp-idf-template cargo
+        cargo generate esp-rs/esp-idf-template
         ```
         See [Understanding `esp-idf-template`][understanding-esp-idf-template] for more details on the template project.
 

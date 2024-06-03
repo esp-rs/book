@@ -1,0 +1,254 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Writing no_std Applications - The Rust on ESP Book</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="A comprehensive guide on using the Rust programming language with Espressif SoCs and modules">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../introduction.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="../overview/index.html"><strong aria-hidden="true">2.</strong> Overview of Development Approaches</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../overview/using-the-standard-library.html"><strong aria-hidden="true">2.1.</strong> Using the Standard Library (std)</a></li><li class="chapter-item expanded "><a href="../overview/using-the-core-library.html"><strong aria-hidden="true">2.2.</strong> Using the Core Library (no_std)</a></li></ol></li><li class="chapter-item expanded "><a href="../installation/index.html"><strong aria-hidden="true">3.</strong> Setting Up a Development Environment</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../installation/rust.html"><strong aria-hidden="true">3.1.</strong> Rust installation</a></li><li class="chapter-item expanded "><a href="../installation/riscv.html"><strong aria-hidden="true">3.2.</strong> RISC-V targets only</a></li><li class="chapter-item expanded "><a href="../installation/riscv-and-xtensa.html"><strong aria-hidden="true">3.3.</strong> RISC-V and Xtensa targets</a></li><li class="chapter-item expanded "><a href="../installation/std-requirements.html"><strong aria-hidden="true">3.4.</strong> std Development Requirements</a></li><li class="chapter-item expanded "><a href="../installation/using-containers.html"><strong aria-hidden="true">3.5.</strong> Using Containers</a></li></ol></li><li class="chapter-item expanded "><a href="../writing-your-own-application/index.html"><strong aria-hidden="true">4.</strong> Writing Your Own Application</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../writing-your-own-application/generate-project/index.html"><strong aria-hidden="true">4.1.</strong> Generating Projects from Templates</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../writing-your-own-application/generate-project/esp-template.html"><strong aria-hidden="true">4.1.1.</strong> Understanding esp-template</a></li><li class="chapter-item expanded "><a href="../writing-your-own-application/generate-project/esp-idf-template.html"><strong aria-hidden="true">4.1.2.</strong> Understanding esp-idf-template</a></li></ol></li><li class="chapter-item expanded "><a href="../writing-your-own-application/nostd.html" class="active"><strong aria-hidden="true">4.2.</strong> Writing no_std Applications</a></li><li class="chapter-item expanded "><a href="../writing-your-own-application/std.html"><strong aria-hidden="true">4.3.</strong> Writing std Applications</a></li></ol></li><li class="chapter-item expanded "><a href="../tooling/index.html"><strong aria-hidden="true">5.</strong> Tooling</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../tooling/visual-studio-code.html"><strong aria-hidden="true">5.1.</strong> Visual Studio Code</a></li><li class="chapter-item expanded "><a href="../tooling/espflash.html"><strong aria-hidden="true">5.2.</strong> espflash</a></li><li class="chapter-item expanded "><a href="../tooling/debugging/index.html"><strong aria-hidden="true">5.3.</strong> Debugging</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../tooling/debugging/probe-rs.html"><strong aria-hidden="true">5.3.1.</strong> probe-rs</a></li><li class="chapter-item expanded "><a href="../tooling/debugging/openocd.html"><strong aria-hidden="true">5.3.2.</strong> OpenOCD</a></li></ol></li><li class="chapter-item expanded "><a href="../tooling/simulating/index.html"><strong aria-hidden="true">5.4.</strong> Simulating</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../tooling/simulating/wokwi.html"><strong aria-hidden="true">5.4.1.</strong> Wokwi</a></li><li class="chapter-item expanded "><a href="../tooling/simulating/qemu.html"><strong aria-hidden="true">5.4.2.</strong> QEMU</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../troubleshooting/index.html"><strong aria-hidden="true">6.</strong> Troubleshooting</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../troubleshooting/std.html"><strong aria-hidden="true">6.1.</strong> esp-idf-sys based projects</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">The Rust on ESP Book</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/esp-rs/book" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="writing-no_std-applications"><a class="header" href="#writing-no_std-applications">Writing <code>no_std</code> Applications</a></h1>
+<p>If you want to learn how to develop <code>no_std</code> application, see the following training materials:</p>
+<ul>
+<li>The book <a href="https://esp-rs.github.io/no_std-training/">Embedded Rust (<code>no_std</code>) on Espressif</a></li>
+<li>The repository <a href="https://github.com/esp-rs/no_std-training"><code>no_std-training</code></a></li>
+</ul>
+<p>The training is based on <a href="https://github.com/esp-rs/esp-rust-board">ESP32-C3-DevKit-RUST-1</a>. You can use any other Espressif development board but code changes and configuration changes might be needed.</p>
+<p>The training contains:</p>
+<ul>
+<li>Introductory level examples:
+<ul>
+<li><a href="https://github.com/esp-rs/no_std-training/tree/main/intro/hello-world">A basic hello-world</a></li>
+<li><a href="https://github.com/esp-rs/no_std-training/tree/main/intro/panic">A panic example</a></li>
+<li><a href="https://github.com/esp-rs/no_std-training/tree/main/intro/blinky">A blinky example</a></li>
+<li><a href="https://github.com/esp-rs/no_std-training/tree/main/intro/button">A button example</a></li>
+<li><a href="https://github.com/esp-rs/no_std-training/tree/main/intro/button-interrupt">A button with an interrupt example</a></li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>⚠️ <strong>Note</strong>: There are several examples covering the use of specific peripherals under the <a href="https://github.com/esp-rs/esp-hal/tree/main/examples"><code>examples</code></a> folder <a href="https://github.com/esp-rs/esp-hal"><code>esp-hal</code></a>. For running instructions and device compatibility for a given example, refer to the <a href="https://github.com/esp-rs/esp-hal/blob/main/examples/README.md"><code>examples</code> README</a>.</p>
+</blockquote>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../writing-your-own-application/generate-project/esp-idf-template.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../writing-your-own-application/std.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../writing-your-own-application/generate-project/esp-idf-template.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../writing-your-own-application/std.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../assets/mermaid.min.js"></script>
+        <script src="../assets/mermaid-init.js"></script>
+
+
+    </div>
+    </body>
+</html>

@@ -21,6 +21,7 @@ Some of our recent products contain the `USB-JTAG-SERIAL` peripheral that allows
     - The availability of built-in JTAG interface depends on the ESP32-C3 revision:
       - Revisions older than 0.3 **don't** have a built-in JTAG interface.
       - Revisions 0.3 (and newer) **do** have a built-in JTAG interface, and you don't have to connect an external device to be able to debug.
+      - The ESP32-C3 Devkit C doesn't expose the JTAG interface over USB by default, see the [ESP32-C3 debugging docs][esp32c3-docs] to configure the board for debugging.
 
     To find your ESP32-C3 revision, run:
     ```shell

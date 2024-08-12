@@ -2,8 +2,16 @@
 
 To build Rust applications for the Espressif chips based on `RISC-V` architecture, do the following:
 
-1. Install the [`nightly`][rustup-book-channel-nightly] toolchain with the `rust-src` [component][rustup-book-components]:
-
+1. Install the proper toolchain with the `rust-src` [component][rustup-book-components]:
+    - For `no_std` (bare-metal) applications, you can use both `stable` or [`nightly`][rustup-book-channel-nightly]:
+    ```shell
+    rustup toolchain install stable --component rust-src
+    ```
+    or
+    ```shell
+    rustup toolchain install nightly --component rust-src
+    ```
+    - For `std` applications, you need to use `nightly`:
     ```shell
     rustup toolchain install nightly --component rust-src
     ```

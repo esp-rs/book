@@ -1,6 +1,6 @@
 # `probe-rs`
 
-The [`probe-rs`][probe-rs] project is a set of tools to interact with embedded MCU's using various debug probes. It is similar to [OpenOCD][openocd], [pyOCD][pyocd], [Segger tools][segger-tools], etc. There is support for `ARM` & `RISC-V` architectures along with a collection of tools, including but not limited to:
+The [`probe-rs`][probe-rs] project is a set of tools to interact with embedded MCU's using various debug probes. It is similar to [OpenOCD][openocd], [pyOCD][pyocd], [Segger tools][segger-tools], etc. There is support for `Xtensa` & `RISC-V` architectures along with a collection of tools, including but not limited to:
 
 - Debugger
   - GDB support.

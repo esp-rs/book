@@ -26,7 +26,7 @@ If you are developing for a target that doesn't have `std` support, Rust Analyze
 
 ```json
 {
-  "rust-analyzer.checkOnSave.allTargets": false
+  "rust-analyzer.check.allTargets": false
 }
 ```
 

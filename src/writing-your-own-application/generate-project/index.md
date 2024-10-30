@@ -11,6 +11,7 @@ Both templates are based on [`cargo-generate`][cargo-generate], a tool that allo
     cargo install cargo-generate
     ```
 2. Generate a project based on one of the templates:
+    > 🚨 **Warning**: On Windows the complete path to your project must be no more than 10 characters.
     - `esp-template`:
         ```shell
         cargo generate esp-rs/esp-template

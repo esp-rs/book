@@ -28,11 +28,11 @@ The table below covers the current support for `no_std` at this moment for diffe
 > - ✅ in Wi-Fi/BLE/ESP-NOW means that the target supports, at least, one of the listed technologies. For details, see [Current support][esp-wifi-current-support] table of the esp-wifi repository.
 > - [ESP8266 HAL][esp8266-hal] is in maintenance mode and no further development will be done for this chip.
 
-[esp-hal]: https://github.com/esp-rs/esp-hal "Hardware abstraction layer"
-[esp-wifi]: https://github.com/esp-rs/esp-wifi "Wi-Fi, BLE and ESP-NOW support"
-[esp-backtrace]: https://github.com/esp-rs/esp-backtrace "Exception and panic handlers"
-[esp-storage]: https://github.com/esp-rs/esp-storage "Embedded-storage traits to access unencrypted flash memory"
-[esp-wifi-current-support]: https://github.com/esp-rs/esp-wifi#current-support
+[esp-hal]: https://github.com/esp-rs/esp-hal/tree/main/esp-hal "Hardware abstraction layer"
+[esp-wifi]: https://github.com/esp-rs/esp-hal/tree/main/esp-wifi "Wi-Fi, BLE and ESP-NOW support"
+[esp-backtrace]: https://github.com/esp-rs/esp-hal/tree/main/esp-backtrace "Exception and panic handlers"
+[esp-storage]: https://github.com/esp-rs/esp-hal/tree/main/esp-storage "Embedded-storage traits to access unencrypted flash memory"
+[esp-wifi-current-support]: https://github.com/esp-rs/esp-hal/tree/main/esp-wifi#current-support
 [esp8266-hal]: https://github.com/esp-rs/esp8266-hal "ESP8266 Hardware abstraction layer"
 
 ### Relevant `esp-rs` Crates
@@ -55,5 +55,5 @@ The table below covers the current support for `no_std` at this moment for diffe
 - Custom requirements: bare-metal allows more customization and fine-grained control over the behavior of an application, which can be useful in specialized or non-standard environments.
 
 [esp-pacs]: https://github.com/esp-rs/esp-pacs "Peripheral access crates"
-[esp-alloc]: https://github.com/esp-rs/esp-alloc "Simple heap allocator"
-[esp-println]: https://github.com/esp-rs/esp-println "print!, println!"
+[esp-alloc]: https://github.com/esp-rs/esp-hal/tree/main/esp-alloc "Simple heap allocator"
+[esp-println]: https://github.com/esp-rs/esp-hal/tree/main/esp-println "print!, println!"

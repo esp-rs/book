@@ -55,5 +55,5 @@ The table below covers the current support for `no_std` at this moment for diffe
 - Custom requirements: bare-metal allows more customization and fine-grained control over the behavior of an application, which can be useful in specialized or non-standard environments.
 
 [esp-pacs]: https://github.com/esp-rs/esp-pacs "Peripheral access crates"
-[esp-alloc]: https://github.com/esp-rs/esp-alloc "Simple heap allocator"
-[esp-println]: https://github.com/esp-rs/esp-println "print!, println!"
+[esp-alloc]: https://github.com/esp-rs/esp-hal/tree/main/esp-alloc "Simple heap allocator"
+[esp-println]: https://github.com/esp-rs/esp-hal/tree/main/esp-println "print!, println!"

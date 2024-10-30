@@ -9,6 +9,8 @@ To set up the development environment, do the following:
     - [`RISC-V` targets only][risc-v-targets]
     - [`RISC-V` and `Xtensa` targets][rics-v-xtensa-targets]
 
+Note that only the ESP32 and ESP32-S series use `Xtensa` architecture, and the rest of the series (ESP32-C, ESP32-H, ESP32-P) are `RISC-V`.
+
 Regardless of the target architecture, for `std` development also don't forget to install [`std` Development Requirements][rust-esp-book-std-requirements].
 
 Please note that you can host the development environment in a [container][use-containers].

@@ -12,7 +12,7 @@
   - [Using Containers](./installation/using-containers.md)
 - [Writing Your Own Application](./writing-your-own-application/index.md)
   - [Generating Projects from Templates](./writing-your-own-application/generate-project/index.md)
-    - [Understanding `esp-template`](./writing-your-own-application/generate-project/esp-template.md)
+    - [Understanding `esp-generate`](./writing-your-own-application/generate-project/esp-generate.md)
     - [Understanding `esp-idf-template`](./writing-your-own-application/generate-project/esp-idf-template.md)
   - [Writing `no_std` Applications](./writing-your-own-application/nostd.md)
   - [Writing `std` Applications](./writing-your-own-application/std.md)

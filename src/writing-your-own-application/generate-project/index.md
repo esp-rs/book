@@ -30,7 +30,7 @@ We currently maintain two template repositories:
 
 ## `esp-idf-template`
 
-`esp-idf-tempalte` is based on [`cargo-generate`][cargo-generate], a tool that allows you to create a new project based on some existing template. In our case, [`esp-idf-template`][esp-idf-template] can be used to generate an application with all the required configurations and dependencies.
+`esp-idf-template` is based on [`cargo-generate`][cargo-generate], a tool that allows you to create a new project based on some existing template. In our case, [`esp-idf-template`][esp-idf-template] can be used to generate an application with all the required configurations and dependencies.
 
 1. Install `cargo generate`:
     ```shell

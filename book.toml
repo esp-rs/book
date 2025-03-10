@@ -9,15 +9,7 @@ edition = "2018"
 
 [output.html]
 git-repository-url = "https://github.com/esp-rs/book"
-additional-js      = ["assets/mermaid.min.js", "assets/mermaid-init.js"]
-
-[output.html.redirect]
-"/overview/bare-metal.html"                                                         = "https://esp-rs.github.io/book/overview/using-the-core-library.html"
-"/tooling/text-editors-and-ides.html"                                               = "https://esp-rs.github.io/book/tooling/visual-studio-code.html"
-"/debugging/vscode-debugging.html"                                                  = "https://esp-rs.github.io/book/debugging/vscode.html"
-"/writing-your-own-application/no-std-applications/understanding-esp-template.html" = "https://esp-rs.github.io/book/writing-your-own-application/generate-project/esp-generate.html"
-"installation/installation.html"                                                    = "https://esp-rs.github.io/book/installation/index.html"
-"troubleshooting/espflash.html"                                                     = "https://esp-rs.github.io/book/troubleshooting/index.html"
+additional-js      = ["assets/mermaid-init.js", "assets/mermaid.min.js"]
 
 [preprocessor.mermaid]
 command = "mdbook-mermaid"

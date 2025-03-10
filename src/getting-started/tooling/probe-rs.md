@@ -14,18 +14,17 @@ Espressif products containing the `USB-JTAG-SERIAL` peripheral can use `probe-rs
 
 > ⚠️ **Note**: `USB-JTAG-SERIAL` peripheral is available in ESP32-C6, ESP32-H2, ESP32-S3 and ESP32-C3(revision 0.3 or later)
 
-## Insallation
-
-Follow the [installation][prober-rs-installation] and [setup][prober-rs-setup] instructions at the [`probe-rs`][probe-rs] website.
-
-
-
 [probe-rs]: https://probe.rs/
 [openocd]: https://openocd.org/
 [pyocd]: https://pyocd.io/
 [segger-tools]: https://www.segger.com/
 [app-trace-idf]: https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-guides/app_trace.html
 [rtt]: https://wiki.segger.com/RTT
+
+## Insallation
+
+Follow the [installation][prober-rs-installation] and [setup][prober-rs-setup] instructions at the [`probe-rs`][probe-rs] website.
+
 [prober-rs-installation]: https://probe.rs/docs/getting-started/installation/
 [prober-rs-setup]: https://probe.rs/docs/getting-started/probe-setup/
 

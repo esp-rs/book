@@ -33,12 +33,7 @@ To build Rust applications for the Espressif chips based on `RISC-V` architectur
 
     > ⚠️ **Note**: Other components such as `rustfmt`, `clippy` or `rust-analyzer` are not required, but they are highly recommended.
 
-    The above command downloads the rust source code. `rust-src` contains things like the std-lib, core-lib and build-config files.
-    Downloading the `rust-src` is important because of two reasons :
-    - **Determinism** - You get the chance to inspect the internals of the core and std library. If you are building software that needs to be determinate, you may need to inspect the libraries that you are using.
-    - **Building custom targets** - The `rustc` uses the `rust-src` to create the components of a new custom-target. If you are targeting a triple-target that is not yet supported by rust, it becomes essential to download the `rust-src`.
 
-   For more info on custom targets, read this [Chapter][embedonomicon-creating-a-custom-target] from the [Embedonomicon][embedonomicon-official-book].
 
 2. Install the target:
       ```shell
@@ -122,7 +117,7 @@ The forked compiler can coexist with the standard Rust compiler, allowing both t
 
 #### Other Installation Methods for `Xtensa` Targets
 
-- Using [`rust-build`][rust-build] installation scripts. This was the recommended way in the past, but now the installation scripts are feature frozen, and all new features will only be included in `espup`. See the repository README for instructions.
+- Using [`rust-build`][rust-build] installation scripts. This was the recommended in the past, but now the installation scripts are feature frozen and all new features will only be included in `espup`. See the repository README for instructions.
 - Building the Rust compiler with `Xtensa` support from source. This process is computationally expensive and can take one or more hours to complete depending on your system. It isn't recommended unless there is a major reason to go for this approach. Here is the repository to build it from source: [`esp-rs/rust` repository][esp-rs-rust].
 
 [rust-build]: https://github.com/esp-rs/rust-build#download-installer-in-bash

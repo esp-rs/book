@@ -17,9 +17,9 @@ See also [alternative installation methods][rust-alt-installation].
 [rustup-book-windows]: https://rust-lang.github.io/rustup/installation/windows.html
 [rust-lang-org]: https://www.rust-lang.org/
 
-### `RISC-V` Devices
+### RISC-V Devices
 
-To build Rust applications for the Espressif chips based on `RISC-V` architecture, do the following:
+To build Rust applications for the Espressif chips based on RISC-V architecture, do the following:
 
 1. Install the proper toolchain with the `rust-src` [component][rustup-book-components]:
     - You can use both `stable` or [`nightly`][rustup-book-channel-nightly]:
@@ -41,9 +41,9 @@ To build Rust applications for the Espressif chips based on `RISC-V` architectur
       rustup target add riscv32imac-unknown-none-elf # For ESP32-C6 and ESP32-H2
       ```
 
-      Those targets are currently [Tier 2][rust-lang-book--platform-support-tier2]. Note the different flavors of `riscv32` target in Rust covering different [`RISC-V` extensions][wiki-riscv-standard-extensions].
+      Those targets are currently [Tier 2][rust-lang-book--platform-support-tier2]. Note the different flavors of `riscv32` target in Rust covering different [RISC-V extensions][wiki-riscv-standard-extensions].
 
-Now you should be able to build and run projects on Espressif's `RISC-V` chips.
+Now you should be able to build and run projects on Espressif's RISC-V chips.
 
 [rustup-book-channel-nightly]: https://rust-lang.github.io/rustup/concepts/channels.html#working-with-nightly-rust
 [rustup-book-components]: https://rust-lang.github.io/rustup/concepts/components.html
@@ -52,9 +52,9 @@ Now you should be able to build and run projects on Espressif's `RISC-V` chips.
 [embedonomicon-creating-a-custom-target]: https://docs.rust-embedded.org/embedonomicon/custom-target.html
 [embedonomicon-official-book]: https://docs.rust-embedded.org/embedonomicon/
 
-### `Xtensa` Devices
+### Xtensa Devices
 
-[`espup`][espup-github] is a tool that simplifies installing and maintaining the toolchains required to develop Rust applications for the `Xtensa` and `RISC-V` architectures.
+[`espup`][espup-github] is a tool that simplifies installing and maintaining the toolchains required to develop Rust applications for the Xtensa and RISC-V architectures.
 
 1. Install `espup`:
     ```shell
@@ -65,7 +65,7 @@ Now you should be able to build and run projects on Espressif's `RISC-V` chips.
     ```shell
     espup install
     ```
-    This also install the `stable` toolchain for `RISC-V` devices, if you want to install the toolchain only for Xtensa devices:
+    This also install the `stable` toolchain for RISC-V devices, if you want to install the toolchain only for Xtensa devices:
     ```shell
     espup install --targets esp32,esp32s2,esp32s3
     ```
@@ -99,8 +99,8 @@ Now you should be able to build and run projects on Espressif's `RISC-V` chips.
 To enable support for Espressif targets, `espup` installs:
 
 - [Espressif Rust fork][esp-rs/rust] with support for Espressif targets
-- `stable` toolchain with support for `RISC-V` targets
-- `LLVM` [fork][llvm-github-fork] with support for `Xtensa` targets
+- `stable` toolchain with support for RISC-V targets
+- `LLVM` [fork][llvm-github-fork] with support for Xtensa targets
 - [GCC toolchain][gcc-toolchain-github-fork] that links the final binary
 
 The forked compiler can coexist with the standard Rust compiler, allowing both to be installed on your system. The forked compiler is invoked when using any of the available [overriding methods][rustup-overrides].
@@ -115,10 +115,10 @@ The forked compiler can coexist with the standard Rust compiler, allowing both t
 [rustup-overrides]: https://rust-lang.github.io/rustup/overrides.html
 [llvm-github-fork-upstream issue]: https://github.com/espressif/llvm-project/issues/4
 
-#### Other Installation Methods for `Xtensa` Targets
+#### Other Installation Methods for Xtensa Targets
 
 - Using [`rust-build`][rust-build] installation scripts. This was the recommended in the past, but now the installation scripts are feature frozen and all new features will only be included in `espup`. See the repository README for instructions.
-- Building the Rust compiler with `Xtensa` support from source. This process is computationally expensive and can take one or more hours to complete depending on your system. It isn't recommended unless there is a major reason to go for this approach. Here is the repository to build it from source: [`esp-rs/rust` repository][esp-rs-rust].
+- Building the Rust compiler with Xtensa support from source. This process is computationally expensive and can take one or more hours to complete depending on your system. It isn't recommended unless there is a major reason to go for this approach. Here is the repository to build it from source: [`esp-rs/rust` repository][esp-rs-rust].
 
 [rust-build]: https://github.com/esp-rs/rust-build#download-installer-in-bash
 [esp-rs-rust]: https://github.com/esp-rs/rust

@@ -189,9 +189,7 @@ Use monospace font for the following items:
 - Command line tools, plugins, packages
 - Files: `config.toml`
 - Images and containers: `idf-rust`
-- Architectures and targets
 
-  > The `RISC-V` and `Xtensa` architectures.
 
 ### Monospace and Other Types of Formatting
 

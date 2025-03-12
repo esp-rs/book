@@ -10,7 +10,7 @@ The [`probe-rs`][probe-rs] project is a set of tools to interact with embedded M
 - [Real Time Transfer (RTT)][rtt]
   - Similar to [`app_trace` component of IDF][app-trace-idf].
 
-Espressif products containing the `USB-JTAG-SERIAL` peripheral can use `probe-rs` without any external hardware.
+Espressif products containing the `USB-JTAG-SERIAL` peripheral can use `probe-rs` without any external hardware. For products that do not have this peripheral, an external programmer such as the [ESP-Prog][esp-prog] is required.
 
 > ⚠️ **Note**: `USB-JTAG-SERIAL` peripheral is available in ESP32-C6, ESP32-H2, ESP32-S3 and ESP32-C3(revision 0.3 or later)
 
@@ -20,6 +20,7 @@ Espressif products containing the `USB-JTAG-SERIAL` peripheral can use `probe-rs
 [segger-tools]: https://www.segger.com/
 [app-trace-idf]: https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-guides/app_trace.html
 [rtt]: https://wiki.segger.com/RTT
+[esp-prog]: https://docs.espressif.com/projects/esp-iot-solution/en/latest/hw-reference/ESP-Prog_guide.html
 
 ## Insallation
 

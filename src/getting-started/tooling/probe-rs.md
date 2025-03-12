@@ -52,67 +52,6 @@ This is automatically done when the project is generated via [`esp-generate`][es
 
 [esp-generate]: esp-generate.md
 
-
-## VS Code Extension
-
-There is a `probe-rs` extension in VS Code, see `probe-rs` [VS Code documentation][probe-rs-vscode] for details on how to install, configure and use it.
-
-### Example `launch.json`
-
-```json
-{
-    "version": "0.2.0",
-    "configurations": [
-        {
-            "type": "probe-rs-debug",
-            "request": "launch",
-            "name": "Launch",
-            "cwd": "${workspaceFolder}",
-            "chip": "esp32c3", //!MODIFY
-            // probe field only needed if multiple probes connected. <Serial> is the MAC address of your esp in case of usb-jtag
-            "probe": "VID:PID:<Serial>", //!MODIFY (or remove) | optional field
-            "flashingConfig": {
-                "flashingEnabled": true,
-                "haltAfterReset": true,
-                "formatOptions": {
-                    "binaryFormat": "idf"
-                }
-            },
-            "coreConfigs": [
-                {
-                    "coreIndex": 0,
-                    "programBinary": "target/riscv32imc-unknown-none-elf/debug/${workspaceFolderBasename}", //!MODIFY
-                    // svdFiles describe the hardware register names off the esp peripherals, such as the LEDC peripheral.
-                    // They can be downloaded seperatly @ https://github.com/espressif/svd/tree/main/svd
-                    "svdFile": "${workspaceFolder}/esp32c3.svd" //!MODIFY (or remove) | optional field
-                }
-            ]
-        },
-        {
-            "type": "probe-rs-debug",
-            "request": "attach",
-            "name": "Attach",
-            "cwd": "${workspaceFolder}",
-            "chip": "esp32c3", //!MODIFY
-            "probe": "VID:PID:<Serial>", //!MODIFY (or remove) | optional field
-            "coreConfigs": [
-                {
-                    "coreIndex": 0,
-                    "programBinary": "target/riscv32imc-unknown-none-elf/debug/${workspaceFolderBasename}", //!MODIFY
-                    "svdFile": "${workspaceFolder}/esp32c3.svd" //!MODIFY (or remove) | optional field
-                }
-            ]
-        }
-    ]
-}
-```
-
-The `Launch` configuration will flash the device and start debugging process while `Attach` will start the debugging in the already running application of the device. See VS Code documentation on [differences between launch and attach][vscode-configs] for more details.
-
-
-[probe-rs-vscode]: https://probe.rs/docs/tools/debugger/
-[vscode-configs]: https://code.visualstudio.com/docs/editor/debugging#_launch-versus-attach-configurations
-
 ## `cargo-flash` and `cargo-embed`
 
 `probe-rs` comes along with these two tools:
@@ -122,11 +61,3 @@ The `Launch` configuration will flash the device and start debugging process whi
 [cargo-flash]: https://probe.rs/docs/tools/cargo-flash/
 [cargo-embed]: https://probe.rs/docs/tools/cargo-embed/
 [cargo-embed-config]: https://probe.rs/docs/tools/cargo-embed/#configuration
-
-## GDB Integration
-
-`probe-rs` includes a GDB stub to integrate into your usual workflow with common tools. The `probe-rs gdb` command runs a GDB server, by default in port, `1337`.
-
-GDB with all the Espressif products supported can be obtained in [`espressif/binutils-gdb`][binutils-repo]
-
-[binutils-repo]: https://github.com/espressif/binutils-gdb

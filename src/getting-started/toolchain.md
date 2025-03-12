@@ -22,7 +22,7 @@ See also [alternative installation methods][rust-alt-installation].
 To build Rust applications for the Espressif chips based on RISC-V architecture, do the following:
 
 1. Install the proper toolchain with the `rust-src` [component][rustup-book-components]:
-    - You can use both `stable` or [`nightly`][rustup-book-channel-nightly]:
+    - You can use either `stable` or [`nightly`][rustup-book-channel-nightly]:
       ```shell
       rustup toolchain install stable --component rust-src
       ```
@@ -41,7 +41,7 @@ To build Rust applications for the Espressif chips based on RISC-V architecture,
       rustup target add riscv32imac-unknown-none-elf # For ESP32-C6 and ESP32-H2
       ```
 
-      Those targets are currently [Tier 2][rust-lang-book--platform-support-tier2]. Note the different flavors of `riscv32` target in Rust covering different [RISC-V extensions][wiki-riscv-standard-extensions].
+      Those targets are currently [Tier 2][rust-lang-book--platform-support-tier2]. Note the different flavors of `riscv32` targets in Rust covering different [RISC-V extensions][wiki-riscv-standard-extensions].
 
 Now you should be able to build and run projects on Espressif's RISC-V chips.
 
@@ -100,13 +100,13 @@ To enable support for Espressif targets, `espup` installs:
 
 - [Espressif Rust fork][esp-rs/rust] with support for Espressif targets
 - `stable` toolchain with support for RISC-V targets
-- `LLVM` [fork][llvm-github-fork] with support for Xtensa targets
+- LLVM [fork][llvm-github-fork] with support for Xtensa targets
 - [GCC toolchain][gcc-toolchain-github-fork] that links the final binary
 
 The forked compiler can coexist with the standard Rust compiler, allowing both to be installed on your system. The forked compiler is invoked when using any of the available [overriding methods][rustup-overrides].
 
 > ⚠️ **Note**: We are actively working to upstream our forks. Below is the current status:
-> 1. `LLVM` fork: We've made significant progress recently. For details, refer to the [tracking issue][llvm-github-fork-upstream issue].
+> 1. LLVM fork: We've made significant progress recently. For details, refer to the [tracking issue][llvm-github-fork-upstream issue].
 > 2. Rust compiler fork: We've submitted all feasible Xtensa patches. Further progress depends on these changes being upstreamed into LLVM.
 
 [esp-rs/rust]: https://github.com/esp-rs/rust

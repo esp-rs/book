@@ -1,10 +1,9 @@
 # `espflash`
 
-`espflash` is a serial flasher utility, based on [esptool.py][esptool], for Espressif SoCs and modules.
+`espflash` is a serial flasher utility for Espressif SoCs and modules.
 
 The [`espflash`][espflash] repository contains two crates, `cargo-espflash` and `espflash`. For more information on these crates, see the respective sections below.
 
-[esptool]: https://github.com/espressif/esptool
 [espflash]: https://github.com/esp-rs/espflash
 
 ## `espflash`

@@ -4,7 +4,7 @@
 
 Make sure you have [Rust][rust-lang-org] installed. If not, see the instructions on the [rustup][rustup.rs-website] website.
 
-> 🚨 **Warning**: When using Unix based systems, installing Rust via a system package manager (e.g. `brew`, `apt`, `dnf`, etc.) can result in various issues and incompatibilities, so it's best to use [rustup][rustup.rs-website] instead.
+> 🚨 **Warning**: When using Unix based systems, installing Rust via a system package manager (e.g. `brew`, `apt`, `dnf`, etc.) can result in various [issues and incompatibilities][rustup-note], so it's best to use [rustup][rustup.rs-website] instead.
 
 When using Windows, make sure you have installed one of the ABIs listed below. For more details, see the [Windows][rustup-book-windows] chapter in The rustup book.
 - **MSVC**: Recommended ABI, included in the list of `rustup` default requirements. Use it for interoperability with the software produced by Visual Studio.
@@ -12,6 +12,7 @@ When using Windows, make sure you have installed one of the ABIs listed below. F
 
 See also [alternative installation methods][rust-alt-installation].
 
+[rustup-note]: https://rust-lang.github.io/rustup/installation/other.html#using-a-package-manager
 [rustup.rs-website]: https://rustup.rs/
 [rust-alt-installation]: https://rust-lang.github.io/rustup/installation/other.html
 [rustup-book-windows]: https://rust-lang.github.io/rustup/installation/windows.html

@@ -6,7 +6,7 @@
   - [System Architecture](./introduction/system-architecture.md)
   - [HAL Design Philosophy](./introduction/hal-design-philosophy.md)
 - [Getting Started](./getting-started/index.md)
-  - [Toolchain Installation and Setup](./getting-started/toolchain-installation-and-setup.md)
+  - [Toolchain Installation and Setup](./getting-started/toolchain.md)
   - [Tooling](./getting-started/tooling/index.md)
     - [esp-generate](./getting-started/tooling/esp-generate.md)
     - [espflash](./getting-started/tooling/espflash.md)

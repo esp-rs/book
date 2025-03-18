@@ -1,17 +1,19 @@
+<p style="text-align:center;"><img src="./assets/esp-logo-black.svg" width="50%"></p>
+
 # Preface
 
-Welcome to a comprehensive guide to using the `esp-rs` driver, created for embedded Rust development on Espressif products. This book serves as a practical resource for developers wishing to utilise the capabilities of Rust in `no_std` environments when working with Espressif hardware platforms.
+Welcome to a comprehensive guide to using the `esp-rs` ecosystem, created for embedded Rust development on Espressif products. This book serves as a practical resource for developers wishing to utilise the capabilities of Rust in `no_std` environments when working with Espressif hardware platforms.
 
 ## Who This Book Is For
 
-This book is intended for people with some experience in Rust and assumes a basic knowledge of embedded development and electronics. The expected target user of our driver and reader of this book has a basic understanding of concepts such as cross-compilation, common digital interfaces (UART, SPI, I2C), memory-mapped peripherals and interrupts. For those without prior experience, we recommend first reading the [Scope of This Book][prerequisites] and [Resources][resources] sections to get up to speed.
+This book is intended for people with some experience in Rust and assumes a basic knowledge of embedded development and electronics. The expected target user of our product and reader of this book has a basic understanding of concepts such as cross-compilation, common digital interfaces (UART, SPI, I2C), memory-mapped peripherals and interrupts. For those without prior experience, we recommend first reading the [Scope of This Book][prerequisites] and [Resources][resources] sections to get up to speed.
 
 [prerequisites]: #scope-of-this-book
 [resources]: #additional-resources
 
 ## Scope of This Book
 
-In this book, we focus specifically on the `esp-rs` driver and its ecosystem. It does **not** serve as:
+In this book, we focus specifically on the `esp-rs` ecosystem. It does **not** serve as:
 
 - A general Rust programming language tutorial: if you are new to Rust, we recommend starting with [The Rust Programming Language][rust-book].
 - An embedded development guide: prior familiarity with basic embedded development is assumed.
@@ -21,7 +23,7 @@ In this book, we focus specifically on the `esp-rs` driver and its ecosystem. It
 
 ## Stability and Availability
 
-The `esp-rs` driver is under active development and may be subject to changes as it evolves. While we strive for stability, users should expect periodic modifications as we improve the API, improve performance, and introduce new features. Those [modules] that are already stabilised will not be subject to frequent dramatic changes, while the `unstable` parts of the driver are being actively worked on and will likely undergo changes in future versions of the driver. 
+The `esp-rs` project is under active development and may be subject to changes as it evolves. While we strive for stability, users should expect periodic modifications as we improve the API, improve performance, and introduce new features. Those [modules] that are already stabilised will not be subject to frequent dramatic changes, while the `unstable` parts of the drivers are being actively worked on and will likely undergo changes in future releases. 
 
 Additionally, the ecosystem of Rust itself, in a broader meaning, is still in its infancy. Some dependencies, tools, or language features may change over time. We encourage developers to stay up to date with the latest releases and participate in discussions to help shape the future of Rust on Espressif platforms.
 
@@ -36,8 +38,8 @@ If you're unfamiliar with certain concepts covered in this book or would like to
 | [The Rust Programming Language][rust-book]             | Learn Rust fundamentals before diving into embedded development.                     |
 | [The Embedded Rust Book][embedded-rust-book]           | A collection of resources from Rust's Embedded Working Group.                        |
 | [The Embedonomicon][embedonomicon]                     | Detailed insights into low-level embedded Rust programming.                          |
-| [Embedded Rust (std) on Espressif][std-training]       | Getting started guide for using Rust's `std` environment on Espressif SoCs.         |
 | [Embedded Rust (no_std) on Espressif][no_std-training] | Guide for working in `no_std` environments with Espressif SoCs.                     |
+| [Embedded Rust (std) on Espressif][std-training]       | Getting started guide for using Rust's `std` environment on Espressif SoCs.         |
 | [Awesome ESP Rust][awesome-esp-rust]                   | A list of resouces for development in the Rust programming language for ESP products | 
 
 [rust-book]: https://doc.rust-lang.org/book/

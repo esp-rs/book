@@ -2,11 +2,11 @@
 
 # Preface
 
-Welcome to a comprehensive guide to using the `esp-rs` ecosystem, created for embedded Rust development on Espressif products. This book serves as a practical resource for developers wishing to utilize the capabilities of Rust in `no_std` environments when working with Espressif hardware platforms.
+Welcome to a comprehensive guide to using the `esp-rs` ecosystem, created for embedded Rust development on Espressif products. You will find everything you need to get started and build real-world applications, from setting up your development environment to writing and debugging embedded code in Rust. We will also touch on other important aspects such as our tools, give an overview of our software product architecture, and teach how you can contribute to our project. 
 
 ## Who This Book Is For
 
-This book is intended for people with some experience in Rust and assumes basic knowledge of embedded development and electronics. The expected target user of our ecosystem and reader of this book has a basic understanding of concepts such as cross-compilation, common digital interfaces (UART, SPI, I2C), memory-mapped peripherals and interrupts. For those without prior experience, we recommend first reading the [Scope of This Book][prerequisites] and [Resources][resources] sections to get up to speed.
+This book is intended for people with some experience in Rust and assumes basic knowledge of embedded development and electronics. Readers of this book are expected to have a basic understanding of concepts such as cross-compilation, common digital interfaces (UART, SPI, I2C), memory-mapped peripherals and interrupts. For those without prior experience, we recommend first reading the [Scope of This Book][prerequisites] and [Resources][resources] sections to get up to speed.
 
 [prerequisites]: #scope-of-this-book
 
@@ -14,8 +14,8 @@ This book is intended for people with some experience in Rust and assumes basic 
 
 In this book, we focus specifically on the `esp-rs` ecosystem. It does **not** serve as:
 
-- A general Rust programming language tutorial: if you are new to Rust, we recommend starting with [The Rust Programming Language][rust-book].
-- An embedded development guide: prior familiarity with basic embedded development is assumed.
+- A general Rust programming language tutorial: Familiarity with the Rust language is assumed to get you started. 
+- An embedded development guide: Prior familiarity with basic embedded development is also assumed.
 - A collection of examples: This book explains the overall process of working with the `esp-rs` ecosystem. More examples can be found [here][examples]. 
 
 Check the [Additional Resources][resources] section if you are not familiar with any of these concepts.

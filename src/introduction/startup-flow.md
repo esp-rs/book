@@ -20,12 +20,6 @@ Uses the [ESP image format][esp-image-format], see more information in [ESP-IDF 
 
 [esp-idf-second-stage-bootloader]: https://docs.espressif.com/projects/esp-idf/en/stable/esp32c6/api-guides/startup.html#second-stage-bootloader
 
-#### MCUboot
-
-See [MCUboot documentation][mcuboot-docs]
-
-[mcuboot-docs]: https://docs.mcuboot.com/
-
 ## Partition Tables
 
 Flash memory of the Espressif devices can store multiple applications along with various types of data, such as calibration data, filesystems, and parameter storage. To manage this, a partition table is flashed at the default offset device.

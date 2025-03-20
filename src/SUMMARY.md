@@ -3,7 +3,7 @@
 - [Preface](./preface.md)
 - [Introduction](./introduction/index.md)
   - [Hardware Overview](./introduction/hardware-overview.md)
-  - [System Architecture](./introduction/system-architecture.md)
+  - [Application Startup Flow](./introduction/startup-flow.md)
   - [HAL Design Philosophy](./introduction/hal-design-philosophy.md)
 - [Getting Started](./getting-started/index.md)
   - [Toolchain Installation and Setup](./getting-started/toolchain.md)

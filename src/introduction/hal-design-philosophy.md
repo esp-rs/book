@@ -7,7 +7,7 @@ The HAL was designed based on some recommended patterns and rules that are descr
 [guidelines]: https://github.com/esp-rs/esp-hal/blob/main/documentation/DEVELOPER-GUIDELINES.md
 [embedded-rust-patterns]: https://docs.rust-embedded.org/book/design-patterns/hal/index.html
 
-The HAL implements both blocking and asynchronous APIs for the supported peripherals. When applicable, drivers implement the [`embedded-hal`][embedded-hal] and [`embedded-hal-async`][embedded-hal-async] traits.
+The HAL implements blocking APIs for all peripherals, and asynchronous APIs for the peripherals which support asynchronous operation. When applicable, drivers implement the [`embedded-hal`][embedded-hal] and [`embedded-hal-async`][embedded-hal-async] traits.
 
 ## `Peripheral` Pattern
 

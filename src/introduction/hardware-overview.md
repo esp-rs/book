@@ -1,16 +1,16 @@
 # Hardware Overview
 
-The crates under the `esp-rs` organization include support for the [ESP32, ESP32-S, ESP32-C, ESP32-H and ESP32-P Series SoCs][espressif-socs].
+The crates under the `esp-rs` organization include support for the [ESP32, ESP32-S, ESP32-C and ESP32-H Series SoCs][espressif-socs].
 
 > ⚠️ **Note**:  The ESP8266 is not supported. However, you can replace it with the pin-compatible ESP32-C3.
 
 Each SoC has its own unique features while sharing some common traits. To select the appropriate chip for your project, please use the [ESP Product Selector][product-selector].
 
 The Espressif portfolio is based on two different system architectures:
-- [Xtensa][xtensa-architecture]: The ESP32 and ESP32-S series are Xtensa-based, with at least their main core using Xtensa.
-- [RISC-V][riscv-architecture]: The ESP32-C, ESP32-H, and ESP32-P series are RISC-V-based.
+- [Xtensa][xtensa-architecture]: The ESP32 and ESP32-S series are based on the Xtensa architecture.
+- [RISC-V][riscv-architecture]: The ESP32-C and ESP32-H series are based on the RISC-V architecture.
 
-We won't go into the details or differences between the two architectures here. Rust's official support differs between the two architectures. Xtensa is not yet officially supported, though we are actively working to add support.
+We won't go into the details or differences between the two architectures here. Rust's official support differs between the two architectures. Xtensa is not yet officially supported, though we matain a fork that adds suport for it and are actively working to upstream our patches.
 
 Feel free to refer to the [Technical Documentation][espressif-docs] for more information about the different SoCs.
 

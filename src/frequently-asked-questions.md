@@ -140,17 +140,17 @@ In this chapter, we will discuss currently available simulation tools.
 
 Refer to the table below to see which chip is supported in every simulating method:
 
-|              | **[Wokwi][wokwi]** | **QEMU** |
-| :----------: | :----------------: | :------: |
-|  **ESP32**   |         ✅          |    ✅     |
-| **ESP32-C2** |         ❌          |    ❌     |
-| **ESP32-C3** |         ✅          |    ✅     |
-| **ESP32-C6** |         ✅          |    ❌     |
-| **ESP32-H2** |         ✅          |    ❌     |
-| **ESP32-S2** |         ✅          |    ❌     |
-| **ESP32-S3** |         ✅          |    ✅     |
+|              | **[Wokwi][wokwi-features]** | **QEMU** |
+| :----------: | :-------------------------: | :------: |
+|  **ESP32**   |              ✅              |    ✅     |
+| **ESP32-C2** |              ❌              |    ❌     |
+| **ESP32-C3** |              ✅              |    ✅     |
+| **ESP32-C6** |              ✅              |    ❌     |
+| **ESP32-H2** |              ✅              |    ❌     |
+| **ESP32-S2** |              ✅              |    ❌     |
+| **ESP32-S3** |              ✅              |    ✅     |
 
-[wokwi]: https://docs.wokwi.com/guides/esp32#simulation-features
+[wokwi-features]: https://docs.wokwi.com/guides/esp32#simulation-features
 
 ### Wokwi
 
@@ -172,12 +172,12 @@ Wokwi offers a VS Code extension that allows you to simulate a project directly 
 For more information, see [Wokwi documentation][wokwi-vscode].
 You can also debug your code using the VS Code debugger; see [Debugging your code][wokwi-debugging].
 
-When using any of the [templates][templates] and not using the default values, there is a prompt (`Configure project to support Wokwi simulation with Wokwi VS Code extension?`) that generates the required files to use Wokwi VS Code extension.
+When using [`esp-generate`][esp-generate], there is a option that generates the required files to use Wokwi VS Code extension.
 
 
 [wokwi-vscode]: https://docs.wokwi.com/vscode/getting-started
 [wokwi-debugging]: https://docs.wokwi.com/vscode/debugging
-[templates]: ./../../writing-your-own-application/generate-project/index.md
+[esp-generate]: ./getting-started/tooling/esp-generate.md
 
 #### Using `wokwi-server`
 

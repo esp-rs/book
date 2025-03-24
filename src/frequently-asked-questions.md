@@ -1,6 +1,6 @@
 # Frequently Asked Questions
 
-This chater addresses common questions and challenges that developers encounter when working with Rust on ESP chips. Whether you're setting up your development environment, optimizing your code, or looking to simulate your projects, you'll find practical solutions and best practices here.
+This chapter addresses common questions and challenges that developers encounter when working with Rust on ESP chips. Whether you're setting up your development environment, optimizing your code, or looking to simulate your projects, you'll find practical solutions and best practices here.
 
 ## Editor/IDE
 
@@ -84,10 +84,10 @@ cargo.target = "riscv32imac-unknown-none-elf"
 
 ### Optimizing Binary Size
 
-- Cargo provices some default profiles, we reccomend using the [`release` profile][release-profile] as it optimizes and removes debug symbols.
+- Cargo provides some default profiles; we recommend using the [`release` profile][release-profile] as it optimizes and removes debug symbols.
 - Cargo allows different [profile settings][profile-settings-cargo], which can make a difference in the resulting size of the artifact.
   - See [Optimizations: the speed size tradeoff][embedded-book-tradeoffs] of The Embedded Rust Book.
-- Careful when using external dependencies, as they can increase the size of your resulting artifact
+- Be careful when using external dependencies, as they can increase the size of your resulting artifact
 - Filter log messages if they are not going to be useful or read.
 
 [embedded-book-tradeoffs]: https://docs.rust-embedded.org/book/unsorted/speed-vs-size.html
@@ -103,7 +103,7 @@ cargo.target = "riscv32imac-unknown-none-elf"
 
 ### Using a Crate Version from a Repository
 
-If for some reason you dont want to use a published version, you can use a Git repository directly. To specify a crate from a Git repository and a specific branch:
+If for some reason you don't want to use a published version, you can use a Git repository directly. To specify a crate from a Git repository and a specific branch:
 ```toml
 [dependencies]
 esp-hal = { git = "https://github.com/esp-rs/esp-hal.git", package="esp-hal", branch = "main" }
@@ -118,7 +118,7 @@ esp-hal = { git = "https://github.com/esp-rs/esp-hal.git", package="esp-hal", re
 
 [cargo-dependencies-git]: https://doc.rust-lang.org/cargo/reference/specifying-dependencies.html#specifying-dependencies-from-git-repositories
 
-### Appliying Patches to Dependencies
+### Applying Patches to Dependencies
 
 If you need to override a dependency with a local or different version, use the `[patch]` section in `Cargo.toml`:
 ```toml
@@ -157,7 +157,7 @@ Refer to the table below to see which chip is supported in every simulating meth
 [Wokwi][wokwi] is an online simulator that supports simulating Rust projects (`no_std`) in Espressif Chips.
 See [wokwi.com/rust][wokwi-rust] for a list of examples and a way to start new projects.
 
-Wokwi offers Wi-Fi simulation, Virtual Logic Analyzer, and [GDB debugging][gdb-debugging] among many other features, see
+Wokwi offers Wi-Fi simulation, Virtual Logic Analyzer, and [GDB debugging][gdb-debugging] among many other features; see
 [Wokwi documentation][wokwi-documentation] for more details. For ESP chips, there is a table of [simulation features][wokwi-simulation-features] that are currently supported.
 
 [wokwi]: https://wokwi.com/
@@ -170,7 +170,7 @@ Wokwi offers Wi-Fi simulation, Virtual Logic Analyzer, and [GDB debugging][gdb-d
 
 Wokwi offers a VS Code extension that allows you to simulate a project directly in the code editor by only adding a few files.
 For more information, see [Wokwi documentation][wokwi-vscode].
-You can also debug your code using the VS Code debugger, see [Debugging your code][wokwi-debugging].
+You can also debug your code using the VS Code debugger; see [Debugging your code][wokwi-debugging].
 
 When using any of the [templates][templates] and not using the default values, there is a prompt (`Configure project to support Wokwi simulation with Wokwi VS Code extension?`) that generates the required files to use Wokwi VS Code extension.
 

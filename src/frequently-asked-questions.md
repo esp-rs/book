@@ -24,6 +24,8 @@ VS Code provides great support for Rust ESP development with the right extension
 ```json
 {
   "rust-analyzer.cargo.allTargets": false,
+  // Update for your target: xtensa-esp32-none-elf, xtensa-esp32s2-none-elf or, xtensa-esp32s3-none-elf
+  "rust-analyzer.cargo.target": "xtensa-esp32-none-elf",
   "rust-analyzer.server.extraEnv": {
     "RUSTUP_TOOLCHAIN": "stable"
   },
@@ -41,6 +43,7 @@ VS Code provides great support for Rust ESP development with the right extension
 ```json
 {
   "rust-analyzer.cargo.allTargets": false,
+  // Update for your target:  riscv32imac-unknown-none-elf for ESP32-H2 and ESP32-C6 and riscv32imc-unknown-none-elf for ESP32-C2 and ESP32-C3
   "rust-analyzer.cargo.target": "riscv32imac-unknown-none-elf",
 }
 ```

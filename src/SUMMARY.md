@@ -13,6 +13,7 @@
     - [probe-rs](./getting-started/tooling/probe-rs.md)
 - [Writing Your Own Application](./writing-your-own-application/index.md)
   - [Logging](./writing-your-own-application/logging.md)
+  - [Async](./writing-your-own-application/async.md)
   - [Configuration](./writing-your-own-application/configuration.md)
   - [Bootloader and Partition Table](./writing-your-own-application/bootloader-and-partition-table.md)
 - [Advanced Topics](./advanced-topics/index.md)

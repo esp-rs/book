@@ -16,6 +16,7 @@
   - [Async](./writing-your-own-application/async.md)
   - [Configuration](./writing-your-own-application/configuration.md)
   - [Bootloader and Partition Table](./writing-your-own-application/bootloader-and-partition-table.md)
+  - [Alloc](./writing-your-own-application/alloc.md)
 - [Advanced Topics](./advanced-topics/index.md)
   - [Concepts](./advanced-topics/concepts/index.md)
     - [API Guidelines](./advanced-topics/concepts/api-guidelines.md)

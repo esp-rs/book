@@ -2,9 +2,7 @@
 
 This subchapter does not serve as an `async` tutorial or teaching material. For these purposes visit [official async-book]. 
 
-## Embassy
-
-[Embassy] is an asynchronous (async) framework designed specifically for embedded Rust development which consists of several crates that you can use together or independently. One of the projects is [embassy-executor]. The `embassy-executor` is an `async/await` executor that generally executes a fixed number of tasks, allocated at startup, though more can be added later. For more information about `embassy` visit [Embassy book]. The [esp-hal-embassy] crate provides integration between the [esp-hal] (Espressif Hardware Abstraction Layer) and the Embassy asynchronous framework. It provides support for:
+The [esp-hal-embassy] crate provides integration between the [esp-hal] and the [Embassy] asynchronous framework. It provides support for:
 
 1. Interrupt-mode executor
 2. Multicore-aware thread-mode embassy executor
@@ -12,6 +10,10 @@ This subchapter does not serve as an `async` tutorial or teaching material. For 
 4. Timer waiter queue
 
 `esp-hal` provides `blocking` and `async` API for most of the supported drivers. For more information and to get started check our `examples` in the [esp-hal-package].
+
+## Embassy
+
+[Embassy] is an asynchronous (async) framework designed specifically for embedded Rust development which consists of several crates that you can use together or independently. One of the projects is [embassy-executor]. The `embassy-executor` is an `async/await` executor that generally executes a fixed number of tasks, allocated at startup, though more can be added later. For more information about `embassy` visit [Embassy book].
 
 
 ## RTIC

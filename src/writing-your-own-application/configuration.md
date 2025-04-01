@@ -2,12 +2,11 @@
 
 The [esp-config] crate provides a way how to manage configuration settings.
 
-
 ## Usage
 
-The full list of available options could be found in `out` dir with the format `{prefix}_config_table.md`, for example `esp_hal_config_table.md` when changed options are `esp-hal`-related.
+The full list of available options could be found in the docs.
 
-If you want to place a function in your code in the RAM (ESP_HAL_CONFIG_PLACE_SPI_DRIVER_IN_RAM), which is set to false as default, you need to create an environment variable with the same name and modify its value:
+For example, if you want to place a function in your code in the RAM (`ESP_HAL_CONFIG_PLACE_SPI_DRIVER_IN_RAM`), which is set to `false` as default, you need to create an environment variable with the same name and modify its value:
 
 ```toml
 # .cargo/config.toml
@@ -18,7 +17,7 @@ ESP_HAL_CONFIG_PLACE_SPI_DRIVER_IN_RAM="true"
 
 After modifying the `.cargo/config.toml` and `[env]` section, **clean build** is recommended.
 
-> ℹ️ Setting the `env-vars` on the command line will have precedence over env section.
+> ⚠️ **Note**: Setting the `env-vars` on the command line will have precedence over env section.
 
 For more information see [esp-config] README.
 

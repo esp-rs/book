@@ -1,6 +1,6 @@
 # Async
 
-This subchapter does not serve as an `async` tutorial or teaching material. For these purposes visit [official async-book]. 
+This section does not serve as an `async` tutorial or teaching material. For these purposes visit [official async-book]. 
 
 The [esp-hal-embassy] crate provides integration between the [esp-hal] and the [Embassy] asynchronous framework. It provides support for:
 
@@ -13,12 +13,12 @@ The [esp-hal-embassy] crate provides integration between the [esp-hal] and the [
 
 ## Embassy
 
-[Embassy] is an asynchronous (async) framework designed specifically for embedded Rust development which consists of several crates that you can use together or independently. One of the projects is [embassy-executor]. The `embassy-executor` is an `async/await` executor that generally executes a fixed number of tasks, allocated at startup, though more can be added later. For more information about `embassy` visit [Embassy book].
+[Embassy] is an asynchronous (async) framework designed specifically for embedded Rust development; it [embassy-executor] crate provides an `async/await` executor which executes a fixed number of tasks, statically allocated at startup, though more can be added later. For more information about `embassy` visit [Embassy book].
 
 
 ## RTIC
 
-[Real-Time Interrupt-driven Concurrency (RTIC)] is a concurrency framework for building real-time systems. Currently, only the ESP32-C3 is supported.
+[Real-Time Interrupt-driven Concurrency (RTIC)] is a concurrency framework for building real-time systems. Currently, the ESP32-C3 and the ESP32-C6 are currently supported.
 
 
 [official async-book]: https://rust-lang.github.io/async-book/

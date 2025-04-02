@@ -1,9 +1,6 @@
 # Alloc
 
-In `no_std`, we need to rely on `alloc` crate, which provides heap allocation support. To use `alloc` in `no_std` environment:
-
-1. Explicitly enable the alloc crate
-2. Provide a Global Allocator
+In a `no_std` environment, the `alloc` crate is available as an option for heap allocation. It can be useful when working with crates that require alloc or when using dynamic collections like `Vec`.
 
 We provide our own simple `no_std` heap allocator [esp-alloc]. To use it you need to:
 
@@ -25,14 +22,14 @@ build-std = ["alloc", "core"] # added alloc here
 extern crate alloc;
 ```
 
-4. Initialize a global heap allocator providing a heap of the given size in bytes (with macro, preferrable)
+4. Initialize a global heap allocator providing a heap of the given size in bytes with the provided macro:
 ```rust
 // main.rs
 
 esp_alloc::heap_allocator!(size: 72 * 1024);
 ```
 
-or (when more flexibility is needed)
+or when more customization is required using the function:
 ```rust
 // main.rs
 
@@ -48,6 +45,15 @@ fn init_heap() {
         ));
     }
 }
+```
+
+## Configurable Memory Placement and Reclaimed RAM
+
+On systems with non-contiguous memory, `cfg` options can be used to control where memory is placed. This also allows accessing RAM that is otherwise unavailable, such as memory occupied by the 2nd stage bootloader. For supported chips, regions like `.dram2_uninit` (which would typically be reserved for static data) can be used as additional heap memory, optimizing available resources.
+
+```rust
+// Use 64kB in dram2_seg for the heap, which is otherwise unused.
+heap_allocator!(#[link_section = ".dram2_uninit"] size: 64000);
 ```
 
 [esp-alloc]: https://crates.io/crates/esp-alloc

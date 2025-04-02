@@ -4,7 +4,7 @@
 
 ## The `log` crate
 
-The [log] crate is a widely adopted logging facade in the Rust community. It defines a set of macros (`info!`, `warn!`, `error!`, etc.) to capture log messages at various levels. The actual logging behavior is determined by the selected backend implementing the Log trait.
+The [log] crate is a widely adopted logging facade in the Rust community. It defines a set of macros (`info!`, `warn!`, `error!`, etc.) to capture log messages at various levels. The actual logging behavior is determined by the selected backend implementing the `Log` trait.
 
 ### Integrating `log` with `esp-println`
 
@@ -16,7 +16,7 @@ esp-hal          = { version = "1.0.0-beta.0", features = ["esp32c6"] }
 esp-println      = { version = "0.13.0", features = ["esp32c6", "log"] }
 log              = { version = "0.4.21" }
 ```
-Ensure you specify the feature corresponding to your target device (e.g., `esp32c6` for ESP32-C6).
+Ensure you specify the feature corresponding to your target device (e.g. `esp32c6` for ESP32-C6).
 
 2. Set log level in your `.config.toml`:
 ```toml
@@ -48,7 +48,7 @@ fn main() -> ! {
 
 ### Integrating `defmt` with `esp-println`
 
-`esp-println` can be configured to work seamlessly with defmt, providing a global logger that outputs defmt-encoded messages. To set this up:​
+`esp-println` can be configured to work seamlessly with `defmt`, providing a global logger that outputs defmt-encoded messages. To set this up:​
 
 1. Add dependencies to your `Cargo.toml`:
 ```toml
@@ -56,7 +56,7 @@ defmt            = "0.3.10"
 esp-hal          = { version = "1.0.0-beta.0", features = ["defmt", "esp32c6"] }
 esp-println      = { version = "0.13.0", features = ["defmt-espflash", "esp32c6"] }
 ```
-Ensure you specify the feature corresponding to your target device (e.g., `esp32c6` for ESP32-C6).
+Ensure you specify the feature corresponding to your target device (e.g. `esp32c6` for ESP32-C6).
 
 2. Set log level in your `.config.toml`:
 ```toml

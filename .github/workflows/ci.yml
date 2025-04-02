@@ -28,16 +28,15 @@ jobs:
           # Cannot use --all here because of the generated redirect pages aren't available.
           sh linkcheck.sh book
   
-  deploy:
-      if: ${{ github.event_name == 'workflow_dispatch' || (github.event_name == 'push' && github.ref == 'refs/heads/main') }}
-      runs-on: ubuntu-20.04
-      steps:
-        - uses: appleboy/scp-action@v0.1.7
-          with:
-            host: docs.espressif.com
-            username: ${{ secrets.PRODUCTION_USERNAME }}
-            key: ${{ secrets.PRODUCTION_KEY }}
-            target: ${{ secrets.PRODUCTION_TARGET }}
-            source: "book/"
-            strip_components: 1 # remove the book prefix, it's already being placed in /projects/rust/book
-            overwrite: true
+      
+      - name: Deploy
+        if: ${{ github.event_name == 'workflow_dispatch' || (github.event_name == 'push' && github.ref == 'refs/heads/main') }}
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: docs.espressif.com
+          username: ${{ secrets.PRODUCTION_USERNAME }}
+          key: ${{ secrets.PRODUCTION_KEY }}
+          target: ${{ secrets.PRODUCTION_TARGET }}
+          source: "book/"
+          strip_components: 1 # remove the book prefix, it's already being placed in /projects/rust/book
+          overwrite: true

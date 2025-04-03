@@ -18,7 +18,7 @@ The [esp-hal-embassy] crate provides integration between the [esp-hal] and the [
 
 ## RTIC
 
-[Real-Time Interrupt-driven Concurrency (RTIC)] is a concurrency framework for building real-time systems. Currently, the ESP32-C3 and the ESP32-C6 are currently supported.
+[Real-Time Interrupt-driven Concurrency (RTIC)] is a concurrency framework for building real-time systems. Currently, the ESP32-C3 and the ESP32-C6 are supported.
 
 
 [official async-book]: https://rust-lang.github.io/async-book/

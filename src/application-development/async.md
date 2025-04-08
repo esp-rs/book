@@ -1,15 +1,15 @@
 # Async
 
-This section does not serve as an `async` tutorial or teaching material. For these purposes visit [official async-book]. 
+This section does not serve as an async tutorial or teaching material. For these purposes, visit [official async-book]. 
 
-The [esp-hal-embassy] crate provides integration between the [esp-hal] and the [Embassy] asynchronous framework. It provides support for:
+The [`esp-hal-embassy`][esp-hal-embassy] crate provides integration between the [`esp-hal`][esp-hal] and the [Embassy] asynchronous framework. It provides support for:
 
 1. Interrupt-mode executor
 2. Multicore-aware thread-mode embassy executor
 3. Embassy time driver
 4. Timer waiter queue
 
-`esp-hal` provides `blocking` and `async` API for most of the supported drivers. For more information and to get started check our `examples` in the [esp-hal-package].
+`esp-hal` provides blocking and async API for most of the supported drivers. For more information and to get started, check our `examples` in the [esp-hal-package].
 
 ## Embassy
 

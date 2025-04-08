@@ -12,7 +12,7 @@
     - [espflash](./getting-started/tooling/espflash.md)
     - [probe-rs](./getting-started/tooling/probe-rs.md)
 - [Application Development](./application-development/index.md)
-  - [Bootloader and Partition Table](./application-development/bootloader-and-partition-table.md)
+  - [Bootloader](./application-development/bootloader.md)
   - [Configuration](./application-development/configuration.md)
   - [Logging](./application-development/logging.md)
   - [Alloc](./application-development/alloc.md)

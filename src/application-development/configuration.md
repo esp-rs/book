@@ -4,7 +4,7 @@ The [`esp-config`][esp-config] crate provides a way to manage configuration sett
 
 ## Usage
 
-The full list of available options can be found in the documentation of the `esp-*` crate you are using. For ESP32-C6's options see [configuration].
+The full list of available options can be found in the documentation of the `esp-*` crate you are using. For esp-hal ESP32-C6's options see [configuration].
 
 For example, in esp-hal if you want to place a function in your code in the RAM (`ESP_HAL_CONFIG_PLACE_SPI_DRIVER_IN_RAM`), which is set to `false` as default, you need to create an environment variable with the same name and modify its value:
 

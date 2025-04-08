@@ -1,8 +1,8 @@
 # Alloc
 
-In a `no_std` environment, the `alloc` crate is available as an option for heap allocation. It can be useful when working with crates that require alloc or when using dynamic collections like `Vec`.
+In a `no_std` environment, the [`alloc`][alloc] crate is available as an option for heap allocation. It can be useful when working with crates that require alloc or when using dynamic collections like `Vec`.
 
-We provide our own `no_std` heap allocator [esp-alloc]. To use it you need to:
+We provide our own `no_std` heap allocator, [`esp-alloc`][esp-alloc].. To use it, you need to:
 
 1. Add a dependency to your `Cargo.toml`
 ```toml
@@ -49,7 +49,7 @@ fn init_heap() {
 
 ## Configurable Memory Placement and Reclaimed RAM
 
-On chips, like the esp32 with non-contiguous memory, `cfg` options can be used to control where memory is placed. This also allows accessing RAM that is otherwise unavailable, such as memory occupied by the 2nd stage bootloader. For supported chips, regions like `.dram2_uninit` can be used as additional heap memory, optimizing available resources.
+On chips with non-contiguous memory, `cfg` options can be used to control where memory is placed. This also allows accessing RAM that is otherwise unavailable, such as memory occupied by the 2nd stage bootloader. For supported chips, regions like `.dram2_uninit` can be used as additional heap memory, optimizing available resources.
 
 ```rust
 // Use 64kB in dram2_seg for the heap, which is otherwise unused.
@@ -57,3 +57,4 @@ heap_allocator!(#[link_section = ".dram2_uninit"] size: 64000);
 ```
 
 [esp-alloc]: https://crates.io/crates/esp-alloc
+[alloc]: https://doc.rust-lang.org/alloc/

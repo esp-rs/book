@@ -1,6 +1,6 @@
 # Configuration
 
-The [esp-config] crate provides a way to manage configuration settings.
+The [`esp-config`][esp-config] crate provides a way to manage configuration settings.
 
 ## Usage
 

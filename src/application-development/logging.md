@@ -1,6 +1,6 @@
 # Logging
 
-​Logging is a crucial aspect of embedded systems development, providing visibility into the system's behavior and aiding in debugging and monitoring. In the Rust ecosystem for ESP devices, two prominent logging frameworks are commonly used: the [log] crate and [defmt].
+​Logging is a crucial aspect of embedded systems development, providing visibility into the system's behavior and aiding in debugging and monitoring. In the Rust ecosystem for ESP devices, two prominent logging frameworks are commonly used: the [`log`][log] crate and [`defmt`][defmt].
 
 ## The `defmt` Framework
 
@@ -69,7 +69,7 @@ fn main() -> ! {
 
 ## The `log` crate
 
-The [log] crate is a widely adopted logging facade in the Rust community. It defines a set of macros (`info!`, `warn!`, `error!`, etc.) to capture log messages at various levels.
+The [`log`][log] crate is a widely adopted logging facade in the Rust community. It defines a set of macros (`info!`, `warn!`, `error!`, etc.) to capture log messages at various levels.
 
 ### Integrating `log` with `esp-println`
 

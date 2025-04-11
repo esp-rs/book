@@ -56,5 +56,15 @@ On chips with non-contiguous memory, `cfg` options can be used to control where 
 heap_allocator!(#[link_section = ".dram2_uninit"] size: 64000);
 ```
 
+## PSRAM
+
+Our chips have a few hundred kilobytes of internal RAM, which could be insufficient for some applications. The ESP32, ESP32-S2, and ESP32-S3 have the ability to use virtual addresses for external PSRAM (Psuedostatic RAM) memory. The external memory is usable is the same way as internal data RAM, with certain restrictions. ESP32 restrictions can be found [here].
+
+### Allocator Considerations
+
+You can only have **one global allocator** but the allocator can use multiple regions (e.g. PSRAM, internal RAM or even multiple blocks of them). You can use multiple allocators with the nightly-feature "allocator api" and with [`allocator api2`][allocator api2], which [`esp-alloc`][esp-alloc] implements.
+
 [esp-alloc]: https://crates.io/crates/esp-alloc
 [alloc]: https://doc.rust-lang.org/alloc/
+[here]: https://docs.espressif.com/projects/esp-idf/en/v5.4.1/esp32/api-guides/external-ram.html#restrictions
+[allocator api2]: https://crates.io/crates/allocator-api2

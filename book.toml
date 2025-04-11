@@ -1,7 +1,6 @@
 [book]
 title        = "The Rust on ESP Book"
 description  = "A comprehensive guide on using the Rust programming language with Espressif SoCs and modules"
-multilingual = false
 language     = "en"
 
 [rust]

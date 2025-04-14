@@ -13,7 +13,7 @@ The [`esp-hal-embassy`][esp-hal-embassy] crate provides integration between the 
 
 ## Embassy
 
-[Embassy] is an asynchronous (async) framework designed specifically for embedded Rust development; it [embassy-executor] crate provides an `async/await` executor which executes a fixed number of tasks, statically allocated at startup, though more can be added later. For more information about `embassy` visit [Embassy book].
+[Embassy] is an asynchronous (async) framework designed specifically for embedded Rust development; its [embassy-executor] crate provides an `async/await` executor which executes a fixed number of tasks, statically allocated at startup, though more can be added later. For more information about `embassy` visit [Embassy book].
 
 
 ## RTIC

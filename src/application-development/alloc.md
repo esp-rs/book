@@ -2,7 +2,7 @@
 
 In a `no_std` environment, the [`alloc`][alloc] crate is available as an option for heap allocation. It can be useful when working with crates that require alloc or when using dynamic collections like `Vec`.
 
-We provide our own `no_std` heap allocator, [`esp-alloc`][esp-alloc].. To use it, you need to:
+We provide our own `no_std` heap allocator, [`esp-alloc`][esp-alloc]. To use it, you need to:
 
 1. Add a dependency to your `Cargo.toml`
 ```toml

@@ -58,7 +58,10 @@ heap_allocator!(#[link_section = ".dram2_uninit"] size: 64000);
 
 ## PSRAM
 
-Our chips have a few hundred kilobytes of internal RAM, which could be insufficient for some applications. The ESP32, ESP32-S2, and ESP32-S3 have the ability to use virtual addresses for external PSRAM (Psuedostatic RAM) memory. The external memory is usable is the same way as internal data RAM, with certain restrictions. ESP32 restrictions can be found [here].
+Our chips have a few hundred kilobytes of internal RAM, which could be insufficient for some applications. The ESP32, ESP32-S2, and ESP32-S3 have the ability to use virtual addresses for external PSRAM (Psuedostatic RAM) memory. The external memory is usable is the same way as internal data RAM, with certain restrictions. The biggest restriction is that the atomic instructions do not work
+correctly when the memory they access is located in PSRAM. This means that
+the allocator must not be used to allocate `Atomic*` types - either directly
+or indirectly. ESP32 restrictions can be found [here]. 
 
 ### Allocator Considerations
 

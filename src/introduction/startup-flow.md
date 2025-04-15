@@ -26,7 +26,7 @@ Flash memory of the Espressif devices can store multiple applications along with
 
 The second stage bootloader will know where to place the binary by looking at the partition table. Each entry in the partition table has a name (label), type (app, data, or something else), subtype and the offset in flash where the partition is loaded.
 
-When working with [`espflash`][espflash], if you don't provide a second stage bootloader or partition table, `espflash` will use a default bootloader and partition table, but you can also create a [custom partition table][custom-partition-table]
+When working with [`espflash`][espflash], if you don't provide a second stage bootloader or partition table, `espflash` will use a default bootloader and partition table, but you can also create a [custom partition table][custom-partition-table].
 
 [esp-image-format]: https://docs.espressif.com/projects/esptool/en/latest/esp32/advanced-topics/firmware-image-format.html
 [espflash]: ../getting-started/tooling/espflash.md

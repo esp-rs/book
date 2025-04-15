@@ -1,1 +1,0 @@
-# Bootloader and Partition Table

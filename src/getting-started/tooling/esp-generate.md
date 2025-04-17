@@ -2,7 +2,7 @@
 
 [`esp-generate`][esp-generate] is a template generation tool that assists users in creating a functional project with most of their desired configurations pre-applied.
 
-## Instalaltion
+## Installation
 To install `esp-generate`:
 
 ```shell
@@ -19,7 +19,7 @@ You can also directly download pre-compiled [release binaries][release-binaries]
 To launch the TUI and select your configuration options, run:
 
 ```shell
-esp-generate --chip esp32c3 your-project
+esp-generate --chip esp32c3 your-project-name
 ```
 
 Replace the chip and project name accordingly.
@@ -27,7 +27,7 @@ Replace the chip and project name accordingly.
 If you prefer not to use the TUI, you can specify options directly with the `-o/--options` flag. Additionally, using the `--headless` flag will prevent the TUI from launching:
 
 ```shell
-esp-generate --chip esp32 -o alloc -o wifi --headless your-project
+esp-generate --chip esp32 -o alloc -o wifi --headless your-project-name
 ```
 
 Adjust the options as needed for your project. See [Available Options][available-options] section of the README.
@@ -74,7 +74,7 @@ Some of the options may add some other files to your generated project:
   - `.vscode/extensions.json`
     - Lists recommended VS Code extensions
   - `.vscode/settings.json`
-    - Contains reccomended VS Code settings
+    - Contains recommended VS Code settings
 
 [esp-generate]: https://github.com/esp-rs/esp-generate
 [available-options]: https://github.com/esp-rs/esp-generate?tab=readme-ov-file#available-options
@@ -95,7 +95,8 @@ Building and running the code is as easy as:
 cargo run --release
 ```
 
-This builds your application, flashes it to the target device and will open a serial monitor.
+This builds your application, flashes it to the target device and opens a serial monitor. The command uses the runner configuration in `.cargo/config.toml` that was automatically set up by `esp-generate`.
+
 <!-- TODO: Shall we explain the fron and backend options here? -->
 
 

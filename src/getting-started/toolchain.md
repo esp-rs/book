@@ -114,10 +114,8 @@ The forked compiler can coexist with the standard Rust compiler, allowing both t
 [rustup-overrides]: https://rust-lang.github.io/rustup/overrides.html
 [llvm-github-fork-upstream issue]: https://github.com/espressif/llvm-project/issues/4
 
-#### Other Installation Methods for Xtensa Targets
+#### Building the Rust Compiler with Xtensa Support from Source
 
-- Using [`rust-build`][rust-build] installation scripts. This was the recommended in the past, but now the installation scripts are feature frozen and all new features will only be included in `espup`. See the repository README for instructions.
-- Building the Rust compiler with Xtensa support from source. This process is computationally expensive and can take one or more hours to complete depending on your system. It isn't recommended unless there is a major reason to go for this approach. Here is the repository to build it from source: [`esp-rs/rust` repository][esp-rs-rust].
+This process is computationally expensive and can take one or more hours to complete depending on your system. It isn't recommended unless there is a major reason to go for this approach. Here is the repository to build it from source: [`esp-rs/rust` repository][esp-rs-rust].
 
-[rust-build]: https://github.com/esp-rs/rust-build#download-installer-in-bash
 [esp-rs-rust]: https://github.com/esp-rs/rust

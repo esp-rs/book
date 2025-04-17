@@ -10,7 +10,7 @@ The Espressif portfolio is based on two different system architectures:
 - [Xtensa][xtensa-architecture]: The ESP32 and ESP32-S series are based on the Xtensa architecture.
 - [RISC-V][riscv-architecture]: The ESP32-C and ESP32-H series are based on the RISC-V architecture.
 
-We won't go into the details or differences between the two architectures here. Rust's official support differs between the two architectures. Xtensa is not yet officially supported, though we matain a fork that adds suport for it and are actively working to upstream our patches, for more information, see the [Note on "What `espup` install"][note-espup] section.
+We won't go into the details or differences between the two architectures here. Rust's official support differs between the two architectures. Xtensa is not yet officially supported, though we maintain a fork that adds support for it and are actively working to upstream our patches, for more information, see the [Note on "What `espup` installs"][note-espup] section.
 
 Feel free to refer to the [Technical Documentation][espressif-docs] for more information about the different SoCs.
 

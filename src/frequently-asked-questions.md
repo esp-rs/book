@@ -90,7 +90,7 @@ cargo.target = "riscv32imac-unknown-none-elf"
 - Cargo provides some default profiles; we recommend using the [`release` profile][release-profile] as it optimizes and removes debug symbols.
 - Cargo allows different [profile settings][profile-settings-cargo], which can make a difference in the resulting size of the artifact.
   - See [Optimizations: the speed size tradeoff][embedded-book-tradeoffs] of The Embedded Rust Book.
-- Be careful when using external dependencies, as they can increase the size of your resulting artifact
+- Be careful when using external dependencies, as they can increase the size of your resulting artifact.
 - Filter log messages if they are not going to be useful or read.
 
 [embedded-book-tradeoffs]: https://docs.rust-embedded.org/book/unsorted/speed-vs-size.html
@@ -175,7 +175,7 @@ Wokwi offers a VS Code extension that allows you to simulate a project directly 
 For more information, see [Wokwi documentation][wokwi-vscode].
 You can also debug your code using the VS Code debugger; see [Debugging your code][wokwi-debugging].
 
-When using [`esp-generate`][esp-generate], there is a option that generates the required files to use Wokwi VS Code extension.
+When using [`esp-generate`][esp-generate], there is an option that generates the required files to use Wokwi VS Code extension.
 
 
 [wokwi-vscode]: https://docs.wokwi.com/vscode/getting-started
@@ -184,7 +184,7 @@ When using [`esp-generate`][esp-generate], there is a option that generates the 
 
 #### Using `wokwi-server`
 
-[`wokwi-server`][wokwi-server] is a CLI tool for launching a Wokwi simulation of your project. I.e., it allows you
+[`wokwi-server`][wokwi-server] is a CLI tool for launching a Wokwi simulation of your project. It allows you
 to build a project on your machine, or in a container, and simulate the resulting binary.
 
 [`wokwi-server`][wokwi-server] also allows simulating your resulting binary on other Wokwi projects, with more hardware parts other than the chip itself. See the corresponding [section of the `wokwi-server`][wokwi-server-custom] README for detailed instructions.
@@ -224,7 +224,7 @@ We can use [`cargo-espflash`][cargo-espflash] to generate it:
 cargo espflash save-image --chip esp32 --merge <OUTFILE> --release
 ```
 
-If you prefer to use [`espflash`][espflash], you can achieve the same result by building the project first and then generating image:
+If you prefer to use [`espflash`][espflash], you can achieve the same result by building the project first and then generating an image:
 
 ```shell
 cargo build --release

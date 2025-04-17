@@ -70,11 +70,6 @@ To install `cargo-espflash`, execute the following command:
 cargo install cargo-espflash --locked
 ```
 
-> ⚠️ **Note**: in Unix systems, we use the [`vendored-openssl` Cargo feature][vendored-ssl] which may require additional tools such as `perl` and `make`. To disable this feature, use:
-> ```shell
-> OPENSSL_NO_VENDOR=1 cargo install cargo-espflash
-> ```
-
 ### Building, Flashing and Monitoring an Application
 
 This command must be run within a Cargo project, ie. a directory containing a `Cargo.toml` file. For example, to build an application named 'blinky', flash the resulting binary to a device, and then subsequently start a serial monitor:

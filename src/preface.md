@@ -2,7 +2,7 @@
 
 # Preface
 
-Welcome to a comprehensive guide to using the `esp-rs` ecosystem, created for embedded Rust development on Espressif products. You will find everything you need to get started and build real-world applications, from setting up your development environment to writing and debugging embedded code in Rust. We will also touch on other important aspects such as our tools, give an overview of our software product architecture, and teach how you can contribute to our project. 
+Welcome to a comprehensive guide to using the `esp-rs` ecosystem, created for embedded Rust development on Espressif products. You will find everything you need to get started and build real-world applications, from setting up your development environment to writing and debugging embedded code in Rust. We will also touch on other important aspects such as our tools, give an overview of our software product architecture, and teach how you can contribute to our project.
 
 ## Who This Book Is For
 
@@ -14,9 +14,9 @@ This book is intended for people with some experience in Rust and assumes basic 
 
 In this book, we focus specifically on the `esp-rs` ecosystem. It does **not** serve as:
 
-- A general Rust programming language tutorial: Familiarity with the Rust language is assumed to get you started. 
+- A general Rust programming language tutorial: Familiarity with the Rust language is assumed to get you started.
 - An embedded development guide: Prior familiarity with basic embedded development is also assumed.
-- A collection of examples: This book explains the overall process of working with the `esp-rs` ecosystem. More examples can be found [here][examples]. 
+- A collection of examples: This book explains the overall process of working with the `esp-rs` ecosystem. More examples can be found [here][examples].
 
 Check the [Additional Resources][resources] section if you are not familiar with any of these concepts.
 
@@ -25,7 +25,7 @@ Check the [Additional Resources][resources] section if you are not familiar with
 
 ## Stability and Availability
 
-The `esp-rs` project is under active development and may be subject to changes as it evolves. While we strive for stability, users should expect periodic modifications as we improve the API, improve performance, and introduce new features. [Modules] that are already stabilized will not be subject to breaking changes, while the `unstable` parts of the drivers are being actively worked on and will likely undergo changes in future releases. 
+The `esp-rs` project is under active development and may be subject to changes as it evolves. While we strive for stability, users should expect periodic modifications as we improve the API, improve performance, and introduce new features. [Modules] that are already stabilized will not be subject to breaking changes, while the `unstable` parts of the drivers are being actively worked on and will likely undergo changes in future releases.
 
 Additionally, the embedded Rust ecosystem is still in its infancy; some dependencies, tools, or language features may change over time. We encourage developers to stay up to date with the latest releases and participate in discussions to help shape the future of Rust on Espressif platforms.
 
@@ -35,13 +35,13 @@ Additionally, the embedded Rust ecosystem is still in its infancy; some dependen
 
 If you're unfamiliar with certain concepts covered in this book or would like to deepen your understanding, the following resources may be helpful:
 
-| Resource                                               | Description                                                                          |
-| ------------------------------------------------------ | ------------------------------------------------------------------------------------ |
-| [The Rust Programming Language][rust-book]             | Learn Rust fundamentals before diving into embedded development.                     |
-| [The Embedded Rust Book][embedded-rust-book]           | A collection of resources from Rust's Embedded Working Group.                        |
-| [The Embedonomicon][embedonomicon]                     | Detailed insights into low-level embedded Rust programming.                          |
-| [Embedded Rust (no_std) on Espressif][no_std-training] | Guide for working in `no_std` environments with Espressif SoCs.                     |
-| [Awesome ESP Rust][awesome-esp-rust]                   | A list of resouces for development in the Rust programming language for ESP products | 
+| Resource                                               | Description                                                                           |
+| ------------------------------------------------------ | ------------------------------------------------------------------------------------- |
+| [The Rust Programming Language][rust-book]             | Learn Rust fundamentals before diving into embedded development.                      |
+| [The Embedded Rust Book][embedded-rust-book]           | A collection of resources from Rust's Embedded Working Group.                         |
+| [The Embedonomicon][embedonomicon]                     | Detailed insights into low-level embedded Rust programming.                           |
+| [Embedded Rust (no_std) on Espressif][no_std-training] | Guide for working in `no_std` environments with Espressif SoCs.                       |
+| [Awesome ESP Rust][awesome-esp-rust]                   | A list of resources for development in the Rust programming language for ESP products |
 
 [rust-book]: https://doc.rust-lang.org/book/
 [embedded-rust-book]: https://docs.rust-embedded.org/book/index.html

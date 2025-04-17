@@ -50,8 +50,6 @@ Now you should be able to build and run projects on Espressif's RISC-V chips.
 [rustup-book-components]: https://rust-lang.github.io/rustup/concepts/components.html
 [rust-lang-book--platform-support-tier2]: https://doc.rust-lang.org/nightly/rustc/platform-support.html#tier-2
 [wiki-riscv-standard-extensions]: https://en.wikichip.org/wiki/risc-v/standard_extensions
-[embedonomicon-creating-a-custom-target]: https://docs.rust-embedded.org/embedonomicon/custom-target.html
-[embedonomicon-official-book]: https://docs.rust-embedded.org/embedonomicon/
 
 ### Xtensa Devices
 

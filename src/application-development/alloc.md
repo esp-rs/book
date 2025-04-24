@@ -1,4 +1,4 @@
-# Alloc
+# Allocating Memory
 
 In a `no_std` environment, the [`alloc`][alloc] crate is available as an option for heap allocation. It can be useful when working with crates that require alloc or when using dynamic collections like `Vec`.
 
@@ -18,15 +18,15 @@ build-std = ["alloc", "core"] # added alloc here
 3. Use `alloc` crate in your application
 ```rust
 // main.rs
-
 extern crate alloc;
 ```
 
 4. Initialize a global heap allocator providing a heap of the given size in bytes with the provided macro:
 ```rust
 // main.rs
+fn main() -> ! {
+    esp_alloc::heap_allocator!(size: 72 * 1024);
 
-esp_alloc::heap_allocator!(size: 72 * 1024);
 ```
 
 or when more customization is required using the function:
@@ -61,11 +61,11 @@ heap_allocator!(#[link_section = ".dram2_uninit"] size: 64000);
 Our chips have a few hundred kilobytes of internal RAM, which could be insufficient for some applications. The ESP32, ESP32-S2, and ESP32-S3 have the ability to use virtual addresses for external PSRAM (Psuedostatic RAM) memory. The external memory is usable is the same way as internal data RAM, with certain restrictions. The biggest restriction is that the atomic instructions do not work
 correctly when the memory they access is located in PSRAM. This means that
 the allocator must not be used to allocate `Atomic*` types - either directly
-or indirectly. ESP32 restrictions can be found [here]. 
+or indirectly. ESP32 restrictions can be found [here].
 
 ### Allocator Considerations
 
-You can only have **one global allocator** but the allocator can use multiple regions (e.g. PSRAM, internal RAM or even multiple blocks of them). You can use multiple allocators with the nightly-feature "allocator api" and with [`allocator api2`][allocator api2], which [`esp-alloc`][esp-alloc] implements.
+You can only have **one global allocator** but the allocator can use multiple regions (e.g. PSRAM, internal RAM or even multiple blocks of them). You can use multiple allocators with the nightly-feature `allocator api` and with [`allocator api2`][allocator api2], which [`esp-alloc`][esp-alloc] implements.
 
 [esp-alloc]: https://crates.io/crates/esp-alloc
 [alloc]: https://doc.rust-lang.org/alloc/

@@ -2,7 +2,9 @@
 
 The crates under the `esp-rs` organization include support for the [ESP32, ESP32-S, ESP32-C and ESP32-H Series SoCs][espressif-socs].
 
-> ⚠️ **Note**:  The ESP8266 is not supported. However, you can replace it with the pin-compatible ESP32-C3.
+> ⚠️ **Note**:  The ESP8266 is not supported.
+>
+> However, the ESP8684 (ESP32-C2) and ESP8685 (ESP32-C3) are supported. Notably, the ESP8685 (ESP32-C3) is pin-compatible with the ESP8266, making it a suitable drop-in replacement.
 
 Each SoC has its own unique features while sharing some common traits. To select the appropriate chip for your project, please use the [ESP Product Selector][product-selector].
 

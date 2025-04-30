@@ -1,6 +1,6 @@
 # `esp-generate`
 
-[`esp-generate`][esp-generate] is a template generation tool that assists users in creating a functional project with most of their desired configurations pre-applied.
+[`esp-generate`][esp-generate] is a project generation tool that assists users in creating a functional project with most of their desired configurations pre-applied.
 
 ## Installation
 To install `esp-generate`:

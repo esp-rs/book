@@ -104,15 +104,10 @@ To enable support for Espressif targets, `espup` installs:
 
 The forked compiler can coexist with the standard Rust compiler, allowing both to be installed on your system. The forked compiler is invoked when using any of the available [overriding methods][rustup-overrides].
 
-> ⚠️ **Note**: We are actively working to upstream our forks. Below is the current status:
-> 1. LLVM fork: We've made significant progress recently. For details, refer to the [tracking issue][llvm-github-fork-upstream issue].
-> 2. Rust compiler fork: We've submitted all feasible Xtensa patches. Further progress depends on these changes being upstreamed into LLVM.
-
 [esp-rs/rust]: https://github.com/esp-rs/rust
 [llvm-github-fork]: https://github.com/espressif/llvm-project
 [gcc-toolchain-github-fork]: https://github.com/espressif/crosstool-NG/
 [rustup-overrides]: https://rust-lang.github.io/rustup/overrides.html
-[llvm-github-fork-upstream issue]: https://github.com/espressif/llvm-project/issues/4
 
 #### Building the Rust Compiler with Xtensa Support from Source
 

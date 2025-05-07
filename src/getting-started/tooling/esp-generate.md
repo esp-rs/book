@@ -24,7 +24,7 @@ esp-generate --chip esp32c3 your-project-name
 
 Replace the chip and project name accordingly.
 
-If you prefer to specify the options in a non-interactive way, you can specify options directly with the `-o/--options` flag. Additionally, using the `--headless` flag will prevent the TUI(Terminal User Interface) from launching:
+If you prefer to specify the options in a non-interactive way, you can specify options directly with the `-o/--options` flag. Additionally, using the `--headless` flag will prevent the TUI (Terminal User Interface) from launching:
 
 ```shell
 esp-generate --chip esp32 -o alloc -o wifi --headless your-project-name

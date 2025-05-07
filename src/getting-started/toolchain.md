@@ -77,7 +77,7 @@ Now you should be able to build and run projects on Espressif's RISC-V chips.
 [espup-github]: https://github.com/esp-rs/espup
 [release-binaries]: https://github.com/esp-rs/espup/releases
 [cargo-binstall]: https://github.com/cargo-bins/cargo-binstall
-[source-file-espup]: https://github.com/esp-rs/espup?tab=readme-ov-file#environment-variable-setup
+[source-file-espup]: https://github.com/esp-rs/espup?tab=readme-ov-file#environment-variables-setup
 
 #### What `espup` Installs
 

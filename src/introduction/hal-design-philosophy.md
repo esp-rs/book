@@ -9,3 +9,5 @@ The HAL was designed based on some recommended patterns and rules that are descr
 
 The HAL implements blocking APIs for all peripherals, and asynchronous APIs for the peripherals which support asynchronous operation. When applicable, drivers implement the [`embedded-hal`][embedded-hal] and [`embedded-hal-async`][embedded-hal-async] traits.
 
+[embedded-hal]: https://docs.rs/embedded-hal/latest/embedded_hal/
+[embedded-hal-async]: https://docs.rs/embedded-hal-async/latest/embedded_hal_async/

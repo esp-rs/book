@@ -27,6 +27,16 @@ jobs:
           # Cannot use --all here because of the generated redirect pages aren't available.
           sh linkcheck.sh book
 
+      - name: Run vale checks
+        run: |
+          sudo snap install vale
+          vale sync
+          vale --no-wrap --minAlertLevel=suggestion src
+          if [ $? -ne 0 ] || [ "$(vale --output=line --no-wrap --minAlertLevel=suggestion src | wc -l)" -ne 0 ]; then
+            echo "Vale found issues. Please fix them before merging."
+            exit 1
+          fi
+
       - name: Deploy book
         if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
         uses: peaceiris/actions-gh-pages@v3

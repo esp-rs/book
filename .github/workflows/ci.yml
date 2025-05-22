@@ -28,14 +28,14 @@ jobs:
           sh linkcheck.sh book
 
       - name: Run vale checks
-        run: |
-          sudo snap install vale
-          vale sync
-          vale --no-wrap --minAlertLevel=suggestion src
-          if [ $? -ne 0 ] || [ "$(vale --output=line --no-wrap --minAlertLevel=suggestion src | wc -l)" -ne 0 ]; then
-            echo "Vale found issues. Please fix them before merging."
-            exit 1
-          fi
+        if: ${{ github.event_name == 'pull_request' }}
+        uses: errata-ai/vale-action@v2.1.1
+        with:
+          fail_on_error: true
+          filter_mode: nofilter
+          files: src
+
+
 
       - name: Deploy book
         if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}

@@ -35,8 +35,6 @@ jobs:
           filter_mode: nofilter
           files: src
 
-
-
       - name: Deploy book
         if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
         uses: peaceiris/actions-gh-pages@v3

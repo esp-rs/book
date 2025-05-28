@@ -3,7 +3,7 @@
 - [Preface](./preface.md)
 - [Introduction](./introduction/index.md)
   - [Hardware Overview](./introduction/hardware-overview.md)
-  - [HAL Design Philosophy](./introduction/hal-design-philosophy.md)
+  - [Anciliary Crates Overview](./introduction/anciliary-crates.md)
 - [Getting Started](./getting-started/index.md)
   - [Toolchain Installation and Setup](./getting-started/toolchain.md)
   - [Tooling](./getting-started/tooling/index.md)

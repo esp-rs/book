@@ -37,6 +37,7 @@ The style guide is based on the best practices collected from the following book
 - [Terminology](#terminology)
   - [Recommended Terms](#recommended-terms)
 - [Admonitions](#admonitions)
+- [Prioritization](#prioritization)
 - [Appendix A Existing Style Guides](#appendix-a-existing-style-guides)
   - [Documentation](#documentation)
   - [Code](#code)
@@ -277,6 +278,8 @@ If you spot other issues with terminology, please add the terms here in alphabet
 - _VS Code_
   - Use VS Code by default
   - Use only if necessary: Visual Studio Code
+- `esp-hal` ecosystem
+  - Avoid using `esp-rs` ecosystem, this is too vague as we have multiple crates and projects not relevant to the book.
 
 ## Admonitions
 
@@ -295,6 +298,10 @@ In markdown:
 ```md
 > ⚠️ **Note**: Write your note.
 ```
+
+## Prioritization
+
+- RISC-V should be mentioned first and given priority over Xtensa in documentation and examples.
 
 ## Appendix A Existing Style Guides
 

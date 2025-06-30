@@ -1,0 +1,25 @@
+# Google.Acronyms -- customized
+# For details, see Espressif Vale Config Documentation
+extends: existence
+message: "Use monospace (`backticks`) for data types, crates, libraries, filenames, etc., such as '%s'. See Rust Documentation Style Guide > Using monospace"
+link: https://github.com/esp-rs/book/blob/main/rust-doc-style-guide.md#using-monospace
+level: error
+tokens:
+    - "[ui](?:8|16|32|64|128)"
+    - "[iu]size"
+    - "config.toml"
+    - "std"
+    - "no_std"
+    - "espup"
+    - "cargo-binstall"
+    - "cargo-generate"
+    - "cargo-espflash"
+    - "cargo-xtask"
+    - "esp-generate"
+    - "esp-idf-template"
+    - "esp-template"
+    - "espflash"
+    - "idf-rust"
+    - "rust-build"
+    - "web-flash"
+    - "wokwi-server"

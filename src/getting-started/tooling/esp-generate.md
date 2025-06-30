@@ -51,7 +51,7 @@ The tool will generate the following files:
 - `src/lib.rs`
     - This tells the Rust compiler that this code doesn't use `libstd`
 
-Some of the options may add some other files to your generated project:
+Some options may add some other files to your generated project:
 - When using the `ci` option:
   - `.github/workflows/rust_ci.yml`:
     - Defines a GitHub Actions workflow for continuous integration (CI), ensuring that the project builds

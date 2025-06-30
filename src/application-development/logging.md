@@ -71,7 +71,7 @@ The [`log`][log] crate is a widely adopted logging facade in the Rust community.
 
 ### Integrating `log` with `esp-println`
 
-To utilize the `log` crate with `esp-println`, follow these steps:​
+To use the `log` crate with `esp-println`, follow these steps:​
 
 1. Add Dependencies to your `Cargo.toml`:
 ```toml

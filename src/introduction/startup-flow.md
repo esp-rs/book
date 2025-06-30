@@ -1,6 +1,6 @@
 # Application Startup Flow
 
-In order to boot an application, Espressif devices use 2 bootloaders:
+To boot an application, Espressif devices use 2 bootloaders:
 - First Stage Bootloader (ROM Bootloader): Sets up architecture-specific registers, checks the [boot mode][boot-mode] and reset reason, and loads the second stage bootloader.
 - Second Stage Bootloader: Loads the [partition table][partition-table] and your application.
 

@@ -1,2 +1,4 @@
 book
 .vale
+
+!.vale/styles/Rust

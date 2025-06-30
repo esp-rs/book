@@ -35,12 +35,12 @@ Additionally, the embedded Rust ecosystem is still in its infancy; some dependen
 
 If you're unfamiliar with certain concepts covered in this book or would like to deepen your understanding, the following resources may be helpful:
 
-| Resource                                                 | Description                                                                                 |
-| -------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
-| [The Rust Programming Language][rust-book]               | Learn Rust fundamentals before diving into embedded development.                            |
-| [The Embedded Rust Book][embedded-rust-book]             | A collection of resources from Rust's Embedded Working Group.                               |
-| [The Embedonomicon][embedonomicon]                       | Detailed insights into low-level embedded Rust programming.                                 |
-| [Embedded Rust (`no_std`) on Espressif][no_std-training] | Guide for working in `no_std` environments with Espressif SoCs.                             |
+| Resource                                                 | Description                                                                           |
+| -------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| [The Rust Programming Language][rust-book]               | Learn Rust fundamentals before diving into embedded development.                      |
+| [The Embedded Rust Book][embedded-rust-book]             | A collection of resources from Rust's Embedded Working Group.                         |
+| [The Embedonomicon][embedonomicon]                       | Detailed insights into low-level embedded Rust programming.                           |
+| [Embedded Rust (`no_std`) on Espressif][no_std-training] | Guide for working in `no_std` environments with Espressif SoCs.                       |
 | [Awesome ESP Rust][awesome-esp-rust]                     | A list of resources for development in the Rust programming language for Espressif products |
 
 [rust-book]: https://doc.rust-lang.org/book/

@@ -64,34 +64,20 @@ Now you should be able to build and run projects on Espressif's RISC-V chips.
     ```shell
     espup install
     ```
-    This also install the `stable` toolchain for RISC-V devices, if you want to install the toolchain only for Xtensa devices:
+   This command also installs the `stable` toolchain for RISC-V devices.
+
+    If you want to install the toolchain only for Xtensa devices:
     ```shell
     espup install --targets esp32,esp32s2,esp32s3
     ```
     You can modify the `--targets` argument to install the toolchain for a certain device.
 
-3. Set Up the Environment Variables: `espup` will create an export file that contains some environment variables required to build projects.
-   - On Windows (`%USERPROFILE%\export-esp.ps1`)
-        - There is **no need** to execute the file for Windows users. It is only created to show the modified environment variables.
-   - On Unix-based systems (`$HOME/export-esp.sh`). There are different ways of sourcing the file:
-     - Source this file in every terminal:
-        1. Source the export file: `. $HOME/export-esp.sh`
-
-        This approach **requires running the command in every new shell**.
-     - Create an alias for executing the `export-esp.sh`:
-        1. Copy and paste the following command to your shell’s profile (`.profile`, `.bashrc`, `.zprofile`, etc.): `alias get_esprs='. $HOME/export-esp.sh'`
-        2. Refresh the configuration by restarting the terminal session or by running `source [path to profile]`, for example, `source ~/.bashrc`.
-
-        This approach **requires running the alias in every new shell**.
-     - Add the environment variables to your shell profile directly:
-        1. Add the content of `$HOME/export-esp.sh` to your shell’s profile: `cat $HOME/export-esp.sh >> [path to profile]`, for example, `cat $HOME/export-esp.sh >> ~/.bashrc`.
-        2. Refresh the configuration by restarting the terminal session or by running `source [path to profile]`, for example, `source ~/.bashrc`.
-
-        This approach **doesn't require any sourcing**. The `export-esp.sh` script will be sourced automatically in every shell.
+3. On Unix systems, set Up the Environment Variables: See the different methods in [espup Readme][source-file-espup]. Windows users don't need to do anything else.
 
 [espup-github]: https://github.com/esp-rs/espup
 [release-binaries]: https://github.com/esp-rs/espup/releases
 [cargo-binstall]: https://github.com/cargo-bins/cargo-binstall
+[source-file-espup]: https://github.com/esp-rs/espup?tab=readme-ov-file#environment-variables-setup
 
 #### What `espup` Installs
 
@@ -104,15 +90,10 @@ To enable support for Espressif targets, `espup` installs:
 
 The forked compiler can coexist with the standard Rust compiler, allowing both to be installed on your system. The forked compiler is invoked when using any of the available [overriding methods][rustup-overrides].
 
-> ⚠️ **Note**: We are actively working to upstream our forks. Below is the current status:
-> 1. LLVM fork: We've made significant progress recently. For details, refer to the [tracking issue][llvm-github-fork-upstream issue].
-> 2. Rust compiler fork: We've submitted all feasible Xtensa patches. Further progress depends on these changes being upstreamed into LLVM.
-
 [esp-rs/rust]: https://github.com/esp-rs/rust
 [llvm-github-fork]: https://github.com/espressif/llvm-project
 [gcc-toolchain-github-fork]: https://github.com/espressif/crosstool-NG/
 [rustup-overrides]: https://rust-lang.github.io/rustup/overrides.html
-[llvm-github-fork-upstream issue]: https://github.com/espressif/llvm-project/issues/4
 
 #### Building the Rust Compiler with Xtensa Support from Source
 

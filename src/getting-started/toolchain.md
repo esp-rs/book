@@ -1,4 +1,10 @@
-## Rust Toolchain
+## Toolchain Installation
+
+<!---
+TODO: This needs some rework based on https://github.com/esp-rs/espup/issues/498
+
+In general in previous chapters we need to explain RISC-V vs Xtensa etc.
+--->
 
 ### Rust Installation
 

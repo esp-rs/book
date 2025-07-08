@@ -2,7 +2,7 @@
 
 The crates under the `esp-rs` organization include support for the [ESP32, ESP32-S, ESP32-C and ESP32-H Series SoCs][espressif-socs].
 
-Each SoC has its own unique features while sharing some common traits. To select the appropriate chip for your project, please use the [ESP Product Selector][product-selector].
+Each SoC has its own unique features while sharing some common traits. To select the appropriate chip for your project, please use the [Espressif Product Selector][product-selector].
 
 The Espressif portfolio is based on two different system architectures:
 - [Xtensa][xtensa-architecture]: The ESP32 and ESP32-S series are based on the Xtensa architecture.

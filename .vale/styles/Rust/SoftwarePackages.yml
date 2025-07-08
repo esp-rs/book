@@ -1,0 +1,25 @@
+# Newly-created rule at Espressif
+# For details, see Espressif Vale Config Documentation
+extends: substitution
+message: "Use '%s' instead of '%s'."
+ignorecase: true
+level: error
+link: https://github.com/esp-rs/book/blob/main/rust-doc-style-guide.md#recommended-terms
+action:
+  name: replace
+swap:
+  rustup: rustup
+  rustc: rustc
+  espup: espup
+  cargo-binstall: cargo-binstall
+  cargo-generate: cargo-generate
+  cargo-espflash: cargo-espflash
+  cargo-xtask: cargo-xtask
+  esp-generate: esp-generate
+  esp-idf-template: esp-idf-template
+  esp-template: esp-template
+  espflash: espflash
+  idf-rust: idf-rust
+  rust-build: rust-build
+  web-flash: web-flash
+  wokwi-server: wokwi-server

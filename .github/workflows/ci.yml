@@ -27,6 +27,14 @@ jobs:
           # Cannot use --all here because of the generated redirect pages aren't available.
           sh linkcheck.sh book
 
+      - name: Run vale checks
+        if: ${{ github.event_name == 'pull_request' }}
+        uses: errata-ai/vale-action@v2.1.1
+        with:
+          fail_on_error: true
+          filter_mode: nofilter
+          files: src
+
       - name: Deploy book
         if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
         uses: peaceiris/actions-gh-pages@v3

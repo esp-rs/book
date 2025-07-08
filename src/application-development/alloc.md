@@ -65,7 +65,7 @@ or indirectly. ESP32 restrictions can be found [here].
 
 ### Allocator Considerations
 
-You can only have **one global allocator** but the allocator can use multiple regions (e.g. PSRAM, internal RAM or even multiple blocks of them). You can use multiple allocators with the nightly-feature `allocator api` and with [`allocator api2`][allocator api2], which [`esp-alloc`][esp-alloc] implements.
+You can only have **one global allocator** but the allocator can use multiple regions (e.g. PSRAM, internal RAM or even multiple blocks of them). You can use multiple allocators with the nightly feature `allocator api` and with [`allocator api2`][allocator api2], which [`esp-alloc`][esp-alloc] implements.
 
 [esp-alloc]: https://crates.io/crates/esp-alloc
 [alloc]: https://doc.rust-lang.org/alloc/

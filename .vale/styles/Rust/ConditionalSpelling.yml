@@ -1,0 +1,11 @@
+# Newly-created rule at Espressif
+# For details, see Espressif Vale Config Documentation
+extends: substitution
+message: "Usually use '%s'; use '%s' in commands, repo names, links only. See Rust Documentation Style Guide > Recommended Terms"
+ignorecase: false
+level: error
+link: https://github.com/esp-rs/book/blob/main/rust-doc-style-guide.md#recommended-terms
+action:
+  name: replace
+swap:
+  (?<![\/\.-])wokwi(?![\/\.-]): Wokwi

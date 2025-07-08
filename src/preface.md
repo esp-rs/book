@@ -2,34 +2,18 @@
 
 # Preface
 
-Welcome to a comprehensive guide to using the `esp-rs` ecosystem, created for embedded Rust development on Espressif products. You will find everything you need to get started and build real-world applications, from setting up your development environment to writing and debugging embedded code in Rust. We will also touch on other important aspects such as our tools, give an overview of our software product architecture, and teach how you can contribute to our project.
+Welcome to a comprehensive guide created for embedded Rust development on Espressif pruducts. You will find everything you need to get started and build real-world applications, from setting up your development environment to writing and debugging embedded code in Rust. We will also touch on other important aspects such as our tools, give an overview of our software product architecture, and teach how you can contribute to our project.
 
 ## Who This Book Is For
 
-This book is intended for people with some experience in Rust and assumes basic knowledge of embedded development and electronics. Readers of this book are expected to have a basic understanding of concepts such as cross-compilation, common digital interfaces (UART, SPI, I2C), memory-mapped peripherals and interrupts. For those without prior experience, we recommend first reading the [Scope of This Book][prerequisites] and [Resources][resources] sections to get up to speed.
-
-[prerequisites]: #scope-of-this-book
-
-## Scope of This Book
-
-In this book, we focus specifically on the `esp-rs` ecosystem. It does **not** serve as:
-
-- A general Rust programming language tutorial: Familiarity with the Rust language is assumed to get you started.
-- An embedded development guide: Prior familiarity with basic embedded development is also assumed.
-- A collection of examples: This book explains the overall process of working with the `esp-rs` ecosystem. More examples can be found [here][examples].
-
-Check the [Additional Resources][resources] section if you are not familiar with any of these concepts.
+This book is intended for readers with some experience in Rust and a basic understanding of embedded development and electronics. You should already be familiar with concepts such as cross-compilation, common digital interfaces (UART, SPI, I2C), memory-mapped peripherals, and interrupts. It is not a general Rust tutorial or an introduction to embedded systems — prior knowledge is expected. Check the [Additional Resources][resources] section if you are not familiar with any of these concepts. For practical examples, see the esp-hal examples see [examples].
 
 [examples]: https://github.com/esp-rs/esp-hal/tree/main/examples
 [resources]: #additional-resources
 
 ## Stability and Availability
 
-The `esp-rs` project is under active development and may be subject to changes as it evolves. While we strive for stability, users should expect periodic modifications as we improve the API, improve performance, and introduce new features. [Modules] that are already stabilized will not be subject to breaking changes, while the `unstable` parts of the drivers are being actively worked on and will likely undergo changes in future releases.
-
-Additionally, the embedded Rust ecosystem is still in its infancy; some dependencies, tools, or language features may change over time. We encourage developers to stay up to date with the latest releases and participate in discussions to help shape the future of Rust on Espressif platforms.
-
-[modules]: https://docs.espressif.com/projects/rust/esp-hal/1.0.0-beta.0/esp32c6/esp_hal/index.html#modules
+The `esp-rs` project is under active development and may be subject to changes as it evolves. While we strive for stability, users should expect periodic modifications as we improve the API, enhance performance, and introduce new features. Modules (see the latest) that are already stabilized will not be subject to breaking changes, in accordance with semantic versioning - `SemVer`. However, `unstable` features—such as parts of the HAL and certain drivers—are actively being developed and are not covered by `SemVer` guarantees. This means that using these `unstable` components may break your project with a simple `cargo update`, much like working with Rust's `nightly` compiler. This kind of instability is common across the broader Rust embedded ecosystem, which is still rapidly evolving. Expect frequent changes and track dependencies closely.
 
 ## Additional Resources
 
@@ -39,15 +23,16 @@ If you're unfamiliar with certain concepts covered in this book or would like to
 | -------------------------------------------------------- | ------------------------------------------------------------------------------------- |
 | [The Rust Programming Language][rust-book]               | Learn Rust fundamentals before diving into embedded development.                      |
 | [The Embedded Rust Book][embedded-rust-book]             | A collection of resources from Rust's Embedded Working Group.                         |
-| [The Embedonomicon][embedonomicon]                       | Detailed insights into low-level embedded Rust programming.                           |
 | [Embedded Rust (`no_std`) on Espressif][no_std-training] | Guide for working in `no_std` environments with Espressif SoCs.                       |
 | [Awesome ESP Rust][awesome-esp-rust]                     | A list of resources for development in the Rust programming language for Espressif products |
+| [Awesome Embedded Rust][awesome-embedded-rust]           | A list of resources related to embedded and low-level programming in the Rust programming language, including a selection of useful crates.                       |
+
 
 [rust-book]: https://doc.rust-lang.org/book/
 [embedded-rust-book]: https://docs.rust-embedded.org/book/index.html
-[embedonomicon]: https://docs.rust-embedded.org/embedonomicon/
 [no_std-training]: https://esp-rs.github.io/no_std-training/
 [awesome-esp-rust]: https://github.com/esp-rs/awesome-esp-rust.git
+[awesome-embedded-rust]: https://github.com/rust-embedded/awesome-embedded-rust
 
 ## Contributing to This Book
 

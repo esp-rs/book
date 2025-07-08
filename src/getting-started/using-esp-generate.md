@@ -1,4 +1,4 @@
-# Using esp-generate
+# Using `esp-generate`
 
 With all the necessary tools installed, you're ready to create your first Rust project for ESP32.
 

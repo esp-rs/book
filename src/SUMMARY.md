@@ -11,7 +11,7 @@
     - [`esp-generate`](./getting-started/tooling/esp-generate.md)
     - [`espflash`](./getting-started/tooling/espflash.md)
     - [`probe-rs`](./getting-started/tooling/probe-rs.md)
-  - [Using esp-generate](./getting-started/using-esp-generate.md)
+  - [Using `esp-generate`](./getting-started/using-esp-generate.md)
 - [Application Development](./application-development/index.md)
   - [Bootloader](./application-development/bootloader.md)
   - [Configuration](./application-development/configuration.md)

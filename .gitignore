@@ -1,3 +1,4 @@
 book
 .vale/styles/*
 !.vale/styles/Rust/
+!.vale/styles/config/

@@ -2,7 +2,7 @@
 
 # Preface
 
-Welcome to a comprehensive guide created for embedded Rust development on Espressif pruducts. You will find everything you need to get started and build real-world applications, from setting up your development environment to writing and debugging embedded code in Rust. We will also touch on other important aspects such as our tools, give an overview of our software product architecture, and teach how you can contribute to our project.
+Welcome to a comprehensive guide created for embedded Rust development on Espressif products. You will find everything you need to get started and build real-world applications, from setting up your development environment to writing and debugging embedded code in Rust. We will also touch on other important aspects such as our tools, give an overview of our software product architecture, and teach how you can contribute to our project.
 
 ## Who This Book Is For
 

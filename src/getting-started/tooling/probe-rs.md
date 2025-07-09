@@ -2,7 +2,7 @@
 
 The [`probe-rs`][probe-rs] project offers a suite of tools for interacting with embedded microcontrollers using various debug probes, with robust support for [Espressif chips][chips].
 
-In addition to flashing and monitoring, it also enables comprehensive debugging capabilities.
+Besides flashing and monitoring, it also provides robust debugging capabilities.
 
 If you're unsure whether you need it right now, you can skip the installation and come back to it later.
 

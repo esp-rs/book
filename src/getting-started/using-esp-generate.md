@@ -1,6 +1,6 @@
 # Using `esp-generate`
 
-With all the necessary tools installed, you're ready to create your first Rust project for ESP32.
+With all the necessary tools installed, you're ready to create your first Rust project running on an Espressif chip.
 
 ## Generating a Project
 
@@ -17,7 +17,7 @@ Make sure to replace the chip type and project name as needed. You can also leav
 I think a screenshot would make all this look a bit more interesting - but the drawback is it will "always" be outdated.
 --->
 
-> 💡 **Tip**: Prefer a non-interactive setup? You can specify configuration options directly using the `-o/--options` flag.
+> 💡 **Hint**: Prefer a non-interactive setup? You can specify configuration options directly using the `-o/--options` flag.
 >
 > Additionally, using the `--headless` flag will prevent the TUI (Terminal User Interface) from launching:
 > ```shell

@@ -6,14 +6,16 @@ Welcome to a comprehensive guide created for embedded Rust development on Espres
 
 ## Who This Book Is For
 
-This book is intended for readers with some experience in Rust and a basic understanding of embedded development and electronics. You should already be familiar with concepts such as cross-compilation, common digital interfaces (UART, SPI, I2C), memory-mapped peripherals, and interrupts. It is not a general Rust tutorial or an introduction to embedded systems — prior knowledge is expected. Check the [Additional Resources][resources] section if you are not familiar with any of these concepts. For practical examples, see the esp-hal examples see [examples].
+This book is intended for readers with some experience in Rust and a basic understanding of embedded development and electronics. You should already be familiar with concepts such as cross-compilation, common digital interfaces (UART, SPI, I2C), memory-mapped peripherals, and interrupts. It is not a general Rust tutorial or an introduction to embedded systems — prior knowledge is expected. Check the [Additional Resources][resources] section if you are not familiar with any of these concepts. For practical examples, see the [`esp-hal` examples][examples].
 
 [examples]: https://github.com/esp-rs/esp-hal/tree/main/examples
 [resources]: #additional-resources
 
 ## Stability and Availability
 
-The `esp-rs` project is under active development and may be subject to changes as it evolves. While we strive for stability, users should expect periodic modifications as we improve the API, enhance performance, and introduce new features. Modules (see the latest) that are already stabilized will not be subject to breaking changes, in accordance with semantic versioning - `SemVer`. However, `unstable` features—such as parts of the HAL and certain drivers—are actively being developed and are not covered by `SemVer` guarantees. This means that using these `unstable` components may break your project with a simple `cargo update`, much like working with Rust's `nightly` compiler. This kind of instability is common across the broader Rust embedded ecosystem, which is still rapidly evolving. Expect frequent changes and track dependencies closely.
+The `esp-rs` project is under active development and may be subject to changes as it evolves. While we strive for stability, users should expect periodic modifications as we improve the API, enhance performance, and introduce new features. [Modules][modules] that are already stabilized will not be subject to breaking changes, in accordance with semantic versioning - `SemVer`. However, `unstable` features—such as parts of the `esp-hal` and certain drivers are actively being developed and are not covered by `SemVer` guarantees. This means that using these `unstable` components may break your project with a simple `cargo update`, much like working with Rust's `nightly` compiler. This kind of instability is common across the broader Rust embedded ecosystem, which is still rapidly evolving. Expect frequent changes and track dependencies closely.
+
+[modules]: https://docs.espressif.com/projects/rust/esp-hal/1.0.0-beta.1/esp32c6/esp_hal/index.html#modules
 
 ## Additional Resources
 

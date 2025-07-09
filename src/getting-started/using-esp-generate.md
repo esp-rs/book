@@ -10,7 +10,8 @@ To start, launch the interactive configuration tool by running:
 esp-generate --chip esp32c3 your-project-name
 ```
 
-Make sure to replace the chip type and project name as needed.
+<!-- 0.4.0 doesn't include the full interactive mode, yet --->
+Make sure to replace the chip type and project name as needed. You can also leave them out and `esp-generate` will prompt you for them.
 
 <!---
 I think a screenshot would make all this look a bit more interesting - but the drawback is it will "always" be outdated.

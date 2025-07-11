@@ -17,6 +17,7 @@ The `esp-hal` repository is home to multiple crates that are used to interact wi
 | `esp-metadata`           | Metadata for Espressif devices, primarily intended for use in build scripts.                           | Unstable  |
 | `esp-println`            | Print and logging functionality for Espressif devices.                                                 | Unstable  |
 | `esp-riscv-rt`           | Minimal startup/runtime for RISC-V CPUs from Espressif.                                                | Unstable  |
+| `esp-rom-sys`            | ROM code support.                                                                                      | Unstable  |
 | `esp-storage`            | Storage utilities for Espressif devices.                                                               | Unstable  |
 | `esp-wifi`               | Wi-Fi, BLE and ESP-NOW functionality for Espressif devices.                                            | Unstable  |
 | `xtensa-lx`              | Low-level access to Xtensa LX processors and peripherals.                                              | Unstable  |

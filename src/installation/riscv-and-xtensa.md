@@ -6,7 +6,7 @@
 
 To install `espup`, run:
 ```shell
-cargo install espup
+cargo install espup --locked
 ```
 
 You can also directly download pre-compiled [release binaries][release-binaries] or use [`cargo-binstall`][cargo-binstall].

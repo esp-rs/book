@@ -2,14 +2,11 @@
 
 # Preface
 
-Welcome to a comprehensive guide created for embedded Rust development on Espressif products. You will find everything you need to get started and build real-world applications, from setting up your development environment to writing and debugging embedded code in Rust. We will also touch on other important aspects such as our tools, give an overview of our software product architecture, and teach how you can contribute to our project.
+Welcome to our guide to embedded Rust development on Espressif products. This book is designed to help you get started and become comfortable using our tools and ecosystem. Along the way, we’ll explain the reasoning behind key design choices, introduce the structure of our software stack, and walk through basic workflows using project generation and tooling. By the end, you’ll be ready to explore more advanced material through our reference documentation and external training resources.
 
 ## Who This Book Is For
 
-This book is intended for readers with some experience in Rust and a basic understanding of embedded development and electronics. You should already be familiar with concepts such as cross-compilation, common digital interfaces (UART, SPI, I2C), memory-mapped peripherals, and interrupts. It is not a general Rust tutorial or an introduction to embedded systems — prior knowledge is expected. Check the [Additional Resources][resources] section if you are not familiar with any of these concepts. For practical examples, see the [`esp-hal` examples][examples].
-
-[examples]: https://github.com/esp-rs/esp-hal/tree/main/examples
-[resources]: #additional-resources
+This book is intended for Rust developers who are curious about embedded development, even if they don’t have prior experience with embedded systems. While some familiarity with low-level programming concepts can be helpful, we aim to introduce key ideas as they come up.
 
 ## Stability and Availability
 

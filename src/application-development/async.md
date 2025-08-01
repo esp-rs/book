@@ -2,7 +2,7 @@
 
 > ⚠️ **Note**:  This section does not serve as an async tutorial or teaching material. For these purposes, visit [official async-book].
 
-`esp-hal` provides blocking and async API for most of the supported drivers. For more information and to get started, check our `examples` in the [esp-hal-package].
+`esp-hal` provides blocking and async API for most of the supported drivers. Drivers are constructed in `Blocking` mode by default. To set up an async driver, they must be converted to an `Async` mode using the `into_async` method. For more information and to get started, check our `examples` in the [esp-hal package].
 
 ## Embassy
 
@@ -15,18 +15,21 @@ The [`esp-hal-embassy`][esp-hal-embassy] crate provides integration between the 
 3. Embassy time driver
 4. Timer waiter queue
 
-
+## ArielOS
+[ArielOS] is an operating system for secure, memory-safe, low-power IoT. It builds on top of various projects from the Embedded Rust ecosystem, including `esp-hal`. ArielOS focuses on tight integration, adding missing OS features like a multicore scheduler, secure networking, portable drivers, and a unified build system. The result is a powerful alternative to C-based `RTOS` solutions, but in pure Rust.
 
 ## RTIC
 
-[Real-Time Interrupt-driven Concurrency (RTIC)] is a concurrency framework for building real-time systems. Currently, only ESP32-C3 and ESP32-C6 are supported.
+[Real-Time Interrupt-driven Concurrency (RTIC)] is a community supported concurrency framework for building real-time systems. Currently, only `ESP32-C3` and `ESP32-C6` are supported. 
 
 
+<!-- TODO: change ArielOS to crates.io link when it's ready -->
 [official async-book]: https://rust-lang.github.io/async-book/
 [Embassy]: https://embassy.dev
 [embassy-executor]: https://crates.io/crates/embassy-executor
 [esp-hal-embassy]: https://crates.io/crates/esp-hal-embassy
 [esp-hal]: https://crates.io/crates/esp-hal
 [Embassy book]: https://embassy.dev/book/
-[esp-hal-package]: https://github.com/esp-rs/esp-hal
+[esp-hal package]: https://github.com/esp-rs/esp-hal
+[ArielOS]: https://github.com/ariel-os/ariel-os
 [Real-Time Interrupt-driven Concurrency (RTIC)]: https://crates.io/crates/rtic

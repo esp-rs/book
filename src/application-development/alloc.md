@@ -1,53 +1,25 @@
 # Allocating Memory
 
-In a `no_std` environment, the [`alloc`][alloc] crate is available as an option for heap allocation. It can be useful when working with crates that require alloc or when using dynamic collections like `Vec`.
+In a `no_std` environment, the [`alloc`][alloc] crate is available as an option for heap allocation. This enables powerful abstractions such as `Vec` and `Box` and other collections that require heap allocation. It can also be useful when working with crates that require alloc.
 
-We provide our own `no_std` heap allocator, [`esp-alloc`][esp-alloc]. To use it, you need to:
+We provide our own `no_std` heap allocator, [`esp-alloc`][esp-alloc]. But before enabling it, user should understand **why** they might want heap allocation and the trade-offs involved.
 
-1. Add a dependency to your `Cargo.toml`
-```toml
-esp-alloc        = "0.7.0"
-```
+## Why Not Use a Heap?
 
-2. Modify the `.cargo/config.toml`
-```toml
-[unstable]
-build-std = ["alloc", "core"] # added alloc here
-```
+While heap allocation offers flexibility, it comes with some costs:
 
-3. Use `alloc` crate in your application
-```rust
-// main.rs
-extern crate alloc;
-```
-
-4. Initialize a global heap allocator providing a heap of the given size in bytes with the provided macro:
-```rust
-// main.rs
-fn main() -> ! {
-    esp_alloc::heap_allocator!(size: 72 * 1024);
-
-```
-
-or when more customization is required using the function:
-```rust
-// main.rs
-
-use esp_alloc as _;
-fn init_heap() {
-    const HEAP_SIZE: usize = 32 * 1024;
-    static mut HEAP: MaybeUninit<[u8; HEAP_SIZE]> = MaybeUninit::uninit();
-    unsafe {
-        esp_alloc::HEAP.add_region(esp_alloc::HeapRegion::new(
-            HEAP.as_mut_ptr() as *mut u8,
-            HEAP_SIZE,
-            esp_alloc::MemoryCapability::Internal.into(),
-        ));
-    }
-}
-```
+- **Fragmentation**: Over time, dynamic allocation can cause *fragmentation*: small, scattered allocations may prevent large ones even if total memory is available. This can lead to subtle runtime failures.
+- **Runtime Overhead**: Allocating and freeing memory incurs costs, both time and computational.
 
 ## Configurable Memory Placement and Reclaimed RAM
+
+Espressif chips have non-contiguous memory mapping, not all physical RAM is usable as a single, flat heap. For example, some regions are reserved for ROM code, and cannot be accessed.
+
+| Abstract Address | Region          | Description                              |
+| ---------------- | --------------- | ---------------------------------------- |
+| `0x0000_0000`    | **IRAM**        | Executable code region                   |
+| `0x0002_0000`    | **Reserved**    | ROM-reserved gap (unusable)              |
+| `0x0003_0000`    | **DRAM**        | Usable RAM — stack, static vars, heap    |
 
 On chips with non-contiguous memory, `cfg` options can be used to control where memory is placed. This also allows accessing RAM that is otherwise unavailable, such as memory occupied by the 2nd stage bootloader. For supported chips, regions like `.dram2_uninit` can be used as additional heap memory, optimizing available resources.
 
@@ -58,7 +30,7 @@ heap_allocator!(#[link_section = ".dram2_uninit"] size: 64000);
 
 ## PSRAM
 
-Our chips have a few hundred kilobytes of internal RAM, which could be insufficient for some applications. The ESP32, ESP32-S2, and ESP32-S3 have the ability to use virtual addresses for external PSRAM (Psuedostatic RAM) memory. The external memory is usable is the same way as internal data RAM, with certain restrictions. The biggest restriction is that the atomic instructions do not work
+Our chips have a few hundred kilobytes of internal RAM, which could be insufficient for some applications. The ESP32, ESP32-S2, and ESP32-S3 have the ability to use virtual addresses for external PSRAM (Psuedostatic RAM) memory. The external memory is usable in the same way as internal data RAM, with certain restrictions. The biggest restriction is that the atomic instructions do not work
 correctly when the memory they access is located in PSRAM. This means that
 the allocator must not be used to allocate `Atomic*` types - either directly
 or indirectly. ESP32 restrictions can be found [here].

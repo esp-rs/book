@@ -2,61 +2,34 @@
 
 # Preface
 
-Welcome to a comprehensive guide to using the `esp-rs` ecosystem, created for embedded Rust development on Espressif products. You will find everything you need to get started and build real-world applications, from setting up your development environment to writing and debugging embedded code in Rust. We will also touch on other important aspects such as our tools, give an overview of our software product architecture, and teach how you can contribute to our project.
+Welcome to our guide to embedded Rust development on Espressif products. This book is designed to help you get started and become comfortable using our tools and ecosystem. Along the way, we’ll explain the reasoning behind key design choices, introduce the structure of our software stack, and walk through basic workflows using project generation and tooling. By the end, you’ll be ready to explore more advanced material through our reference documentation and external training resources.
 
 ## Who This Book Is For
 
-This book is intended for people with some experience in Rust and assumes basic knowledge of embedded development and electronics. Readers of this book are expected to have a basic understanding of concepts such as cross-compilation, common digital interfaces (UART, SPI, I2C), memory-mapped peripherals and interrupts. For those without prior experience, we recommend first reading the [Scope of This Book][prerequisites] and [Resources][resources] sections to get up to speed.
-
-[prerequisites]: #scope-of-this-book
-
-## Scope of This Book
-
-In this book, we focus specifically on the `esp-rs` ecosystem. It does **not** serve as:
-
-- A general Rust programming language tutorial: Familiarity with the Rust language is assumed to get you started.
-- An embedded development guide: Prior familiarity with basic embedded development is also assumed.
-- A collection of examples: This book explains the overall process of working with the `esp-rs` ecosystem. More examples can be found [here][examples].
-
-Check the [Additional Resources][resources] section if you are not familiar with any of these concepts.
-
-[examples]: https://github.com/esp-rs/esp-hal/tree/main/examples
-[resources]: #additional-resources
+This book is intended for Rust developers who are curious about embedded development, even if they don’t have prior experience with embedded systems. While some familiarity with low-level programming concepts can be helpful, we aim to introduce key ideas as they come up. If you would like to expand your baseline knowledge, consider studying the additional [Resources][resources].
 
 ## Stability and Availability
 
-The `esp-rs` project is under active development and may be subject to changes as it evolves. While we strive for stability, users should expect periodic modifications as we improve the API, improve performance, and introduce new features. [Modules] that are already stabilized will not be subject to breaking changes, while the `unstable` parts of the drivers are being actively worked on and will likely undergo changes in future releases.
+While we strive for stability, users should expect periodic modifications as we improve the API, enhance performance, and introduce new features. [Modules][modules] that are already stabilized will not be subject to breaking changes, in accordance with semantic versioning - `SemVer`. However, `unstable` features—such as parts of the `esp-hal` and certain drivers are actively being developed and are not covered by `SemVer` guarantees. This means that using these `unstable` components may break your project with a simple `cargo update`, much like working with Rust's `nightly` compiler. This kind of instability is common across the broader Rust embedded ecosystem, which is still rapidly evolving. Expect frequent changes and track dependencies closely. For all major crates, we provide migration guides between releases to help you stay up to date.
 
-Additionally, the embedded Rust ecosystem is still in its infancy; some dependencies, tools, or language features may change over time. We encourage developers to stay up to date with the latest releases and participate in discussions to help shape the future of Rust on Espressif platforms.
-
-[modules]: https://docs.espressif.com/projects/rust/esp-hal/1.0.0-beta.0/esp32c6/esp_hal/index.html#modules
 
 ## Additional Resources
 
 If you're unfamiliar with certain concepts covered in this book or would like to deepen your understanding, the following resources may be helpful:
 
-| Resource                                                 | Description                                                                                 |
-| -------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
-| [The Rust Programming Language][rust-book]               | Learn Rust fundamentals before diving into embedded development.                            |
-| [The Embedded Rust Book][embedded-rust-book]             | A collection of resources from Rust's Embedded Working Group.                               |
-| [The Embedonomicon][embedonomicon]                       | Detailed insights into low-level embedded Rust programming.                                 |
-| [Embedded Rust (`no_std`) on Espressif][no_std-training] | Guide for working in `no_std` environments with Espressif SoCs.                             |
+| Resource                                                 | Description                                                                           |
+| -------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| [The Rust Programming Language][rust-book]               | Learn Rust fundamentals before diving into embedded development.                      |
+| [The Embedded Rust Book][embedded-rust-book]             | A collection of resources from Rust's Embedded Working Group.                         |
+| [Embedded Rust (`no_std`) on Espressif][no_std-training] | Guide for working in `no_std` environments with Espressif SoCs.                       |
 | [Awesome ESP Rust][awesome-esp-rust]                     | A list of resources for development in the Rust programming language for Espressif products |
-
-[rust-book]: https://doc.rust-lang.org/book/
-[embedded-rust-book]: https://docs.rust-embedded.org/book/index.html
-[embedonomicon]: https://docs.rust-embedded.org/embedonomicon/
-[no_std-training]: https://esp-rs.github.io/no_std-training/
-[awesome-esp-rust]: https://github.com/esp-rs/awesome-esp-rust.git
+| [Awesome Embedded Rust][awesome-embedded-rust]           | A list of resources related to embedded and low-level programming in the Rust programming language, including a selection of useful crates.                       |
 
 ## Contributing to This Book
 
 The work on this book is coordinated in [this repository][book-repository].
 
 If you encounter difficulties following the instructions or find unclear sections, please report them in [the issue tracker][book-issues]. Contributions in the form of pull requests for typo fixes or clarity improvements are always welcome!
-
-[book-repository]: https://github.com/esp-rs/book
-[book-issues]: https://github.com/esp-rs/book/issues/
 
 ## Support and Community
 
@@ -68,3 +41,12 @@ If you need help, have questions, or would like to discuss topics related to `es
 
 We hope this book provides you with the knowledge and confidence to build robust, efficient, and safe embedded applications using Rust on Espressif products. Let's get started!
 
+[modules]: https://docs.espressif.com/projects/rust/esp-hal/1.0.0-beta.1/esp32c6/esp_hal/index.html#modules
+[resources]: #additional-resources
+[rust-book]: https://doc.rust-lang.org/book/
+[embedded-rust-book]: https://docs.rust-embedded.org/book/index.html
+[no_std-training]: https://esp-rs.github.io/no_std-training/
+[awesome-esp-rust]: https://github.com/esp-rs/awesome-esp-rust.git
+[awesome-embedded-rust]: https://github.com/rust-embedded/awesome-embedded-rust
+[book-repository]: https://github.com/esp-rs/book
+[book-issues]: https://github.com/esp-rs/book/issues/

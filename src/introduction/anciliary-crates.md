@@ -5,7 +5,7 @@ The `esp-hal` repository is home to multiple crates that are used to interact wi
 | Crate                    | Description                                                                                            | Stability |
 | ------------------------ | ------------------------------------------------------------------------------------------------------ | --------- |
 | `esp-alloc`              | Memory allocation utilities.                                                                           | Unstable  |
-| `esp-backtrace`          | Provides backtraces and support for exceptions and panic handlers .                                    | Unstable  |
+| `esp-backtrace`          | Provides backtraces support.                                                                           | Unstable  |
 | `esp-bootloader-esp-idf` | Offers additional support for the ESP-IDF 2nd stage bootloader.                                        | Unstable  |
 | `esp-build`              | Build utilities for use with esp-hal and other related packages, intended for use in build scripts.    | Unstable  |
 | `esp-config`             | Configuration system.                                                                                  | Unstable  |

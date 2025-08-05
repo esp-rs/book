@@ -20,7 +20,9 @@ Adjust the options as needed for your project. See [Available Options][available
 
 > 💡 **Hint**: When using `espflash` you might want to enable `Use esp-backtrace as the panic handler.` and `Use the log crate to print messages.` under `Flashing, logging and debugging (espflash)`
 
-> 💡 **Hint**: When you intent to use `probe-rs` instead of `espflash` you should enable `Use probe-rs to flash and monitor instead of espflash.`, then enable `Use defmt to print messages.` and `Use panic-rtt-target as the panic handler.` under `Flashing, logging and debugging (probe-rs)`
+> 💡 **Hint**: When you intent to use `probe-rs` instead of `espflash` you might want to enable `Use probe-rs to flash and monitor instead of espflash.`, then enable `Use defmt to print messages.` and `Use panic-rtt-target as the panic handler.` under `Flashing, logging and debugging (probe-rs)`
+
+When you save the project the tool will check for the required and optional tools being installed and shows the results.
 
 ## Running the Code
 

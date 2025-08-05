@@ -11,6 +11,8 @@ cargo install esp-generate --locked
 
 You can also directly download pre-compiled [release binaries][release-binaries] or use [`cargo-binstall`][cargo-binstall].
 
+> 💡 **Hint**: Each version of `esp-generate` targets a specific version of the eco-system crates. Make sure to update `esp-generate` if you want to use the latest released versions.
+
 [release-binaries]: https://github.com/esp-rs/esp-generate/releases
 [cargo-binstall]: https://github.com/cargo-bins/cargo-binstall
 [esp-generate]: https://github.com/esp-rs/esp-generate

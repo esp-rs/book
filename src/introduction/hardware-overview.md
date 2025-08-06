@@ -29,7 +29,7 @@ Feel free to refer to the [Technical Documentation][espressif-docs] for more inf
 
 ## Understanding an Espressif DevKit
 
-Lets take the [ESP32-C6-DevKitC-1][c6-devkitc] as an example. Its a development board based in ESP32-C6 which comes with:
+Let's take the [ESP32-C6-DevKitC-1][c6-devkitc] as an example. It's a development board based on ESP32-C6 which comes with:
 
 ![ESP32-C6-DevKitC-1](../assets/esp32-c6-devkitc-1-v1.2.png)
 

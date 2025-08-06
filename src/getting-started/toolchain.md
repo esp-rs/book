@@ -1,4 +1,4 @@
-## Rust Toolchain
+## Toolchain Installation
 
 ### Rust Installation
 
@@ -8,6 +8,8 @@ Make sure you have [Rust][rust-lang-org] installed. If not, see the instructions
 
 When using Windows, make sure you have installed one of the ABIs listed below. For more details, see the [Windows][rustup-book-windows] chapter in The rustup book.
 - **MSVC**: Recommended ABI, included in the list of `rustup` default requirements. Use it for interoperability with the software produced by Visual Studio.
+
+    When in doubt this is what you want to use.
 - **GNU**: ABI used by the GCC toolchain. Install it yourself for interoperability with the software built with the MinGW/MSYS2 toolchain.
 
 See also [alternative installation methods][rust-alt-installation].
@@ -44,7 +46,7 @@ To build Rust applications for the Espressif chips based on RISC-V architecture,
 
       Those targets are currently [Tier 2][rust-lang-book--platform-support-tier2]. Note the different flavors of `riscv32` targets in Rust covering different [RISC-V extensions][wiki-riscv-standard-extensions].
 
-Now you should be able to build and run projects on Espressif's RISC-V chips.
+If you are _not_ going to use ESP32, ESP32-S2 or ESP32-S3 you are done and can skip to [Tooling Installation](tooling/index.md).
 
 [rustup-book-channel-nightly]: https://rust-lang.github.io/rustup/concepts/channels.html#working-with-nightly-rust
 [rustup-book-components]: https://rust-lang.github.io/rustup/concepts/components.html
@@ -53,7 +55,10 @@ Now you should be able to build and run projects on Espressif's RISC-V chips.
 
 ### Xtensa Devices
 
-[`espup`][espup-github] is a tool that simplifies installing and maintaining the toolchains required to develop Rust applications for the Xtensa and RISC-V architectures.
+As mentioned in previous chapters ESP32, ESP32-S2 and ESP32-S3 are based on Xtensa architecture. If you are going to target these chips you will need
+to use a fork of the Rust compiler for now.
+
+[`espup`][espup-github] is a tool that simplifies installing and maintaining the toolchains required to develop Rust applications for these targets.
 
 1. Install `espup`:
     ```shell
@@ -64,14 +69,6 @@ Now you should be able to build and run projects on Espressif's RISC-V chips.
     ```shell
     espup install
     ```
-   This command also installs the `stable` toolchain for RISC-V devices.
-
-    If you want to install the toolchain only for Xtensa devices:
-    ```shell
-    espup install --targets esp32,esp32s2,esp32s3
-    ```
-    You can modify the `--targets` argument to install the toolchain for a certain device.
-
 3. On Unix systems, set Up the Environment Variables: See the different methods in [`espup` Readme][source-file-espup]. Windows users don't need to do anything else.
 
 [espup-github]: https://github.com/esp-rs/espup
@@ -94,9 +91,3 @@ The forked compiler can coexist with the standard Rust compiler, allowing both t
 [llvm-github-fork]: https://github.com/espressif/llvm-project
 [gcc-toolchain-github-fork]: https://github.com/espressif/crosstool-NG/
 [rustup-overrides]: https://rust-lang.github.io/rustup/overrides.html
-
-#### Building the Rust Compiler with Xtensa Support from Source
-
-This process is computationally expensive and can take one or more hours to complete depending on your system. It isn't recommended unless there is a major reason to go for this approach. Here is the repository to build it from source: [`esp-rs/rust` repository][esp-rs-rust].
-
-[esp-rs-rust]: https://github.com/esp-rs/rust

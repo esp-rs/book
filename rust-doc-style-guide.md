@@ -293,6 +293,10 @@ Use the following formatting for notes and warnings:
 
   > 🚨 **Warning**: Use in critical circumstances only, e.g., for irreversible actions or actions potentially harmful to hardware, software, etc.
 
+- Hint
+
+  > 💡 **Hint**: Use for additional hints and tips
+
 In markdown:
 
 ```md

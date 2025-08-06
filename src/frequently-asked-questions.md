@@ -4,7 +4,9 @@ This chapter addresses common questions and challenges that developers may encou
 
 ## Editor/IDE
 
-When using `esp-generate`, you can automatically configure recommended settings and extensions for both VS Code and Helix editors during the generation process.
+When using [`esp-generate`][esp-generate], you can automatically configure recommended settings and extensions for VS Code, Helix, and Zed editors during the generation process.
+
+[esp-generate]: ./getting-started/tooling/esp-generate.md
 
 ## Size and Memory Optimizations
 
@@ -28,7 +30,7 @@ Additionally, the [Embassy documentation][embassy-documentation] contains some s
 
 ### Optimizing Memory Usage
 
-We will again defer to the [Embassy Documentation][embassy-documentation], specifically the [How can I measure resource usage (CPU, RAM, etc.)?][measure-resources] section.
+We will, again, defer to the [Embassy Documentation][embassy-documentation], specifically the [How can I measure resource usage (CPU, RAM, etc.)?][measure-resources] section.
 
 [measure-resources]: https://embassy.dev/book/#_how_can_i_measure_resource_usage_cpu_ram_etc
 
@@ -63,13 +65,13 @@ Refer to the table below for chip support status in Wokwi:
 
 |              | **[Wokwi][wokwi-simulation-features]** |
 | :----------: | :------------------------------------: |
-|  **ESP32**   |                   ✅                   |
-| **ESP32-C2** |                   ❌                   |
-| **ESP32-C3** |                   ✅                   |
-| **ESP32-C6** |                   ✅                   |
-| **ESP32-H2** |                   ✅                   |
-| **ESP32-S2** |                   ✅                   |
-| **ESP32-S3** |                   ✅                   |
+|  **ESP32**   |                   ✅                    |
+| **ESP32-C2** |                   ❌                    |
+| **ESP32-C3** |                   ✅                    |
+| **ESP32-C6** |                   ✅                    |
+| **ESP32-H2** |                   ✅                    |
+| **ESP32-S2** |                   ✅                    |
+| **ESP32-S3** |                   ✅                    |
 
 [wokwi]: https://wokwi.com/
 [wokwi-rust]: https://wokwi.com/rust

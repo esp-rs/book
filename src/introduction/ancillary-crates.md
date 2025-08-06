@@ -1,4 +1,4 @@
-# Anciliary Crates Overview
+# Ancillary Crates Overview
 
 The `esp-hal` repository is home to multiple crates that are used to interact with the hardware of the Espressif devices:
 

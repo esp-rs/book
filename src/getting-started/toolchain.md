@@ -69,7 +69,7 @@ to use a fork of the Rust compiler for now.
     ```shell
     espup install
     ```
-3. On Unix systems, set Up the Environment Variables: See the different methods in [`espup` Readme][source-file-espup]. Windows users don't need to do anything else.
+3. On Unix systems, set up the Environment Variables: See the different methods in [`espup` Readme][source-file-espup]. Windows users don't need to do anything else.
 
 [espup-github]: https://github.com/esp-rs/espup
 [release-binaries]: https://github.com/esp-rs/espup/releases

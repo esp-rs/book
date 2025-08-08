@@ -2,7 +2,7 @@
 
 > ⚠️ **Note**:  This section does not serve as an async tutorial or teaching material. For these purposes, visit [official async-book].
 
-`esp-hal` provides blocking and async API for most of the supported drivers. Drivers are constructed in `Blocking` mode by default. To set up an async driver, they must be converted to an `Async` mode using the `into_async` method. For more information and to get started, check our `examples` in the [esp-hal package].
+`esp-hal` provides blocking and async API for most of the supported drivers. Drivers are constructed in [`Blocking`] mode by default. To set up an async driver, they must be converted to an [`Async`] mode using the `into_async` method. For more information and to get started, check our `examples` in the [esp-hal package].
 
 > ⚠️ **Note**: Our `Async` drivers are not `Send` because they register interrupts on the current core. Moving them to another core can cause issues. If user needs to send (move) a driver to another core, they should use the `Blocking` version, send it and then make an `Async` driver out of it.
 
@@ -28,6 +28,8 @@ The [`esp-hal-embassy`] crate provides integration between the [`esp-hal`] and t
 
 <!-- TODO: change ArielOS to crates.io link when it's ready -->
 [official async-book]: https://rust-lang.github.io/async-book/
+[`Blocking`]: https://docs.espressif.com/projects/rust/esp-hal/1.0.0-rc.0/esp32c6/esp_hal/struct.Blocking.html
+[`Async`]:  https://docs.espressif.com/projects/rust/esp-hal/1.0.0-rc.0/esp32c6/esp_hal/struct.Async.html 
 [Embassy]: https://embassy.dev
 [embassy-executor]: https://crates.io/crates/embassy-executor
 [`esp-hal-embassy`]: https://crates.io/crates/esp-hal-embassy

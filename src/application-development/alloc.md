@@ -1,6 +1,6 @@
 # Allocating Memory
 
-In a `no_std` environment, the [`alloc`][alloc] crate is available as an option for heap allocation. This enables powerful abstractions such as `Vec` and `Box` and other collections that require heap allocation. It can also be useful when working with crates that require alloc.
+In a `no_std` environment, the [`alloc`][alloc] crate is available as an option for heap allocation. This enables powerful abstractions such as `Vec` and `Box` and other collections that require heap allocation. It can also be useful when working with crates that require `alloc`.
 
 We provide our own `no_std` heap allocator, [`esp-alloc`][esp-alloc]. But before enabling it, user should understand **why** they might want heap allocation and the trade-offs involved.
 
@@ -21,6 +21,8 @@ Espressif chips have non-contiguous memory mapping, not all physical RAM is usab
 | `0x0002_0000`    | **Reserved**    | ROM-reserved gap (unusable)              |
 | `0x0003_0000`    | **DRAM**        | Usable RAM — stack, static vars, heap    |
 
+> ⚠️ **Note**: This table does not contain information about the actual memory layout of the chip and serves as a demonstration of memory non-contiguity.
+
 On chips with non-contiguous memory, `cfg` options can be used to control where memory is placed. This also allows accessing RAM that is otherwise unavailable, such as memory occupied by the 2nd stage bootloader. For supported chips, regions like `.dram2_uninit` can be used as additional heap memory, optimizing available resources.
 
 ```rust
@@ -32,9 +34,9 @@ heap_allocator!(#[link_section = ".dram2_uninit"] size: 64000);
 
 Our chips have a few hundred kilobytes of internal RAM, which could be insufficient for some applications. The ESP32, ESP32-S2, and ESP32-S3 have the ability to use virtual addresses for external PSRAM (Psuedostatic RAM) memory. The external memory is usable in the same way as internal data RAM, with certain restrictions.
 
-> ⚠️ **Note**: On `Xtensa` chips, atomics in PSRAM do not work correctly — they can cause data races and defeat their purpose. This means that
+> ⚠️ **Note**: On Xtensa chips, atomics in PSRAM do not work correctly — they can cause data races and defeat their purpose. This means that
 the allocator must not be used to allocate `Atomic*` types - either directly
-or indirectly. ESP32 restrictions can be found [here]. This does **not** affect our `RISC-V` chips, where PSRAM works correctly with atomics.
+or indirectly. ESP32 restrictions can be found [here]. This does **not** affect our RISC-V chips, where PSRAM works correctly with atomics.
 
 ### Allocator Considerations
 

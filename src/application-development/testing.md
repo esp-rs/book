@@ -4,7 +4,7 @@ Testing is an integral part of application development. Using the example of how
 
 ## HIL testing
 
-Testing in our ecosystem is organised using Hardware-in-loop (HIL). We use the [`embedded-test`] framework to write unit and integration tests, so in principle, the process is only slightly different from normal non-embedded projects.
+Testing in our ecosystem is organized using Hardware-in-loop (HIL). We use the [`embedded-test`] framework to write unit and integration tests, so in principle, the process is only slightly different from normal non-embedded projects.
 
 We use [`probe-rs`] (revision `#9bde591`) to flash and run tests on the target device. To do this, the user **MUST** use **only** the `USB-Serial-JTAG` port on their devkit (usually the right one, possibly labelled "USB" next to it). If user's device does not have such a port, they will have to use [esp-prog] and connect it according to the [connection instructions] (select the desired chip on the page).
 

@@ -16,4 +16,4 @@ The [`log`][log] crate is a widely adopted logging facade in the Rust community.
 [defmt]: https://crates.io/crates/defmt
 [defmt-documentation]: https://defmt.ferrous-systems.com/introduction
 [filtering]: https://defmt.ferrous-systems.com/filtering#filtering
-[esp-generate]: ./getting-started/tooling/esp-generate.md
+[esp-generate]: ./../getting-started/tooling/esp-generate.md

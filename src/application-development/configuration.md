@@ -3,7 +3,7 @@
 The [`esp-config`][esp-config] crate provides a way to manage additional configuration settings.
 
 ## Usage
-While creating their project, the user may need to configure some additional advanced parameters, for example, place a peripheral in RAM for better performance or change the size of RX/TX queue when working with Wi-Fi and so on. In order to do this they will need to configure some settings provided by the `esp-config`. 
+While creating their project, the user may need to configure some additional advanced parameters, for example, place a peripheral in RAM for better performance or change the size of RX/TX queue when working with Wi-Fi and so on. In order to do so they will need to configure some settings provided by the `esp-config`. 
 
 The user is free to do this in two ways: 
 - By setting the environment variable. For example, in `esp-hal` if you want to place anonymous symbols in the RAM (`ESP_HAL_CONFIG_PLACE_ANON_IN_RAM`), which is set to `false` as default, you need to create an environment variable with the same name and modify its value:

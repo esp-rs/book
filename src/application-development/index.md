@@ -11,7 +11,7 @@ This chapter covers essential topics for developing applications:
 
 Before going into a detailed description of the various packages and concepts for writing an application, it might be useful for the user to have a superficial familiarity with the whole ecosystem, both in the `esp-hal` sense and in the broader Embedded Rust sense.
 
- ## `esp-hal` ecosystem 
+ ## `esp-hal` Ecosystem 
 
 The first step in working with a project is to create it, the main way to do this is to use `esp-generate` Read more about it in the [section](../getting-started/tooling/esp-generate.md) dedicated to this tool
  
@@ -21,9 +21,9 @@ Further, the user may want to use more advanced functionality of their chip. For
 
 For more advanced work with chip memory and to use collections from the `core` library that require heap allocation, the user is offered to use `esp-alloc`. A separate [chapter in the book](./alloc.md) is devoted to this.
 
-## Embedded Rust ecosystem integration
+## Embedded Rust Ecosystem Integration
 
-The most popular Hardware Abstraction Layer in the Embedded Rust environment is [`embedded-hal`], which provides a number of traits for several peripherals that simplify and unify the user's work with them. `esp-hal` also implements these traits within its drivers. In addition, various traits from different crates used in the embedded Rust industry have also been implemented, such as [`rand_core`] traits for our RNG driver, as well as [`embedded-io`] traits, which are analogues of `std::io` traits for no_std applications.
+The most popular Hardware Abstraction Layer in the Embedded Rust environment is [`embedded-hal`], which provides a number of traits for several peripherals that simplify and unify the user's work with them. `esp-hal` also implements these traits within its drivers. In addition, various traits from different crates used in the embedded Rust industry have also been implemented, such as [`rand_core`] traits for our RNG driver, as well as [`embedded-io`] traits, which are analogues of `std::io` traits for `no_std` applications.
 
 [`esp-hal` documentation]: https://docs.espressif.com/projects/rust/esp-hal/latest/
 [`esp-radio` sub-repository]: https://github.com/esp-rs/esp-hal/tree/main/esp-radio

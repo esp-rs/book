@@ -10,7 +10,7 @@ The alpha and omega that ties all work with Espressif chips in Rust is the `esp-
 
 Further, the user may want to use more advanced functionality of their chip. For example, network and connectivity. This part of the ecosystem is entirely the responsibility of `esp-radio`, which combines drivers for the communication protocols available on one or another of Espressif's products: `Wi-Fi`, `BLE`, `esp-now` and low-level `IEEE 802.15.4` for the lower layers of communication. More detailed information for each chip is available in the [`esp-radio` sub-repository].
 
-For more advanced work with chip memory and to use collections from the `core` library that require heap allocation, the user is offered to use `esp-alloc`. A separate [chapter in the book](./alloc.md) is devoted to this.
+For more advanced work with chip memory and to use collections from the `core` library that require heap allocation, the user is offered to use `esp-alloc`. A separate [chapter in the book](./../application-development/alloc.md) is devoted to this.
 
 The table below briefly describes all crates in the `esp-hal` ecosystem and their purposes: 
 

@@ -13,6 +13,8 @@ exceptions:
   - ABI
   - API
   - CLI
+  - CPU
+  - DRAM
   - ELF
   - ESP
   - ETA
@@ -22,6 +24,7 @@ exceptions:
   - HAL
   - IDF
   - IDE
+  - IRAM
   - LLVM
   - MSVC
   - OTA
@@ -29,8 +32,10 @@ exceptions:
   - QEMU
   - RAM
   - RISC
+  - RNG
   - ROM
   - RTIC
+  - RTT
   - SPI
   - TOML
   - TUI

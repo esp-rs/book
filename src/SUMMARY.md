@@ -19,6 +19,7 @@
   - [Logging](./application-development/logging.md)
   - [Alloc](./application-development/alloc.md)
   - [Async](./application-development/async.md)
+  - [Testing](./application-development/testing.md)
 - [Advanced Topics](./advanced-topics/index.md)
   - [Concepts](./advanced-topics/concepts/index.md)
     - [API Guidelines](./advanced-topics/concepts/api-guidelines.md)

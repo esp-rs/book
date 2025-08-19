@@ -47,6 +47,10 @@ The [Cargo Book][cargo-book] and the [Embassy Documentation][embassy-documentati
 [patch-section]: https://doc.rust-lang.org/cargo/reference/overriding-dependencies.html#the-patch-section
 [switch-to-main-branch]: https://embassy.dev/book/#_how_do_i_switch_to_the_main_branch
 
+## Can I Use `mem::forget` on Drivers?
+
+The `mem::forget` function should be avoided, as forgetting drivers may result in unintended consequences. Peripheral drivers provide `Drop` implementations which return the peripheral to its default, unconfigured state, and if necessary cancel any DMA transactions which are current in progress. Forgetting a driver may result in erroneously configured peripherals and/or DMA transactions which run indefinitely and never complete.
+
 ## Simulating Projects
 
 Simulating projects can be handy. It allows users to test projects using CI, try projects without having hardware available, and many other scenarios.

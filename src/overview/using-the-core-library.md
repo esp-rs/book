@@ -13,7 +13,7 @@ It is important to note that `no_std` uses the Rust `core` library. As this libr
 
 The table below covers the current support for `no_std` at this moment for different Espressif products.
 
-|          | [HAL][esp-hal] | [Wi-Fi/BLE/ESP-NOW][esp-wifi] | [Backtrace][esp-backtrace] | [Storage][esp-storage] |
+|          | [HAL][esp-hal] | [Wi-Fi/BLE/ESP-NOW][esp-radio] | [Backtrace][esp-backtrace] | [Storage][esp-storage] |
 | -------- | :------------: | :---------------------------: | :------------------------: | :--------------------: |
 | ESP32    |       ✅        |               ✅               |             ✅              |           ✅            |
 | ESP32-C2 |       ✅        |               ✅               |             ✅              |           ✅            |
@@ -25,14 +25,14 @@ The table below covers the current support for `no_std` at this moment for diffe
 
 > ⚠️ **Note**:
 >
-> - ✅ in Wi-Fi/BLE/ESP-NOW means that the target supports, at least, one of the listed technologies. For details, see [Current support][esp-wifi-current-support] table of the esp-wifi repository.
+> - ✅ in Wi-Fi/BLE/ESP-NOW means that the target supports, at least, one of the listed technologies. For details, see [Current support][esp-radio-current-support] table of the esp-radio repository.
 > - [ESP8266 HAL][esp8266-hal] is in maintenance mode and no further development will be done for this chip.
 
 [esp-hal]: https://github.com/esp-rs/esp-hal/tree/main/esp-hal "Hardware abstraction layer"
-[esp-wifi]: https://github.com/esp-rs/esp-hal/tree/main/esp-wifi "Wi-Fi, BLE and ESP-NOW support"
+[esp-radio]: https://github.com/esp-rs/esp-hal/tree/main/esp-radio "Wi-Fi, BLE and ESP-NOW support"
 [esp-backtrace]: https://github.com/esp-rs/esp-hal/tree/main/esp-backtrace "Exception and panic handlers"
 [esp-storage]: https://github.com/esp-rs/esp-hal/tree/main/esp-storage "Embedded-storage traits to access unencrypted flash memory"
-[esp-wifi-current-support]: https://github.com/esp-rs/esp-hal/tree/main/esp-wifi#current-support
+[esp-radio-current-support]: https://github.com/esp-rs/esp-hal/tree/main/esp-radio#current-support
 [esp8266-hal]: https://github.com/esp-rs/esp8266-hal "ESP8266 Hardware abstraction layer"
 
 ### Relevant `esp-rs` Crates
@@ -41,7 +41,7 @@ The table below covers the current support for `no_std` at this moment for diffe
 | -------------------------------- | ---------------------------------------------------------- |
 | [`esp-hal`][esp-hal]             | Hardware abstraction layer                                 |
 | [`esp-pacs`][esp-pacs]           | Peripheral access crates                                   |
-| [`esp-wifi`][esp-wifi]           | Wi-Fi, BLE and ESP-NOW support                             |
+| [`esp-radio`][esp-radio]           | Wi-Fi, BLE and ESP-NOW support                             |
 | [`esp-alloc`][esp-alloc]         | Simple heap allocator                                      |
 | [`esp-println`][esp-println]     | `print!`,  `println!`                                      |
 | [`esp-backtrace`][esp-backtrace] | Exception and panic handlers                               |

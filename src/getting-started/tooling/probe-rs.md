@@ -17,7 +17,7 @@ Espressif devices equipped with the  `USB-JTAG-SERIAL` peripheral can use `probe
 
 ## Installation
 
-Refer to the [installation][prober-rs-installation] and [setup][prober-rs-setup] guide available on the probe-rs website.
+Refer to the [installation][probe-rs-installation] and [setup][probe-rs-setup] guide available on the probe-rs website.
 
-[prober-rs-installation]: https://probe.rs/docs/getting-started/installation/
-[prober-rs-setup]: https://probe.rs/docs/getting-started/probe-setup/
+[probe-rs-installation]: https://probe.rs/docs/getting-started/installation/
+[probe-rs-setup]: https://probe.rs/docs/getting-started/probe-setup/

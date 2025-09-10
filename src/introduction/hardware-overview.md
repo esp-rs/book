@@ -16,9 +16,9 @@ We won't go into the details or differences between the two architectures here. 
 
 Feel free to refer to the [Technical Documentation][espressif-docs] for more information about the different SoCs.
 
-> ⚠️ **Note**:  The ESP8266 is not supported.
+> ⚠️ **Note**:  The ESP8266 is not supported by esp-hal.
 >
-> However, the ESP8684 (ESP32-C2) and ESP8685 (ESP32-C3) are supported. Notably, the ESP8685 (ESP32-C3) is pin-compatible with the ESP8266, making it a suitable drop-in replacement.
+> However, the ESP32-C2 (ESP8684) and ESP32-C3 (ESP8685) are supported. Notably, the ESP32-C3 is pin-compatible with the ESP8266, making it a suitable drop-in replacement.
 
 [espressif-socs]: https://www.espressif.com/en/products/socs
 [product-selector]: https://products.espressif.com/#/

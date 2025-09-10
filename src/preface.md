@@ -2,11 +2,11 @@
 
 # Preface
 
-Welcome to our guide to embedded Rust development on Espressif products. This book is designed to help you get started and become comfortable using our tools and ecosystem. Along the way, we’ll explain the reasoning behind key design choices, introduce the structure of our software stack, and walk through basic workflows using project generation and tooling. By the end, you’ll be ready to explore more advanced material through our reference documentation and external training resources.
+Welcome to our guide to embedded Rust development on Espressif products. This book is designed to help you get started and become comfortable using our tools and ecosystem. Along the way, we’ll introduce the structure of our software stack, and walk through basic workflows using project generation and tooling. By the end, you’ll be ready to explore more advanced material through our reference documentation and external training resources.
 
 ## Who This Book Is For
 
-This book is intended for Rust developers who are curious about embedded development, even if they don’t have prior experience with embedded systems. While some familiarity with low-level programming concepts can be helpful, we aim to introduce key ideas as they come up. If you would like to expand your baseline knowledge, consider studying the additional [Resources][resources].
+This book is intended for Rust developers who are interested in embedded development, even if they don’t have prior experience with embedded systems. While some familiarity with low-level programming concepts can be helpful, we aim to introduce key ideas as they come up. If you would like to expand your baseline knowledge, consider studying the additional [Resources][resources].
 
 ## Stability and Availability
 
@@ -37,7 +37,6 @@ If you need help, have questions, or would like to discuss topics related to `es
 
 - **Matrix**: [Join our community chat](https://matrix.to/#/#esp-rs:matrix.org).
 - **GitHub Discussions**: [Engage with the community](https://github.com/esp-rs/esp-hal/discussions).
-- **Email Support**: Contact the maintainers via <rust.support@espressif.com>.
 
 We hope this book provides you with the knowledge and confidence to build robust, efficient, and safe embedded applications using Rust on Espressif products. Let's get started!
 

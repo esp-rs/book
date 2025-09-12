@@ -1,4 +1,4 @@
-# Using `esp-config` (Optional)
+# Using `esp-config`'s TUI (Optional)
 
 If installed you can launch the tool from your project's directory by running `esp-config` which looks like this
 

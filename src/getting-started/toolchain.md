@@ -22,7 +22,7 @@ See also [alternative installation methods][rust-alt-installation].
 
 ### RISC-V Devices
 
-To build Rust applications for the Espressif chips based on RISC-V architecture, do the following:
+To build Rust applications for the Espressif chips based on RISC-V architecture (if you're unsure what your device is, see [hardware overview](../introduction/hardware-overview.md)), do the following:
 
 1. Install the proper toolchain with the `rust-src` [component][rustup-book-components]:
     - You can use either `stable` or [`nightly`][rustup-book-channel-nightly]:
@@ -55,8 +55,7 @@ If you are _not_ going to use ESP32, ESP32-S2 or ESP32-S3 you are done and can s
 
 ### Xtensa Devices
 
-As mentioned in previous chapters ESP32, ESP32-S2 and ESP32-S3 are based on Xtensa architecture. If you are going to target these chips you will need
-to use a fork of the Rust compiler for now.
+As mentioned in [hardware overview](../introduction/hardware-overview.md) ESP32, ESP32-S2 and ESP32-S3 are based on Xtensa architecture. If you are going to target these chips you will need to use a fork of the Rust compiler for now.
 
 [`espup`][espup-github] is a tool that simplifies installing and maintaining the toolchains required to develop Rust applications for these targets.
 

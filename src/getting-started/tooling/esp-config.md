@@ -5,6 +5,7 @@
 [config-chapter]: ../../application-development/configuration.md
 
 ## Installation
+
 To install `esp-config`:
 
 ```shell

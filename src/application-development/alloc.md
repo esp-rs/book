@@ -1,6 +1,6 @@
 # Allocating Memory
 
-In a `no_std` environment, the [`alloc`][alloc] crate is available as an option for heap allocation. This enables powerful abstractions such as `Vec` and `Box` and other collections that require heap allocation. It can also be useful when working with crates that require `alloc`.
+In a `no_std` environment, the [`alloc`][alloc] crate is available as an option for heap allocation. This enables useful common Rust items such as `Vec` and `Box` and other collections that require heap allocation. In the some cases, `alloc` may be required for a dependency you wish to use.
 
 We provide our own `no_std` heap allocator, [`esp-alloc`][esp-alloc]. But before enabling it, user should understand **why** they might want heap allocation and the trade-offs involved.
 
@@ -9,11 +9,11 @@ We provide our own `no_std` heap allocator, [`esp-alloc`][esp-alloc]. But before
 While heap allocation offers flexibility, it comes with some costs:
 
 - **Fragmentation**: Over time, dynamic allocation can cause *fragmentation*: small, scattered allocations may prevent large ones even if total memory is available. This can lead to subtle runtime failures.
-- **Runtime Overhead**: Allocating and freeing memory incurs costs, both time and computational.
+- **Runtime Overhead**: Allocating and freeing memory incurs a computational cost, along with any overhead of the chosen allocator.
 
 ## Configurable Memory Placement and Reclaimed RAM
 
-Espressif chips have non-contiguous memory mapping, not all physical RAM is usable as a single, flat heap. For example, some regions are reserved for ROM code, and cannot be accessed.
+Some Espressif chips have non-contiguous memory mapping, not all physical RAM is usable as a single, flat heap. For example, some regions are reserved for ROM code usage, and cannot be overwritten.
 
 | Abstract Address | Region          | Description                              |
 | ---------------- | --------------- | ---------------------------------------- |
@@ -32,7 +32,7 @@ heap_allocator!(#[link_section = ".dram2_uninit"] size: 64000);
 
 ## PSRAM
 
-Our chips have a few hundred kilobytes of internal RAM, which could be insufficient for some applications. The ESP32, ESP32-S2, and ESP32-S3 have the ability to use virtual addresses for external PSRAM (Psuedostatic RAM) memory. The external memory is usable in the same way as internal data RAM, with certain restrictions.
+Our chips have a few hundred kilobytes of internal RAM, which could be insufficient for some applications. Some Espressif chips have the ability to use virtual addresses for external PSRAM (Psuedostatic RAM) memory. The external memory is usable in the same way as internal data RAM, with certain restrictions.
 
 > ⚠️ **Note**: On Xtensa chips, atomics in PSRAM do not work correctly — they can cause data races and defeat their purpose. This means that
 the allocator must not be used to allocate `Atomic*` types - either directly

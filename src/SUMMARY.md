@@ -14,7 +14,7 @@
   - [Using `esp-generate`](./getting-started/using-esp-generate.md)
   - [Using `esp-config`'s TUI (Optional)](./getting-started/using-esp-config.md)
 - [Application Development](./application-development/index.md)
-  - [Application Startup and Bootloaders](./application-development/bootloader.md)
+  - [Application Startup and Bootloader](./application-development/bootloader.md)
   - [Configuration](./application-development/configuration.md)
   - [Logging](./application-development/logging.md)
   - [Alloc](./application-development/alloc.md)

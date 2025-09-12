@@ -4,7 +4,7 @@ Testing is an integral part of application development. Using the example of how
 
 ## Host Testing
 
-Where possible, and where it makes sense, you should try to test as much as possible on your host machine, not on the target device. It's easier to test in CI, faster, and won't waste FLASH write cycles on your device. Test's that _need_ the real hardware to run them, should use a HIL testing setup.
+Where possible, and where it makes sense, you should try to test as much as possible on your host machine, not on the target device. It's easier to test in CI, faster, and won't waste flash write cycles on your device. Test's that _need_ the real hardware to run them, should use a HIL testing setup.
 
 ## Hardware-in-Loop Testing
 

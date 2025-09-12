@@ -1,13 +1,13 @@
-# Application Startup Flow
+# Application Startup and Bootloader
 
-Upon power up, many embedded devices will just start executing code from a address in FLASH memory. Espressif chips are a bit more complicated, and require some steps to setup FLASH memory, a cache and some other miscellaneous operations. For this, we require a bootloader which is a simple application that sets up the aforementioned operations, then jumps to executing other code.
+Upon power up, many embedded devices will just start executing code from a address in flash memory. Espressif chips are a bit more complicated, and require some steps to setup flash memory, a cache and some other miscellaneous operations. For this, we require a bootloader which is a simple application that sets up the aforementioned operations, then jumps to executing other code.
 
 To boot an application, Espressif devices use 2 bootloaders:
 
 - First Stage Bootloader (ROM Bootloader): Sets up architecture-specific registers, checks the [boot mode][boot-mode] and reset reason, and loads the second stage bootloader. This bootloader is burned into ROM, and exists as part of SoC and therefore doesn't need to be flashed, nor can it be changed.
 - Second Stage Bootloader: Loads your application and sets up the memory(RAM, PSRAM or flash).
 
-The second stage bootloader whilst not _technically_ required, is advised as it allows OTA support (the first stage bootloader only loads applications from a fixed offset in Flash) and also enables Flash encryption and secure boot. For more information, see the [OTA section](./ota.md).
+The second stage bootloader whilst not _technically_ required, is advised as it allows OTA support (the first stage bootloader only loads applications from a fixed offset in flash) and also enables flash encryption and secure boot. For more information, see the [OTA section](./ota.md).
 
 For more information about the startup process, please check [ESP-IDF documentation][esp-idf-startup]. However, note that some aspects may be ESP-IDF specific.
 
@@ -48,7 +48,7 @@ To build a custom ESP-IDF bootloader:
 3. Make desired bootloader changes using `idf.py menuconfig` or editing the `sdkconfig` file.
    - See [Configuration Options Reference][config-reference] for more information.
 4. Build the bootloader with `idf.py set-target <CHIP_TARGET> build bootloader`.
-   - The resulting booloader binary will be placed under `build/bootloader/bootloader.bin`.
+   - The resulting bootloader binary will be placed under `build/bootloader/bootloader.bin`.
 5. Use the built bootloader binary in `espflash/cargo-espflash` with the `--bootloader` flag or with the [configuration file][espflash-config-file].
 
 

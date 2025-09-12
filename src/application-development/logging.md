@@ -10,7 +10,7 @@ Regardless of which of the following tools you choose to use when generating you
 
 ## `log`
 
-The [`log`][log] crate is a widely adopted logging facade in the Rust community. It defines a set of macros (`info!`, `warn!`, `error!`, etc.) to capture log messages at various levels. We offer a [logger] implementation in `esp-println`, but you are free to implement your own logger if you wish.
+The [`log`][log] crate is a widely adopted logging facade in the Rust community. It defines a set of macros (`info!`, `warn!`, `error!`, etc.) to capture log messages at various levels. We offer a [logger] implementation in [`esp-println`], but you are free to implement your own logger if you wish.
 
 [log]: https://crates.io/crates/log
 [defmt]: https://crates.io/crates/defmt
@@ -18,3 +18,4 @@ The [`log`][log] crate is a widely adopted logging facade in the Rust community.
 [filtering]: https://defmt.ferrous-systems.com/filtering#filtering
 [esp-generate]: ./../getting-started/tooling/esp-generate.md
 [logger]: https://docs.rs/log/latest/log/#implementing-a-logger
+[`esp-println`]: https://github.com/esp-rs/esp-hal/tree/main/esp-println

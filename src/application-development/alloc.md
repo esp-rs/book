@@ -26,6 +26,8 @@ On chips with non-contiguous memory, `cfg` options can be used to control where 
 heap_allocator!(#[link_section = ".dram2_uninit"] size: 64000);
 ```
 
+> ⚠️ **Note**: Link section names such as `.dram2_uninit` are not stable, and may change over time. Check each releases change log to ensure you are using the right section name.
+
 ## PSRAM
 
 Our chips have a few hundred kilobytes of internal RAM, which could be insufficient for some applications. Some Espressif chips have the ability to use virtual addresses for external PSRAM (Psuedostatic RAM) memory. The external memory is usable in the same way as internal data RAM, with certain restrictions.

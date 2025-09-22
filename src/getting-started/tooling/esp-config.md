@@ -1,4 +1,4 @@
-# esp-config (Optional)
+# `esp-config` (Optional)
 
 [`esp-config`][esp-config] is a tool to edit configuration options via a TUI. Using it is entirely optional, see the [Configuration chapter][config-chapter] for details on how config files are organized and how to manually edit them without using the TUI.
 

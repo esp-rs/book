@@ -26,7 +26,7 @@ The table below briefly describes all crates in the `esp-hal` ecosystem and thei
 | `esp-hal-proc-macros`    | Procedural macros for use with the esp-hal family of HAL packages.                                             | Unstable              |
 | `esp-lp-hal`             | Bare-metal (`no_std`) HAL for the low power and ultra-low power cores found in some Espressif devices.         | Unstable              |
 | `esp-metadata`           | Metadata for Espressif devices, primarily intended for use in build scripts.                                   | Unstable              |
-| `esp-preempt`            | Threading and thread-aware synchronization primitives, primarily used in `esp-radio` when not using an RTOS.   | Unstable              |
+| `esp-preempt`            | Threading and thread-aware synchronization primitives, primarily used for `esp-radio`.                         | Unstable              |
 | `esp-println`            | Print and logging functionality for Espressif devices.                                                         | Unstable              |
 | `esp-riscv-rt`           | Minimal startup/runtime for RISC-V CPUs from Espressif.                                                        | Unstable              |
 | `esp-rom-sys`            | ROM code support.                                                                                              | Unstable              |
@@ -42,7 +42,7 @@ The table below briefly describes all crates in the `esp-hal` ecosystem and thei
 
 ## Embedded Rust Ecosystem Integration
 
-The most popular Hardware Abstraction Layer in the Embedded Rust environment is [`embedded-hal`], which provides a number of traits for several peripherals that allow writing HAL agnostic device drivers. `esp-hal` implements these traits within its drivers. In addition, various traits from different crates used in the embedded Rust industry have also been implemented, such as [`rand_core`] traits for our RNG peripheral, as well as [`embedded-io`] traits, which are analogues of `std::io` traits for `no_std` applications.
+The most popular Hardware Abstraction Layer in the Embedded Rust environment is [`embedded-hal`], which provides a number of traits for several peripherals that allow writing HAL agnostic device drivers. `esp-hal` implements these traits within its drivers. In addition, various traits from different crates used in the embedded Rust industry have also been implemented, such as [`rand_core`] traits for our Random Number Generator (RNG) peripheral, as well as [`embedded-io`] traits, which are analogues of `std::io` traits for `no_std` applications.
 
 [`esp-hal` documentation]: https://docs.espressif.com/projects/rust/esp-hal/latest/
 [`esp-radio` sub-repository]: https://github.com/esp-rs/esp-hal/tree/main/esp-radio

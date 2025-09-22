@@ -20,7 +20,7 @@ The [`esp-hal-embassy`] crate provides integration between the [`esp-hal`] and t
 
 ## ArielOS
 
-[ArielOS] is an operating system for secure, memory-safe, low-power IoT. It builds on top of various projects from the Embedded Rust ecosystem, including `esp-hal`. ArielOS focuses on tight integration, adding missing OS features like a multicore scheduler, secure networking, portable drivers, and a unified build system. The result is a powerful alternative to C-based RTOS solutions, but in pure Rust. It has great integrations with embassy, and can be used together with embassy in various ways.
+[ArielOS] is an operating system for secure, memory-safe, low-power IoT. It builds on top of various projects from the Embedded Rust ecosystem, including `esp-hal`. ArielOS focuses on tight integration, adding missing OS features like a multicore scheduler, secure networking, portable drivers, and a unified build system. The result is a powerful alternative to C-based Real-Time Operating System (RTOS) solutions, but in pure Rust. It has great integrations with embassy, and can be used together with embassy in various ways.
 
 ## RTIC
 

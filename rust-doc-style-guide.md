@@ -1,12 +1,12 @@
 <!-- omit in toc -->
 # Rust Documentation Style Guide
 
-As [The Rust RFC Book](https://rust-lang.github.io/rfcs/2436-style-guide.html#drawbacks) states:
+As [the Rust style guide book](https://rust-lang.github.io/rfcs/2436-style-guide.html#drawbacks) states:
 
 > One can level some criticisms at having a style guide:
 >
 > - It is bureaucratic, gives developers more to worry about, and crushes creativity.
-> - There are edge cases where the style rules make code look worse (e.g., around FFI).
+> - There are edge cases where the style rules make code look worse (e.g., around Foreign Function Interface (FFI)).
 >
 > However, these are heavily out-weighed by the benefits.
 
@@ -37,6 +37,7 @@ The style guide is based on the best practices collected from the following book
 - [Terminology](#terminology)
   - [Recommended Terms](#recommended-terms)
 - [Admonitions](#admonitions)
+- [Prioritization](#prioritization)
 - [Appendix A Existing Style Guides](#appendix-a-existing-style-guides)
   - [Documentation](#documentation)
   - [Code](#code)
@@ -101,7 +102,7 @@ Example:
 
 The books on Rust usually use the following link formatting:
 
-> As mentioned in the [Environment Variables](https://rust-lang.github.io/rustup/installation/index.html) section, ...
+> As mentioned in the [Environment Variables](https://rust-lang.github.io/rustup/installation/index.html) section.
 
 > For more details, see the [Windows](rustup-book-windows) chapter in The rustup book.
 
@@ -109,7 +110,7 @@ The books on Rust usually use the following link formatting:
 
 - Make intra-book links relative, so they work both online and locally
 
-Do NOT turn long phrases into links
+Do *not* turn long phrases into links
 
   > ❌ See the [Rust Reference’s section on constant evaluation](https://doc.rust-lang.org/book/ch03-01-variables-and-mutability.html) for more information on what operations can be used when declaring constants.
 
@@ -155,10 +156,10 @@ The books on Rust usually use the following list formatting:
 
 - For longer list items, consider using a summary word of phrase to make content [scannable](https://learn.microsoft.com/en-us/style-guide/scannable-content/).
 
-  > If you run Windows on your host machine, make sure ...
+  > If you run Windows on your host machine, make sure 
   >
-  > - **MSVC**: Recommended ABI, included in ...
-  > - **GNU**: ABI used by the GCC toolchain ...
+  > - **MSVC**: Recommended ABI, included in 
+  > - **GNU**: ABI used by the GCC toolchain 
 
   -  For an example using bold font, see the list in the [Modules Cheat Sheet](https://doc.rust-lang.org/book/ch07-02-defining-modules-to-control-scope-and-privacy.html#modules-cheat-sheet) section in The Rust Programming Language book.
   -  For an example using monospace font, see the [Panicking](https://docs.rust-embedded.org/book/start/panicking.html#panicking) section in The Embedded Rust Book.
@@ -189,9 +190,7 @@ Use monospace font for the following items:
 - Command line tools, plugins, packages
 - Files: `config.toml`
 - Images and containers: `idf-rust`
-- Architectures and targets
 
-  > The `RISC-V` and `Xtensa` architectures.
 
 ### Monospace and Other Types of Formatting
 
@@ -199,7 +198,7 @@ Monospace font can also be used in:
 
 - links
 
-  > [`String`](https://doc.rust-lang.org/std/string/struct.String.html) is a string type provided by ...
+  > [`String`](https://doc.rust-lang.org/std/string/struct.String.html) is a string type provided by
 
 - headings
 
@@ -216,7 +215,7 @@ Monospace font can also be used in:
 
   > When `s` comes _into_ scope, it is valid. It remains valid until it goes _out of_ scope.
 
-- Do NOT use italics with Espressif product names, such as ESP32.
+- Do *not* use italics with Espressif product names, such as ESP32.
 
 ## Mode of Narration
 
@@ -249,37 +248,6 @@ If you spot other issues with terminology, please add the terms here in alphabet
   - Use: Add recommended phrases
   - Note: Add more information if needed
 
-### Recommended Terms
-
-- _Cargo_
-  - Note: always use uppercase _C_
-- ESP-IDF or esp-idf
-  - Use: esp-idf when writing about the esp-idf repo
-  - Use: ESP-IDF when writing about the ESP-IDF framework or ESP-IDF programming guide
-- `no_std`
-  - Note: see `std`
-- _Product_
-  - Avoid: Espressif SoCs
-  - Use: Espressif products
-  - Note: In the content of running applications, suggested as an umbrella term for Espressif chips, modules, development boards, etc. Otherwise, it might be potentially ambiguous that running an app on an SoC is the same as running it on a module.
-- _SoC_
-  - Avoid: _chip_
-  - Note: see also _product_
-- `std` / `no_std`
-  - Use only if necessary: bare metal development, hosted environment, Standard library, Core library
-  - Use `std` / `no_std` by default in patterns, such as:
-    - write, build, or choose between  `std` / `no_std` applications
-    - requires `std` for ...
-    - use `std` for ...
-    - compile in an `std` environment
-    - support for `no_std` requires ... (`std` support)
-    - using the `std` / `no_std` approach
-    - `std` projects / templates / features
-    - `std` / `no_std` development
-- _VS Code_
-  - Use VS Code by default
-  - Use only if necessary: Visual Studio Code
-
 ## Admonitions
 
 Use the following formatting for notes and warnings:
@@ -292,11 +260,19 @@ Use the following formatting for notes and warnings:
 
   > 🚨 **Warning**: Use in critical circumstances only, e.g., for irreversible actions or actions potentially harmful to hardware, software, etc.
 
+- Hint
+
+  > 💡 **Hint**: Use for additional hints and tips
+
 In markdown:
 
 ```md
 > ⚠️ **Note**: Write your note.
 ```
+
+## Prioritization
+
+- RISC-V should be mentioned first and given priority over Xtensa in documentation and examples.
 
 ## Appendix A Existing Style Guides
 
@@ -307,7 +283,7 @@ In markdown:
 ### Code
 
 - [Style Guidelines](https://doc.rust-lang.org/1.0.0/style/README.html)
-- [The Rust RFC Book](https://rust-lang.github.io/rfcs/2436-style-guide.html), chapter _Style Guide_
+- [the Rust style guide book](https://rust-lang.github.io/rfcs/2436-style-guide.html), chapter _Style Guide_
 - [Rust API Guidelines](https://rust-lang.github.io/api-guidelines/)
 - [Rust Style Guide](https://riptutorial.com/rust/topic/4620/rust-style-guide) (riptutorial.com)
 - [Rust Style Guide](https://github.com/rust-lang/style-team/blob/master/guide/guide.md) (github.com/rust-lang)

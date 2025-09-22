@@ -1,3 +1,4 @@
 book
-.vale.ini
-.vale
+.vale/styles/*
+!.vale/styles/Rust/
+!.vale/styles/config/

@@ -1,0 +1,13 @@
+HAL
+-hal
+RTIC
+IEEE
+BLE
+USB
+WROOM
+(?i)NOW
+LED
+JTAG
+USB
+RGB
+MIT

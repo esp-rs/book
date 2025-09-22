@@ -1,0 +1,42 @@
+# Google.Acronyms -- customized
+# For details, see Espressif Vale Config Documentation
+extends: conditional
+message: "Spell out '%s', if it's unfamiliar to the audience."
+# source: EMoS > Define Abbreviations and Acronyms at First Use
+link: http://mos.espressif.com/general-conventions.html#define-abbreviations-and-acronyms-at-first-use
+level: warning
+# Ensures that the existence of 'first' implies the existence of 'second'.
+first: '\b([A-Z]{3,5})\b'
+second: '(?:\b[A-Za-z][a-z]+ )+\(([A-Z]{3,5})\)'
+# ... with the exception of these:
+exceptions:
+  - ABI
+  - API
+  - CLI
+  - CPU
+  - DRAM
+  - ELF
+  - ESP
+  - ETA
+  - GCC
+  - GDB
+  - GNU
+  - HAL
+  - IDF
+  - IDE
+  - IRAM
+  - LLVM
+  - MSVC
+  - OTA
+  - PSRAM
+  - QEMU
+  - RAM
+  - RISC
+  - RNG
+  - ROM
+  - RTIC
+  - RTT
+  - SPI
+  - TOML
+  - TUI
+  - UART

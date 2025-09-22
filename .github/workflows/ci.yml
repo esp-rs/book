@@ -27,8 +27,15 @@ jobs:
             https://raw.githubusercontent.com/rust-lang/rust/master/src/tools/linkchecker/linkcheck.sh
           # Cannot use --all here because of the generated redirect pages aren't available.
           sh linkcheck.sh book
-  
-      
+
+      - name: Run vale checks
+        if: ${{ github.event_name == 'pull_request' }}
+        uses: errata-ai/vale-action@v2.1.1
+        with:
+          fail_on_error: true
+          filter_mode: nofilter
+          files: src
+
       - name: Deploy
         if: ${{ github.event_name == 'workflow_dispatch' || (github.event_name == 'push' && github.ref == 'refs/heads/main') }}
         uses: appleboy/scp-action@v0.1.7

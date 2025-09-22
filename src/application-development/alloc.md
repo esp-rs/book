@@ -13,15 +13,11 @@ While heap allocation offers flexibility, it comes with some costs:
 
 ## Configurable Memory Placement and Reclaimed RAM
 
-Some Espressif chips have non-contiguous memory mapping, not all physical RAM is usable as a single, flat heap. For example, some regions are reserved for ROM code usage, and cannot be overwritten.
+Some Espressif chips have non-contiguous memory mapping, not all physical RAM is usable as a single, flat heap. For example, some regions are reserved for ROM code usage, and cannot be overwritten. Take the memory layout on the ESP32 for example. 
 
-| Abstract Address | Region          | Description                              |
-| ---------------- | --------------- | ---------------------------------------- |
-| `0x0000_0000`    | **IRAM**        | Executable code region                   |
-| `0x0002_0000`    | **Reserved**    | ROM-reserved gap (unusable)              |
-| `0x0003_0000`    | **DRAM**        | Usable RAM — stack, static vars, heap    |
-
-> ⚠️ **Note**: This table does not contain information about the actual memory layout of the chip and serves as a demonstration of memory non-contiguity.
+<p align="center">
+<img src="../assets/esp32-mm.webp" alt="ESP32 memory map"/>
+</p>
 
 On chips with non-contiguous memory, `cfg` options can be used to control where memory is placed. This also allows accessing RAM that is otherwise unavailable, such as memory occupied by the 2nd stage bootloader. For supported chips, regions like `.dram2_uninit` can be used as additional heap memory, optimizing available resources.
 

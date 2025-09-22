@@ -1,6 +1,6 @@
 # Application Development
 
-Now that you've successfully run your first program, let's fill in some knowledge gaps and show you some options for some common embedded practices
+Now that you've successfully run your first program, let's fill in some knowledge gaps and show you some options for some common embedded practices.
 
  - [Application Startup and Bootloader](./bootloader.md)
  - [Configuration](./configuration.md)

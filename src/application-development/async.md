@@ -24,7 +24,7 @@ The [`esp-hal-embassy`] crate provides integration between the [`esp-hal`] and t
 
 ## RTIC
 
-[Real-Time Interrupt-driven Concurrency (RTIC)] is a community supported concurrency framework for building real-time systems. Real time tasks are not async, but "software" tasks are `async`. Currently, only ESP32-C3 and ESP32-C6 are supported.
+[Real-Time Interrupt-driven Concurrency (RTIC)] is a community supported concurrency framework for building real-time systems. Real time tasks are not async, but "software" tasks are async. Currently, only ESP32-C3 and ESP32-C6 are supported.
 
 
 <!-- TODO: change ArielOS to crates.io link when it's ready -->

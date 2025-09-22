@@ -1,6 +1,6 @@
 # Application Startup and Bootloader
 
-Upon power up, many embedded devices will just start executing code from a address in flash memory. Espressif chips are a bit more complicated, and require some steps to setup flash memory, a cache and some other miscellaneous operations. For this, we require a bootloader which is a simple application that sets up the aforementioned operations, then jumps to executing other code.
+Upon power up, many embedded devices will just start executing code from an address in flash memory. Espressif chips are a bit more complicated, and require some steps to setup flash memory, a cache and some other miscellaneous operations. For this, we require a bootloader which is a simple application that sets up the aforementioned operations, then jumps to executing other code.
 
 To boot an application, Espressif devices use 2 bootloaders:
 

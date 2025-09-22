@@ -31,7 +31,7 @@ There are two options for flashing the code to the target device:
 
 > 💡 **Hint**: When using `probe-rs`, instead of `espflash`, you might want to enable `Use defmt to print messages.` and `Use panic-rtt-target as the panic handler.` under `Flashing, logging and debugging (probe-rs)`
 
-## Generating the project
+## Generating the Project
 
 When you are ready, you can generate the project by pressing `s` at the root of the TUI. When you save the project the tool will check for the required and optional tools being installed and shows the results, this may include asking you to install any tooling you may have missed, or now require based on the generation options.
 

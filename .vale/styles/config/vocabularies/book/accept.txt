@@ -1,5 +1,5 @@
 HAL
-esp-hal
+-hal
 RTIC
 IEEE
 BLE

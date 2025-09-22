@@ -24,7 +24,7 @@ Adjust the options as needed for your project. See [Available Options][available
 There are two options for flashing the code to the target device:
 
 - `espflash`: Default flashing tool.
-- `probe-rs`: Enables RTT-based options and allows on chip debugging.
+- `probe-rs`: Enables Real Time Transfer (RTT) based options and allows on chip debugging.
   - Make sure to enable `Use probe-rs to flash and monitor instead of espflash.` (`probe-rs` option) when generating your project.
 
 > 💡 **Hint**: When using `espflash` you might want to enable `Use esp-backtrace as the panic handler.` and `Use the log crate to print messages.` under `Flashing, logging and debugging (espflash)`

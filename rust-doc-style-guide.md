@@ -1,12 +1,12 @@
 <!-- omit in toc -->
 # Rust Documentation Style Guide
 
-As [The Rust RFC Book](https://rust-lang.github.io/rfcs/2436-style-guide.html#drawbacks) states:
+As [the Rust style guide book](https://rust-lang.github.io/rfcs/2436-style-guide.html#drawbacks) states:
 
 > One can level some criticisms at having a style guide:
 >
 > - It is bureaucratic, gives developers more to worry about, and crushes creativity.
-> - There are edge cases where the style rules make code look worse (e.g., around FFI).
+> - There are edge cases where the style rules make code look worse (e.g., around Foreign Function Interface (FFI)).
 >
 > However, these are heavily out-weighed by the benefits.
 
@@ -102,7 +102,7 @@ Example:
 
 The books on Rust usually use the following link formatting:
 
-> As mentioned in the [Environment Variables](https://rust-lang.github.io/rustup/installation/index.html) section, ...
+> As mentioned in the [Environment Variables](https://rust-lang.github.io/rustup/installation/index.html) section.
 
 > For more details, see the [Windows](rustup-book-windows) chapter in The rustup book.
 
@@ -110,7 +110,7 @@ The books on Rust usually use the following link formatting:
 
 - Make intra-book links relative, so they work both online and locally
 
-Do NOT turn long phrases into links
+Do *not* turn long phrases into links
 
   > ❌ See the [Rust Reference’s section on constant evaluation](https://doc.rust-lang.org/book/ch03-01-variables-and-mutability.html) for more information on what operations can be used when declaring constants.
 
@@ -156,10 +156,10 @@ The books on Rust usually use the following list formatting:
 
 - For longer list items, consider using a summary word of phrase to make content [scannable](https://learn.microsoft.com/en-us/style-guide/scannable-content/).
 
-  > If you run Windows on your host machine, make sure ...
+  > If you run Windows on your host machine, make sure 
   >
-  > - **MSVC**: Recommended ABI, included in ...
-  > - **GNU**: ABI used by the GCC toolchain ...
+  > - **MSVC**: Recommended ABI, included in 
+  > - **GNU**: ABI used by the GCC toolchain 
 
   -  For an example using bold font, see the list in the [Modules Cheat Sheet](https://doc.rust-lang.org/book/ch07-02-defining-modules-to-control-scope-and-privacy.html#modules-cheat-sheet) section in The Rust Programming Language book.
   -  For an example using monospace font, see the [Panicking](https://docs.rust-embedded.org/book/start/panicking.html#panicking) section in The Embedded Rust Book.
@@ -198,7 +198,7 @@ Monospace font can also be used in:
 
 - links
 
-  > [`String`](https://doc.rust-lang.org/std/string/struct.String.html) is a string type provided by ...
+  > [`String`](https://doc.rust-lang.org/std/string/struct.String.html) is a string type provided by
 
 - headings
 
@@ -215,7 +215,7 @@ Monospace font can also be used in:
 
   > When `s` comes _into_ scope, it is valid. It remains valid until it goes _out of_ scope.
 
-- Do NOT use italics with Espressif product names, such as ESP32.
+- Do *not* use italics with Espressif product names, such as ESP32.
 
 ## Mode of Narration
 
@@ -283,7 +283,7 @@ In markdown:
 ### Code
 
 - [Style Guidelines](https://doc.rust-lang.org/1.0.0/style/README.html)
-- [The Rust RFC Book](https://rust-lang.github.io/rfcs/2436-style-guide.html), chapter _Style Guide_
+- [the Rust style guide book](https://rust-lang.github.io/rfcs/2436-style-guide.html), chapter _Style Guide_
 - [Rust API Guidelines](https://rust-lang.github.io/api-guidelines/)
 - [Rust Style Guide](https://riptutorial.com/rust/topic/4620/rust-style-guide) (riptutorial.com)
 - [Rust Style Guide](https://github.com/rust-lang/style-team/blob/master/guide/guide.md) (github.com/rust-lang)

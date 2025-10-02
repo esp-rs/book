@@ -13,20 +13,18 @@ While heap allocation offers flexibility, it comes with some costs:
 
 ## Configurable Memory Placement and Reclaimed RAM
 
-Some Espressif chips have non-contiguous memory mapping, not all physical RAM is usable as a single, flat heap. For example, some regions are reserved for ROM code usage, and cannot be overwritten. Take the memory layout on the ESP32 for example. 
+Some Espressif chips have non-contiguous memory mapping, not all physical RAM is usable as a single, flat heap. For example, some regions are reserved for ROM code usage, and cannot be overwritten Take the memory layout on the ESP32 for example. 
 
 <p align="center">
 <img src="../assets/esp32-mm.webp" alt="ESP32 memory map"/>
 </p>
 
-On chips with non-contiguous memory, `cfg` options can be used to control where memory is placed. This also allows accessing RAM that is otherwise unavailable, such as memory occupied by the 2nd stage bootloader. For supported chips, regions like `.dram2_uninit` can be used as additional heap memory, optimizing available resources.
+There is also some memory that the 2nd stage bootloader uses during the boot process that can't be used as stack, but could be used as heap instead once in the main application. You can use the `#[ram(reclaimed)]` macro in the heap allocator declaration to use this otherwise unused memory.
 
 ```rust
 // Use 64kB in dram2_seg for the heap, which is otherwise unused.
-heap_allocator!(#[link_section = ".dram2_uninit"] size: 64000);
+heap_allocator!(#[ram(reclaimed)] size: 64000);
 ```
-
-> ⚠️ **Note**: Link section names such as `.dram2_uninit` are not stable, and may change over time. Check each releases change log to ensure you are using the right section name.
 
 ## PSRAM
 

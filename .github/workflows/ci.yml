@@ -46,4 +46,4 @@ jobs:
           target: ${{ secrets.PRODUCTION_TARGET }}
           source: "book/"
           strip_components: 1 # remove the book prefix, it's already being placed in /projects/rust/book
-          overwrite: true
+          rm: true

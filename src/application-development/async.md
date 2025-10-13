@@ -11,7 +11,7 @@
 
 [Embassy] is an asynchronous (async) framework designed specifically for embedded Rust development; its [embassy-executor] crate provides an `async/await` executor which executes a fixed number of tasks, statically allocated at startup, though more can be added later. To spawn more tasks later, you may keep copies of the `Spawner`, for example by passing it as an argument to the initial tasks. For more information about `embassy` visit [Embassy book].
 
-The [`esp-hal-embassy`] crate provides integration between the [`esp-hal`] and the [Embassy] asynchronous framework. It provides support for:
+The [`esp-rtos`] crate provides integration between [`esp-hal`] and the [Embassy] asynchronous framework. It provides support for:
 
 1. Interrupt-mode executor
 2. Multicore-aware thread-mode embassy executor
@@ -33,7 +33,7 @@ The [`esp-hal-embassy`] crate provides integration between the [`esp-hal`] and t
 [`Async`]:  https://docs.espressif.com/projects/rust/esp-hal/1.0.0-rc.0/esp32c6/esp_hal/struct.Async.html
 [Embassy]: https://embassy.dev
 [embassy-executor]: https://crates.io/crates/embassy-executor
-[`esp-hal-embassy`]: https://crates.io/crates/esp-hal-embassy
+[`esp-rtos`]: https://crates.io/crates/esp-rtos
 [`esp-hal`]: https://crates.io/crates/esp-hal
 [Embassy book]: https://embassy.dev/book/
 [esp-hal package]: https://github.com/esp-rs/esp-hal

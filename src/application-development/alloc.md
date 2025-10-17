@@ -28,7 +28,7 @@ heap_allocator!(#[ram(reclaimed)] size: 64000);
 
 ## PSRAM
 
-Our chips have a few hundred kilobytes of internal RAM, which could be insufficient for some applications. Some Espressif chips have the ability to use virtual addresses for external PSRAM (Psuedostatic RAM) memory. The external memory is usable in the same way as internal data RAM, with certain restrictions.
+Our chips have a few hundred kilobytes of internal RAM, which could be insufficient for some applications. Some Espressif chips have the ability to use virtual addresses for external PSRAM (Pseudostatic RAM) memory. The external memory is usable in the same way as internal data RAM, with certain restrictions.
 
 > ⚠️ **Note**: On Xtensa chips, atomics in PSRAM do not work correctly — they can cause data races and defeat their purpose. This means that
 the allocator must not be used to allocate `Atomic*` types - either directly

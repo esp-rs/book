@@ -9,17 +9,16 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v5
 
       - uses: dtolnay/rust-toolchain@v1
         with:
           toolchain: nightly
           components: rust-docs
 
-      - uses: jontze/action-mdbook@v2
+      - uses: jontze/action-mdbook@v4
         with:
           token: ${{secrets.GITHUB_TOKEN}}
-          use-mermaid: true
 
       - name: Check for broken links
         run: |
@@ -38,7 +37,7 @@ jobs:
 
       - name: Deploy
         if: ${{ github.event_name == 'workflow_dispatch' || (github.event_name == 'push' && github.ref == 'refs/heads/main') }}
-        uses: appleboy/scp-action@v0.1.7
+        uses: appleboy/scp-action@v1
         with:
           host: docs.espressif.com
           username: ${{ secrets.PRODUCTION_USERNAME }}

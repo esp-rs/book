@@ -4,13 +4,13 @@ This repository contains the source of "The Rust on ESP" book.
 
 ## Quickstart
 
-This book is generated using [`mdbook`] and additionally uses the [`mdbook-mermaid`] preprocessor to add support for diagrams. To install these tools:
+This book is generated using [`mdbook`], which can be installed using Cargo:
 
 ```shell
-cargo install mdbook mdbook-mermaid
+cargo install mdbook
 ```
 
-With `mdbook` and `mdbook-mermaid` installed, you can clone the repository and start a development server by running:
+With `mdbook` installed, you can clone the repository and start a development server by running:
 
 ```shell
 git clone https://github.com/esp-rs/book
@@ -19,7 +19,6 @@ mdbook serve
 ```
 
 [`mdbook`]: https://github.com/rust-lang/mdBook
-[`mdbook-mermaid`]: https://github.com/badboy/mdbook-mermaid
 
 ## License
 

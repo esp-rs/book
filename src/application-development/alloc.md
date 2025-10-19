@@ -13,7 +13,7 @@ While heap allocation offers flexibility, it comes with some costs:
 
 ## Configurable Memory Placement and Reclaimed RAM
 
-Some Espressif chips have non-contiguous memory mapping, not all physical RAM is usable as a single, flat heap. For example, some regions are reserved for ROM code usage, and cannot be overwritten Take the memory layout on the ESP32 for example. 
+Some Espressif chips have non-contiguous memory mapping, not all physical RAM is usable as a single, flat heap. For example, some regions are reserved for ROM code usage, and cannot be overwritten. Take the memory layout on the ESP32 as an example:
 
 <p align="center">
 <img src="../assets/esp32-mm.webp" alt="ESP32 memory map"/>

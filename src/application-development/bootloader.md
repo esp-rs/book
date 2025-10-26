@@ -5,7 +5,7 @@ Upon power up, many embedded devices will just start executing code from an addr
 To boot an application, Espressif devices use 2 bootloaders:
 
 - First Stage Bootloader (ROM Bootloader): Sets up architecture-specific registers, checks the [boot mode][boot-mode] and reset reason, and loads the second stage bootloader. This bootloader is burned into ROM, and exists as part of SoC and therefore doesn't need to be flashed, nor can it be changed.
-- Second Stage Bootloader: Loads your application and sets up the memory(RAM, PSRAM or flash).
+- Second Stage Bootloader: Loads your application and sets up the memory (RAM, PSRAM or flash).
 
 The second stage bootloader whilst not _technically_ required, is advised as it allows OTA support (the first stage bootloader only loads applications from a fixed offset in flash) and also enables flash encryption and secure boot. For more information, see the [OTA section](./ota.md).
 

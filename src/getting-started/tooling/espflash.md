@@ -1,6 +1,6 @@
 # `espflash`
 
-[`espflash`][espflash] is a serial flasher utility  designed for Espressif SoCs and modules. It natively supports all chips compatible with `esp-hal`.
+[`espflash`][espflash] is a serial flasher utility designed for Espressif SoCs and modules. It natively supports all chips compatible with `esp-hal`.
 
 ## Installation
 

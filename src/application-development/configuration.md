@@ -12,7 +12,7 @@ While creating your project, you may need to configure some additional advanced 
 
 You are free to do this in two ways:
 
-- By setting the environment variable. For example, in `esp-hal` if you want to place anonymous symbols in the RAM (`ESP_HAL_CONFIG_PLACE_ANON_IN_RAM`), which is set to `false` as default, you need to create an environment variable with the same name and modify its value.
+- By setting the environment variable. For example, in `esp-hal` if you want to place anonymous symbols in RAM (`ESP_HAL_CONFIG_PLACE_ANON_IN_RAM`), which is set to `false` by default, you need to create an environment variable with the same name and modify its value.
 
 - By setting the required parameter in `.cargo/config.toml` (this method also sets the environment variable):
     ```toml
@@ -23,7 +23,7 @@ You are free to do this in two ways:
     ```
     After modifying the `.cargo/config.toml` and `[env]` section, **clean build** is recommended.
 
-> ⚠️ **Note**: Setting the environment variables on the command line will have precedence over env section.
+> ⚠️ **Note**: Setting environment variables on the command line will take precedence over the `[env]` section.
 
 ## Multiple Configurations
 
@@ -33,11 +33,11 @@ Depending on your application, you may find yourself wanting to support differen
 * A config file for each configuration in `.cargo/`
 * (**Recommended**) A Cargo [alias] to build with the given config, for example `run-config-a = "run --config=./.cargo/config_a.toml --release"`, but for simple cases you can pass `--config` on the CLI.
 
-Checkout [this example repo] for a more comprehensive look at multi-config projects.
+Check out [this example repo] for a more comprehensive look at multi-config projects.
 
 ## Defining Your Own Config Options
 
-You may also want to define certain configuration options in your project. To do so, it is necessary to declaratively define these options, their default values, and other parameters and checks inside a `esp_config.yml` file. Details can be found in the [Defining Configuration Options] section of the project repository.
+You may also want to define certain configuration options in your project. To do so, it is necessary to declaratively define these options, their default values, and other parameters and checks inside an `esp_config.yml` file. Details can be found in the [Defining Configuration Options] section of the project repository.
 
 [documentation]: https://docs.espressif.com/projects/rust/
 [esp-config]: https://crates.io/crates/esp-config

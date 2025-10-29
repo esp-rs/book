@@ -32,7 +32,7 @@ The table below briefly describes all crates in the `esp-hal` ecosystem and thei
 | `esp-rtos`               | Scheduler implementation for esp-radio, embassy support for `esp-hal`.                                         | Unstable              |
 | `esp-sync`               | Synchronization primitives for Espressif devices.                                                              | Unstable              |
 | `esp-storage`            | Storage utilities for Espressif devices.                                                                       | Unstable              |
-| `esp-radio`              | Wi-Fi, BLE, IEEE8 802.15.4 and ESP-NOW functionality for Espressif devices.                                    | Unstable              |
+| `esp-radio`              | Wi‑Fi, BLE, IEEE 802.15.4, and ESP‑NOW functionality for Espressif devices.                                    | Unstable              |
 | `xtensa-lx`              | Low-level access to Xtensa LX processors and peripherals.                                                      | Unstable              |
 | `xtensa-lx-rt`           | Minimal startup/runtime for Xtensa LX CPUs from Espressif.                                                     | Unstable              |
 

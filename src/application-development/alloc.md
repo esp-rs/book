@@ -1,6 +1,6 @@
 # Allocating Memory
 
-In a `no_std` environment, the [`alloc`][alloc] crate is available as an option for heap allocation. This enables useful common Rust items such as `Vec` and `Box` and other collections that require heap allocation. In the some cases, `alloc` may be required for a dependency you wish to use.
+In a `no_std` environment, the [`alloc`][alloc] crate is available as an option for heap allocation. This enables useful common Rust items such as `Vec` and `Box` and other collections that require heap allocation. In some cases, `alloc` may be required for a dependency you wish to use.
 
 We provide our own `no_std` heap allocator, [`esp-alloc`][esp-alloc]. But before enabling it, user should understand **why** they might want heap allocation and the trade-offs involved.
 
@@ -13,7 +13,7 @@ While heap allocation offers flexibility, it comes with some costs:
 
 ## Configurable Memory Placement and Reclaimed RAM
 
-Some Espressif chips have non-contiguous memory mapping, not all physical RAM is usable as a single, flat heap. For example, some regions are reserved for ROM code usage, and cannot be overwritten Take the memory layout on the ESP32 for example. 
+Some Espressif chips have non-contiguous memory mapping, not all physical RAM is usable as a single, flat heap. For example, some regions are reserved for ROM code usage, and cannot be overwritten Take the memory layout on the ESP32 for example.
 
 <p align="center">
 <img src="../assets/esp32-mm.webp" alt="ESP32 memory map"/>
@@ -36,7 +36,7 @@ or indirectly. ESP32 restrictions can be found [here]. This does **not** affect 
 
 ### Allocator Considerations
 
-You can only have **one global allocator** but the allocator can use multiple regions (e.g. PSRAM, internal RAM or even multiple blocks of them). You can use multiple allocators with the nightly feature `allocator api` and with [`allocator api2`][allocator api2], which [`esp-alloc`][esp-alloc] implements.
+You can only have **one global allocator** but the allocator can use multiple regions (e.g. PSRAM, internal RAM or even multiple blocks of them). You can use multiple allocators with the nightly feature `allocator_api` and with [`allocator_api2`][allocator api2], which [`esp-alloc`][esp-alloc] implements.
 
 [esp-alloc]: https://crates.io/crates/esp-alloc
 [alloc]: https://doc.rust-lang.org/alloc/

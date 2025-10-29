@@ -4,7 +4,7 @@ We hope this book has prepared you for building real-world applications using Es
 
 We're excited to see what you create, be sure to add it to the [awesome-esp-rust] list or use this list for inspiration.
 
-If you're keen to contribute to `esp-hal` or the ancillary crates directly, checkout [our developer contribution documentation].
+If you're keen to contribute to `esp-hal` or the ancillary crates directly, check out [our developer contribution documentation].
 
 
 [our developer contribution documentation]: https://github.com/esp-rs/esp-hal/tree/main/documentation

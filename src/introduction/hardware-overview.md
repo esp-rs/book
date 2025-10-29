@@ -16,7 +16,7 @@ We won't go into the details or differences between the two architectures here. 
 
 Feel free to refer to the [Technical Documentation][espressif-docs] for more information about the different SoCs.
 
-> ⚠️ **Note**:  The ESP8266 is not supported by `esp-hal`.
+> ⚠️ **Note**: The ESP8266 is not supported by `esp-hal`.
 >
 > However, the ESP32-C2 (ESP8684) and ESP32-C3 (ESP8685) are supported. Notably, the ESP32-C3 is pin-compatible with the ESP8266, making it a suitable drop-in replacement.
 
@@ -36,7 +36,7 @@ Let's take the [ESP32-C6-DevKitC-1][c6-devkitc] as an example. It's a developmen
 - ESP32-C6-WROOM-1 module:
   - Wi-Fi, BLE, and IEEE 802.15.4 support.
   - 8 MB SPI flash.
-- GPIOs pins available for use.
+- GPIO pins available for use.
 - 2 buttons: Boot and Reset
   - Boot button: Download button. Holding down Boot and then pressing Reset initiates Firmware Download mode for downloading firmware through the serial port.
     - For more information, see [Boot Mode Selection][boot-mode-selection].

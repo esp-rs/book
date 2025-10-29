@@ -4,7 +4,7 @@ This chapter addresses common questions and challenges that developers may encou
 
 ## Editor/IDE
 
-When using [`esp-generate`][esp-generate], you can automatically configure recommended settings and extensions for VS Code, Helix, and Zed editors during the generation process.
+When using [`esp-generate`][esp-generate], you can automatically configure recommended settings and extensions for VS Code, Helix, Neovim, and Zed editors during the generation process.
 
 [esp-generate]: ./getting-started/tooling/esp-generate.md
 

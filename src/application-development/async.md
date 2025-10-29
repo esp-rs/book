@@ -29,8 +29,8 @@ The [`esp-rtos`] crate provides integration between [`esp-hal`] and the [Embassy
 
 <!-- TODO: change ArielOS to crates.io link when it's ready -->
 [official async-book]: https://rust-lang.github.io/async-book/
-[`Blocking`]: https://docs.espressif.com/projects/rust/esp-hal/1.0.0-rc.0/esp32c6/esp_hal/struct.Blocking.html
-[`Async`]:  https://docs.espressif.com/projects/rust/esp-hal/1.0.0-rc.0/esp32c6/esp_hal/struct.Async.html
+[`Blocking`]: https://docs.espressif.com/projects/rust/esp-hal/1.0.0/esp32c6/esp_hal/struct.Blocking.html
+[`Async`]:  https://docs.espressif.com/projects/rust/esp-hal/1.0.0/esp32c6/esp_hal/struct.Async.html
 [Embassy]: https://embassy.dev
 [embassy-executor]: https://crates.io/crates/embassy-executor
 [`esp-rtos`]: https://crates.io/crates/esp-rtos

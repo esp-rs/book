@@ -42,7 +42,6 @@ You may also want to define certain configuration options in your project. To do
 [documentation]: https://docs.espressif.com/projects/rust/
 [esp-config]: https://crates.io/crates/esp-config
 [Defining Configuration Options]: https://github.com/esp-rs/esp-hal/tree/main/esp-config#defining-configuration-options
-<!-- TODO, can we get latest to work here instead of 1.0.0-rc.0? -->
-[esp-hal-config]: https://docs.espressif.com/projects/rust/esp-hal/1.0.0-rc.0/esp32c6/esp_hal/index.html#additional-configuration
+[esp-hal-config]: https://docs.espressif.com/projects/rust/esp-hal/1.0.0/esp32c6/esp_hal/index.html#additional-configuration
 [this example repo]: https://github.com/bjoernQ/esp-hal-multiconfig-example/tree/main
 [alias]: https://doc.rust-lang.org/cargo/reference/config.html#alias

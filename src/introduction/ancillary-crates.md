@@ -38,6 +38,9 @@ The table below briefly describes all crates in the `esp-hal` ecosystem and thei
 
 > ⚠️ **Note**: The stability of individual peripheral drivers within `esp-hal` varies. Refer to the [Peripheral support section][peripheral-support] for per-peripheral stability details.
 
+You can find details about any of these packages in the [esp-rs documentation][docs].
+
+[docs]: https://docs.espressif.com/projects/rust/index.html
 [peripheral-support]: https://github.com/esp-rs/esp-hal/tree/main/esp-hal#peripheral-support
 
 ## Embedded Rust Ecosystem Integration

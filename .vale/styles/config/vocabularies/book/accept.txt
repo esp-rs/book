@@ -11,3 +11,8 @@ JTAG
 USB
 RGB
 MIT
+(?i)NOTE
+(?i)TIP
+(?i)IMPORTANT
+(?i)WARNING
+(?i)CAUTION

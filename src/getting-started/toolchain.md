@@ -4,12 +4,15 @@
 
 Make sure you have [Rust][rust-lang-org] installed. If not, see the instructions on the [rustup][rustup.rs-website] website.
 
-> 🚨 **Warning**: When using Unix based systems, installing Rust via a system package manager (e.g. `brew`, `apt`, `dnf`, etc.) can result in various [issues and incompatibilities][rustup-note], so it's best to use [rustup][rustup.rs-website] instead.
+> [!WARNING]
+> When using Unix based systems, installing Rust via a system package manager (e.g. `brew`, `apt`, `dnf`, etc.) can result in various [issues and incompatibilities][rustup-note], so it's best to use [rustup][rustup.rs-website] instead.
 
 When using Windows, make sure you have installed one of the ABIs listed below. For more details, see the [Windows][rustup-book-windows] chapter in The rustup book.
+
 - **MSVC**: Recommended ABI, included in the list of `rustup` default requirements. Use it for interoperability with the software produced by Visual Studio.
 
     When in doubt, this is what you want to use.
+
 - **GNU**: ABI used by the GCC toolchain. Install it yourself for interoperability with the software built with the MinGW/MSYS2 toolchain.
 
 See also [alternative installation methods][rust-alt-installation].
@@ -25,23 +28,24 @@ See also [alternative installation methods][rust-alt-installation].
 To build Rust applications for the Espressif chips based on RISC-V architecture (if you're unsure what your device is, see [hardware overview](../introduction/hardware-overview.md)), do the following:
 
 1. Install the proper toolchain with the `rust-src` [component][rustup-book-components]:
-    - You can use either `stable` or [`nightly`][rustup-book-channel-nightly]:
-      ```shell
-      rustup toolchain install stable --component rust-src
+
+   - You can use either `stable` or [`nightly`][rustup-book-channel-nightly]:
+     ```shell
+     rustup toolchain install stable --component rust-src
       ```
       or
       ```shell
-      rustup toolchain install nightly --component rust-src
-      ```
+     rustup toolchain install nightly --component rust-src
+     ```
 
-    > ⚠️ **Note**: Other components such as `rustfmt`, `clippy` or `rust-analyzer` are not required, but they are highly recommended.
-
-
+   > [!NOTE]
+   > Other components such as `rustfmt`, `clippy` or `rust-analyzer` are not required, but they are highly recommended.
 
 2. Install the target:
-      ```shell
-      rustup target add riscv32imc-unknown-none-elf # For ESP32-C2 and ESP32-C3
-      rustup target add riscv32imac-unknown-none-elf # For ESP32-C6 and ESP32-H2
+
+   ```shell
+   rustup target add riscv32imc-unknown-none-elf # For ESP32-C2 and ESP32-C3
+   rustup target add riscv32imac-unknown-none-elf # For ESP32-C6 and ESP32-H2
       ```
 
       Those targets are currently [Tier 2][rust-lang-book--platform-support-tier2]. Note the different flavors of `riscv32` targets in Rust covering different [RISC-V extensions][wiki-riscv-standard-extensions].

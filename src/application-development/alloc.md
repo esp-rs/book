@@ -8,7 +8,7 @@ We provide our own `no_std` heap allocator, [`esp-alloc`][esp-alloc]. But before
 
 While heap allocation offers flexibility, it comes with some costs:
 
-- **Fragmentation**: Over time, dynamic allocation can cause *fragmentation*: small, scattered allocations may prevent large ones even if total memory is available. This can lead to subtle runtime failures.
+- **Fragmentation**: Over time, dynamic allocation can cause _fragmentation_: small, scattered allocations may prevent large ones even if total memory is available. This can lead to subtle runtime failures.
 - **Runtime Overhead**: Allocating and freeing memory incurs a computational cost, along with any overhead of the chosen allocator.
 
 ## Configurable Memory Placement and Reclaimed RAM
@@ -30,9 +30,10 @@ heap_allocator!(#[ram(reclaimed)] size: 64000);
 
 Our chips have a few hundred kilobytes of internal RAM, which could be insufficient for some applications. Some Espressif chips have the ability to use virtual addresses for external PSRAM (Pseudostatic RAM) memory. The external memory is usable in the same way as internal data RAM, with certain restrictions.
 
-> ⚠️ **Note**: On Xtensa chips, atomics in PSRAM do not work correctly — they can cause data races and defeat their purpose. This means that
-the allocator must not be used to allocate `Atomic*` types - either directly
-or indirectly. ESP32 restrictions can be found [here]. This does **not** affect our RISC-V chips, where PSRAM works correctly with atomics.
+> [!NOTE]
+> On Xtensa chips, atomics in PSRAM do not work correctly — they can cause data races and defeat their purpose. This means that
+> the allocator must not be used to allocate `Atomic*` types - either directly
+> or indirectly. ESP32 restrictions can be found [here]. This does **not** affect our RISC-V chips, where PSRAM works correctly with atomics.
 
 ### Allocator Considerations
 

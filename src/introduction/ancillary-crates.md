@@ -36,7 +36,8 @@ The table below briefly describes all crates in the `esp-hal` ecosystem and thei
 | `xtensa-lx`              | Low-level access to Xtensa LX processors and peripherals.                                                      | Unstable              |
 | `xtensa-lx-rt`           | Minimal startup/runtime for Xtensa LX CPUs from Espressif.                                                     | Unstable              |
 
-> ⚠️ **Note**: The stability of individual peripheral drivers within `esp-hal` varies. Refer to the [Peripheral support section][peripheral-support] for per-peripheral stability details.
+> [!NOTE]
+> The stability of individual peripheral drivers within `esp-hal` varies. Refer to the [Peripheral support section][peripheral-support] for per-peripheral stability details.
 
 You can find details about any of these packages in the [esp-rs documentation][docs].
 

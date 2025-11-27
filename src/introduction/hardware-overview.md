@@ -5,18 +5,22 @@ The crates under the `esp-rs` organization include support for the [ESP32, ESP32
 Each SoC has its own unique features while sharing some common traits. To select the appropriate chip for your project, please use the [Espressif Product Selector][product-selector].
 
 The Espressif portfolio is based on two different system architectures:
+
 - [Xtensa][xtensa-architecture]: The ESP32 and ESP32-S series are based on the Xtensa architecture.
 - [RISC-V][riscv-architecture]: The ESP32-C and ESP32-H series are based on the RISC-V architecture.
 
 We won't go into the details or differences between the two architectures here. Rust's official support differs between the two architectures. Xtensa is not yet officially supported by Rust; the reason for Rust not supporting Xtensa is that Rust uses LLVM as part of its compiler infrastructure, and LLVM does not yet support Xtensa. For this reason, we maintain custom forks of both LLVM and the Rust compiler that include Xtensa support, and we are actively working to upstream our changes to enable official support in the future.
 
-> ⚠️ **Note**: We are actively working to upstream our forks. Below is the current status:
+> [!NOTE]
+> We are actively working to upstream our forks. Below is the current status:
+>
 > 1. LLVM fork: We've made significant progress recently. For details, refer to the [tracking issue][llvm-github-fork-upstream issue].
 > 2. Rust compiler fork: We've submitted all feasible Xtensa patches. Further progress depends on these changes being upstreamed into LLVM.
 
 Feel free to refer to the [Technical Documentation][espressif-docs] for more information about the different SoCs.
 
-> ⚠️ **Note**: The ESP8266 is not supported by `esp-hal`.
+> [!NOTE]
+> The ESP8266 is not supported by `esp-hal`.
 >
 > However, the ESP32-C2 (ESP8684) and ESP32-C3 (ESP8685) are supported. Notably, the ESP32-C3 is pin-compatible with the ESP8266, making it a suitable drop-in replacement.
 
@@ -47,8 +51,6 @@ Let's take the [ESP32-C6-DevKitC-1][c6-devkitc] as an example. It's a developmen
 - RGB LED: Addressable RGB LED, driven by GPIO8.
   - Note that this is not a standard RGB LED, it is a [WS2812B LED][esp-hal-smartled].
 
-
 [c6-devkitc]: https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32c6/esp32-c6-devkitc-1/index.html
 [boot-mode-selection]: https://docs.espressif.com/projects/esptool/en/latest/esp32c6/advanced-topics/boot-mode-selection.html?highlight=boot%20mode
 [esp-hal-smartled]: https://github.com/esp-rs/esp-hal-community/tree/main/esp-hal-smartled
-

@@ -18,7 +18,6 @@ Adjust the options as needed for your project. See [Available Options][available
 
 [available-options]: https://github.com/esp-rs/esp-generate?tab=readme-ov-file#available-options
 
-
 ## Flashing Options
 
 There are two options for flashing the code to the target device:
@@ -27,9 +26,11 @@ There are two options for flashing the code to the target device:
 - `probe-rs`: Enables Real Time Transfer (RTT) based options and allows on chip debugging.
   - Make sure to enable `Use probe-rs to flash and monitor instead of espflash.` (`probe-rs` option) when generating your project.
 
-> 💡 **Hint**: When using `espflash` you might want to enable `Use the log crate to print messages.` and `Use esp-backtrace as the panic handler.` under `Flashing, logging and debugging (espflash)`
+> [!TIP]
+> When using `espflash` you might want to enable `Use the log crate to print messages.` and `Use esp-backtrace as the panic handler.` under `Flashing, logging and debugging (espflash)`
 
-> 💡 **Hint**: When using `probe-rs`, instead of `espflash`, you might want to enable `Use defmt to print messages.` and `Use panic-rtt-target as the panic handler.` under `Flashing, logging and debugging (probe-rs)`
+> [!TIP]
+> When using `probe-rs`, instead of `espflash`, you might want to enable `Use defmt to print messages.` and `Use panic-rtt-target as the panic handler.` under `Flashing, logging and debugging (probe-rs)`
 
 ## Generating the Project
 

@@ -6,9 +6,10 @@ Besides flashing and monitoring, it also provides robust debugging capabilities.
 
 If you're unsure whether you need it right now, you can skip the installation and come back to it later.
 
-Espressif devices equipped with the  `USB-JTAG-SERIAL` peripheral can use `probe-rs` without any external hardware. For devices lacking this peripheral, you'll need an external programmer like the [ESP-Prog][esp-prog].
+Espressif devices equipped with the `USB-JTAG-SERIAL` peripheral can use `probe-rs` without any external hardware. For devices lacking this peripheral, you'll need an external programmer like the [ESP-Prog][esp-prog].
 
-> ⚠️ **Note**: `USB-JTAG-SERIAL` peripheral is available in ESP32-C6, ESP32-H2, ESP32-S3 and ESP32-C3 (revision 0.3 or later)
+> [!NOTE]
+> `USB-JTAG-SERIAL` peripheral is available in ESP32-C6, ESP32-H2, ESP32-S3 and ESP32-C3 (revision 0.3 or later)
 
 [probe-rs]: https://probe.rs/
 <!--- the search currently doesn't work on the probe-rs website --->

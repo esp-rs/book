@@ -15,23 +15,26 @@ You are free to do this in two ways:
 - By setting the environment variable. For example, in `esp-hal` if you want to place anonymous symbols in RAM (`ESP_HAL_CONFIG_PLACE_ANON_IN_RAM`), which is set to `false` by default, you need to create an environment variable with the same name and modify its value.
 
 - By setting the required parameter in `.cargo/config.toml` (this method also sets the environment variable):
-    ```toml
-    # .cargo/config.toml
 
-    [env]
-    ESP_HAL_CONFIG_PLACE_ANON_IN_RAM="true"
-    ```
-    After modifying the `.cargo/config.toml` and `[env]` section, **clean build** is recommended.
+  ```toml
+  # .cargo/config.toml
 
-> ⚠️ **Note**: Setting environment variables on the command line will take precedence over the `[env]` section.
+  [env]
+  ESP_HAL_CONFIG_PLACE_ANON_IN_RAM="true"
+  ```
+
+  After modifying the `.cargo/config.toml` and `[env]` section, **clean build** is recommended.
+
+> [!NOTE]
+> Setting environment variables on the command line will take precedence over the `[env]` section.
 
 ## Multiple Configurations
 
 Depending on your application, you may find yourself wanting to support different boards/chips/targets in the same project. In this case, you may have specific options to set for each target. To do this, we recommend the following setup.
 
-* A baseline `.cargo/config.toml` which has your typical build modifying flags (Cargo will _always_ read and respect this file, regardless of other `--config`'s passed)
-* A config file for each configuration in `.cargo/`
-* (**Recommended**) A Cargo [alias] to build with the given config, for example `run-config-a = "run --config=./.cargo/config_a.toml --release"`, but for simple cases you can pass `--config` on the CLI.
+- A baseline `.cargo/config.toml` which has your typical build modifying flags (Cargo will _always_ read and respect this file, regardless of other `--config`'s passed)
+- A config file for each configuration in `.cargo/`
+- (**Recommended**) A Cargo [alias] to build with the given config, for example `run-config-a = "run --config=./.cargo/config_a.toml --release"`, but for simple cases you can pass `--config` on the CLI.
 
 Check out [this example repo] for a more comprehensive look at multi-config projects.
 

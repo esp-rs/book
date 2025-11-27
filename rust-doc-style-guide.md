@@ -63,6 +63,7 @@ In heading titles, capitalize the first letter of every word **except for**:
   > **Packages and Crates**
 
 - Prepositions of four letters or less; unless these prepositions are the first or last words.
+
   - Prepositions of _five_ letters and above should be capitalized (Before, Through, Versus, Among, Under, Between, Without, etc.).
 
   > **Peripherals as State Machines**
@@ -110,7 +111,7 @@ The books on Rust usually use the following link formatting:
 
 - Make intra-book links relative, so they work both online and locally
 
-Do *not* turn long phrases into links
+Do _not_ turn long phrases into links
 
   > ❌ See the [Rust Reference’s section on constant evaluation](https://doc.rust-lang.org/book/ch03-01-variables-and-mutability.html) for more information on what operations can be used when declaring constants.
 
@@ -146,6 +147,7 @@ The books on Rust usually use the following list formatting:
   > - Building your C or C++ code to be integrated with the Rust code
 
 - If a bullet point is a full sentence, you can end it with a full stop.
+
   - If a list has at least one full stop, end all other list items with a full stop.
 
   > To reliably interact with these peripherals:
@@ -156,13 +158,13 @@ The books on Rust usually use the following list formatting:
 
 - For longer list items, consider using a summary word of phrase to make content [scannable](https://learn.microsoft.com/en-us/style-guide/scannable-content/).
 
-  > If you run Windows on your host machine, make sure 
+  > If you run Windows on your host machine, make sure
   >
-  > - **MSVC**: Recommended ABI, included in 
-  > - **GNU**: ABI used by the GCC toolchain 
+  > - **MSVC**: Recommended ABI, included in
+  > - **GNU**: ABI used by the GCC toolchain
 
-  -  For an example using bold font, see the list in the [Modules Cheat Sheet](https://doc.rust-lang.org/book/ch07-02-defining-modules-to-control-scope-and-privacy.html#modules-cheat-sheet) section in The Rust Programming Language book.
-  -  For an example using monospace font, see the [Panicking](https://docs.rust-embedded.org/book/start/panicking.html#panicking) section in The Embedded Rust Book.
+  - For an example using bold font, see the list in the [Modules Cheat Sheet](https://doc.rust-lang.org/book/ch07-02-defining-modules-to-control-scope-and-privacy.html#modules-cheat-sheet) section in The Rust Programming Language book.
+  - For an example using monospace font, see the [Panicking](https://docs.rust-embedded.org/book/start/panicking.html#panicking) section in The Embedded Rust Book.
 
 ## Using `monospace`
 
@@ -191,7 +193,6 @@ Use monospace font for the following items:
 - Files: `config.toml`
 - Images and containers: `idf-rust`
 
-
 ### Monospace and Other Types of Formatting
 
 Monospace font can also be used in:
@@ -215,7 +216,7 @@ Monospace font can also be used in:
 
   > When `s` comes _into_ scope, it is valid. It remains valid until it goes _out of_ scope.
 
-- Do *not* use italics with Espressif product names, such as ESP32.
+- Do _not_ use italics with Espressif product names, such as ESP32.
 
 ## Mode of Narration
 
@@ -254,20 +255,24 @@ Use the following formatting for notes and warnings:
 
 - Note
 
-  > ⚠️ **Note**: A note covering an important point or idea. Use sparingly or the readers will start ignoring them.
+  > [!NOTE]
+  > A note covering an important point or idea. Use sparingly or the readers will start ignoring them.
 
 - Warning
 
-  > 🚨 **Warning**: Use in critical circumstances only, e.g., for irreversible actions or actions potentially harmful to hardware, software, etc.
+  > [!WARNING]
+  > Use in critical circumstances only, e.g., for irreversible actions or actions potentially harmful to hardware, software, etc.
 
-- Hint
+- Tip
 
-  > 💡 **Hint**: Use for additional hints and tips
+  > [!TIP]
+  > Use for additional hints and tips
 
 In markdown:
 
 ```md
-> ⚠️ **Note**: Write your note.
+> [!NOTE]
+> Write your note.
 ```
 
 ## Prioritization
@@ -287,4 +292,3 @@ In markdown:
 - [Rust API Guidelines](https://rust-lang.github.io/api-guidelines/)
 - [Rust Style Guide](https://riptutorial.com/rust/topic/4620/rust-style-guide) (riptutorial.com)
 - [Rust Style Guide](https://github.com/rust-lang/style-team/blob/master/guide/guide.md) (github.com/rust-lang)
-

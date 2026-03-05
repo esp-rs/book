@@ -71,13 +71,13 @@ Implementation Methods
    dependency), you can hook into the `esp-hal` linker scripts.
 
    - Enable the corresponding config options (`ESP_HAL_CONFIG_USE_RWDATA_LD_HOOK` / `ESP_HAL_CONFIG_USE_RWTEXT_LD_HOOK`)
-     to require the linker to look for rwdata_hook.x (for data) or rwtext_hook.x (for code).
+     to require the linker to look for `rwdata_hook.x` (for data) or `rwtext_hook.x` (for code).
    - These files must use the [Linker Input Section syntax](https://sourceware.org/binutils/docs/ld/Input-Section-Basics.html).
 
-   Content in these files is included directly into the .data and .rwtext sections without
+   Content in these files is included directly into the `.data` and `.rwtext` sections without
    validation.
 
-   Example rwtext_hook.x content:
+   Example `rwtext_hook.x` content:
    ```text
    /* Move all functions from the 'some_critical_lib' to RAM */
    *:some_critical_lib.*(.literal .literal.* .text .text.*)

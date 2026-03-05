@@ -86,7 +86,7 @@ Implementation Methods
    Configuration & Pathing
    By default, the linker looks for these hook files in your project’s current working
    directory. If you prefer to store them elsewhere, add the directory to your linker search
-   path in .cargo/config.toml:
+   path in `.cargo/config.toml`:
 
    ```toml
    rustflags = [
@@ -97,7 +97,7 @@ Implementation Methods
    It's advised to perform a clean build after modifying the hook files to guarantee the
    changes are picked up correctly.
 
-   In order to check the effects of the changes it's useful to generate a linker map file.
+   To check the effects of the changes it's useful to generate a linker map file.
 
    Xtensa:
    ```toml

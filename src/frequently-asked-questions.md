@@ -117,3 +117,7 @@ Implementation Methods
    These hooks provide direct access to the linking process. Incorrect syntax or
    over-allocating RAM can lead to link-time errors or application instability.
    </section>
+
+   <section class="warning">
+   Please note that the hooking mechanism is currently an unstable feature which might change in future.
+   </section>

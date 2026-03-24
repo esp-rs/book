@@ -50,3 +50,22 @@ The [Cargo Book][cargo-book] and the [Embassy Documentation][embassy-documentati
 ## Can I Use `mem::forget` on Drivers?
 
 The `mem::forget` function should be avoided, as forgetting drivers may result in unintended consequences. Peripheral drivers provide `Drop` implementations which return the peripheral to its default, unconfigured state, and if necessary cancel any Direct Memory Access (DMA) transactions which are current in progress. Forgetting a driver may result in erroneously configured peripherals and/or DMA transactions which run indefinitely and never complete.
+
+## Entering/exiting Download Mode
+
+Download mode is a boot mode used for firmware programming and debugging. In this mode, the chip does not boot the application from Flash, instead, it waits to receive new firmware data through interfaces such as UART or USB, and writes it to Flash.
+
+### Selecting Boot Mode
+
+When a reset ocurs, the ROM bootloader reads the state of specific strapping pins and selects the boot mode based on their levels at that moment:
+- If the boot strapping pin is high → the chip enters SPI Boot mode (runs the application from Flash).
+- If the boot strapping pin is low → the chip enters Download mode (waits for firmware).
+See more information about boot mode selection in [ESP-IDF documentation][esp-idf-bootmode]
+
+When the device is on download mode you will see the following serial output: "waiting for download". See [ESP-IDF Download Mode documentation][esp-idf-downloadmode]
+
+After flashing the chip, the chip needs to return to SPI Boot mode to run the new firmware. This can be achieved by reseting the target, causing the strapping pins to be re-sampled, and the chip boots normally or by using the `--after watchdog-reset` option of `espflash` and `esptool` when in USB-Serial/JTAG Mode, see [ESP-IDF Troubleshooting][esp-idf-troubleshooting].
+
+[esp-idf-bootmode]: https://docs.espressif.com/projects/esptool/en/latest/esp32c6/advanced-topics/boot-mode-selection.html
+[esp-idf-downloadmode]: https://docs.espressif.com/projects/esp-techpedia/en/latest/esp-friends/get-started/try-firmware/try-firmware-troubleshooting.html#download-mode
+[esp-idf-troubleshooting]: https://docs.espressif.com/projects/esptool/en/latest/esp32c6/troubleshooting.html#leaving-download-mode-in-usb-serial-jtag-mode

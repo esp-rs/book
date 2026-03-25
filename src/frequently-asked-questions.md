@@ -51,7 +51,7 @@ The [Cargo Book][cargo-book] and the [Embassy Documentation][embassy-documentati
 
 The `mem::forget` function should be avoided, as forgetting drivers may result in unintended consequences. Peripheral drivers provide `Drop` implementations which return the peripheral to its default, unconfigured state, and if necessary cancel any Direct Memory Access (DMA) transactions which are current in progress. Forgetting a driver may result in erroneously configured peripherals and/or DMA transactions which run indefinitely and never complete.
 
-## Entering/exiting Download Mode
+## Entering/Exiting Download Mode
 
 Download mode is a boot mode used for firmware programming and debugging. In this mode, the chip does not boot the application from Flash, instead, it waits to receive new firmware data through interfaces such as UART or USB, and writes it to Flash.
 

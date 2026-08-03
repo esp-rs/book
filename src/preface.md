@@ -33,10 +33,7 @@ If you encounter difficulties following the instructions or find unclear section
 
 ## Support and Community
 
-If you need help, have questions, or would like to discuss topics related to `esp-rs`, you can reach out through the following channels:
-
-- **Matrix**: [Join our community chat](https://matrix.to/#/#esp-rs:matrix.org).
-- **GitHub Discussions**: [Engage with the community](https://github.com/esp-rs/esp-hal/discussions).
+If you need help, have questions, or would like to discuss topics related to `esp-rs`, join our community chat on [Matrix](https://matrix.to/#/#esp-rs:matrix.org).
 
 We hope this book provides you with the knowledge and confidence to build robust, efficient, and safe embedded applications using Rust on Espressif products. Let's get started!
 

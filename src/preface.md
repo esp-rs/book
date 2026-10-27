@@ -37,11 +37,11 @@ If you need help, have questions, or would like to discuss topics related to `es
 
 We hope this book provides you with the knowledge and confidence to build robust, efficient, and safe embedded applications using Rust on Espressif products. Let's get started!
 
-[modules]: https://docs.espressif.com/projects/rust/esp-hal/1.0.0/esp32c6/esp_hal/index.html#modules
+[modules]: https://docs.espressif.com/projects/rust/esp-hal/1.2.0/esp32c6/esp_hal/index.html#modules
 [resources]: #additional-resources
 [rust-book]: https://doc.rust-lang.org/book/
 [embedded-rust-book]: https://docs.rust-embedded.org/book/index.html
-[no_std-training]: https://esp-rs.github.io/no_std-training/
+[no_std-training]: https://docs.espressif.com/projects/rust/no_std-training/
 [awesome-esp-rust]: https://github.com/esp-rs/awesome-esp-rust.git
 [awesome-embedded-rust]: https://github.com/rust-embedded/awesome-embedded-rust
 [book-repository]: https://github.com/esp-rs/book

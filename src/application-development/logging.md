@@ -6,7 +6,7 @@ Regardless of which of the following tools you choose to use when generating you
 
 ## `defmt`
 
-[`defmt`][defmt] is a highly efficient logging framework designed for resource-constrained environments, such as embedded systems. It offers compact, binary-encoded log messages, reducing the overhead associated with traditional string-based logging. For more information about see [`defmt` documentation][defmt-documentation]. We recommend pairing `defmt` with `probe-rs` for the best results on Espressif chips.
+[`defmt`][defmt] is a highly efficient logging framework designed for resource-constrained environments, such as embedded systems. It offers compact, binary-encoded log messages, reducing the overhead associated with traditional string-based logging. For more information about see [`defmt` documentation][defmt-documentation]. `defmt` can be used with both `probe-rs`, which transfers the log messages over Real-Time Transfer (RTT), and `espflash`, which decodes them from the serial output with `--log-format defmt`. `esp-generate` configures either setup for you.
 
 ## `log`
 

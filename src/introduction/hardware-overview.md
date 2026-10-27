@@ -1,13 +1,13 @@
 # Hardware Overview
 
-The crates under the `esp-rs` organization include support for the [ESP32, ESP32-S, ESP32-C and ESP32-H Series SoCs][espressif-socs].
+The crates under the `esp-rs` organization include support for the [ESP32, ESP32-S, ESP32-C, ESP32-H and ESP32-P Series SoCs][espressif-socs]. See the [`esp-hal` supported devices][esp-hal-supported-devices] table for the full list of chips and their support status.
 
 Each SoC has its own unique features while sharing some common traits. To select the appropriate chip for your project, please use the [Espressif Product Selector][product-selector].
 
 The Espressif portfolio is based on two different system architectures:
 
-- [Xtensa][xtensa-architecture]: The ESP32 and ESP32-S series are based on the Xtensa architecture.
-- [RISC-V][riscv-architecture]: The ESP32-C and ESP32-H series are based on the RISC-V architecture.
+- [Xtensa][xtensa-architecture]: The ESP32, ESP32-S2 and ESP32-S3 are based on the Xtensa architecture.
+- [RISC-V][riscv-architecture]: The ESP32-C, ESP32-H and ESP32-P series, as well as the ESP32-S31, are based on the RISC-V architecture.
 
 We won't go into the details or differences between the two architectures here. Rust's official support differs between the two architectures. Xtensa is not yet officially supported by Rust; the reason for Rust not supporting Xtensa is that Rust uses LLVM as part of its compiler infrastructure, and LLVM does not yet support Xtensa. For this reason, we maintain custom forks of both LLVM and the Rust compiler that include Xtensa support, and we are actively working to upstream our changes to enable official support in the future.
 
@@ -25,6 +25,7 @@ Feel free to refer to the [Technical Documentation][espressif-docs] for more inf
 > However, the ESP32-C2 (ESP8684) and ESP32-C3 (ESP8685) are supported. Notably, the ESP32-C3 is pin-compatible with the ESP8266, making it a suitable drop-in replacement.
 
 [espressif-socs]: https://www.espressif.com/en/products/socs
+[esp-hal-supported-devices]: https://github.com/esp-rs/esp-hal/tree/main/esp-hal#supported-devices
 [product-selector]: https://products.espressif.com/#/
 [xtensa-architecture]: https://www.cadence.com/content/dam/cadence-www/global/en_US/documents/tools/silicon-solutions/compute-ip/isa-summary.pdf
 [riscv-architecture]: https://en.wikipedia.org/wiki/RISC-V

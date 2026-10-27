@@ -21,4 +21,4 @@ Using `esp-generate`, and selecting `embedded-test` under `probe-rs` will set up
 [`hil-test` sub-repository]: https://github.com/esp-rs/esp-hal/tree/main/hil-test
 [esp-prog]:  https://docs.espressif.com/projects/esp-dev-kits/en/latest/other/esp-prog/user_guide.html
 [connection instructions]: https://docs.espressif.com/projects/esp-idf/en/v5.2.3/esp32s2/api-guides/jtag-debugging/configure-other-jtag.html
-[`embedded-test` documentation]: https://docs.rs/embedded-test/0.6.2/embedded_test/
+[`embedded-test` documentation]: https://docs.rs/embedded-test/latest/embedded_test/

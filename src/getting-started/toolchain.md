@@ -44,11 +44,15 @@ To build Rust applications for the Espressif chips based on RISC-V architecture 
 2. Install the target:
 
    ```shell
-   rustup target add riscv32imc-unknown-none-elf # For ESP32-C2 and ESP32-C3
-   rustup target add riscv32imac-unknown-none-elf # For ESP32-C6 and ESP32-H2
-      ```
+   rustup target add riscv32imc-unknown-none-elf   # For ESP32-C2 and ESP32-C3
+   rustup target add riscv32imac-unknown-none-elf  # For ESP32-C5, ESP32-C6, ESP32-C61 and ESP32-H2
+   rustup target add riscv32imafc-unknown-none-elf # For ESP32-H4, ESP32-P4 and ESP32-S31
+   ```
 
-      Those targets are currently [Tier 2][rust-lang-book--platform-support-tier2]. Note the different flavors of `riscv32` targets in Rust covering different [RISC-V extensions][wiki-riscv-standard-extensions].
+   Those targets are currently [Tier 2][rust-lang-book--platform-support-tier2]. Note the different flavors of `riscv32` targets in Rust covering different [RISC-V extensions][wiki-riscv-standard-extensions].
+
+   > [!NOTE]
+   > Support maturity differs between chips. For example, ESP32-H4 and ESP32-S31 support is in early stages of development. See the [`esp-hal` supported devices][esp-hal-supported-devices] table for the current status of each chip.
 
 If you are _not_ going to use ESP32, ESP32-S2 or ESP32-S3 you are done and can skip to [Tooling Installation](tooling/index.md).
 
@@ -56,6 +60,7 @@ If you are _not_ going to use ESP32, ESP32-S2 or ESP32-S3 you are done and can s
 [rustup-book-components]: https://rust-lang.github.io/rustup/concepts/components.html
 [rust-lang-book--platform-support-tier2]: https://doc.rust-lang.org/nightly/rustc/platform-support.html#tier-2
 [wiki-riscv-standard-extensions]: https://en.wikichip.org/wiki/risc-v/standard_extensions
+[esp-hal-supported-devices]: https://github.com/esp-rs/esp-hal/tree/main/esp-hal#supported-devices
 
 ### Xtensa Devices
 

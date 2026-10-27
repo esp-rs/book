@@ -10,13 +10,17 @@ To start, launch the interactive configuration tool by running:
 esp-generate
 ```
 
-`esp-generate` will prompt you for your chip, and a project name, before launching into a TUI with options to configure the project generation process.
+`esp-generate` will prompt you for a project name before launching into a TUI where you select the target chip and the options to configure the project generation process.
 
 ![Screenshot](../assets/esp-generate.png)
 
-Adjust the options as needed for your project. See [Available Options][available-options] section of the README. There is a small description of each option at the bottom of the TUI.
+Adjust the options as needed for your project. There is a small description of each option at the bottom of the TUI. You can also list all available options with `esp-generate list-options`, and get a detailed explanation of an option with `esp-generate explain <option>`.
 
-[available-options]: https://github.com/esp-rs/esp-generate?tab=readme-ov-file#available-options
+Alternatively, you can skip the TUI and pass the options directly on the command line:
+
+```shell
+esp-generate --headless -o esp32c6 -o embassy -o unstable-hal -o alloc -o wifi your-project
+```
 
 ## Flashing Options
 

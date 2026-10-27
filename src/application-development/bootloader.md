@@ -55,5 +55,5 @@ To build a custom ESP-IDF bootloader:
 [bootloaders]: https://github.com/esp-rs/espflash/tree/main/espflash/resources/bootloaders
 [esp-idf-install]: https://docs.espressif.com/projects/esp-idf/en/stable/esp32/get-started/index.html#manual-installation
 [config-reference]: https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/kconfig-reference.html#configuration-options-reference
-[espflash-config-file]: https://github.com/esp-rs/espflash/tree/main/espflash#configuration-file
+[espflash-config-file]: https://github.com/esp-rs/espflash/tree/main/espflash#configuration-files
 [MCUBOOT]: https://docs.mcuboot.com/

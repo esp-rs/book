@@ -14,16 +14,16 @@ You are free to do this in two ways:
 
 - By setting the environment variable. For example, in `esp-hal` if you want to place anonymous symbols in RAM (`ESP_HAL_CONFIG_PLACE_ANON_IN_RAM`), which is set to `false` by default, you need to create an environment variable with the same name and modify its value.
 
-- By setting the required parameter in `.cargo/config.toml` (this method also sets the environment variable):
+- By setting the required parameter in the `[env]` section of a Cargo configuration file (this method also sets the environment variable). Projects generated with `esp-generate` keep these settings in `.cargo/esp-config.toml`, which is included from `.cargo/config.toml`:
 
   ```toml
-  # .cargo/config.toml
+  # .cargo/esp-config.toml
 
   [env]
   ESP_HAL_CONFIG_PLACE_ANON_IN_RAM="true"
   ```
 
-  After modifying the `.cargo/config.toml` and `[env]` section, **clean build** is recommended.
+  After modifying the `[env]` section, **clean build** is recommended.
 
 > [!NOTE]
 > Setting environment variables on the command line will take precedence over the `[env]` section.
@@ -45,6 +45,6 @@ You may also want to define certain configuration options in your project. To do
 [documentation]: https://docs.espressif.com/projects/rust/
 [esp-config]: https://crates.io/crates/esp-config
 [Defining Configuration Options]: https://github.com/esp-rs/esp-hal/tree/main/esp-config#defining-configuration-options
-[esp-hal-config]: https://docs.espressif.com/projects/rust/esp-hal/1.0.0/esp32c6/esp_hal/index.html#additional-configuration
+[esp-hal-config]: https://docs.espressif.com/projects/rust/esp-hal/1.2.0/esp32c6/esp_hal/index.html#additional-configuration
 [this example repo]: https://github.com/bjoernQ/esp-hal-multiconfig-example/tree/main
 [alias]: https://doc.rust-lang.org/cargo/reference/config.html#alias
